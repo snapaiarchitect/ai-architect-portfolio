@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snap AI Architect — AI Systems & Agent Infrastructure</title>
+    <meta name="description" content="Production-grade AI agent systems, multi-agent orchestration, and LLM engineering tools. Built by a senior AI architect.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --charcoal: #0D0D0D;
+            --charcoal-light: #1A1A1A;
+            --charcoal-lighter: #262626;
+            --charcoal-border: #333333;
+            --text-primary: #F5F5F5;
+            --text-secondary: #A0A0A0;
+            --text-muted: #666666;
+            --amber: #FFB800;
+            --amber-dark: #E6A600;
+            --amber-glow: rgba(255,184,0,0.15);
+            --teal: #00D4AA;
+            --teal-dark: #00B894;
+            --teal-glow: rgba(0,212,170,0.15);
+            --red-accent: #FF4757;
+            --success: #00D4AA;
+            --warning: #FFB800;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--charcoal);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        .nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(13,13,13,0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--charcoal-border);
+            padding: 0.75rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .nav-brand img {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 2px solid var(--amber);
+        }
+
+        .nav-tldr {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            background: var(--charcoal-light);
+            padding: 0.35rem 0.75rem;
+            border-radius: 6px;
+            border: 1px solid var(--charcoal-border);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: var(--amber); }
+
+        /* Hero */
+        .hero {
+            padding: 5rem 2rem 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-title .accent {
+            background: linear-gradient(135deg, var(--amber), var(--teal));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            max-width: 500px;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.875rem 1.75rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.2s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--amber);
+            color: var(--charcoal);
+        }
+
+        .btn-primary:hover {
+            background: var(--amber-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255,184,0,0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--charcoal-border);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--amber);
+            color: var(--amber);
+        }
+
+        .hero-tldr {
+            background: var(--charcoal-light);
+            border: 1px solid var(--charcoal-border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .hero-tldr-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--amber);
+            margin-bottom: 0.75rem;
+        }
+
+        .hero-tldr p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .hero-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-avatar {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            border: 3px solid var(--amber);
+            box-shadow: 0 0 60px rgba(255,184,0,0.2);
+            object-fit: cover;
+        }
+
+        .hero-orbit {
+            position: absolute;
+            width: 340px;
+            height: 340px;
+            border: 1px solid rgba(255,184,0,0.15);
+            border-radius: 50%;
+            animation: orbit 20s linear infinite;
+        }
+
+        .hero-orbit::before {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: 50%;
+            width: 8px;
+            height: 8px;
+            background: var(--amber);
+            border-radius: 50%;
+            transform: translateX(-50%);
+        }
+
+        @keyframes orbit {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Trust Bar */
+        .trust {
+            background: var(--charcoal-light);
+            border-top: 1px solid var(--charcoal-border);
+            border-bottom: 1px solid var(--charcoal-border);
+            padding: 2.5rem 2rem;
+        }
+
+        .trust-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .trust-item h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--amber);
+            margin-bottom: 0.25rem;
+        }
+
+        .trust-item p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Section Headers */
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            margin-bottom: 3rem;
+        }
+
+        .section-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--teal);
+            margin-bottom: 0.75rem;
+        }
+
+        .section-title {
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .section-desc {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+        }
+
+        /* Project Cards */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .project-card {
+            background: var(--charcoal-light);
+            border: 1px solid var(--charcoal-border);
+            border-radius: 12px;
+            padding: 1.75rem;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--amber), var(--teal));
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .project-card:hover {
+            border-color: var(--charcoal-lighter);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        .project-card:hover::before {
+            opacity: 1;
+        }
+
+        .project-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+
+        .project-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .project-name:hover {
+            color: var(--amber);
+        }
+
+        .project-status {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        .status-production {
+            background: rgba(0,212,170,0.15);
+            color: var(--teal);
+        }
+
+        .status-beta {
+            background: rgba(255,184,0,0.15);
+            color: var(--amber);
+        }
+
+        .project-tldr {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: rgba(0,0,0,0.2);
+            border-radius: 8px;
+            border-left: 3px solid var(--amber);
+        }
+
+        .project-metrics {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .metric {
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .metric-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+        }
+
+        .dot-amber { background: var(--amber); }
+        .dot-teal { background: var(--teal); }
+        .dot-red { background: var(--red-accent); }
+
+        .project-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            padding: 0.3rem 0.6rem;
+            background: var(--charcoal-lighter);
+            border: 1px solid var(--charcoal-border);
+            border-radius: 4px;
+            color: var(--text-secondary);
+        }
+
+        .tag-highlight {
+            border-color: var(--amber);
+            color: var(--amber);
+        }
+
+        /* Stack Section */
+        .stack-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 1rem;
+        }
+
+        .stack-item {
+            background: var(--charcoal-light);
+            border: 1px solid var(--charcoal-border);
+            border-radius: 8px;
+            padding: 1.25rem;
+            text-align: center;
+            transition: all 0.2s;
+        }
+
+        .stack-item:hover {
+            border-color: var(--teal);
+            transform: translateY(-2px);
+        }
+
+        .stack-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .stack-name {
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .stack-desc {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, var(--charcoal-light) 0%, var(--charcoal) 100%);
+            border-top: 1px solid var(--charcoal-border);
+            border-bottom: 1px solid var(--charcoal-border);
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .cta-desc {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 500px;
+            margin: 0 auto 2rem;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 3rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            border-top: 1px solid var(--charcoal-border);
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand img {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            border: 2px solid var(--amber);
+        }
+
+        .footer-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        .footer-links h4 {
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--amber);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            border-top: 1px solid var(--charcoal-border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* Floating CTA */
+        .floating-cta {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 50;
+            background: var(--amber);
+            color: var(--charcoal);
+            padding: 1rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 8px 30px rgba(255,184,0,0.3);
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .floating-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(255,184,0,0.4);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .hero-title {
+                font-size: 2.25rem;
+            }
+
+            .hero-visual {
+                order: -1;
+            }
+
+            .hero-avatar {
+                width: 200px;
+                height: 200px;
+            }
+
+            .hero-orbit {
+                width: 240px;
+                height: 240px;
+            }
+
+            .trust-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="#" class="nav-brand">
+                <img src="https://raw.githubusercontent.com/snapaiarchitect/the-ai-architect/main/branding/avatar.png" alt="Snap AI Architect">
+                Snap AI Architect
+            </a>
+            <span class="nav-tldr">10 repos · 4 domains · Production-grade</span>
+            <ul class="nav-links">
+                <li><a href="#agents">Agents</a></li>
+                <li><a href="#automation">Automation</a></li>
+                <li><a href="#llm">LLM Lab</a></li>
+                <li><a href="#stack">Stack</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-grid">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Building <span class="accent">AI Systems</span> That Actually Ship
+                </h1>
+                <p class="hero-subtitle">
+                    Production-grade multi-agent orchestration, LLM infrastructure, and automation tooling. Senior AI architect shipping real code, not slide decks.
+                </p>
+                <div class="hero-cta">
+                    <a href="https://github.com/snapaiarchitect" class="btn btn-primary" target="_blank">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.53 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                        GitHub
+                    </a>
+                    <a href="mailto:snapaiarchitect@gmail.com" class="btn btn-secondary">Hire Me →</a>
+                </div>
+                <div class="hero-tldr">
+                    <div class="hero-tldr-label">TL;DR — What I Do</div>
+                    <p>I architect multi-agent systems that coordinate LLMs, APIs, and business logic into production pipelines. Every repo here is a real, documented system — not a tutorial. Built with Python, modern frameworks, and zero hand-waving.</p>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-orbit"></div>
+                <img src="https://raw.githubusercontent.com/snapaiarchitect/the-ai-architect/main/branding/avatar.png" alt="AI Architect" class="hero-avatar">
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Bar -->
+    <section class="trust">
+        <div class="trust-container">
+            <div class="trust-item">
+                <h3>10</h3>
+                <p>Production Repos</p>
+            </div>
+            <div class="trust-item">
+                <h3>4</h3>
+                <p>Domain Clusters</p>
+            </div>
+            <div class="trust-item">
+                <h3>50+</h3>
+                <p>Battle-Tested Prompts</p>
+            </div>
+            <div class="trust-item">
+                <h3>12</h3>
+                <p>Automation Scripts</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agents & Orchestration -->
+    <section class="section" id="agents">
+        <div class="section-header">
+            <div class="section-label">01 — Multi-Agent Systems</div>
+            <h2 class="section-title">Agents & Orchestration</h2>
+            <p class="section-desc">Production-grade multi-agent frameworks with real coordination patterns, not toy examples.</p>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-header">
+                    <a href="https://github.com/snapaiarchitect/multi-agent-orchestrator" class="project-name" target="_blank">multi-agent-orchestrator</a>
+                    <span class="project-status status-production">Production</span>
+                </div>
+                <div class="project-tldr">Pattern: Orchestrator + Domain Agents + Evaluator. Multi-agent system that coordinates specialized agents through a central router with evaluation loops. Built for real-world task decomposition.</div>
+                <div class="project-metrics">
+                    <span class="metric"><span class="metric-dot dot-amber"></span> Python</span>
+                    <span class="metric"><span class="metric-dot dot-teal"></span> Async</span>
+                    <span class="metric"><span class="metric-dot dot-red"></span> Multi-Agent</span>
+                </div>
+                <div class="project-tags">
+                    <span class="tag tag-highlight">orchestration</span>
+                    <span class="tag">task-routing</span>
+                    <span class="tag">evaluator-pattern</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <a href="https://github.com/snapaiarchitect/ai-agent-starter-kit" class="project-name" target="_blank">ai-agent-starter-kit</a>
+                    <span class="project-status status-production">Production</span>
+                </div>
+                <div class="project-tldr">Complete starter template for building multi-agent systems. Includes agent base classes, message bus, state management, and example implementations. Fork and ship.</div>
+                <div class="project-metrics">
+                    <span class="metric"><span class="metric-dot dot-amber"></span> Python</span>
+                    <span class="metric"><span class="metric-dot dot-teal"></span> Template</span>
+                    <span class="metric"><span class="metric-dot dot-red"></span> Batteries-Included</span>
+                </div>
+                <div class="project-tags">
+                    <span class="tag tag-highlight">starter-kit</span>
+                    <span class="tag">boilerplate</span>
+                    <span class="tag">message-bus</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Automation & Tools -->
+    <section class="section" id="automation">
+        <div class="section-header">
+            <div class="section-label">02 — Business Automation</div>
+            <h2 class="section-title">Automation & Tools</h2>
+            <p class="section-desc">Scripts and scrapers that automate real business workflows — content, data, and operations.</p>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-header">
+                    <a href="https://github.com/snapaiarchitect/ai-automation-scripts" class="project-name" target="_blank">ai-automation-scripts</a>
+                    <span class="project-status status-production">Production</span>
+                </div>
+                <div class="project-tldr">12 production scripts for business and content automation. Social media pipelines, email workflows, data processing, and repetitive task elimination. Ready to configure and deploy.</div>
+                <div class="project-metrics">
+                    <span class="metric"><span class="metric-dot dot-amber"></span> 12 Scripts</span>
+                    <span class="metric"><span class="metric-dot dot-teal"></span> Python/JS</span>
+                    <span class="metric"><span class="metric-dot dot-red"></span> Business-Ready</span>
+                </div>
+                <div class="project-tags">
+                    <span class="tag tag-highlight">automation</span>
+                    <span class="tag">content-pipeline</span>
+                    <span class="tag">email-workflows</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <a href="https://github.com/snapaiarchitect/ai-web-scraper" class="project-name" target="_blank">ai-web-scraper</a>
+                    <span class="project-status status-beta">Beta</span>
+                </div>
+                <div class="project-tldr">Intelligent web scraping with LLM-powered data extraction. Crawl, parse, and structure data from any site with natural language extraction rules. Anti-bot aware.</div>
+                <div class="project-metrics">
+                    <span class="metric"><span class="metric-dot dot-amber"></span> Python</span>
+                    <span class="metric"><span class="metric-dot dot-teal"></span> LLM Extraction</span>
+                    <span class="metric"><span class="metric-dot dot-red"></span> Anti-Detection</span>
+                </div>
+                <div class="project-tags">
+                    <span class="tag tag-highlight">scraping</span>
+                    <span class="tag">data-extraction</span>
+                    <span class="tag">playwright</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LLM Engineering -->
+    <section class="section" id="llm">
+        <div class="section-header">
+            <div class="section-label">03 — Language Models</div>
+            <h2 class="section-title">LLM Engineering</h2>
+            <p class="section-desc">Local inference, prompt engineering, and LLM infrastructure — from edge to cloud.</p>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-header">
+                    <a href="https://github.com/snapaiarchitect/local-llm-lab" class="project-name" target="_blank">local-llm-lab</a>
+                    <span class="project-status status-production">Production</span>
+                </div>
+                <div class="project-tldr">Run production LLMs locally with Ollama. Model comparison, quantization benchmarks, and deployment configs for edge inference. Privacy-first, zero API costs.</div>
+                <div class="project-metrics">
+                    <span class="metric"><span class="metric-dot dot-amber"></span> Ollama</span>
+                    <span class="metric"><span class="metric-dot dot-teal"></span> Quantization</span>
+                    <span class="metric"><span class="metric-dot dot-red"></span> Edge-Ready</span>
+                </div>
+                <div class="project-tags">
+                    <span class="tag tag-highlight">local-inference</span>
+                    <span class="tag">ollama</span>
+                    <span class="tag">quantization</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <a href="https://github.com/snapaiarchitect/prompt-engineering-library" class="project-name" target="_blank">prompt-engineering-library</a>
+                    <span class="project-status status-production">Production</span>
+                </div>
+                <div class="project-tldr">50+ battle-tested prompts for business, development, and creative tasks. System prompts, few-shot examples, chain-of-thought templates. Copy-paste ready with performance notes.</div>
+                <div class="project-metrics">
+                    <span class="metric"><span class="metric-dot dot-amber"></span> 50+ Prompts</span>
+                    <span class="metric"><span class="metric-dot dot-teal"></span> Categorized</span>
+                    <span class="metric"><span class="metric-dot dot-red"></span> Production-Ready</span>
+                </div>
+                <div class="project-tags">
+                    <span class="tag tag-highlight">prompts</span>
+                    <span class="tag">system-prompts</span>
+                    <span class="tag">chain-of-thought</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand & Ecosystem -->
+    <section class="section">
+        <div class="section-header">
+            <div class="section-label">04 — Brand & Content</div>
+            <h2 class="section-title">Ecosystem & Brand</h2>
+            <p class="section-desc">Content systems, brand infrastructure, and community tools that scale.</p>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-header">
+                    <a href="https://github.com/snapaiarchitect/the-ai-architect" class="project-name" target="_blank">the-ai-architect</a>
+                    <span class="project-status status-production">Production</span>
+                </div>
+                <div class="project-tldr">The central repo — brand guidelines, documentation, course materials, and the AI Architect methodology. Complete branding kit with colors, typography, and assets.</div>
+                <div class="project-metrics">
+                    <span class="metric"><span class="metric-dot dot-amber"></span> Brand Kit</span>
+                    <span class="metric"><span class="metric-dot dot-teal"></span> Documentation</span>
+                    <span class="metric"><span class="metric-dot dot-red"></span> Course-Ready</span>
+                </div>
+                <div class="project-tags">
+                    <span class="tag tag-highlight">branding</span>
+                    <span class="tag">documentation</span>
+                    <span class="tag">course-materials</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <a href="https://github.com/snapaiarchitect/baldbeautymua2" class="project-name" target="_blank">baldbeautymua2</a>
+                    <span class="project-status status-beta">Beta</span>
+                </div>
+                <div class="project-tldr">Beauty content automation system. AI-powered content generation, scheduling, and brand management for beauty professionals. From concept to posting.</div>
+                <div class="project-metrics">
+                    <span class="metric"><span class="metric-dot dot-amber"></span> Content AI</span>
+                    <span class="metric"><span class="metric-dot dot-teal"></span> Automation</span>
+                    <span class="metric"><span class="metric-dot dot-red"></span> Beauty-Tech</span>
+                </div>
+                <div class="project-tags">
+                    <span class="tag tag-highlight">content-generation</span>
+                    <span class="tag">social-media</span>
+                    <span class="tag">beauty-tech</span>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <a href="https://github.com/snapaiarchitect/SWC-Collection" class="project-name" target="_blank">SWC-Collection</a>
+                    <span class="project-status status-beta">Beta</span>
+                </div>
+                <div class="project-tldr">Star Wars Card collection tracker and management system. Community tooling for collectors with trade matching, valuation, and inventory management.</div>
+                <div class="project-metrics">
+                    <span class="metric"><span class="metric-dot dot-amber"></span> Community</span>
+                    <span class="metric"><span class="metric-dot dot-teal"></span> Inventory</span>
+                    <span class="metric"><span class="metric-dot dot-red"></span> Trade-Matching</span>
+                </div>
+                <div class="project-tags">
+                    <span class="tag tag-highlight">community-tools</span>
+                    <span class="tag">inventory</span>
+                    <span class="tag">collectibles</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section class="section" id="stack">
+        <div class="section-header">
+            <div class="section-label">05 — Infrastructure</div>
+            <h2 class="section-title">Tech Stack</h2>
+            <p class="section-desc">The tools and frameworks that power these systems.</p>
+        </div>
+        <div class="stack-grid">
+            <div class="stack-item">
+                <div class="stack-icon">🐍</div>
+                <div class="stack-name">Python</div>
+                <div class="stack-desc">Primary Language</div>
+            </div>
+            <div class="stack-item">
+                <div class="stack-icon">⚡</div>
+                <div class="stack-name">Asyncio</div>
+                <div class="stack-desc">Concurrency</div>
+            </div>
+            <div class="stack-item">
+                <div class="stack-icon">🦙</div>
+                <div class="stack-name">Ollama</div>
+                <div class="stack-desc">Local LLMs</div>
+            </div>
+            <div class="stack-item">
+                <div class="stack-icon">🔗</div>
+                <div class="stack-name">OpenAI</div>
+                <div class="stack-desc">API Integration</div>
+            </div>
+            <div class="stack-item">
+                <div class="stack-icon">🌐</div>
+                <div class="stack-name">Playwright</div>
+                <div class="stack-desc">Web Automation</div>
+            </div>
+            <div class="stack-item">
+                <div class="stack-icon">📊</div>
+                <div class="stack-name">Pandas</div>
+                <div class="stack-desc">Data Processing</div>
+            </div>
+            <div class="stack-item">
+                <div class="stack-icon">🗄️</div>
+                <div class="stack-name">SQLite/Postgres</div>
+                <div class="stack-desc">Data Storage</div>
+            </div>
+            <div class="stack-item">
+                <div class="stack-icon">🐳</div>
+                <div class="stack-name">Docker</div>
+                <div class="stack-desc">Containerization</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <h2 class="cta-title">Let's Build Something Real</h2>
+        <p class="cta-desc">Open to fractional AI architect roles, consulting, and production system design. I ship code, not decks.</p>
+        <div class="hero-cta" style="justify-content: center;">
+            <a href="mailto:snapaiarchitect@gmail.com" class="btn btn-primary">Get In Touch →</a>
+            <a href="https://github.com/snapaiarchitect" class="btn btn-secondary" target="_blank">View All Repos</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div>
+            <div class="footer-brand">
+                <img src="https://raw.githubusercontent.com/snapaiarchitect/the-ai-architect/main/branding/avatar.png" alt="">
+                Snap AI Architect
+            </div>
+            <p class="footer-desc">Senior AI architect building production-grade agent systems, LLM infrastructure, and automation tooling. 10 repos. Real code. Real systems.</p>
+        </div>
+        <div class="footer-links">
+            <h4>Domains</h4>
+            <ul>
+                <li><a href="#agents">Multi-Agent Systems</a></li>
+                <li><a href="#automation">Automation</a></li>
+                <li><a href="#llm">LLM Engineering</a></li>
+            </ul>
+        </div>
+        <div class="footer-links">
+            <h4>Repos</h4>
+            <ul>
+                <li><a href="https://github.com/snapaiarchitect/multi-agent-orchestrator" target="_blank">Orchestrator</a></li>
+                <li><a href="https://github.com/snapaiarchitect/ai-automation-scripts" target="_blank">Scripts</a></li>
+                <li><a href="https://github.com/snapaiarchitect/local-llm-lab" target="_blank">LLM Lab</a></li>
+            </ul>
+        </div>
+        <div class="footer-links">
+            <h4>Contact</h4>
+            <ul>
+                <li><a href="mailto:snapaiarchitect@gmail.com">Email</a></li>
+                <li><a href="https://github.com/snapaiarchitect" target="_blank">GitHub</a></li>
+            </ul>
+        </div>
+    </footer>
+    <div class="footer-bottom">
+        <span>© 2025 Snap AI Architect. All systems operational.</span>
+        <span>Built with intent. No placeholders.</span>
+    </div>
+
+    <!-- Floating CTA -->
+    <a href="mailto:snapaiarchitect@gmail.com" class="floating-cta">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Hire Me
+    </a>
+
+    <script>
+        // Intersection Observer for scroll reveals
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Apply to cards
+        document.querySelectorAll('.project-card, .stack-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(el);
+        });
+
+        // Nav scroll behavior
+        let lastScroll = 0;
+        const nav = document.querySelector('.nav');
+        
+        window.addEventListener('scroll', () => {
+            const current = window.pageYOffset;
+            if (current > lastScroll && current > 100) {
+                nav.style.transform = 'translateY(-100%)';
+            } else {
+                nav.style.transform = 'translateY(0)';
+            }
+            lastScroll = current;
+        });
+
+        // Smooth scroll for nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
