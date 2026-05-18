@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The AI Architect | Workforce Training in Agentic AI</title>
+  <meta name="description" content="Production-ready AI engineering curriculum: agentic systems, local LLMs, and intelligent automation. Built by Sierra Napier.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --surface: #111118;
+      --surface-2: #1a1a24;
+      --text: #e8e8ec;
+      --text-2: #9ca3af;
+      --accent: #6366f1;
+      --accent-2: #8b5cf6;
+      --gold: #fbbf24;
+      --border: rgba(255,255,255,0.06);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    
+    /* Hero */
+    .hero {
+      padding: 100px 0 60px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-badge {
+      display: inline-block;
+      padding: 6px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+    }
+    .hero h1 span {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero p {
+      font-size: 1.125rem;
+      color: var(--text-2);
+      max-width: 600px;
+      margin: 0 auto 32px;
+    }
+    .hero-cta {
+      display: inline-flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: center;
+    }
+    .btn {
+      padding: 12px 28px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.875rem;
+      text-decoration: none;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: white;
+    }
+    .btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
+    .btn-secondary {
+      background: var(--surface-2);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn-secondary:hover { border-color: var(--accent); }
+    
+    /* Stats Bar */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 24px;
+      padding: 40px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .stat {
+      text-align: center;
+    }
+    .stat-value {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.75rem;
+      color: var(--text-2);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-top: 6px;
+    }
+    
+    /* Section */
+    .section {
+      padding: 80px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .section-subtitle {
+      color: var(--text-2);
+      font-size: 1rem;
+      max-width: 600px;
+      margin-bottom: 40px;
+    }
+    
+    /* Mission */
+    .mission {
+      background: var(--surface);
+      padding: 40px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      font-size: 1.125rem;
+      line-height: 1.8;
+    }
+    .mission-quote {
+      border-left: 3px solid var(--accent);
+      padding-left: 20px;
+      font-style: italic;
+      color: var(--text-2);
+      margin-bottom: 20px;
+    }
+    
+    /* Courses */
+    .courses-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .course-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px;
+      transition: all 0.2s;
+    }
+    .course-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+    .course-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      margin-bottom: 16px;
+    }
+    .course-title {
+      font-size: 1.125rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .course-meta {
+      font-size: 0.75rem;
+      color: var(--text-2);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 12px;
+    }
+    .course-desc {
+      font-size: 0.875rem;
+      color: var(--text-2);
+      line-height: 1.6;
+    }
+    .course-modules {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      font-size: 0.75rem;
+      color: var(--text-2);
+    }
+    .course-modules span {
+      color: var(--accent);
+      font-weight: 600;
+    }
+    
+    /* Audience */
+    .audience-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+    .audience-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+    }
+    .audience-card h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--gold);
+    }
+    .audience-card p {
+      font-size: 0.875rem;
+      color: var(--text-2);
+    }
+    
+    /* CTA Section */
+    .cta-section {
+      text-align: center;
+      padding: 100px 0;
+      background: radial-gradient(ellipse at center, rgba(99,102,241,0.08) 0%, transparent 70%);
+    }
+    .cta-section h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+    .cta-section p {
+      color: var(--text-2);
+      max-width: 500px;
+      margin: 0 auto 32px;
+    }
+    
+    /* Footer */
+    .footer {
+      padding: 40px 0 20px;
+      text-align: center;
+      color: var(--text-2);
+      font-size: 0.75rem;
+      border-top: 1px solid var(--border);
+    }
+    .footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .copyright-notice {
+      font-size: 0.65rem;
+      color: var(--text-2);
+      opacity: 0.5;
+      margin-top: 12px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.5;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+    }
+    .ip-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      font-size: 0.65rem;
+      color: var(--text-2);
+      opacity: 0.7;
+      margin-top: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    
+    @media (max-width: 640px) {
+      .hero { padding: 60px 0 40px; }
+      .section { padding: 50px 0; }
+      .mission { padding: 24px; }
+      .hero-cta { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="container">
+      <div class="hero-badge">Workforce Training Curriculum</div>
+      <h1>The <span>AI Architect</span></h1>
+      <p>Production-ready AI engineering skills for developers who want to build agentic systems, deploy local LLMs, and create intelligent automation — not just consume AI tools.</p>
+      <div class="hero-cta">
+        <a href="#courses" class="btn btn-primary">Explore Curriculum</a>
+        <a href="https://goevo3.com/booking" class="btn btn-secondary">Book a Workshop</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stats -->
+  <div class="container">
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-value">4</div>
+        <div class="stat-label">Complete Courses</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">90+</div>
+        <div class="stat-label">Learning Modules</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">15</div>
+        <div class="stat-label">How-To Guides</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">6</div>
+        <div class="stat-label">Video Programs</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">23</div>
+        <div class="stat-label">Social Assets</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mission -->
+  <div class="section">
+    <div class="container">
+      <h2 class="section-title">The Mission</h2>
+      <p class="section-subtitle">Bridging the gap between AI theory and production deployment.</p>
+      <div class="mission">
+        <div class="mission-quote">
+          "Democratize production-ready AI engineering skills."
+        </div>
+        <p>Most AI education stops at chatbot demos and prompt engineering tricks. The AI Architect teaches what actually gets deployed: agent architectures with memory and tool-use, local LLM pipelines for privacy-sensitive environments, multi-agent orchestration for complex workflows, and automation systems that don't break when the API changes.</p>
+        <p style="margin-top: 16px; color: var(--text-2); font-size: 0.9375rem;">
+          Built by <strong style="color: var(--text);">Sierra Napier</strong> — MPA/MPH, former Senior Data Analyst (City of Fort Lauderdale, DC Government, Accenture), and self-directed AI engineering specialist with 4+ years building agentic systems.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Courses -->
+  <div class="section" id="courses">
+    <div class="container">
+      <h2 class="section-title">The Curriculum</h2>
+      <p class="section-subtitle">Four complete courses. Every module includes code examples, debugging guides, and production deployment patterns.</p>
+      <div style="text-align: center; margin-bottom: 24px;">
+        <span class="ip-badge">All Curriculum Content © Sierra Napier. All Rights Reserved.</span>
+      </div>
+      <div class="courses-grid">
+        <div class="course-card">
+          <div class="course-icon">🤖</div>
+          <div class="course-title">AI Agent Mastery</div>
+          <div class="course-meta">8 Modules · Agentic Systems</div>
+          <div class="course-desc">Build autonomous agents with ReAct patterns, tool use, memory persistence, and multi-step reasoning. From first principles to production deployment.</div>
+          <div class="course-modules"><span>12</span> detailed markdown lessons including capstone project</div>
+        </div>
+        <div class="course-card">
+          <div class="course-icon">⚙️</div>
+          <div class="course-title">AI Automation Bootcamp</div>
+          <div class="course-meta">6 Modules · n8n & APIs</div>
+          <div class="course-desc">Design and deploy intelligent automation workflows using n8n, webhooks, and API integrations. Architecture patterns for scalable business process automation.</div>
+          <div class="course-modules"><span>34</span> markdown lessons across 6 module folders</div>
+        </div>
+        <div class="course-card">
+          <div class="course-icon">🏠</div>
+          <div class="course-title">Local LLM Engineering</div>
+          <div class="course-meta">Privacy-First AI Deployment</div>
+          <div class="course-desc">Deploy and fine-tune local large language models for privacy-sensitive environments. Quantization, optimization, and on-premise inference pipelines.</div>
+          <div class="course-modules"><span>10</span> markdown lessons covering setup to production</div>
+        </div>
+        <div class="course-card">
+          <div class="course-icon">✍️</div>
+          <div class="course-title">Prompt Engineering Pro</div>
+          <div class="course-meta">6 Modules · Advanced Patterns</div>
+          <div class="course-desc">Master advanced prompt engineering: chain-of-thought, few-shot optimization, structured output, and prompt versioning for production systems.</div>
+          <div class="course-modules"><span>34</span> markdown lessons with framework-specific guides</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Audience -->
+  <div class="section">
+    <div class="container">
+      <h2 class="section-title">Who This Is For</h2>
+      <p class="section-subtitle">Designed for technical teams and workforce development programs.</p>
+      <div class="audience-grid">
+        <div class="audience-card">
+          <h4>🎯 Developers & Engineers</h4>
+          <p>Teams transitioning from traditional software to AI-augmented systems. Learn to build agents that actually work, not just chatbots with extra steps.</p>
+        </div>
+        <div class="audience-card">
+          <h4>🏛️ Workforce Programs (WIOA/DORS)</h4>
+          <p>Upskilling displaced workers into AI engineering roles. Structured curriculum with measurable outcomes and production-ready skill validation.</p>
+        </div>
+        <div class="audience-card">
+          <h4>🏢 Enterprise Teams</h4>
+          <p>Organizations needing internal AI capability. Private LLM deployment, agent orchestration, and automation without vendor lock-in or data leakage.</p>
+        </div>
+        <div class="audience-card">
+          <h4>📚 Technical Educators</h4>
+          <p>Instructors building AI engineering programs. Complete module structure, instructor guides, and assessment frameworks included.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <div class="container">
+      <h2>Ready to Build Real AI Systems?</h2>
+      <p>Book a discovery call to discuss workforce training, curriculum licensing, or custom AI engineering workshops for your organization.</p>
+      <a href="https://goevo3.com/booking" class="btn btn-primary" style="font-size: 1rem; padding: 14px 36px;">Book a Discovery Call</a>
+      <p style="margin-top: 16px; font-size: 0.75rem; color: var(--text-2);">
+        Or email <a href="mailto:Book@baldbeautymua.com" style="color: var(--accent);">Book@baldbeautymua.com</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="container">
+      <p>© 2026 The AI Architect · Built by Sierra Napier · <a href="https://github.com/snapaiarchitect/the-ai-architect">View Curriculum Repo</a></p>
+      <div class="copyright-notice">
+        All curriculum content, course materials, brand assets, and instructional design are the exclusive intellectual property of Sierra Napier. 
+        Unauthorized reproduction, distribution, or commercial use of any course modules, guides, or training materials is strictly prohibited. 
+        Workforce program licensing available by request. The curriculum repository is private and access-controlled. 
+        This public page serves as a portfolio reference only and does not constitute a grant of any license to the underlying materials.
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
