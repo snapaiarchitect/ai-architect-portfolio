@@ -1216,13 +1216,35 @@
                             <div class="metric-label">Audit Cycle</div>
                         </div>
                     </div>
-                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;">
-                        <img src="images/governance/completeness_trend.png" alt="Data Completeness Trend" style="width:100%;border-radius:8px;border:1px solid var(--border);">
-                        <img src="images/governance/schema_drift_timeline.png" alt="Schema Drift Timeline" style="width:100%;border-radius:8px;border:1px solid var(--border);">
-                    </div>
+                    <div class="chart-box"><div style="display:flex;flex-wrap:wrap;gap:1rem;">
+    <div style="flex:1;min-width:300px;">
+            <iframe src="charts/completeness_trend.html" 
+                style="width:100%;height:400px;border:none;border-radius:8px;"
+                title="Completeness Trend">
+            </iframe>
+        </div><div style="flex:1;min-width:300px;">
+            <iframe src="charts/schema_drift_timeline.html" 
+                style="width:100%;height:400px;border:none;border-radius:8px;"
+                title="Schema Drift Timeline">
+            </iframe>
+        </div>
+</div></div>
                     <div class="tldr">
                         <p><strong>Upstream APIs change without warning — your warehouse shouldn't break when they do.</strong> This system captures the live ArcGIS schema, establishes a baseline, then flags any drift (new fields, removed fields, type changes) with structured audit logs. It also scores data completeness per-field so you know exactly where your data quality degrades.</p>
                     </div>
+<div class="chart-box"><div style="display:flex;flex-wrap:wrap;gap:1rem;">
+    <div style="flex:1;min-width:300px;">
+            <iframe src="charts/completeness_trend.html" 
+                style="width:100%;height:400px;border:none;border-radius:8px;"
+                title="Completeness Trend">
+            </iframe>
+        </div><div style="flex:1;min-width:300px;">
+            <iframe src="charts/schema_drift_timeline.html" 
+                style="width:100%;height:400px;border:none;border-radius:8px;"
+                title="Schema Drift Timeline">
+            </iframe>
+        </div>
+</div></div>
                     <div class="technical-detail">
                         <span class="technical-label">How we got there</span>
                         <p>Built a governance pipeline that queries the DC Enterprise Dataset Inventory ArcGIS REST API, extracts field schemas, and compares against a stored JSON baseline. Detects added/removed/type-changed fields with precise diffs. Computes weighted completeness scores from live record samples. Logs all events to structured JSONL audit trail. Automated via GitHub Actions cron running weekly.</p>
@@ -1269,13 +1291,35 @@
                             <div class="metric-label">Retrain Needed</div>
                         </div>
                     </div>
-                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;">
-                        <img src="images/mlops/psi_feature_chart.png" alt="PSI Per Feature" style="width:100%;border-radius:8px;border:1px solid var(--border);">
-                        <img src="images/mlops/drift_distribution.png" alt="Feature Distribution Drift" style="width:100%;border-radius:8px;border:1px solid var(--border);">
-                    </div>
+                    <div class="chart-box"><div style="display:flex;flex-wrap:wrap;gap:1rem;">
+    <div style="flex:1;min-width:300px;">
+            <iframe src="charts/psi_feature_chart.html" 
+                style="width:100%;height:400px;border:none;border-radius:8px;"
+                title="Psi Feature Chart">
+            </iframe>
+        </div><div style="flex:1;min-width:300px;">
+            <iframe src="charts/drift_distribution.html" 
+                style="width:100%;height:400px;border:none;border-radius:8px;"
+                title="Drift Distribution">
+            </iframe>
+        </div>
+</div></div>
                     <div class="tldr">
                         <p><strong>Models decay when the world changes — this catches it before accuracy drops.</strong> Three features crossed the significant drift threshold: temperature (+5°C shift), humidity (-15%), and nearby station utilization (+0.15). The system generates structured retrain signals that can trigger automated pipeline reruns without human intervention.</p>
                     </div>
+<div class="chart-box"><div style="display:flex;flex-wrap:wrap;gap:1rem;">
+    <div style="flex:1;min-width:300px;">
+            <iframe src="charts/psi_feature_chart.html" 
+                style="width:100%;height:400px;border:none;border-radius:8px;"
+                title="Psi Feature Chart">
+            </iframe>
+        </div><div style="flex:1;min-width:300px;">
+            <iframe src="charts/drift_distribution.html" 
+                style="width:100%;height:400px;border:none;border-radius:8px;"
+                title="Drift Distribution">
+            </iframe>
+        </div>
+</div></div>
                     <div class="technical-detail">
                         <span class="technical-label">How we got there</span>
                         <p>Computed PSI per feature by comparing live inference distributions against the training baseline using 10-bin histograms. PSI thresholds: < 0.1 stable, 0.1–0.25 moderate, > 0.25 significant. Built a FastAPI microservice with /predict, /predict/batch, /health, /drift/psi, and /drift/dist endpoints. Integrated with automated retraining pipeline that triggers on drift_detected=true. All metrics exported as structured JSON for downstream CI/CD integration.</p>
@@ -1521,6 +1565,14 @@
                     <div class="tldr">
                         <p><strong>Transparency is a metric, not a promise.</strong> The dashboard reveals which agencies clear requests fastest, which exemptions are invoked most often, and where backlogs are growing. Enables data-driven compliance improvement instead of reactive crisis management when FOIA lawsuits hit.</p>
                     </div>
+<div class="chart-box"><div style="display:flex;flex-wrap:wrap;gap:1rem;">
+    <div style="flex:1;min-width:300px;">
+            <iframe src="charts/foia_processing.html" 
+                style="width:100%;height:400px;border:none;border-radius:8px;"
+                title="Foia Processing">
+            </iframe>
+        </div>
+</div></div>
                     <div class="technical-detail">
                         <span class="technical-label">How we got there</span>
                         <p>Built on FOIA.gov public API with annual processing statistics. Created backlog trend analysis, exemption rate heatmaps, processing time distributions, and agency comparison benchmarking. Added automated compliance scoring and alert thresholds for agencies exceeding statutory deadlines. All data refreshes from live FOIA.gov reports.</p>
@@ -1570,6 +1622,14 @@
                     <div class="tldr">
                         <p><strong>Research moves fast — staying current is a full-time job.</strong> This system auto-categorizes incoming papers by sub-discipline, tracks publication volume trends, and identifies keyword emergence patterns. Perfect for R&D strategy teams monitoring competitor research output and academic trend shifts.</p>
                     </div>
+<div class="chart-box"><div style="display:flex;flex-wrap:wrap;gap:1rem;">
+    <div style="flex:1;min-width:300px;">
+            <iframe src="charts/arxiv_categories.html" 
+                style="width:100%;height:400px;border:none;border-radius:8px;"
+                title="Arxiv Categories">
+            </iframe>
+        </div>
+</div></div>
                     <div class="technical-detail">
                         <span class="technical-label">How we got there</span>
                         <p>Built on arXiv OAI API with 230K CS papers. Created TF-IDF vectorizer with n-gram analysis, Linear SVM classifier with calibrated probability outputs, and category distribution visualization. Added temporal trend analysis for publication volume by subfield and keyword co-occurrence networks. All data refreshes from live arXiv feeds.</p>
@@ -1668,6 +1728,14 @@
                     <div class="tldr">
                         <p><strong>Metro ridership is still 32% below pre-COVID levels — but recovery is uneven.</strong> The Red Line has recovered to 78% while Silver Line lags at 54%. Downtown stations show stronger recovery than suburban terminals. This system identifies which stations and lines need service adjustments to accelerate ridership return.</p>
                     </div>
+<div class="chart-box"><div style="display:flex;flex-wrap:wrap;gap:1rem;">
+    <div style="flex:1;min-width:300px;">
+            <iframe src="charts/wmata_ridership.html" 
+                style="width:100%;height:400px;border:none;border-radius:8px;"
+                title="Wmata Ridership">
+            </iframe>
+        </div>
+</div></div>
                     <div class="technical-detail">
                         <span class="technical-label">How we got there</span>
                         <p>Built on WMATA public API with station-level entry/exit data. Created recovery ratio computation (current vs. pre-COVID baseline), line-level aggregation, station ranking by ridership, and weekly trend analysis. Added entries-vs-exits balance detection for station flow optimization. All visualizations update from live WMATA data feeds.</p>
@@ -1717,6 +1785,14 @@
                     <div class="tldr">
                         <p><strong>Development happens unevenly — this shows exactly where.</strong> The dashboard reveals the GDP-life expectancy correlation curve, identifies literacy gap clusters, and tracks CO2 emission trajectories by development stage. Used for international development strategy, NGO resource targeting, and cross-country policy benchmarking.</p>
                     </div>
+<div class="chart-box"><div style="display:flex;flex-wrap:wrap;gap:1rem;">
+    <div style="flex:1;min-width:300px;">
+            <iframe src="charts/world_bank_gdp_life.html" 
+                style="width:100%;height:400px;border:none;border-radius:8px;"
+                title="World Bank Gdp Life">
+            </iframe>
+        </div>
+</div></div>
                     <div class="technical-detail">
                         <span class="technical-label">How we got there</span>
                         <p>Built on World Bank Open Data API with 200+ country records spanning 60+ years. Created GDP vs. life expectancy scatter with animated time progression, literacy rate distribution analysis, CO2 emission trend tracking, and development stage clustering. Added interactive country comparison and regional benchmarking. All data refreshes from live World Bank APIs.</p>
@@ -1766,6 +1842,14 @@
                     <div class="tldr">
                         <p><strong>Federal guidance changes constantly — missing a memo costs millions.</strong> The system categorizes all OMB guidance by type and subject, tracks issuance velocity over time, and identifies which policy areas are receiving new attention. Enables proactive compliance instead of reactive scramble when new guidance drops.</p>
                     </div>
+<div class="chart-box"><div style="display:flex;flex-wrap:wrap;gap:1rem;">
+    <div style="flex:1;min-width:300px;">
+            <iframe src="charts/omb_policy_timeline.html" 
+                style="width:100%;height:400px;border:none;border-radius:8px;"
+                title="Omb Policy Timeline">
+            </iframe>
+        </div>
+</div></div>
                     <div class="technical-detail">
                         <span class="technical-label">How we got there</span>
                         <p>Built on OMB public API with 500+ policy documents. Created policy type distribution analysis, category concentration heatmaps, issuance timeline tracking, and automated tagging by subject matter. Added full-text search and similarity clustering to identify related guidance. All data refreshes from live OMB policy feeds.</p>
@@ -1913,6 +1997,14 @@
                     <div class="tldr">
                         <p><strong>Flight delays follow predictable patterns — if you know where to look.</strong> Friday evening departures average 35 minutes late. Certain hub routes show 3× higher delay rates than direct flights. The system identifies optimal booking windows, high-risk routes, and airline reliability scores — turning on-time performance data into actionable travel and operations intelligence.</p>
                     </div>
+<div class="chart-box"><div style="display:flex;flex-wrap:wrap;gap:1rem;">
+    <div style="flex:1;min-width:300px;">
+            <iframe src="charts/bts_airline_delays.html" 
+                style="width:100%;height:400px;border:none;border-radius:8px;"
+                title="Bts Airline Delays">
+            </iframe>
+        </div>
+</div></div>
                     <div class="technical-detail">
                         <span class="technical-label">How we got there</span>
                         <p>Built on BTS On-Time Performance API with 5.8M flight records. Created airline delay rate comparison, route-level performance analysis, day-of-week pattern detection, and delay distribution modeling. Added delay prediction scoring based on historical route-airline-time combinations. All data refreshes from live BTS feeds.</p>
@@ -2060,6 +2152,14 @@
                     <div class="tldr">
                         <p><strong>250K federal datasets exist — finding the right one is the hard part.</strong> The system clusters datasets by topic, identifies which agencies publish most frequently, and tracks update cadence to flag stale data. Used by researchers to discover data sources and by agencies to benchmark their open data programs against peers.</p>
                     </div>
+<div class="chart-box"><div style="display:flex;flex-wrap:wrap;gap:1rem;">
+    <div style="flex:1;min-width:300px;">
+            <iframe src="charts/data_gov_agencies.html" 
+                style="width:100%;height:400px;border:none;border-radius:8px;"
+                title="Data Gov Agencies">
+            </iframe>
+        </div>
+</div></div>
                     <div class="technical-detail">
                         <span class="technical-label">How we got there</span>
                         <p>Built on Data.gov CKAN API with 250K+ dataset records. Created agency distribution analysis, topic clustering via TF-IDF + K-Means, update frequency tracking, and dataset quality scoring. Added temporal trend analysis for publishing velocity and automated stale data detection. All data refreshes from live Data.gov feeds.</p>
@@ -2109,6 +2209,14 @@
                     <div class="tldr">
                         <p><strong>Demographics drive every market decision — this maps them at county precision.</strong> The dashboard reveals age distribution shifts, income-education correlations, and population density clusters. Used for site selection, policy targeting, resource allocation, and market segmentation — all at the county level where decisions actually get made.</p>
                     </div>
+<div class="chart-box"><div style="display:flex;flex-wrap:wrap;gap:1rem;">
+    <div style="flex:1;min-width:300px;">
+            <iframe src="charts/census_demographics.html" 
+                style="width:100%;height:400px;border:none;border-radius:8px;"
+                title="Census Demographics">
+            </iframe>
+        </div>
+</div></div>
                     <div class="technical-detail">
                         <span class="technical-label">How we got there</span>
                         <p>Built on US Census Bureau API with ACS 5-Year Estimates. Created age distribution pyramids, income vs. education scatter analysis, county-level choropleth maps, and population density clustering. Added demographic trend tracking and comparison tools for multi-region analysis. All data refreshes from live Census APIs.</p>
@@ -2158,6 +2266,14 @@
                     <div class="tldr">
                         <p><strong>The labor market varies more by state than by nation.</strong> North Dakota's unemployment is 2.1% while Nevada's is 5.4%. The dashboard surfaces these gaps, tracks wage growth vs. inflation correlation, and identifies which states have the tightest labor markets — critical intelligence for workforce planning and economic development.</p>
                     </div>
+<div class="chart-box"><div style="display:flex;flex-wrap:wrap;gap:1rem;">
+    <div style="flex:1;min-width:300px;">
+            <iframe src="charts/bls_employment.html" 
+                style="width:100%;height:400px;border:none;border-radius:8px;"
+                title="Bls Employment">
+            </iframe>
+        </div>
+</div></div>
                     <div class="technical-detail">
                         <span class="technical-label">How we got there</span>
                         <p>Built on BLS Public Data API with monthly unemployment, JOLTS job openings, and quarterly wage data. Created state-level unemployment choropleth, wage vs. unemployment scatter, job openings trend analysis, and regional economic disparity scoring. Added automated monthly refresh and alert thresholds for significant labor market shifts.</p>
@@ -2207,6 +2323,19 @@
                     <div class="tldr">
                         <p><strong>Response times spike 40% during evening rush — but most crews are already deployed.</strong> The system identifies which boroughs have the longest delays, which severity levels get downgraded most often, and where adding ambulances would have the highest impact on patient outcomes.</p>
                     </div>
+<div class="chart-box"><div style="display:flex;flex-wrap:wrap;gap:1rem;">
+    <div style="flex:1;min-width:300px;">
+            <iframe src="charts/911_demand_heatmap.html" 
+                style="width:100%;height:400px;border:none;border-radius:8px;"
+                title="911 Demand Heatmap">
+            </iframe>
+        </div><div style="flex:1;min-width:300px;">
+            <iframe src="charts/911_response_time.html" 
+                style="width:100%;height:400px;border:none;border-radius:8px;"
+                title="911 Response Time">
+            </iframe>
+        </div>
+</div></div>
                     <div class="technical-detail">
                         <span class="technical-label">How we got there</span>
                         <p>Built on FDNY EMS Incident API with 2.5M historical incidents. Created response time distribution analysis, severity-based triage performance, call volume forecasting, and resource allocation optimization. Added demand heatmaps by hour and borough. All data refreshes from live NYC Open Data feeds.</p>
@@ -2256,6 +2385,19 @@
                     <div class="tldr">
                         <p><strong>Generic drugs save Medicaid $40B annually — but penetration varies 30% by state.</strong> The dashboard reveals which states over-prescribe opioids, which therapeutic classes drive the most spend, and where generic substitution could cut costs without compromising care.</p>
                     </div>
+<div class="chart-box"><div style="display:flex;flex-wrap:wrap;gap:1rem;">
+    <div style="flex:1;min-width:300px;">
+            <iframe src="charts/medicaid_cost_efficiency.html" 
+                style="width:100%;height:400px;border:none;border-radius:8px;"
+                title="Medicaid Cost Efficiency">
+            </iframe>
+        </div><div style="flex:1;min-width:300px;">
+            <iframe src="charts/medicaid_opioid.html" 
+                style="width:100%;height:400px;border:none;border-radius:8px;"
+                title="Medicaid Opioid">
+            </iframe>
+        </div>
+</div></div>
                     <div class="technical-detail">
                         <span class="technical-label">How we got there</span>
                         <p>Built on CMS State Drug Utilization Data with 50-state coverage. Created generic penetration analysis, opioid rate tracking by state, high-cost product identification, and cost efficiency benchmarking. Added year-over-year trend analysis and interstate comparison. All data refreshes from live CMS feeds.</p>
@@ -2305,6 +2447,19 @@
                     <div class="tldr">
                         <p><strong>West Virginia's mortality rate is 40% above national average — the dashboard shows exactly why.</strong> The system tracks age-adjusted death rates by cause, county, and year. Identifies opioid epidemic hotspots, cardiovascular disease clusters, and regions where life expectancy is declining — the same data CDC uses for national health reports.</p>
                     </div>
+<div class="chart-box"><div style="display:flex;flex-wrap:wrap;gap:1rem;">
+    <div style="flex:1;min-width:300px;">
+            <iframe src="charts/public_health_epidemic.html" 
+                style="width:100%;height:400px;border:none;border-radius:8px;"
+                title="Public Health Epidemic">
+            </iframe>
+        </div><div style="flex:1;min-width:300px;">
+            <iframe src="charts/public_health_mortality.html" 
+                style="width:100%;height:400px;border:none;border-radius:8px;"
+                title="Public Health Mortality">
+            </iframe>
+        </div>
+</div></div>
                     <div class="technical-detail">
                         <span class="technical-label">How we got there</span>
                         <p>Built on CDC WONDER and NVSS APIs with county-level mortality data. Created age-adjusted death rate analysis, cause-of-death trend tracking, epidemic trajectory modeling, and state health disparity scoring. Added COVID impact analysis and opioid epidemic hotspot identification. All data refreshes from live CDC feeds.</p>
@@ -2354,6 +2509,19 @@
                     <div class="tldr">
                         <p><strong>Employees who travel frequently and work overtime are 3× more likely to quit — but most HR teams find out in the exit interview.</strong> The system identifies attrition risk factors (overtime, travel, tenure, age) and predicts which employees are likely to leave within 6 months. Enables proactive retention instead of reactive backfill.</p>
                     </div>
+<div class="chart-box"><div style="display:flex;flex-wrap:wrap;gap:1rem;">
+    <div style="flex:1;min-width:300px;">
+            <iframe src="charts/attrition_roc.html" 
+                style="width:100%;height:400px;border:none;border-radius:8px;"
+                title="Attrition Roc">
+            </iframe>
+        </div><div style="flex:1;min-width:300px;">
+            <iframe src="charts/attrition_survival.html" 
+                style="width:100%;height:400px;border:none;border-radius:8px;"
+                title="Attrition Survival">
+            </iframe>
+        </div>
+</div></div>
                     <div class="technical-detail">
                         <span class="technical-label">How we got there</span>
                         <p>Built on IBM HR Analytics Employee Attrition dataset. Created exploratory analysis, feature engineering (overtime ratio, satisfaction composite, tenure segments), logistic regression and random forest classifiers, and Cox proportional hazards survival analysis. Added ROC/AUC evaluation, confusion matrix analysis, and Kaplan-Meier survival curves by risk factors.</p>
@@ -2403,6 +2571,24 @@
                     <div class="tldr">
                         <p><strong>The pay gap hasn't closed in 20 years — but some states are moving faster than others.</strong> The dashboard tracks median income by gender and race, unemployment disparities, and representation scores across all 50 states. Enables data-driven DEI goal-setting instead of aspirational targets with no baseline.</p>
                     </div>
+<div class="chart-box"><div style="display:flex;flex-wrap:wrap;gap:1rem;">
+    <div style="flex:1;min-width:300px;">
+            <iframe src="charts/dei_employment_trends.html" 
+                style="width:100%;height:400px;border:none;border-radius:8px;"
+                title="Dei Employment Trends">
+            </iframe>
+        </div><div style="flex:1;min-width:300px;">
+            <iframe src="charts/dei_pay_equity.html" 
+                style="width:100%;height:400px;border:none;border-radius:8px;"
+                title="Dei Pay Equity">
+            </iframe>
+        </div><div style="flex:1;min-width:300px;">
+            <iframe src="charts/dei_representation.html" 
+                style="width:100%;height:400px;border:none;border-radius:8px;"
+                title="Dei Representation">
+            </iframe>
+        </div>
+</div></div>
                     <div class="technical-detail">
                         <span class="technical-label">How we got there</span>
                         <p>Built on US Census ACS and BLS employment data. Created pay equity analysis by demographic group, representation scoring, employment trend tracking, and interstate DEI benchmarking. Added diversity index computation and year-over-year gap analysis. All data refreshes from live Census and BLS APIs.</p>
@@ -2452,6 +2638,24 @@
                     <div class="tldr">
                         <p><strong>Sentiment varies dramatically by domain — product feedback is 70% negative while internal reviews are 60% positive.</strong> The system classifies sentiment by source, identifies which domains generate the most negative feedback, and surfaces common complaint themes. Used for employee pulse monitoring and customer satisfaction tracking.</p>
                     </div>
+<div class="chart-box"><div style="display:flex;flex-wrap:wrap;gap:1rem;">
+    <div style="flex:1;min-width:300px;">
+            <iframe src="charts/sentiment_by_domain.html" 
+                style="width:100%;height:400px;border:none;border-radius:8px;"
+                title="Sentiment By Domain">
+            </iframe>
+        </div><div style="flex:1;min-width:300px;">
+            <iframe src="charts/sentiment_distribution.html" 
+                style="width:100%;height:400px;border:none;border-radius:8px;"
+                title="Sentiment Distribution">
+            </iframe>
+        </div><div style="flex:1;min-width:300px;">
+            <iframe src="charts/sentiment_text_length.html" 
+                style="width:100%;height:400px;border:none;border-radius:8px;"
+                title="Sentiment Text Length">
+            </iframe>
+        </div>
+</div></div>
                     <div class="technical-detail">
                         <span class="technical-label">How we got there</span>
                         <p>Built on 3,000 labeled sentiment records. Created text preprocessing pipeline, TF-IDF vectorization, Linear SVM classifier, and domain-specific sentiment analysis. Added confusion matrix evaluation, ROC curve analysis, and cross-domain comparison. Generates automated sentiment reports by source category.</p>
@@ -2501,6 +2705,29 @@
                     <div class="tldr">
                         <p><strong>Manual document sorting is expensive and inconsistent — this automates it at 97% accuracy.</strong> The system classifies documents into categories using text features, handles imbalanced classes with stratified sampling, and evaluates with precision, recall, and F1. Scales from 2K news articles to 2M legal contracts.</p>
                     </div>
+<div class="chart-box"><div style="display:flex;flex-wrap:wrap;gap:1rem;">
+    <div style="flex:1;min-width:300px;">
+            <iframe src="charts/llm_class_distribution.html" 
+                style="width:100%;height:400px;border:none;border-radius:8px;"
+                title="Llm Class Distribution">
+            </iframe>
+        </div><div style="flex:1;min-width:300px;">
+            <iframe src="charts/llm_classification_performance.html" 
+                style="width:100%;height:400px;border:none;border-radius:8px;"
+                title="Llm Classification Performance">
+            </iframe>
+        </div><div style="flex:1;min-width:300px;">
+            <iframe src="charts/llm_confusion_matrix.html" 
+                style="width:100%;height:400px;border:none;border-radius:8px;"
+                title="Llm Confusion Matrix">
+            </iframe>
+        </div><div style="flex:1;min-width:300px;">
+            <iframe src="charts/llm_doc_length.html" 
+                style="width:100%;height:400px;border:none;border-radius:8px;"
+                title="Llm Doc Length">
+            </iframe>
+        </div>
+</div></div>
                     <div class="technical-detail">
                         <span class="technical-label">How we got there</span>
                         <p>Built on BBC News Classification dataset. Created text preprocessing (lowercasing, tokenization, stopword removal), TF-IDF vectorization (max 5K features), Random Forest and Logistic Regression classifiers with hyperparameter tuning. Added stratified train-test split, confusion matrix analysis, and feature importance extraction. Generates classification performance reports with precision, recall, and F1 per class.</p>
