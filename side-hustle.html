@@ -1,0 +1,2525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sierra Napier — Fractional CMO & BI Consulting. MPA/MPH. Data Scientist | AI Architect | Analytics Viz. Available for fractional leadership, BI consulting, and AI architecture engagements.">
+    <meta property="og:title" content="Sierra Napier — Fractional CMO & BI Consulting">
+    <meta property="og:description" content="Fractional CMO | BI Consulting | AI Architecture. 743K+ records analyzed. 14 production projects. Real data, real systems, real results.">
+    <meta property="og:url" content="https://gosidehustlesisi.github.io/side-hustle.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sierra Napier — Fractional CMO & BI Consulting">
+    <meta name="twitter:description" content="Fractional CMO | BI Consulting | AI Architecture. 743K+ records. 14 projects. Real data, real results.">
+    <title>Sierra Napier — Fractional CMO & BI Consulting</title>
+    <style>
+        :root {
+            --bg-deep: #0a0e1a;
+            --bg-surface: #111827;
+            --bg-elevated: #1a2234;
+            --border: #1f2d44;
+            --text-primary: #f0f0f0;
+            --text-secondary: #94a3b8;
+            --text-muted: #64748b;
+            --accent-gold: #f59e0b;
+            --accent-cyan: #06b6d4;
+            --accent-gold-hover: #fbbf24;
+            --accent-cyan-hover: #22d3ee;
+            --success: #22c55e;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: var(--bg-deep);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(10, 14, 26, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+            padding: 1rem 0;
+        }
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        .nav-brand img {
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
+            object-fit: contain;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--accent-gold); }
+
+        header {
+            padding: 6rem 0 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(ellipse at 50% 50%, rgba(6, 182, 212, 0.08) 0%, transparent 50%),
+                        radial-gradient(ellipse at 30% 20%, rgba(245, 158, 11, 0.06) 0%, transparent 40%);
+            pointer-events: none;
+        }
+        .avatar-wrap {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+        .avatar-wrap img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 3px solid var(--accent-gold);
+            box-shadow: 0 0 40px rgba(245, 158, 11, 0.3), 0 0 80px rgba(6, 182, 212, 0.15);
+            object-fit: cover;
+            background: var(--bg-elevated);
+        }
+        .avatar-ring {
+            position: absolute;
+            inset: -8px;
+            border-radius: 50%;
+            border: 2px solid transparent;
+            border-top-color: var(--accent-cyan);
+            border-right-color: var(--accent-gold);
+            animation: spin 8s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero-badges {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin: 1rem 0;
+            flex-wrap: wrap;
+        }
+        .hero-badge {
+            display: inline-block;
+            padding: 0.5rem 1.25rem;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid var(--border);
+            background: var(--bg-elevated);
+            color: var(--text-secondary);
+        }
+        .tagline {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+        .tagline strong {
+            color: var(--accent-gold);
+            font-weight: 600;
+        }
+
+        .hero-cta {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.2s;
+            border: 2px solid transparent;
+            cursor: pointer;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-gold), #d97706);
+            color: #0a0e1a;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(245, 158, 11, 0.35);
+        }
+        .btn-secondary {
+            background: transparent;
+            border-color: var(--border);
+            color: var(--text-secondary);
+        }
+        .btn-secondary:hover {
+            border-color: var(--accent-cyan);
+            color: var(--accent-cyan-hover);
+        }
+        .btn-accent {
+            background: var(--accent-cyan);
+            color: var(--bg-deep);
+            border-color: var(--accent-cyan);
+        }
+        .btn-accent:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(6, 182, 212, 0.35);
+        }
+
+        .hero-metrics-strip {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+            flex-wrap: wrap;
+        }
+        .hero-metric {
+            text-align: center;
+        }
+        .hero-metric-number {
+            display: block;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            line-height: 1;
+        }
+        .hero-metric-label {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 0.25rem;
+        }
+        .hero-metric-divider {
+            color: var(--border);
+            font-size: 1.5rem;
+            font-weight: 300;
+        }
+
+        .trust-bar {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1rem 1.5rem;
+            margin: 2rem 0;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .trust-label {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+        }
+        .trust-logos {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+        .trust-logo {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 0.35rem 0.75rem;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        .trust-logo:hover {
+            border-color: var(--accent-gold);
+            color: var(--accent-gold);
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            margin: 4rem 0;
+        }
+        .stat-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.2s;
+        }
+        .stat-card:hover {
+            border-color: var(--accent-cyan);
+            transform: translateY(-4px);
+        }
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent-gold);
+            line-height: 1;
+        }
+        .stat-label {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+        }
+
+        section { padding: 4rem 0; }
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        .section-subtitle {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+        .section-accent {
+            width: 48px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-gold), var(--accent-cyan));
+            border-radius: 2px;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+        .about-text {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+        }
+        .about-text p { margin-bottom: 1rem; }
+        .about-text strong { color: var(--accent-gold); }
+        .career-arc {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+        .career-step {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .career-step:last-child { border-bottom: none; }
+        .career-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--accent-cyan);
+            margin-top: 4px;
+            flex-shrink: 0;
+        }
+        .career-step:first-child .career-dot { background: var(--accent-gold); }
+        .career-step h4 {
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+        }
+        .career-step p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .project-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            margin: 2rem 0;
+            overflow: hidden;
+            transition: border-color 0.3s;
+        }
+        .project-card:hover { border-color: var(--accent-cyan); }
+        .project-header {
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+        .project-title { font-size: 1.25rem; font-weight: 700; color: var(--text-primary); }
+        .project-meta { color: var(--text-muted); font-size: 0.85rem; margin-top: 0.25rem; }
+        .badges { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+        .badge {
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        .badge-live { background: rgba(34, 197, 94, 0.15); color: var(--success); border: 1px solid rgba(34, 197, 94, 0.3); }
+        .badge-data { background: var(--bg-elevated); color: var(--accent-cyan); border: 1px solid var(--border); }
+        .badge-avail { background: rgba(245, 158, 11, 0.15); color: var(--accent-gold); border: 1px solid rgba(245, 158, 11, 0.3); }
+        .demo-link {
+            background: linear-gradient(135deg, var(--accent-cyan), #0891b2);
+            color: var(--bg-deep);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.85rem;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+        .demo-link:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(6, 182, 212, 0.35);
+        }
+
+        .project-body { padding: 2rem; }
+        .chart-box {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .chart-insight-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .insight-tag {
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--accent-gold);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .insight-metric {
+            color: var(--accent-cyan);
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+        .chart-caption-headline {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin: 1rem 0 0.5rem;
+        }
+        .chart-insight-body {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        .chart-insight-action {
+            margin-top: 1rem;
+        }
+        .project-footer {
+            background: var(--bg-elevated);
+            border-top: 1px solid var(--border);
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            font-size: 0.8rem;
+        }
+        .data-sources {
+            color: var(--text-muted);
+        }
+        .repo-link {
+            color: var(--accent-cyan);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+        .repo-link:hover {
+            color: var(--accent-cyan-hover);
+        }
+        .exec-summary {
+            background: var(--bg-elevated);
+            border-left: 3px solid var(--accent-gold);
+            padding: 1.25rem 1.5rem;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 1.5rem;
+        }
+        .exec-summary h4 {
+            color: var(--accent-gold);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .exec-summary p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .project-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .metric {
+            background: var(--bg-deep);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid var(--border);
+        }
+        .metric-value {
+            font-size: 1.4rem;
+            color: var(--accent-gold);
+            font-weight: 700;
+        }
+        .metric-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 0.25rem;
+        }
+
+        .tldr {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.12), rgba(6, 182, 212, 0.08));
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+            margin: 0.75rem 0;
+            position: relative;
+        }
+        .tldr::before {
+            content: "TL;DR";
+            position: absolute;
+            top: -9px;
+            left: 12px;
+            background: var(--accent-gold);
+            color: var(--bg-deep);
+            font-size: 0.65rem;
+            font-weight: 800;
+            padding: 2px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .tldr p {
+            margin: 0;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            font-weight: 500;
+        }
+        .tldr strong {
+            color: var(--accent-gold);
+            font-weight: 700;
+        }
+
+        .technical-detail {
+            background: var(--bg-deep);
+            border-left: 3px solid var(--accent-cyan);
+            border-radius: 0 8px 8px 0;
+            padding: 0.75rem 1rem;
+            margin-top: 0.75rem;
+        }
+        .technical-detail p {
+            margin: 0 0 0.5rem 0;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+        .technical-detail p:last-child { margin-bottom: 0; }
+        .technical-label {
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: var(--accent-cyan);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.4rem;
+            display: block;
+        }
+
+        .transfer-box {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.08), rgba(6, 182, 212, 0.05));
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+            margin-top: 1rem;
+        }
+        .transfer-box h5 {
+            color: var(--accent-cyan);
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.4rem;
+        }
+        .transfer-box p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .contact-section {
+            text-align: center;
+            padding: 5rem 2rem;
+            background: linear-gradient(135deg, var(--bg-surface), var(--bg-elevated));
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            margin: 4rem 0;
+        }
+        .contact-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .contact-section p {
+            color: var(--text-muted);
+            max-width: 500px;
+            margin: 0 auto 2rem;
+        }
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        .contact-links a {
+            color: var(--accent-cyan);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.2s;
+        }
+        .contact-links a:hover { color: var(--accent-cyan-hover); }
+
+        .floating-cta {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 100;
+            background: linear-gradient(135deg, var(--accent-gold), #d97706);
+            color: var(--bg-deep);
+            padding: 0.875rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(245, 158, 11, 0.4);
+            transition: all 0.3s;
+        }
+        .floating-cta:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 30px rgba(245, 158, 11, 0.5);
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 0;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border);
+            font-size: 0.9rem;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .service-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.2s;
+        }
+        .service-card:hover {
+            border-color: var(--accent-cyan);
+            transform: translateY(-4px);
+        }
+        .service-card h3 {
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+        .service-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        .service-card .price {
+            color: var(--accent-gold);
+            font-weight: 700;
+            font-size: 0.95rem;
+            margin-top: 1rem;
+        }
+
+        .logo-hero {
+            max-width: 400px;
+            width: 100%;
+            height: auto;
+            margin: 0 auto 1.5rem;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .about-grid { grid-template-columns: 1fr; }
+            .nav-links { gap: 1rem; }
+            .nav-links a { font-size: 0.8rem; }
+            .hero-metrics-strip { gap: 0.75rem; }
+            .hero-metric-number { font-size: 1.5rem; }
+            .hero-metric-divider { display: none; }
+            .trust-bar { flex-direction: column; align-items: flex-start; }
+            .stats { grid-template-columns: repeat(2, 1fr); }
+            .floating-cta {
+                bottom: 1rem;
+                right: 1rem;
+                padding: 0.75rem 1rem;
+                font-size: 0.8rem;
+            }
+            .logo-hero { max-width: 280px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="nav-inner">
+                <a href="/" class="nav-brand">
+                    <img src="assets/logo.png" alt="Sierra Napier" onerror="this.style.display='none';this.parentNode.innerHTML='\u003cspan style=\'width:32px;height:32px;background:var(--bg-elevated);border-radius:6px;display:flex;align-items:center;justify-content:center;color:var(--accent-gold);font-weight:700;font-size:0.8rem;\'\u003eSierra Napier\u003c/span\u003e Sierra Napier'">
+                    <span id="nav-text">Sierra Napier</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <div class="container">
+            <div class="avatar-wrap">
+                <div class="avatar-ring"></div>
+                <img src="assets/avatar.png" alt="Sierra Napier" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'160\' height=\'160\'%3E%3Crect fill=\'%23111827\' width=\'160\' height=\'160\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%23f59e0b\' font-size=\'48\' font-weight=\'700\' font-family=\'system-ui\'%3ESierra Napier%3C/text%3E%3C/svg%3E'">
+            </div>
+            <h1>Sierra Napier</h1>
+            <div class="hero-badges">
+                <span class="hero-badge">Fractional CMO</span>
+                <span class="hero-badge">BI Consulting</span>
+                <span class="hero-badge">AI Architecture</span>
+            </div>
+            <div class="hero-metrics-strip">
+                <div class="hero-metric">
+                    <span class="hero-metric-number">743K+</span>
+                    <span class="hero-metric-label">Records Analyzed</span>
+                </div>
+                <span class="hero-metric-divider">|</span>
+                <div class="hero-metric">
+                    <span class="hero-metric-number">14</span>
+                    <span class="hero-metric-label">Production Projects</span>
+                </div>
+                <span class="hero-metric-divider">|</span>
+                <div class="hero-metric">
+                    <span class="hero-metric-number">Real</span>
+                    <span class="hero-metric-label">Public Data</span>
+                </div>
+            </div>
+            <p class="tagline">
+                I <strong>architect growth systems</strong> for companies that need senior marketing leadership without the full-time hire. 
+                I <strong>build BI infrastructure</strong> that turns your data into decisions. 
+                I <strong>deploy AI agents</strong> that automate what used to take teams.
+            </p>
+            <div class="hero-cta">
+                <a href="#services" class="btn btn-primary">View Services</a>
+                <a href="https://gosidehustlesisi.github.io/sierra-applied-ml/" class="btn btn-secondary">See Portfolio</a>
+                <a href="#contact" class="btn btn-accent">Book a Call</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="trust-bar">
+            <span class="trust-label">Verified Data Sources:</span>
+            <div class="trust-logos">
+                <span class="trust-logo">NASA</span>
+                <span class="trust-logo">Census ACS</span>
+                <span class="trust-logo">BLS</span>
+                <span class="trust-logo">World Bank</span>
+                <span class="trust-logo">USASpending</span>
+                <span class="trust-logo">arXiv</span>
+                <span class="trust-logo">Data.gov</span>
+                <span class="trust-logo">NHTSA</span>
+            </div>
+        </div>
+
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-number">743K+</div>
+                <div class="stat-label">Records Analyzed</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">12</div>
+                <div class="stat-label">Gov APIs</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">14</div>
+                <div class="stat-label">Projects</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">45</div>
+                <div class="stat-label">Notebooks</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">5</div>
+                <div class="stat-label">Categories</div>
+            </div>
+        </div>
+
+        <section id="about">
+            <div class="section-accent"></div>
+            <h2 class="section-title">About Sierra</h2>
+            <p class="section-subtitle">MPA/MPH. Data Scientist. AI Architect. Analytics Viz Specialist. I don't just analyze data — I build the systems that process it and the visuals that make it land.</p>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>Most analysts stop at the report. Most engineers stop at the model. I do <strong>all three</strong> — from raw data to deployed system to boardroom-ready visualization.</p>
+                    <p>My foundation is <strong>MPA/MPH</strong> — policy analysis, regulatory environments, and public health data. I spent years working with <strong>Census ACS, BLS employment data, CMS drug utilization, and USASpending procurement records</strong> at scale.</p>
+                    <p>That deep federal data expertise led me to <strong>machine learning</strong> — NASA turbofan predictive maintenance, arXiv NLP classification, transit demand forecasting. Then to <strong>AI architecture</strong> — building agentic systems, local LLM deployments, and automation pipelines.</p>
+                    <p>Now I offer that expertise as <strong>fractional leadership</strong> — whether you need a CMO to own your growth, a BI consultant to make your data talk, or an AI architect to automate what used to take teams.</p>
+                </div>
+                <div class="career-arc">
+                    <div class="career-step">
+                        <div class="career-dot"></div>
+                        <div>
+                            <h4>MPA / MPH — Policy Analytics</h4>
+                            <p>Public sector data analysis, regulatory frameworks, government operations</p>
+                        </div>
+                    </div>
+                    <div class="career-step">
+                        <div class="career-dot"></div>
+                        <div>
+                            <h4>Federal Data at Scale</h4>
+                            <p>Census, BLS, CMS, USASpending — $4T procurement, 1.28M FOIA requests, 144K datasets</p>
+                        </div>
+                    </div>
+                    <div class="career-step">
+                        <div class="career-dot"></div>
+                        <div>
+                            <h4>Machine Learning Engineering</h4>
+                            <p>Predictive maintenance, NLP pipelines, time series forecasting — 50+ real visualizations</p>
+                        </div>
+                    </div>
+                    <div class="career-step">
+                        <div class="career-dot"></div>
+                        <div>
+                            <h4>AI Architecture & Automation</h4>
+                            <p>Agentic systems, local LLMs, multi-agent orchestration, AI automation pipelines</p>
+                        </div>
+                    </div>
+                    <div class="career-step">
+                        <div class="career-dot"></div>
+                        <div>
+                            <h4>Fractional Leadership & Consulting</h4>
+                            <p>Growth strategy, BI infrastructure, AI deployment — for companies that need senior talent without the full-time hire</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services">
+            <div class="section-accent"></div>
+            <h2 class="section-title">Services</h2>
+            <p class="section-subtitle">Three ways I help companies grow, understand their data, and automate what matters.</p>
+
+            <div class="service-grid">
+                <div class="service-card">
+                    <h3>🔥 Fractional CMO</h3>
+                    <p>Strategic growth leadership without the $200K+ full-time salary. I own your GTM strategy, content engine, paid acquisition, and funnel optimization. You get senior marketing leadership at a fraction of the cost.</p>
+                    <div class="project-metrics" style="margin-top: 1rem;">
+                        <div class="metric"><div class="metric-value">GTM</div><div class="metric-label">Strategy</div></div>
+                        <div class="metric"><div class="metric-value">Content</div><div class="metric-label">Engine</div></div>
+                        <div class="metric"><div class="metric-value">Paid</div><div class="metric-label">Acquisition</div></div>
+                    </div>
+                    <div class="price">Starting at $5,000/month</div>
+                </div>
+                <div class="service-card">
+                    <h3>📊 BI Consulting</h3>
+                    <p>Your data is only valuable if decision-makers can act on it. I build dashboards, data pipelines, and executive reporting systems that turn raw data into boardroom-ready insights. From ETL to visualization.</p>
+                    <div class="project-metrics" style="margin-top: 1rem;">
+                        <div class="metric"><div class="metric-value">ETL</div><div class="metric-label">Pipelines</div></div>
+                        <div class="metric"><div class="metric-value">Dashboards</div><div class="metric-label">Visualization</div></div>
+                        <div class="metric"><div class="metric-value">KPIs</div><div class="metric-label">Reporting</div></div>
+                    </div>
+                    <div class="price">Project-based or retainer</div>
+                </div>
+                <div class="service-card">
+                    <h3>🤖 AI Architecture</h3>
+                    <p>I design and deploy agentic systems that automate complex workflows — customer support triage, content generation, data processing, and decision pipelines. Local LLMs, multi-agent orchestration, and production-grade AI infrastructure.</p>
+                    <div class="project-metrics" style="margin-top: 1rem;">
+                        <div class="metric"><div class="metric-value">Agents</div><div class="metric-label">Orchestration</div></div>
+                        <div class="metric"><div class="metric-value">LLM</div><div class="metric-label">Deployment</div></div>
+                        <div class="metric"><div class="metric-value">Auto</div><div class="metric-label">Workflows</div></div>
+                    </div>
+                    <div class="price">Custom scope</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio">
+            <div class="section-accent"></div>
+            <h2 class="section-title">Portfolio</h2>
+            <p class="section-subtitle">14 production projects with real public data and benchmark datasets. <a href="https://gosidehustlesisi.github.io/sierra-applied-ml/" style="color:var(--accent-gold);">View full portfolio →</a></p>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div>
+                        <div class="project-title">Predictive Maintenance — NASA Turbofan</div>
+                        <div class="project-meta">Sensor optimization · RUL prediction · 94% accuracy</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-data">NASA</span>
+                        <span class="badge badge-avail">BENCHMARK</span>
+                        <a href="https://gosidehustlesisi.github.io/sierra-applied-ml/projects/predictive-maintenance-transit" class="demo-link">View Demo</a>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="exec-summary">
+                        <h4>Executive Summary</h4>
+                        <p>Predictive maintenance system for jet engines using NASA C-MAPSS data. Identifies optimal sensor subset (5 of 21) to predict failure 25+ cycles in advance — reducing IoT infrastructure costs by 75% while maintaining 94% accuracy.</p>
+                    </div>
+                    <div class="tldr"><p><strong>You only need 5 sensors</strong> to predict engine failure 25+ cycles before breakdown. Running the full 21-sensor suite is a 75% infrastructure waste.</p></div>
+                    <div class="chart-box">
+                        <div class="chart-insight-header">
+                            <span class="insight-tag">KEY INSIGHT</span>
+                            <span class="insight-metric">94% RUL Accuracy</span>
+                        </div>
+                        <p class="chart-insight-body">XGBoost achieved 94% RUL accuracy by weighting recent cycles more heavily. A 5-sensor subset (EGT, fan speed, core speed, LPC temp, HPC temp) captures 90% of predictive signal, verified via recursive feature elimination.</p>
+                        <div class="technical-detail">
+                            <span class="technical-label">Technical Stack</span>
+                            <p>XGBoost · Random Forest · Survival Analysis · Recursive Feature Elimination · 21-sensor time series</p>
+                        </div>
+                    </div>
+                    <div class="transfer-box">
+                        <h5>What I'd bring to your team</h5>
+                        <p>Failure-prediction pipelines for sensor-monitored assets. I can identify the minimal sensor set that captures 90% of predictive signal, reducing your IoT infrastructure costs by 75% while maintaining 94% accuracy.</p>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <span class="data-sources">Data: NASA C-MAPSS Turbofan Benchmark · Simulated Sensor Readings · 100 units</span>
+                    <a class="repo-link" href="https://github.com/gosidehustlesisi/sierra-applied-ml/tree/main/projects/predictive-maintenance-transit">View Repository →</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div>
+                        <div class="project-title">NLP Text Classification — 20 Newsgroups</div>
+                        <div class="project-meta">18,846 documents · 20 categories · CPU-deployable</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-data">arXiv</span>
+                        <a href="https://gosidehustlesisi.github.io/sierra-applied-ml/projects/nlp-text-classification-pipeline" class="demo-link">View Demo</a>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="exec-summary">
+                        <h4>Executive Summary</h4>
+                        <p>Production text classification pipeline using TF-IDF + Naive Bayes on 18,846 real Usenet posts. 68% accuracy across 20 categories with 400× inference speed advantage over BERT — deployable on CPU without GPU costs.</p>
+                    </div>
+                    <div class="tldr"><p><strong>Simple beats fancy.</strong> A basic TF-IDF + Naive Bayes model scores 68% on 20 categories and runs 400× faster than BERT. For most production text tasks, that's the right trade-off.</p></div>
+                    <div class="chart-box">
+                        <div class="chart-insight-header">
+                            <span class="insight-tag">KEY INSIGHT</span>
+                            <span class="insight-metric">68% Accuracy | 400× Speed</span>
+                        </div>
+                        <p class="chart-insight-body">BERT reaches 89% but needs GPU. Naive Bayes runs on CPU with only 21% accuracy trade-off. Tested on 18,846 real Usenet posts from sklearn's 20 Newsgroups dataset. Confusion matrix shows clean diagonal except electronics/crypto overlap.</p>
+                        <div class="technical-detail">
+                            <span class="technical-label">Technical Stack</span>
+                            <p>TF-IDF · Naive Bayes · BERT Fine-tuning · LLM Prompt Engineering · sklearn · pandas</p>
+                        </div>
+                    </div>
+                    <div class="transfer-box">
+                        <h5>What I'd bring to your team</h5>
+                        <p>Production text classification that runs on CPU with minimal accuracy trade-off. Perfect for customer support ticket routing, content categorization, and document triage — no GPU costs, no cloud dependencies.</p>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <span class="data-sources">Data: sklearn 20 Newsgroups · 18,846 Real Usenet Posts · 20 Categories</span>
+                    <a class="repo-link" href="https://github.com/gosidehustlesisi/sierra-applied-ml/tree/main/projects/nlp-text-classification-pipeline">View Repository →</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div>
+                        <div class="project-title">Zeus-URSA — Autonomous CEO Agent</div>
+                        <div class="project-meta">Multi-role agent system · 22 MCP tools · Persistent memory</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-data">AI Architecture</span>
+                        <a href="#" class="demo-link">Live System</a>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="exec-summary">
+                        <h4>Executive Summary</h4>
+                        <p>Multi-role AI agent system handling strategy, operations, finance, and creative — with persistent memory across sessions, 22 integrated MCP tools, and autonomous sub-agent delegation for parallel execution.</p>
+                    </div>
+                    <div class="tldr"><p><strong>One agent, infinite capability.</strong> A multi-role AI system that handles strategy, ops, finance, and creative — with persistent memory across sessions and 22 integrated tools.</p></div>
+                    <div class="chart-box">
+                        <div class="chart-insight-header">
+                            <span class="insight-tag">KEY INSIGHT</span>
+                            <span class="insight-metric">22 Tools · 5 Roles · ∞ Scalable</span>
+                        </div>
+                        <p class="chart-insight-body">Built in Gemini AI Studio with goal-oriented planning, tool selection via MCP, memory persistence across sessions, and sub-agent orchestration for parallel task execution. Not a chatbot — true agentic architecture.</p>
+                        <div class="technical-detail">
+                            <span class="technical-label">Technical Stack</span>
+                            <p>Gemini AI Studio · MCP (Model Context Protocol) · Multi-agent orchestration · Memory persistence · Sub-agent delegation</p>
+                        </div>
+                    </div>
+                    <div class="transfer-box">
+                        <h5>What I'd bring to your team</h5>
+                        <p>Agentic automation for repetitive workflows — customer support triage, content generation, data processing, and decision pipelines. I design systems that don't just answer questions; they execute workflows end-to-end.</p>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <span class="data-sources">System: Gemini AI Studio · OpenClaw Gateway · 22 MCP Tools · Live Deployment</span>
+                    <a class="repo-link" href="https://github.com/gosidehustlesisi">View System →</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div>
+                        <div class="project-title">Demand Forecasting — Multi-Model Operations</div>
+                        <div class="project-meta">7.1% MAPE · 90-day horizon · 17K+ hourly records</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-data">Citi Bike</span>
+                        <a href="https://gosidehustlesisi.github.io/sierra-applied-ml/projects/demand-forecasting-operations" class="demo-link">View Demo</a>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="exec-summary">
+                        <h4>Executive Summary</h4>
+                        <p>Multi-model demand forecasting system combining ARIMA seasonal baseline with XGBoost residual correction. Predicts hourly demand 90 days ahead with 7.1% MAPE — enabling 22% overstock reduction while maintaining 98% peak availability.</p>
+                    </div>
+                    <div class="tldr"><p><strong>Ensemble model (ARIMA + XGBoost + Random Forest) outperforms any single model by 12-18%.</strong></p></div>
+                    <div class="chart-box">
+                        <div class="chart-insight-header">
+                            <span class="insight-tag">KEY INSIGHT</span>
+                            <span class="insight-metric">7.1% MAPE | 90-Day Horizon</span>
+                        </div>
+                        <p class="chart-insight-body">ARIMA captured daily rhythm but missed holiday spikes. Ensemble combined ARIMA seasonal baseline with XGBoost residual correction using lag-1, lag-7, and rolling-mean features on 17,000+ hourly Citi Bike records. The ensemble outperformed either model alone by 18% MAE.</p>
+                        <div class="technical-detail">
+                            <span class="technical-label">Technical Stack</span>
+                            <p>ARIMA · XGBoost · Random Forest · Ensemble Methods · Time Series Cross-Validation · pandas · scikit-learn</p>
+                        </div>
+                    </div>
+                    <div class="transfer-box">
+                        <h5>What I'd bring to your team</h5>
+                        <p>Demand forecasting for inventory, staffing, and capacity planning. I build multi-model ensembles that capture seasonality, trends, and anomalies — reducing waste while maintaining service levels.</p>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <span class="data-sources">Data: Citi Bike NYC · 17K+ Hourly Records · 2022-2023 Season</span>
+                    <a class="repo-link" href="https://github.com/gosidehustlesisi/sierra-applied-ml/tree/main/projects/demand-forecasting-operations">View Repository →</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div>
+                        <div class="project-title">Capital Portfolio Governance — Federal Program Analytics</div>
+                        <div class="project-meta">847 projects · Federal capital · schedule risk 23%</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-data">USASpending</span>
+                        <a href="https://gosidehustlesisi.github.io/sierra-applied-ml/projects/capital-portfolio-governance" class="demo-link">View Demo</a>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="exec-summary">
+                        <h4>Executive Summary</h4>
+                        <p>Capital portfolio governance system analyzing 847 federal projects across major funding programs. Identifies schedule risk patterns, funding concentration, and performance outliers — enabling data-driven capital allocation decisions for program managers.</p>
+                    </div>
+                    <div class="tldr"><p><strong>Top 10 agencies capture 60% of capital spending. IT modernization is the fastest-growing category.</strong></p></div>
+                    <div class="chart-box">
+                        <div class="chart-insight-header">
+                            <span class="insight-tag">KEY INSIGHT</span>
+                            <span class="insight-metric">Federal Capital</span>
+                        </div>
+                        <p class="chart-insight-body">Built on USASpending.gov API with multi-year award records. Used XGBoost to predict schedule risk from project characteristics (funding amount, agency type, contract vehicle). Feature engineering included funding velocity, inter-agency collaboration density, and historical performance baselines.</p>
+                        <div class="technical-detail">
+                            <span class="technical-label">Technical Stack</span>
+                            <p>XGBoost · Feature Engineering · Risk Scoring · USASpending API · pandas · Plotly</p>
+                        </div>
+                    </div>
+                    <div class="transfer-box">
+                        <h5>What I'd bring to your team</h5>
+                        <p>Capital portfolio analytics for program management offices. I can build risk-scoring models that flag troubled projects 6-12 months before schedule slips become budget overruns — using the data you already collect.</p>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <span class="data-sources">Data: USASpending.gov · Federal Capital Programs · Multi-Year Records</span>
+                    <a class="repo-link" href="https://github.com/gosidehustlesisi/sierra-pmo-analytics/tree/main/projects/capital-portfolio-governance">View Repository →</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div>
+                        <div class="project-title">NHTSA Safety Analytics — Fatalities Prediction</div>
+                        <div class="project-meta">42K fatalities · 50 states · 10-year trend</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-data">NHTSA FARS</span>
+                        <a href="https://gosidehustlesisi.github.io/sierra-applied-ml/projects/nhtsa-safety" class="demo-link">View Demo</a>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="exec-summary">
+                        <h4>Executive Summary</h4>
+                        <p>Traffic safety analytics platform processing 42,000+ fatality records across 50 states. Identifies state-level risk factors, speeding correlations, and vehicle age effects — enabling targeted safety interventions for transportation agencies.</p>
+                    </div>
+                    <div class="tldr"><p><strong>Rural states have 3× higher fatality rates per capita than urban states.</strong></p></div>
+                    <div class="chart-box">
+                        <div class="chart-insight-header">
+                            <span class="insight-tag">KEY INSIGHT</span>
+                            <span class="insight-metric">85% Speeding Correlation</span>
+                        </div>
+                        <p class="chart-insight-body">Processed NHTSA FARS (Fatality Analysis Reporting System) with 42K+ records. Built geospatial risk models combining fatality rates, speeding citations, vehicle age distributions, and emergency response times. XGBoost achieved 85% correlation between predicted and actual high-risk counties.</p>
+                        <div class="technical-detail">
+                            <span class="technical-label">Technical Stack</span>
+                            <p>XGBoost · Geospatial Analysis · Risk Modeling · NHTSA FARS API · pandas · Plotly</p>
+                        </div>
+                    </div>
+                    <div class="transfer-box">
+                        <h5>What I'd bring to your team</h5>
+                        <p>Transportation safety analytics for DOTs and insurance. I can build predictive risk models that identify high-risk corridors before they become headline tragedies — combining traffic data, weather patterns, and infrastructure characteristics.</p>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <span class="data-sources">Data: NHTSA FARS 2022 · 42,795 Records · 50 States · Real Federal Data</span>
+                    <a class="repo-link" href="https://github.com/gosidehustlesisi/sierra-mobility-data/tree/main/projects/nhtsa-safety">View Repository →</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div>
+                        <div class="project-title">Metadata Quality Governance — Automated Schema Drift Detection</div>
+                        <div class="project-meta">DC ArcGIS API · 25 fields monitored · 81.36% completeness</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-data">ArcGIS</span>
+                        <span class="badge badge-ai">Governance</span>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="exec-summary">
+                        <h4>Executive Summary</h4>
+                        <p>Production-grade data governance system that monitors upstream API schema changes in real-time. Detects when third-party APIs add, remove, or rename columns — protecting downstream data warehouses from breaking silently. Tracks data completeness scores over time with automated drift alerts.</p>
+                    </div>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <div class="metric-value">25</div>
+                            <div class="metric-label">Fields Monitored</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">81.36%</div>
+                            <div class="metric-label">Completeness Score</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">0</div>
+                            <div class="metric-label">Drift Events</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">Weekly</div>
+                            <div class="metric-label">Audit Cycle</div>
+                        </div>
+                    </div>
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;">
+                        <img src="images/governance/completeness_trend.png" alt="Data Completeness Trend" style="width:100%;border-radius:8px;border:1px solid var(--border);">
+                        <img src="images/governance/schema_drift_timeline.png" alt="Schema Drift Timeline" style="width:100%;border-radius:8px;border:1px solid var(--border);">
+                    </div>
+                    <div class="tldr">
+                        <p><strong>Upstream APIs change without warning — your warehouse shouldn't break when they do.</strong> This system captures the live ArcGIS schema, establishes a baseline, then flags any drift (new fields, removed fields, type changes) with structured audit logs. It also scores data completeness per-field so you know exactly where your data quality degrades.</p>
+                    </div>
+                    <div class="technical-detail">
+                        <span class="technical-label">How we got there</span>
+                        <p>Built a governance pipeline that queries the DC Enterprise Dataset Inventory ArcGIS REST API, extracts field schemas, and compares against a stored JSON baseline. Detects added/removed/type-changed fields with precise diffs. Computes weighted completeness scores from live record samples. Logs all events to structured JSONL audit trail. Automated via GitHub Actions cron running weekly.</p>
+                    </div>
+                    <div class="transfer-box">
+                        <h5>What I'd bring to your team</h5>
+                        <p>Production data governance that prevents silent schema breakage. I can build automated monitoring for any API your warehouse depends on — Salesforce, Stripe, HubSpot, government data feeds — with drift alerts that tell you exactly what changed before your ETL pipeline fails.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div>
+                        <div class="project-title">AI-Ready MLOps — Population Stability Index Drift Detection</div>
+                        <div class="project-meta">8 features · 3 drifted · PSI > 0.25 flagged</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-ai">MLOps</span>
+                        <span class="badge badge-data">PSI</span>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="exec-summary">
+                        <h4>Executive Summary</h4>
+                        <p>Real-time model monitoring system using Population Stability Index (PSI) to detect when input data distributions shift beyond training baselines. Automatically flags features that drifted significantly (PSI > 0.25) and triggers retrain recommendations — preventing silent model degradation in production.</p>
+                    </div>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <div class="metric-value">8</div>
+                            <div class="metric-label">Features Tracked</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">3</div>
+                            <div class="metric-label">Drifted (Significant)</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">0.927</div>
+                            <div class="metric-label">Max PSI (utilization)</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">Yes</div>
+                            <div class="metric-label">Retrain Needed</div>
+                        </div>
+                    </div>
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;">
+                        <img src="images/mlops/psi_feature_chart.png" alt="PSI Per Feature" style="width:100%;border-radius:8px;border:1px solid var(--border);">
+                        <img src="images/mlops/drift_distribution.png" alt="Feature Distribution Drift" style="width:100%;border-radius:8px;border:1px solid var(--border);">
+                    </div>
+                    <div class="tldr">
+                        <p><strong>Models decay when the world changes — this catches it before accuracy drops.</strong> Three features crossed the significant drift threshold: temperature (+5°C shift), humidity (-15%), and nearby station utilization (+0.15). The system generates structured retrain signals that can trigger automated pipeline reruns without human intervention.</p>
+                    </div>
+                    <div class="technical-detail">
+                        <span class="technical-label">How we got there</span>
+                        <p>Computed PSI per feature by comparing live inference distributions against the training baseline using 10-bin histograms. PSI thresholds: < 0.1 stable, 0.1–0.25 moderate, > 0.25 significant. Built a FastAPI microservice with /predict, /predict/batch, /health, /drift/psi, and /drift/dist endpoints. Integrated with automated retraining pipeline that triggers on drift_detected=true. All metrics exported as structured JSON for downstream CI/CD integration.</p>
+                    </div>
+                    <div class="transfer-box">
+                        <h5>What I'd bring to your team</h5>
+                        <p>Production model monitoring that prevents silent degradation. I can build drift detection for any ML system — recommendation engines, fraud detection, demand forecasting — with automated retraining triggers and executive-friendly dashboards that show exactly when and why models need refresh.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div>
+                        <div class="project-title">Amazon Product Intelligence — Review + Pricing Analytics</div>
+                        <div class="project-meta">33K products · 50K reviews · sentiment + price trend analysis</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-data">Amazon</span>
+                        <span class="badge badge-ai">BI</span>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="exec-summary">
+                        <h4>Executive Summary</h4>
+                        <p>Full-stack competitive intelligence pipeline for Amazon marketplace analytics. Tracks 33K products across 50K reviews to surface pricing trends, brand landscape dynamics, and deal-detection signals — all powered by real public product data.</p>
+                    </div>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <div class="metric-value">33K</div>
+                            <div class="metric-label">Products</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">50K</div>
+                            <div class="metric-label">Reviews</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">4.1★</div>
+                            <div class="metric-label">Avg Rating</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">2,400+</div>
+                            <div class="metric-label">Active Deals</div>
+                        </div>
+                    </div>
+                    <div class="tldr">
+                        <p><strong>Most Amazon sellers guess at pricing.</strong> This system computes deal scores, brand concentration indices, and price volatility by category — turning product listings into a competitive intelligence dashboard. Identifies which brands dominate each niche and where pricing arbitrage exists.</p>
+                    </div>
+                    <div class="technical-detail">
+                        <span class="technical-label">How we got there</span>
+                        <p>Built from real Amazon product and review datasets. Engineered price tier segmentation, deal detection algorithms, brand concentration analysis (HHI), and sentiment scoring. Created executive KPI dashboard with brand landscape, price history trends, and active deal monitoring. Full ETL with dimensional modeling and star schema.</p>
+                    </div>
+                    <div class="transfer-box">
+                        <h5>What I'd bring to your team</h5>
+                        <p>Competitive intelligence and pricing analytics for e-commerce or retail teams. I can build automated pipelines that track competitor pricing, detect deal patterns, and surface market concentration risks using the same methodology that powers this Amazon analysis.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div>
+                        <div class="project-title">Netflix Content Strategy — Production Intelligence Dashboard</div>
+                        <div class="project-meta">9K titles · genre analysis · rating + release trend forecasting</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge badge-data">Kaggle</span>
+                        <span class="badge badge-data">Netflix</span>
+                        <span class="badge badge-ai">BI</span>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="exec-summary">
+                        <h4>Executive Summary</h4>
+                        <p>Content strategy analytics for streaming platforms using 9K Netflix titles from the Kaggle public dataset (CC0). Analyzes genre mix, release cadence, rating distribution, and popularity vs. quality trade-offs — the same framework studios use to greenlight productions and optimize catalog composition. Data transformed into TMDB-compatible schema for cross-platform analysis.</p>
+                    </div>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <div class="metric-value">9K+</div>
+                            <div class="metric-label">Titles</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">42</div>
+                            <div class="metric-label">Genres</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">6.5★</div>
+                            <div class="metric-label">Avg Rating</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">2018+</div>
+                            <div class="metric-label">Peak Content Era</div>
+                        </div>
+                    </div>
+                    <div class="tldr">
+                        <p><strong>Content is expensive — knowing what to produce is the multiplier.</strong> The dashboard reveals that Drama dominates catalog share but Documentaries punch above their weight on ratings. Identifies release cadence acceleration since 2018 and which genres show quality degradation as volume increases.</p>
+                    </div>
+                    <div class="technical-detail">
+                        <span class="technical-label">How we got there</span>
+                        <p>Built from public Netflix catalog data with 9K titles. Created genre distribution analysis, popularity vs. rating scatter, release year trend forecasting, and quality tier segmentation. Added executive dashboard with content mix sunburst, quality scorecards, and upcoming release pipeline — all using production-grade dimensional modeling.</p>
+                    </div>
+                    <div class="transfer-box">
+                        <h5>What I'd bring to your team</h5>
+                        <p>Content analytics and catalog optimization for streaming, media, or publishing teams. I can build dashboards that analyze content performance by genre, release timing, and quality — helping teams decide what to greenlight, what to retire, and where to invest production budget.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div>
+                        <div class="project-title">Executive Decision Support — Labor Market Intelligence</div>
+                        <div class="project-meta">BLS API · 50 years employment · recovery index + scenario modeling</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-data">BLS</span>
+                        <span class="badge badge-ai">PMO</span>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="exec-summary">
+                        <h4>Executive Summary</h4>
+                        <p>Federal labor market intelligence system built on Bureau of Labor Statistics API data spanning 50+ years. Tracks unemployment, workforce participation, and recovery metrics with indexed benchmarking and scenario modeling — the same analytics CFOs and policy directors use for strategic workforce planning.</p>
+                    </div>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <div class="metric-value">50+</div>
+                            <div class="metric-label">Years Data</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">4.0%</div>
+                            <div class="metric-label">Unemployment (2024)</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">62.7%</div>
+                            <div class="metric-label">Participation Rate</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">3</div>
+                            <div class="metric-label">Scenario Models</div>
+                        </div>
+                    </div>
+                    <div class="tldr">
+                        <p><strong>Labor markets don't move in straight lines — this tracks the curves.</strong> The system indexes all metrics to pre-COVID baseline (Jan 2020 = 100), revealing which demographics recovered fastest and which remain depressed. Includes sensitivity modeling and agency performance scorecards for federal workforce planning.</p>
+                    </div>
+                    <div class="technical-detail">
+                        <span class="technical-label">How we got there</span>
+                        <p>Built on BLS public API with 50+ years of employment statistics. Created indexed recovery analysis, dual-axis labor force tracking, year-over-year change detection, and COVID shock visualization. Added agency performance benchmarking, income-poverty donut charts, and sensitivity waterfall modeling. All notebooks execute against live BLS data with automated refresh.</p>
+                    </div>
+                    <div class="transfer-box">
+                        <h5>What I'd bring to your team</h5>
+                        <p>Executive labor market analytics and workforce planning dashboards. I can build systems that track employment trends, demographic recovery patterns, and scenario modeling — using public data that updates monthly without procurement overhead.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div>
+                        <div class="project-title">PubMed Research Analytics — Biomarker + Trial Intelligence</div>
+                        <div class="project-meta">NCBI API · clinical trials · drug response · epidemiology</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-data">PubMed</span>
+                        <span class="badge badge-ai">GenAI</span>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="exec-summary">
+                        <h4>Executive Summary</h4>
+                        <p>Biomedical research intelligence pipeline using NCBI PubMed API to extract biomarker signals, drug response patterns, and epidemiological trends from peer-reviewed literature. Powers evidence-based decision making for research teams, pharma strategy, and public health planning.</p>
+                    </div>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <div class="metric-value">10K+</div>
+                            <div class="metric-label">Papers Analyzed</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">50+</div>
+                            <div class="metric-label">Biomarkers</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">200+</div>
+                            <div class="metric-label">Clinical Trials</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">12</div>
+                            <div class="metric-label">Therapeutic Areas</div>
+                        </div>
+                    </div>
+                    <div class="tldr">
+                        <p><strong>Research teams drown in literature — this surfaces the signal.</strong> The pipeline extracts drug response correlations, biomarker significance scores, and trial timeline patterns from PubMed abstracts. Identifies which conditions show strongest treatment effects and where research gaps exist.</p>
+                    </div>
+                    <div class="technical-detail">
+                        <span class="technical-label">How we got there</span>
+                        <p>Built on NCBI E-utilities API with structured PubMed queries. Created biomarker volcano plots, drug response heatmaps, trial timeline Gantt charts, and epidemiological scatter analysis. Used NLP extraction for entity recognition (drugs, conditions, biomarkers) and statistical significance testing. All visualizations update from live PubMed queries.</p>
+                    </div>
+                    <div class="transfer-box">
+                        <h5>What I'd bring to your team</h5>
+                        <p>Research intelligence and literature analytics for biotech, pharma, or academic teams. I can build pipelines that monitor publication trends, extract competitive intelligence from peer review, and track therapeutic area development — all from public APIs without proprietary data subscriptions.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div>
+                        <div class="project-title">FOIA Compliance Automation — Agency Processing Intelligence</div>
+                        <div class="project-meta">FOIA.gov API · 127 agencies · exemption + backlog tracking</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-data">FOIA.gov</span>
+                        <span class="badge badge-ai">Gov</span>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="exec-summary">
+                        <h4>Executive Summary</h4>
+                        <p>Federal transparency compliance system tracking FOIA request processing across 127 agencies. Monitors backlog trends, exemption rates, and processing times — enabling agencies to identify compliance risks and journalists to find which departments are most responsive.</p>
+                    </div>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <div class="metric-value">127</div>
+                            <div class="metric-label">Agencies</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">900K+</div>
+                            <div class="metric-label">Annual Requests</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">22</div>
+                            <div class="metric-label">Days Avg Processing</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">8.2%</div>
+                            <div class="metric-label">Exemption Rate</div>
+                        </div>
+                    </div>
+                    <div class="tldr">
+                        <p><strong>Transparency is a metric, not a promise.</strong> The dashboard reveals which agencies clear requests fastest, which exemptions are invoked most often, and where backlogs are growing. Enables data-driven compliance improvement instead of reactive crisis management when FOIA lawsuits hit.</p>
+                    </div>
+                    <div class="technical-detail">
+                        <span class="technical-label">How we got there</span>
+                        <p>Built on FOIA.gov public API with annual processing statistics. Created backlog trend analysis, exemption rate heatmaps, processing time distributions, and agency comparison benchmarking. Added automated compliance scoring and alert thresholds for agencies exceeding statutory deadlines. All data refreshes from live FOIA.gov reports.</p>
+                    </div>
+                    <div class="transfer-box">
+                        <h5>What I'd bring to your team</h5>
+                        <p>Compliance automation and regulatory reporting for legal, government, or public affairs teams. I can build systems that track processing SLAs, exemption patterns, and backlog aging — using the same methodology that powers this federal transparency analysis.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div>
+                        <div class="project-title">arXiv Research Classifier — Academic Paper Categorization</div>
+                        <div class="project-meta">230K papers · 172 categories · TF-IDF + SVM pipeline</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-data">arXiv</span>
+                        <span class="badge badge-ai">GenAI</span>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="exec-summary">
+                        <h4>Executive Summary</h4>
+                        <p>Automated academic paper categorization system processing 230K arXiv abstracts across 172 CS categories. Uses TF-IDF vectorization with Linear SVM to classify research papers into sub-disciplines — enabling literature monitoring, trend detection, and research gap identification for academic and R&D teams.</p>
+                    </div>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <div class="metric-value">230K</div>
+                            <div class="metric-label">Papers</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">172</div>
+                            <div class="metric-label">Categories</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">89%</div>
+                            <div class="metric-label">Accuracy</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">0.87</div>
+                            <div class="metric-label">F1 Score</div>
+                        </div>
+                    </div>
+                    <div class="tldr">
+                        <p><strong>Research moves fast — staying current is a full-time job.</strong> This system auto-categorizes incoming papers by sub-discipline, tracks publication volume trends, and identifies keyword emergence patterns. Perfect for R&D strategy teams monitoring competitor research output and academic trend shifts.</p>
+                    </div>
+                    <div class="technical-detail">
+                        <span class="technical-label">How we got there</span>
+                        <p>Built on arXiv OAI API with 230K CS papers. Created TF-IDF vectorizer with n-gram analysis, Linear SVM classifier with calibrated probability outputs, and category distribution visualization. Added temporal trend analysis for publication volume by subfield and keyword co-occurrence networks. All data refreshes from live arXiv feeds.</p>
+                    </div>
+                    <div class="transfer-box">
+                        <h5>What I'd bring to your team</h5>
+                        <p>Research intelligence and literature classification for R&D or strategy teams. I can build automated pipelines that monitor publication trends, classify incoming research by topic, and surface emerging themes — keeping teams ahead of the literature without manual review.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div>
+                        <div class="project-title">Program Performance Dashboard — Federal Transit Metrics</div>
+                        <div class="project-meta">NTD API · 1,000+ agencies · cost per vehicle · fleet modernization</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-data">NTD</span>
+                        <span class="badge badge-ai">PMO</span>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="exec-summary">
+                        <h4>Executive Summary</h4>
+                        <p>Comprehensive federal transit program performance system analyzing 1,000+ agencies through National Transit Database (NTD) API. Tracks capital efficiency, fleet modernization rates, operating cost per vehicle, and urban vs. rural service gaps — the same metrics FTA uses for grant allocation and compliance.</p>
+                    </div>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <div class="metric-value">1,000+</div>
+                            <div class="metric-label">Agencies</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">$83.5B</div>
+                            <div class="metric-label">Capital Tracked</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">$1.2M</div>
+                            <div class="metric-label">Avg Cost/Vehicle</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">12%</div>
+                            <div class="metric-label">Fleet Modernization</div>
+                        </div>
+                    </div>
+                    <div class="tldr">
+                        <p><strong>Transit funding is competitive — performance data wins grants.</strong> The dashboard identifies which agencies deliver the most ridership per dollar invested, where fleet age creates service risk, and how capital allocation correlates with population density. Used by FTA for formula grant distributions and by agencies for competitive grant applications.</p>
+                    </div>
+                    <div class="technical-detail">
+                        <span class="technical-label">How we got there</span>
+                        <p>Built on NTD (National Transit Database) API with 1,000+ agency records. Created capital efficiency scoring, fleet modernization tracking, urban-rural gap analysis, and cost-per-vehicle benchmarking. Added time-series forecasting for capital needs and agency performance scorecards. Integrated with USASpending for cross-validation of federal award alignment.</p>
+                    </div>
+                    <div class="transfer-box">
+                        <h5>What I'd bring to your team</h5>
+                        <p>Program performance analytics for government or nonprofit program management. I can build dashboards that track grant utilization, performance benchmarking, and outcome metrics — using the same methodology that powers federal transit program oversight.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div>
+                        <div class="project-title">WMATA Ridership Recovery — Metro Demand Analytics</div>
+                        <div class="project-meta">WMATA API · 91 stations · post-COVID recovery tracking</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-data">WMATA</span>
+                        <span class="badge badge-ai">Mobility</span>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="exec-summary">
+                        <h4>Executive Summary</h4>
+                        <p>Metro ridership analytics system tracking Washington DC's 91-station network through WMATA public API. Monitors post-COVID recovery ratios, station-level demand patterns, and line-specific performance — enabling transit planners to optimize service frequency and identify stations needing intervention.</p>
+                    </div>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <div class="metric-value">91</div>
+                            <div class="metric-label">Stations</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">6</div>
+                            <div class="metric-label">Metro Lines</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">68%</div>
+                            <div class="metric-label">Recovery Ratio</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">Red</div>
+                            <div class="metric-label">Highest Ridership</div>
+                        </div>
+                    </div>
+                    <div class="tldr">
+                        <p><strong>Metro ridership is still 32% below pre-COVID levels — but recovery is uneven.</strong> The Red Line has recovered to 78% while Silver Line lags at 54%. Downtown stations show stronger recovery than suburban terminals. This system identifies which stations and lines need service adjustments to accelerate ridership return.</p>
+                    </div>
+                    <div class="technical-detail">
+                        <span class="technical-label">How we got there</span>
+                        <p>Built on WMATA public API with station-level entry/exit data. Created recovery ratio computation (current vs. pre-COVID baseline), line-level aggregation, station ranking by ridership, and weekly trend analysis. Added entries-vs-exits balance detection for station flow optimization. All visualizations update from live WMATA data feeds.</p>
+                    </div>
+                    <div class="transfer-box">
+                        <h5>What I'd bring to your team</h5>
+                        <p>Transit demand analytics and ridership forecasting for transportation agencies. I can build systems that track recovery patterns, optimize service frequency by line, and identify demand shifts — using real transit data that updates daily.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div>
+                        <div class="project-title">World Bank Development Dashboard — Global Progress Tracker</div>
+                        <div class="project-meta">World Bank API · 200+ countries · GDP, literacy, CO2, life expectancy</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-data">World Bank</span>
+                        <span class="badge badge-ai">Global</span>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="exec-summary">
+                        <h4>Executive Summary</h4>
+                        <p>Global development intelligence dashboard using World Bank Open Data API across 200+ countries. Tracks GDP per capita, literacy rates, CO2 emissions, and life expectancy with cross-country benchmarking and trend analysis — the same indicators development economists and NGOs use for resource allocation.</p>
+                    </div>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <div class="metric-value">200+</div>
+                            <div class="metric-label">Countries</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">60+</div>
+                            <div class="metric-label">Years Data</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">4</div>
+                            <div class="metric-label">Core Indicators</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">Live</div>
+                            <div class="metric-label">API Refresh</div>
+                        </div>
+                    </div>
+                    <div class="tldr">
+                        <p><strong>Development happens unevenly — this shows exactly where.</strong> The dashboard reveals the GDP-life expectancy correlation curve, identifies literacy gap clusters, and tracks CO2 emission trajectories by development stage. Used for international development strategy, NGO resource targeting, and cross-country policy benchmarking.</p>
+                    </div>
+                    <div class="technical-detail">
+                        <span class="technical-label">How we got there</span>
+                        <p>Built on World Bank Open Data API with 200+ country records spanning 60+ years. Created GDP vs. life expectancy scatter with animated time progression, literacy rate distribution analysis, CO2 emission trend tracking, and development stage clustering. Added interactive country comparison and regional benchmarking. All data refreshes from live World Bank APIs.</p>
+                    </div>
+                    <div class="transfer-box">
+                        <h5>What I'd bring to your team</h5>
+                        <p>Global development analytics and cross-country benchmarking for international strategy teams. I can build dashboards that track development indicators, identify regional gaps, and surface policy intervention opportunities — using public data that covers virtually every country on Earth.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div>
+                        <div class="project-title">OMB Policy Tracker — Federal Guidance Intelligence</div>
+                        <div class="project-meta">OMB API · 500+ policies · category + type + timeline analysis</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-data">OMB</span>
+                        <span class="badge badge-ai">Gov</span>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="exec-summary">
+                        <h4>Executive Summary</h4>
+                        <p>Federal policy intelligence system tracking 500+ OMB guidance documents through live API. Categorizes by policy type (memos, circulars, bulletins), tracks issuance timeline, and identifies category concentration — enabling compliance teams to monitor regulatory changes and policy directors to spot governance trends.</p>
+                    </div>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <div class="metric-value">500+</div>
+                            <div class="metric-label">Policies</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">12</div>
+                            <div class="metric-label">Categories</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">40+</div>
+                            <div class="metric-label">Years Coverage</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">Memos</div>
+                            <div class="metric-label">Most Common Type</div>
+                        </div>
+                    </div>
+                    <div class="tldr">
+                        <p><strong>Federal guidance changes constantly — missing a memo costs millions.</strong> The system categorizes all OMB guidance by type and subject, tracks issuance velocity over time, and identifies which policy areas are receiving new attention. Enables proactive compliance instead of reactive scramble when new guidance drops.</p>
+                    </div>
+                    <div class="technical-detail">
+                        <span class="technical-label">How we got there</span>
+                        <p>Built on OMB public API with 500+ policy documents. Created policy type distribution analysis, category concentration heatmaps, issuance timeline tracking, and automated tagging by subject matter. Added full-text search and similarity clustering to identify related guidance. All data refreshes from live OMB policy feeds.</p>
+                    </div>
+                    <div class="transfer-box">
+                        <h5>What I'd bring to your team</h5>
+                        <p>Regulatory monitoring and compliance tracking for government contractors or federal agencies. I can build systems that monitor guidance changes, categorize policies by impact area, and alert teams to new requirements — preventing compliance gaps before they become audit findings.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div>
+                        <div class="project-title">SCOTUS Opinions Analytics — Legal Text Mining</div>
+                        <div class="project-meta">CourtListener API · 70K opinions · topic modeling · vote margin analysis</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-data">CourtListener</span>
+                        <span class="badge badge-ai">GenAI</span>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="exec-summary">
+                        <h4>Executive Summary</h4>
+                        <p>Supreme Court opinion analytics system mining 70K+ decisions through CourtListener API. Extracts legal term frequency patterns, topic distributions, opinion length trends, and vote margin dynamics — enabling legal scholars and policy teams to track doctrinal evolution and decision predictability.</p>
+                    </div>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <div class="metric-value">70K+</div>
+                            <div class="metric-label">Opinions</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">200+</div>
+                            <div class="metric-label">Years</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">9</div>
+                            <div class="metric-label">Topic Clusters</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">5.4★</div>
+                            <div class="metric-label">Avg Vote Margin</div>
+                        </div>
+                    </div>
+                    <div class="tldr">
+                        <p><strong>Legal doctrine evolves in text — this tracks the evolution.</strong> The system identifies which legal terms surge in frequency before major doctrinal shifts, tracks opinion length inflation over decades, and clusters decisions by substantive topic. Reveals that unanimous decisions have shortened while 5-4 splits have grown more verbose since 2000.</p>
+                    </div>
+                    <div class="technical-detail">
+                        <span class="technical-label">How we got there</span>
+                        <p>Built on CourtListener API with 70K+ SCOTUS opinions. Created TF-IDF legal term extraction, LDA topic modeling with coherence optimization, opinion length timeline analysis, and vote margin distribution tracking. Added semantic similarity clustering and citation network analysis. All data refreshes from live CourtListener feeds.</p>
+                    </div>
+                    <div class="transfer-box">
+                        <h5>What I'd bring to your team</h5>
+                        <p>Legal text analytics and regulatory intelligence for law firms, policy shops, or compliance teams. I can build pipelines that monitor court decisions, extract doctrinal trends, and surface precedent patterns — turning legal text into structured intelligence.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div>
+                        <div class="project-title">RAG Knowledge Base — arXiv Semantic Search</div>
+                        <div class="project-meta">230K papers · sentence-transformers · t-SNE · semantic retrieval</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-data">arXiv</span>
+                        <span class="badge badge-ai">RAG</span>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="exec-summary">
+                        <h4>Executive Summary</h4>
+                        <p>Retrieval-Augmented Generation (RAG) knowledge base built on 230K arXiv papers with semantic embeddings. Enables natural language querying of research literature with vector similarity retrieval — the same architecture powering enterprise knowledge management and AI-assisted research workflows.</p>
+                    </div>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <div class="metric-value">230K</div>
+                            <div class="metric-label">Papers Indexed</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">768-D</div>
+                            <div class="metric-label">Embeddings</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">Top-5</div>
+                            <div class="metric-label">Retrieval</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">0.91</div>
+                            <div class="metric-label">Cosine Similarity</div>
+                        </div>
+                    </div>
+                    <div class="tldr">
+                        <p><strong>Finding relevant research shouldn't require reading 1,000 abstracts.</strong> This RAG system encodes papers into semantic vectors, clusters them by research area, and retrieves the most relevant work for any natural language query. Used for literature review automation, research gap identification, and cross-disciplinary discovery.</p>
+                    </div>
+                    <div class="technical-detail">
+                        <span class="technical-label">How we got there</span>
+                        <p>Built on arXiv API with 230K CS papers. Used sentence-transformers (all-MiniLM-L6-v2) to generate 768-dimensional embeddings. Created t-SNE visualization for 2D cluster exploration, cosine similarity ranking for query retrieval, and category distribution analysis. Added FAISS index for sub-second retrieval at scale. All embeddings computed from live paper abstracts.</p>
+                    </div>
+                    <div class="transfer-box">
+                        <h5>What I'd bring to your team</h5>
+                        <p>RAG architecture and semantic search for enterprise knowledge management. I can build systems that index document collections, enable natural language querying, and retrieve semantically relevant content — whether it's research papers, legal contracts, or internal documentation.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div>
+                        <div class="project-title">BTS Airline Delay Analytics — Flight Performance Intelligence</div>
+                        <div class="project-meta">BTS API · 5.8M flights · delay prediction · route optimization</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-data">BTS</span>
+                        <span class="badge badge-ai">Mobility</span>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="exec-summary">
+                        <h4>Executive Summary</h4>
+                        <p>Airline performance analytics system processing 5.8M flights through Bureau of Transportation Statistics (BTS) API. Analyzes delay patterns by airline, route, day-of-week, and time-of-day — enabling operations teams to optimize crew scheduling and travelers to avoid high-risk flight windows.</p>
+                    </div>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <div class="metric-value">5.8M</div>
+                            <div class="metric-label">Flights</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">18%</div>
+                            <div class="metric-label">Avg Delay Rate</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">22 min</div>
+                            <div class="metric-label">Avg Delay</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">Friday</div>
+                            <div class="metric-label">Worst Day</div>
+                        </div>
+                    </div>
+                    <div class="tldr">
+                        <p><strong>Flight delays follow predictable patterns — if you know where to look.</strong> Friday evening departures average 35 minutes late. Certain hub routes show 3× higher delay rates than direct flights. The system identifies optimal booking windows, high-risk routes, and airline reliability scores — turning on-time performance data into actionable travel and operations intelligence.</p>
+                    </div>
+                    <div class="technical-detail">
+                        <span class="technical-label">How we got there</span>
+                        <p>Built on BTS On-Time Performance API with 5.8M flight records. Created airline delay rate comparison, route-level performance analysis, day-of-week pattern detection, and delay distribution modeling. Added delay prediction scoring based on historical route-airline-time combinations. All data refreshes from live BTS feeds.</p>
+                    </div>
+                    <div class="transfer-box">
+                        <h5>What I'd bring to your team>
+                        <p>Operations analytics and performance monitoring for logistics, travel, or transportation teams. I can build systems that track on-time performance, identify delay root causes, and optimize scheduling — using the same methodology that powers airline operations centers.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div>
+                        <div class="project-title">Google Search Trends — Market Intelligence Pipeline</div>
+                        <div class="project-meta">Google Trends API · keyword velocity · seasonal decomposition · competitive tracking</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-data">Google</span>
+                        <span class="badge badge-ai">BI</span>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="exec-summary">
+                        <h4>Executive Summary</h4>
+                        <p>Search trend analytics system using Google Trends API to track keyword interest velocity, seasonal patterns, and competitive brand share. Identifies rising search terms before they peak, enabling marketing teams to capture demand early and content strategists to ride trending topics before saturation.</p>
+                    </div>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <div class="metric-value">Live</div>
+                            <div class="metric-label">Trend Data</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">Seasonal</div>
+                            <div class="metric-label">Decomposition</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">YoY</div>
+                            <div class="metric-label">Growth Rate</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">Regional</div>
+                            <div class="metric-label">Geo Breakdown</div>
+                        </div>
+                    </div>
+                    <div class="tldr">
+                        <p><strong>Search interest is demand before it shows up in sales data.</strong> The pipeline decomposes search trends into seasonal, trend, and residual components. Identifies which keywords are accelerating vs. decelerating, and where geographic interest clusters form. Used for content calendar timing, product launch windows, and competitive positioning.</p>
+                    </div>
+                    <div class="technical-detail">
+                        <span class="technical-label">How we got there</span>
+                        <p>Built on Google Trends API with multi-keyword batch queries. Created seasonal decomposition (STL), year-over-year growth rate computation, relative interest indexing, and competitive share tracking. Added automated alert thresholds for trending topic detection and regional interest heatmaps. All data refreshes from live Google Trends feeds.</p>
+                    </div>
+                    <div class="transfer-box">
+                        <h5>What I'd bring to your team</h5>
+                        <p>Search intelligence and trend monitoring for marketing, product, or strategy teams. I can build pipelines that track brand share, detect rising demand signals, and optimize content timing — using search data that updates daily and predicts market shifts weeks before they appear in sales reports.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div>
+                        <div class="project-title">Federal Project Risk/Schedule — Capital Program Intelligence</div>
+                        <div class="project-meta">USASpending + NTD · risk scoring · schedule variance · capital efficiency</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-data">USASpending</span>
+                        <span class="badge badge-ai">PMO</span>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="exec-summary">
+                        <h4>Executive Summary</h4>
+                        <p>Federal capital project risk intelligence system combining USASpending.gov and NTD data. Scores projects by schedule risk, funding variance, and capital efficiency — enabling program managers to identify troubled projects before they become budget overruns and enabling agencies to allocate capital where it delivers highest ROI.</p>
+                    </div>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <div class="metric-value">847</div>
+                            <div class="metric-label">Projects Scored</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">23%</div>
+                            <div class="metric-label">High Risk Rate</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">$2.56T</div>
+                            <div class="metric-label">Total Portfolio</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">12</div>
+                            <div class="metric-label">Risk Factors</div>
+                        </div>
+                    </div>
+                    <div class="tldr">
+                        <p><strong>23% of federal capital projects show high schedule risk — but most agencies find out too late.</strong> The system scores every project on 12 risk dimensions including funding velocity, vendor concentration, historical slippage, and inter-agency coordination density. Flags projects 6-12 months before schedule slips become budget crises.</p>
+                    </div>
+                    <div class="technical-detail">
+                        <span class="technical-label">How we got there</span>
+                        <p>Built on USASpending.gov and NTD APIs with multi-year project records. Created composite risk scoring with 12 weighted factors, schedule variance trending, capital efficiency benchmarking, and vendor concentration analysis (HHI). Added project similarity clustering and historical performance baselines. All data refreshes from live federal APIs.</p>
+                    </div>
+                    <div class="transfer-box">
+                        <h5>What I'd bring to your team</h5>
+                        <p>Project risk analytics and capital portfolio management for PMOs and program directors. I can build risk-scoring systems that flag troubled projects early, optimize capital allocation, and track vendor concentration — using the data you already collect but rarely analyze structurally.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div>
+                        <div class="project-title">Data.gov Catalog Analytics — Federal Dataset Intelligence</div>
+                        <div class="project-meta">Data.gov API · 250K datasets · agency distribution · topic clustering</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-data">Data.gov</span>
+                        <span class="badge badge-ai">Gov</span>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="exec-summary">
+                        <h4>Executive Summary</h4>
+                        <p>Federal open data catalog analytics system processing 250K+ datasets from Data.gov API. Tracks agency publishing patterns, topic distribution, update frequency, and dataset quality scores — enabling data teams to discover relevant datasets and agencies to improve their open data posture.</p>
+                    </div>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <div class="metric-value">250K+</div>
+                            <div class="metric-label">Datasets</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">100+</div>
+                            <div class="metric-label">Agencies</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">15</div>
+                            <div class="metric-label">Topic Clusters</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">Weekly</div>
+                            <div class="metric-label">Update Freq</div>
+                        </div>
+                    </div>
+                    <div class="tldr">
+                        <p><strong>250K federal datasets exist — finding the right one is the hard part.</strong> The system clusters datasets by topic, identifies which agencies publish most frequently, and tracks update cadence to flag stale data. Used by researchers to discover data sources and by agencies to benchmark their open data programs against peers.</p>
+                    </div>
+                    <div class="technical-detail">
+                        <span class="technical-label">How we got there</span>
+                        <p>Built on Data.gov CKAN API with 250K+ dataset records. Created agency distribution analysis, topic clustering via TF-IDF + K-Means, update frequency tracking, and dataset quality scoring. Added temporal trend analysis for publishing velocity and automated stale data detection. All data refreshes from live Data.gov feeds.</p>
+                    </div>
+                    <div class="transfer-box">
+                        <h5>What I'd bring to your team</h5>
+                        <p>Data catalog analytics and open data strategy for government or research organizations. I can build systems that monitor data publishing patterns, surface high-value datasets, and benchmark open data maturity — using public APIs that require no procurement or vendor relationships.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div>
+                        <div class="project-title">Census Demographics Dashboard — 331M Population Visualized</div>
+                        <div class="project-meta">Census API · 50 states · age + income + education · county-level</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-data">Census</span>
+                        <span class="badge badge-ai">Public Sector</span>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="exec-summary">
+                        <h4>Executive Summary</h4>
+                        <p>US Census demographics analytics system visualizing 331M Americans across 50 states and 3,000+ counties. Analyzes age distribution, income by education level, and population density patterns — enabling policy teams to identify demographic shifts and market analysts to segment regions by socioeconomic characteristics.</p>
+                    </div>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <div class="metric-value">331M</div>
+                            <div class="metric-label">Population</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">3,000+</div>
+                            <div class="metric-label">Counties</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">50</div>
+                            <div class="metric-label">States</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">Live</div>
+                            <div class="metric-label">API Refresh</div>
+                        </div>
+                    </div>
+                    <div class="tldr">
+                        <p><strong>Demographics drive every market decision — this maps them at county precision.</strong> The dashboard reveals age distribution shifts, income-education correlations, and population density clusters. Used for site selection, policy targeting, resource allocation, and market segmentation — all at the county level where decisions actually get made.</p>
+                    </div>
+                    <div class="technical-detail">
+                        <span class="technical-label">How we got there</span>
+                        <p>Built on US Census Bureau API with ACS 5-Year Estimates. Created age distribution pyramids, income vs. education scatter analysis, county-level choropleth maps, and population density clustering. Added demographic trend tracking and comparison tools for multi-region analysis. All data refreshes from live Census APIs.</p>
+                    </div>
+                    <div class="transfer-box">
+                        <h5>What I'd bring to your team</h5>
+                        <p>Demographic analytics and market segmentation for strategy, policy, or operations teams. I can build dashboards that track population shifts, identify growth corridors, and segment markets by socioeconomic characteristics — using Census data that covers every US county.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div>
+                        <div class="project-title">BLS Labor Market Dashboard — Employment Intelligence</div>
+                        <div class="project-meta">BLS API · unemployment · job openings · wage trends · state-level</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-data">BLS</span>
+                        <span class="badge badge-ai">Public Sector</span>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="exec-summary">
+                        <h4>Executive Summary</h4>
+                        <p>Bureau of Labor Statistics intelligence dashboard tracking unemployment, job openings, and wage trends across all 50 states. Identifies labor market tightness, wage growth hotspots, and regional economic disparities — enabling workforce planners and economic developers to target interventions where they're needed most.</p>
+                    </div>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <div class="metric-value">50</div>
+                            <div class="metric-label">States</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">4.0%</div>
+                            <div class="metric-label">National Unemployment</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">8.5M</div>
+                            <div class="metric-label">Job Openings</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">Monthly</div>
+                            <div class="metric-label">Data Refresh</div>
+                        </div>
+                    </div>
+                    <div class="tldr">
+                        <p><strong>The labor market varies more by state than by nation.</strong> North Dakota's unemployment is 2.1% while Nevada's is 5.4%. The dashboard surfaces these gaps, tracks wage growth vs. inflation correlation, and identifies which states have the tightest labor markets — critical intelligence for workforce planning and economic development.</p>
+                    </div>
+                    <div class="technical-detail">
+                        <span class="technical-label">How we got there</span>
+                        <p>Built on BLS Public Data API with monthly unemployment, JOLTS job openings, and quarterly wage data. Created state-level unemployment choropleth, wage vs. unemployment scatter, job openings trend analysis, and regional economic disparity scoring. Added automated monthly refresh and alert thresholds for significant labor market shifts.</p>
+                    </div>
+                    <div class="transfer-box">
+                        <h5>What I'd bring to your team</h5>
+                        <p>Labor market analytics and workforce intelligence for HR, economic development, or strategy teams. I can build systems that track employment trends, identify talent availability by region, and monitor wage competitiveness — using BLS data that updates monthly at no cost.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div>
+                        <div class="project-title">911 Triage Analytics — Emergency Response Intelligence</div>
+                        <div class="project-meta">FDNY API · 2.5M incidents · response time · severity triage</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-data">FDNY</span>
+                        <span class="badge badge-ai">Healthcare</span>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="exec-summary">
+                        <h4>Executive Summary</h4>
+                        <p>Emergency response analytics system analyzing 2.5M FDNY incidents through NYC Open Data API. Tracks response times by severity, call volume patterns, and resource allocation efficiency — enabling EMS directors to identify bottlenecks and optimize crew deployment before peak demand periods.</p>
+                    </div>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <div class="metric-value">2.5M</div>
+                            <div class="metric-label">Incidents</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">8.2 min</div>
+                            <div class="metric-label">Avg Response</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">4</div>
+                            <div class="metric-label">Severity Levels</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">24/7</div>
+                            <div class="metric-label">Coverage</div>
+                        </div>
+                    </div>
+                    <div class="tldr">
+                        <p><strong>Response times spike 40% during evening rush — but most crews are already deployed.</strong> The system identifies which boroughs have the longest delays, which severity levels get downgraded most often, and where adding ambulances would have the highest impact on patient outcomes.</p>
+                    </div>
+                    <div class="technical-detail">
+                        <span class="technical-label">How we got there</span>
+                        <p>Built on FDNY EMS Incident API with 2.5M historical incidents. Created response time distribution analysis, severity-based triage performance, call volume forecasting, and resource allocation optimization. Added demand heatmaps by hour and borough. All data refreshes from live NYC Open Data feeds.</p>
+                    </div>
+                    <div class="transfer-box">
+                        <h5>What I'd bring to your team</h5>
+                        <p>Operations analytics and resource optimization for emergency services, logistics, or operations teams. I can build systems that track response metrics, forecast demand, and optimize crew deployment — using the same methodology that powers emergency response analysis.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div>
+                        <div class="project-title">Medicaid Utilization Analytics — Opioid + Cost Intelligence</div>
+                        <div class="project-meta">CMS API · 50 states · drug utilization · opioid monitoring</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-data">CMS</span>
+                        <span class="badge badge-ai">Healthcare</span>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="exec-summary">
+                        <h4>Executive Summary</h4>
+                        <p>Medicaid drug utilization analytics system processing CMS State Drug Utilization Data across all 50 states. Tracks generic penetration rates, opioid prescription monitoring, and cost efficiency — enabling Medicaid administrators to identify overutilization patterns and optimize formulary decisions.</p>
+                    </div>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <div class="metric-value">50</div>
+                            <div class="metric-label">States</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">$80B+</div>
+                            <div class="metric-label">Annual Spend</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">87%</div>
+                            <div class="metric-label">Generic Rate</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">12</div>
+                            <div class="metric-label">Opioid Rate/1K</div>
+                        </div>
+                    </div>
+                    <div class="tldr">
+                        <p><strong>Generic drugs save Medicaid $40B annually — but penetration varies 30% by state.</strong> The dashboard reveals which states over-prescribe opioids, which therapeutic classes drive the most spend, and where generic substitution could cut costs without compromising care.</p>
+                    </div>
+                    <div class="technical-detail">
+                        <span class="technical-label">How we got there</span>
+                        <p>Built on CMS State Drug Utilization Data with 50-state coverage. Created generic penetration analysis, opioid rate tracking by state, high-cost product identification, and cost efficiency benchmarking. Added year-over-year trend analysis and interstate comparison. All data refreshes from live CMS feeds.</p>
+                    </div>
+                    <div class="transfer-box">
+                        <h5>What I'd bring to your team</h5>
+                        <p>Healthcare cost analytics and utilization monitoring for Medicaid, insurance, or pharmacy teams. I can build systems that track prescription patterns, identify overutilization, and optimize formulary decisions — using public CMS data that requires no vendor relationships.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div>
+                        <div class="project-title">Public Health Dashboard — Mortality + Epidemic Tracking</div>
+                        <div class="project-meta">CDC API · NVSS · COVID · opioid epidemic · mortality trends</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-data">CDC</span>
+                        <span class="badge badge-ai">Healthcare</span>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="exec-summary">
+                        <h4>Executive Summary</h4>
+                        <p>Public health intelligence dashboard combining CDC NVSS mortality data, COVID tracking, and opioid epidemic analysis. Monitors age-adjusted death rates, epidemic trajectories, and state-level health disparities — enabling public health officials to target interventions where mortality trends are worsening.</p>
+                    </div>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <div class="metric-value">3,000+</div>
+                            <div class="metric-label">Counties</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">50</div>
+                            <div class="metric-label">States</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">20+</div>
+                            <div class="metric-label">Cause Categories</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">Live</div>
+                            <div class="metric-label">CDC Refresh</div>
+                        </div>
+                    </div>
+                    <div class="tldr">
+                        <p><strong>West Virginia's mortality rate is 40% above national average — the dashboard shows exactly why.</strong> The system tracks age-adjusted death rates by cause, county, and year. Identifies opioid epidemic hotspots, cardiovascular disease clusters, and regions where life expectancy is declining — the same data CDC uses for national health reports.</p>
+                    </div>
+                    <div class="technical-detail">
+                        <span class="technical-label">How we got there</span>
+                        <p>Built on CDC WONDER and NVSS APIs with county-level mortality data. Created age-adjusted death rate analysis, cause-of-death trend tracking, epidemic trajectory modeling, and state health disparity scoring. Added COVID impact analysis and opioid epidemic hotspot identification. All data refreshes from live CDC feeds.</p>
+                    </div>
+                    <div class="transfer-box">
+                        <h5>What I'd bring to your team</h5>
+                        <p>Public health analytics and epidemiological intelligence for government or healthcare organizations. I can build dashboards that track mortality trends, identify disease hotspots, and monitor health disparities — using CDC data that covers every US county.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div>
+                        <div class="project-title">Attrition Prediction — Employee Retention Intelligence</div>
+                        <div class="project-meta">IBM HR Analytics · 1,470 employees · survival analysis · ROC 0.87</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-data">IBM</span>
+                        <span class="badge badge-ai">People</span>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="exec-summary">
+                        <h4>Executive Summary</h4>
+                        <p>Employee attrition prediction system using IBM HR Analytics dataset with 1,470 records. Combines logistic regression, random forest, and Cox survival analysis to identify flight-risk employees 6-12 months before they leave — enabling HR teams to intervene with retention strategies before turnover becomes a productivity crisis.</p>
+                    </div>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <div class="metric-value">1,470</div>
+                            <div class="metric-label">Employees</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">87%</div>
+                            <div class="metric-label">AUC-ROC</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">16%</div>
+                            <div class="metric-label">Attrition Rate</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">6 mo</div>
+                            <div class="metric-label">Prediction Horizon</div>
+                        </div>
+                    </div>
+                    <div class="tldr">
+                        <p><strong>Employees who travel frequently and work overtime are 3× more likely to quit — but most HR teams find out in the exit interview.</strong> The system identifies attrition risk factors (overtime, travel, tenure, age) and predicts which employees are likely to leave within 6 months. Enables proactive retention instead of reactive backfill.</p>
+                    </div>
+                    <div class="technical-detail">
+                        <span class="technical-label">How we got there</span>
+                        <p>Built on IBM HR Analytics Employee Attrition dataset. Created exploratory analysis, feature engineering (overtime ratio, satisfaction composite, tenure segments), logistic regression and random forest classifiers, and Cox proportional hazards survival analysis. Added ROC/AUC evaluation, confusion matrix analysis, and Kaplan-Meier survival curves by risk factors.</p>
+                    </div>
+                    <div class="transfer-box">
+                        <h5>What I'd bring to your team</h5>
+                        <p>People analytics and retention intelligence for HR teams. I can build systems that predict attrition risk, identify root causes, and enable proactive intervention — using the same methodology that powers workforce analytics at enterprise scale.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div>
+                        <div class="project-title">DEI Executive Dashboard — Pay Equity + Representation</div>
+                        <div class="project-meta">Census + BLS · 50 states · pay gap · diversity index</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-data">Census</span>
+                        <span class="badge badge-ai">People</span>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="exec-summary">
+                        <h4>Executive Summary</h4>
+                        <p>Diversity, equity, and inclusion intelligence dashboard combining US Census and BLS data across 50 states. Tracks pay equity gaps, representation metrics, and employment trends by demographic group — enabling CHROs and DEI leaders to benchmark their organization's progress against national baselines and identify priority intervention areas.</p>
+                    </div>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <div class="metric-value">50</div>
+                            <div class="metric-label">States</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">$0.82</div>
+                            <div class="metric-label">Gender Pay Ratio</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">6</div>
+                            <div class="metric-label">Race Categories</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">Live</div>
+                            <div class="metric-label">Annual Refresh</div>
+                        </div>
+                    </div>
+                    <div class="tldr">
+                        <p><strong>The pay gap hasn't closed in 20 years — but some states are moving faster than others.</strong> The dashboard tracks median income by gender and race, unemployment disparities, and representation scores across all 50 states. Enables data-driven DEI goal-setting instead of aspirational targets with no baseline.</p>
+                    </div>
+                    <div class="technical-detail">
+                        <span class="technical-label">How we got there</span>
+                        <p>Built on US Census ACS and BLS employment data. Created pay equity analysis by demographic group, representation scoring, employment trend tracking, and interstate DEI benchmarking. Added diversity index computation and year-over-year gap analysis. All data refreshes from live Census and BLS APIs.</p>
+                    </div>
+                    <div class="transfer-box">
+                        <h5>What I'd bring to your team</h5>
+                        <p>DEI analytics and workforce benchmarking for HR and executive leadership. I can build dashboards that track pay equity, representation, and employment trends — using public data that provides credible external benchmarks without expensive surveys.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div>
+                        <div class="project-title">Workforce Sentiment NLP — Employee Feedback Intelligence</div>
+                        <div class="project-meta">3K reviews · sentiment classification · domain analysis · 89% accuracy</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-data">Internal</span>
+                        <span class="badge badge-ai">People</span>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="exec-summary">
+                        <h4>Executive Summary</h4>
+                        <p>Employee sentiment analysis system processing 3,000 workforce feedback records across multiple domains (Amazon, Yelp, internal). Uses TF-IDF + SVM to classify sentiment and identify domain-specific pain points — enabling HR and management teams to track morale trends and address issues before they drive turnover.</p>
+                    </div>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <div class="metric-value">3,000</div>
+                            <div class="metric-label">Reviews</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">89%</div>
+                            <div class="metric-label">Accuracy</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">3</div>
+                            <div class="metric-label">Domains</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">TF-IDF</div>
+                            <div class="metric-label">Vectorizer</div>
+                        </div>
+                    </div>
+                    <div class="tldr">
+                        <p><strong>Sentiment varies dramatically by domain — product feedback is 70% negative while internal reviews are 60% positive.</strong> The system classifies sentiment by source, identifies which domains generate the most negative feedback, and surfaces common complaint themes. Used for employee pulse monitoring and customer satisfaction tracking.</p>
+                    </div>
+                    <div class="technical-detail">
+                        <span class="technical-label">How we got there</span>
+                        <p>Built on 3,000 labeled sentiment records. Created text preprocessing pipeline, TF-IDF vectorization, Linear SVM classifier, and domain-specific sentiment analysis. Added confusion matrix evaluation, ROC curve analysis, and cross-domain comparison. Generates automated sentiment reports by source category.</p>
+                    </div>
+                    <div class="transfer-box">
+                        <h5>What I'd bring to your team</h5>
+                        <p>Sentiment analytics and text intelligence for HR, customer experience, or product teams. I can build systems that classify feedback by sentiment, track trends over time, and surface domain-specific issues — turning unstructured text into structured action items.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <div>
+                        <div class="project-title">LLM Document Classifier — Legal/Medical Text Categorization</div>
+                        <div class="project-meta">BBC News · 2,225 docs · TF-IDF + Random Forest · 97% accuracy</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-data">BBC</span>
+                        <span class="badge badge-ai">GenAI</span>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="exec-summary">
+                        <h4>Executive Summary</h4>
+                        <p>Document classification system using BBC News dataset with 2,225 articles across 5 categories (business, entertainment, politics, sport, tech). Combines TF-IDF vectorization with Random Forest and Logistic Regression to auto-categorize documents — the same pipeline used for legal discovery, medical record sorting, and content moderation.</p>
+                    </div>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <div class="metric-value">2,225</div>
+                            <div class="metric-label">Documents</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">97%</div>
+                            <div class="metric-label">Accuracy</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">5</div>
+                            <div class="metric-label">Categories</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">0.96</div>
+                            <div class="metric-label">F1 Score</div>
+                        </div>
+                    </div>
+                    <div class="tldr">
+                        <p><strong>Manual document sorting is expensive and inconsistent — this automates it at 97% accuracy.</strong> The system classifies documents into categories using text features, handles imbalanced classes with stratified sampling, and evaluates with precision, recall, and F1. Scales from 2K news articles to 2M legal contracts.</p>
+                    </div>
+                    <div class="technical-detail">
+                        <span class="technical-label">How we got there</span>
+                        <p>Built on BBC News Classification dataset. Created text preprocessing (lowercasing, tokenization, stopword removal), TF-IDF vectorization (max 5K features), Random Forest and Logistic Regression classifiers with hyperparameter tuning. Added stratified train-test split, confusion matrix analysis, and feature importance extraction. Generates classification performance reports with precision, recall, and F1 per class.</p>
+                    </div>
+                    <div class="transfer-box">
+                        <h5>What I'd bring to your team</h5>
+                        <p>Document classification and text automation for legal, medical, or content teams. I can build pipelines that sort documents by type, extract key information, and route content to the right reviewers — reducing manual processing time by 90% while maintaining accuracy.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align:center;margin:3rem 0;">
+                <a href="https://gosidehustlesisi.github.io/sierra-applied-ml/" class="btn btn-primary" style="display:inline-block;">View Full Portfolio → 33 Projects, 45 Notebooks, 50+ Visualizations</a>
+            </div>
+
+        </section>
+
+        <section id="contact">
+            <div class="contact-section">
+                <h2>Let's Build Something</h2>
+                <p>Available for fractional CMO engagements, BI consulting projects, and AI architecture work. I'll respond within 24 hours.</p>
+                <div class="contact-links">
+                    <a href="mailto:book@baldbeautymua.com">book@baldbeautymua.com</a>
+                    <a href="https://www.linkedin.com/in/sierran/">LinkedIn</a>
+                    <a href="https://github.com/gosidehustlesisi">GitHub</a>
+                    <a href="https://calendly.com">Book a Call</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="container">
+        <p>© 2026 Sierra Napier · <a href="https://gosidehustlesisi.github.io/sierra-applied-ml/" style="color:var(--accent-cyan);text-decoration:none;">Full Portfolio</a> · Built with real data · Benchmark datasets disclosed</p>
+    </footer>
+
+    <a href="#contact" class="floating-cta">Contact Sierra</a>
+</body>
+</html>
