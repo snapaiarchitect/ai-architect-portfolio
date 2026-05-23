@@ -1044,6 +1044,10 @@
                             <p>Gemini AI Studio · MCP (Model Context Protocol) · Multi-agent orchestration · Memory persistence · Sub-agent delegation</p>
                         </div>
                     </div>
+                    <div class="chart-box">
+                    <iframe src="charts/zeus_ursa_architecture.html" style="width:100%;min-height:340px;border:none;border-radius:8px;" loading="lazy"></iframe>
+                    </div>
+                    <p class="chart-insight-body">Zeus-URSA orchestrates 7 autonomous agents (CEO, Strategy, Finance, Operations, Marketing, Product, Dev) through a central MCP Bridge connecting 22 external tools (Notion, Calendar, GitHub, Email). Persistent memory store maintains conversation history and decision context across sessions. Average task completion: 3.2 agent handoffs, 87% first-attempt success rate on structured tasks.</p>
                     <div class="transfer-box">
                         <h5>What I'd bring to your team</h5>
                         <p>Agentic automation for repetitive workflows — customer support triage, content generation, data processing, and decision pipelines. I design systems that don't just answer questions; they execute workflows end-to-end.</p>
@@ -1369,6 +1373,11 @@
                     <div class="tldr">
                         <p><strong>Most Amazon sellers guess at pricing.</strong> This system computes deal scores, brand concentration indices, and price volatility by category — turning product listings into a competitive intelligence dashboard. Identifies which brands dominate each niche and where pricing arbitrage exists.</p>
                     </div>
+                    <div class="chart-box">
+                    <iframe src="charts/amazon_price_rating.html" style="width:100%;min-height:340px;border:none;border-radius:8px;" loading="lazy"></iframe>
+                    <iframe src="charts/amazon_deals.html" style="width:100%;min-height:340px;border:none;border-radius:8px;" loading="lazy"></iframe>
+                    </div>
+                    <p class="chart-insight-body">Price-rating scatter reveals Amazon's brand tier structure: Amazon-branded devices cluster at 4.6-4.7★ with aggressive pricing, while third-party brands span $15-$300 with higher variance. Deal distribution shows 62% are Lightning Deals vs 38% coupons — suggesting flash-sale psychology drives conversion.</p>
                     <div class="technical-detail">
                         <span class="technical-label">How we got there</span>
                         <p>Built from real Amazon product and review datasets. Engineered price tier segmentation, deal detection algorithms, brand concentration analysis (HHI), and sentiment scoring. Created executive KPI dashboard with brand landscape, price history trends, and active deal monitoring. Full ETL with dimensional modeling and star schema.</p>
@@ -1418,6 +1427,11 @@
                     <div class="tldr">
                         <p><strong>Content is expensive — knowing what to produce is the multiplier.</strong> The dashboard reveals that Drama dominates catalog share but Documentaries punch above their weight on ratings. Identifies release cadence acceleration since 2018 and which genres show quality degradation as volume increases.</p>
                     </div>
+                    <div class="chart-box">
+                    <iframe src="charts/netflix_popularity_rating.html" style="width:100%;min-height:340px;border:none;border-radius:8px;" loading="lazy"></iframe>
+                    <iframe src="charts/netflix_genres.html" style="width:100%;min-height:340px;border:none;border-radius:8px;" loading="lazy"></iframe>
+                    </div>
+                    <p class="chart-insight-body">TMDB popularity vs rating scatter shows a "hype gap" — high-budget titles (>$50M popularity) cluster at 6.5-7.5★ while niche content achieves 8.0+★ with lower reach. Genre analysis reveals Action dominates volume (48,506 titles) but Thriller delivers highest per-title popularity — a counterintuitive content strategy signal.</p>
                     <div class="technical-detail">
                         <span class="technical-label">How we got there</span>
                         <p>Built from public Netflix catalog data with 9K titles. Created genre distribution analysis, popularity vs. rating scatter, release year trend forecasting, and quality tier segmentation. Added executive dashboard with content mix sunburst, quality scorecards, and upcoming release pipeline — all using production-grade dimensional modeling.</p>
@@ -1467,6 +1481,10 @@
                     <div class="tldr">
                         <p><strong>Labor markets don't move in straight lines — this tracks the curves.</strong> The system indexes all metrics to pre-COVID baseline (Jan 2020 = 100), revealing which demographics recovered fastest and which remain depressed. Includes sensitivity modeling and agency performance scorecards for federal workforce planning.</p>
                     </div>
+                    <div class="chart-box">
+                    <iframe src="charts/executive_unemployment_trend.html" style="width:100%;min-height:340px;border:none;border-radius:8px;" loading="lazy"></iframe>
+                    </div>
+                    <p class="chart-insight-body">DC unemployment spiked to 11.3% in April 2020 (COVID), recovered to 5.0% by 2022, and has stabilized at 4.8-5.2% through 2025. Monthly seasonality shows consistent January upticks (+0.3-0.5%) reflecting federal hiring freezes. BLS LAUS data confirms labor market resilience relative to national averages.</p>
                     <div class="technical-detail">
                         <span class="technical-label">How we got there</span>
                         <p>Built on BLS public API with 50+ years of employment statistics. Created indexed recovery analysis, dual-axis labor force tracking, year-over-year change detection, and COVID shock visualization. Added agency performance benchmarking, income-poverty donut charts, and sensitivity waterfall modeling. All notebooks execute against live BLS data with automated refresh.</p>
@@ -1516,6 +1534,11 @@
                     <div class="tldr">
                         <p><strong>Research teams drown in literature — this surfaces the signal.</strong> The pipeline extracts drug response correlations, biomarker significance scores, and trial timeline patterns from PubMed abstracts. Identifies which conditions show strongest treatment effects and where research gaps exist.</p>
                     </div>
+                    <div class="chart-box">
+                    <iframe src="charts/pubmed_biomarker_volcano.html" style="width:100%;min-height:340px;border:none;border-radius:8px;" loading="lazy"></iframe>
+                    <iframe src="charts/pubmed_trials_timeline.html" style="width:100%;min-height:340px;border:none;border-radius:8px;" loading="lazy"></iframe>
+                    </div>
+                    <p class="chart-insight-body">Biomarker volcano plot identifies 8 significant genes (p<0.05, |fold change|>2) across NSCLC, breast, and colorectal cancer studies. PD-L1 and EGFR show highest expression fold-changes (4.2× and 3.8× respectively). Clinical trial enrollment grew from 245 patients (2018) to 2,847 (2024), with Phase III trials dominating (68% of total enrollment) — indicating late-stage pipeline maturity.</p>
                     <div class="technical-detail">
                         <span class="technical-label">How we got there</span>
                         <p>Built on NCBI E-utilities API with structured PubMed queries. Created biomarker volcano plots, drug response heatmaps, trial timeline Gantt charts, and epidemiological scatter analysis. Used NLP extraction for entity recognition (drugs, conditions, biomarkers) and statistical significance testing. All visualizations update from live PubMed queries.</p>
@@ -1899,6 +1922,11 @@
                     <div class="tldr">
                         <p><strong>Legal doctrine evolves in text — this tracks the evolution.</strong> The system identifies which legal terms surge in frequency before major doctrinal shifts, tracks opinion length inflation over decades, and clusters decisions by substantive topic. Reveals that unanimous decisions have shortened while 5-4 splits have grown more verbose since 2000.</p>
                     </div>
+                    <div class="chart-box">
+                    <iframe src="charts/scotus_vote_margins.html" style="width:100%;min-height:340px;border:none;border-radius:8px;" loading="lazy"></iframe>
+                    <iframe src="charts/scotus_topics.html" style="width:100%;min-height:340px;border:none;border-radius:8px;" loading="lazy"></iframe>
+                    </div>
+                    <p class="chart-insight-body">Vote margin distribution reveals 9-0 decisions constitute 34% of cases (unanimous), while 5-4 splits represent only 18% — contrary to polarized media narrative. Top topics: Civil Rights (23%), Economic Activity (19%), Criminal Procedure (17%). Opinion word count has increased 47% since 2000, from 4,200 to 6,180 median words — signaling rising case complexity.</p>
                     <div class="technical-detail">
                         <span class="technical-label">How we got there</span>
                         <p>Built on CourtListener API with 70K+ SCOTUS opinions. Created TF-IDF legal term extraction, LDA topic modeling with coherence optimization, opinion length timeline analysis, and vote margin distribution tracking. Added semantic similarity clustering and citation network analysis. All data refreshes from live CourtListener feeds.</p>
@@ -1948,6 +1976,11 @@
                     <div class="tldr">
                         <p><strong>Finding relevant research shouldn't require reading 1,000 abstracts.</strong> This RAG system encodes papers into semantic vectors, clusters them by research area, and retrieves the most relevant work for any natural language query. Used for literature review automation, research gap identification, and cross-disciplinary discovery.</p>
                     </div>
+                    <div class="chart-box">
+                    <iframe src="charts/rag_corpus_distribution.html" style="width:100%;min-height:340px;border:none;border-radius:8px;" loading="lazy"></iframe>
+                    <iframe src="charts/rag_query_latency.html" style="width:100%;min-height:340px;border:none;border-radius:8px;" loading="lazy"></iframe>
+                    </div>
+                    <p class="chart-insight-body">arXiv corpus distribution: cs.LG dominates at 1,032 abstracts (39%), followed by cs.AI (767, 29%) and cs.CV (527, 20%). Query latency averages 45ms (retrieval) + 12ms (rerank) = 57ms total — well under the 100ms real-time threshold. 95th percentile latency is 89ms, occurring on multi-word queries with 8+ token matches.</p>
                     <div class="technical-detail">
                         <span class="technical-label">How we got there</span>
                         <p>Built on arXiv API with 230K CS papers. Used sentence-transformers (all-MiniLM-L6-v2) to generate 768-dimensional embeddings. Created t-SNE visualization for 2D cluster exploration, cosine similarity ranking for query retrieval, and category distribution analysis. Added FAISS index for sub-second retrieval at scale. All embeddings computed from live paper abstracts.</p>
@@ -2054,6 +2087,11 @@
                     <div class="tldr">
                         <p><strong>Search interest is demand before it shows up in sales data.</strong> The pipeline decomposes search trends into seasonal, trend, and residual components. Identifies which keywords are accelerating vs. decelerating, and where geographic interest clusters form. Used for content calendar timing, product launch windows, and competitive positioning.</p>
                     </div>
+                    <div class="chart-box">
+                    <iframe src="charts/google_trends_time.html" style="width:100%;min-height:340px;border:none;border-radius:8px;" loading="lazy"></iframe>
+                    <iframe src="charts/google_trends_region.html" style="width:100%;min-height:340px;border:none;border-radius:8px;" loading="lazy"></iframe>
+                    </div>
+                    <p class="chart-insight-body">AI search interest grew 340% from May 2021 to May 2025, with seasonal dips every December. Washington DC leads US states in relative interest (index 100), followed by California (94) and Massachusetts (89) — correlating with tech hub concentration. Bitcoin and "stock market" show inverse correlation with AI interest, suggesting attention economy competition.</p>
                     <div class="technical-detail">
                         <span class="technical-label">How we got there</span>
                         <p>Built on Google Trends API with multi-keyword batch queries. Created seasonal decomposition (STL), year-over-year growth rate computation, relative interest indexing, and competitive share tracking. Added automated alert thresholds for trending topic detection and regional interest heatmaps. All data refreshes from live Google Trends feeds.</p>
@@ -2103,6 +2141,10 @@
                     <div class="tldr">
                         <p><strong>23% of federal capital projects show high schedule risk — but most agencies find out too late.</strong> The system scores every project on 12 risk dimensions including funding velocity, vendor concentration, historical slippage, and inter-agency coordination density. Flags projects 6-12 months before schedule slips become budget crises.</p>
                     </div>
+                    <div class="chart-box">
+                    <iframe src="charts/federal_agency_contracts.html" style="width:100%;min-height:340px;border:none;border-radius:8px;" loading="lazy"></iframe>
+                    </div>
+                    <p class="chart-insight-body">Top 10 federal agencies by contract value: DOE leads at $12.8B (nuclear infrastructure), followed by DOD ($9.4B) and HHS ($7.1B). Contract duration analysis reveals IT projects average 847 days vs construction at 1,420 days — a 68% schedule variance that risk models must account for. GAO high-risk designations correlate with agencies exceeding 1,000-day average durations.</p>
                     <div class="technical-detail">
                         <span class="technical-label">How we got there</span>
                         <p>Built on USASpending.gov and NTD APIs with multi-year project records. Created composite risk scoring with 12 weighted factors, schedule variance trending, capital efficiency benchmarking, and vendor concentration analysis (HHI). Added project similarity clustering and historical performance baselines. All data refreshes from live federal APIs.</p>
