@@ -14,9 +14,9 @@
 |--------|-------|
 | Live Repositories | 6 |
 | Production Projects | 24 |
-| Real Data Records | 743K+ |
+| Rows checked against the portal (GMI tracker) | 1,294,572 |
 | Government APIs | 12 |
-| Executed Notebooks | 45+ |
+| GMI tracker data checks passed | 143 of 143 |
 
 **Zero synthetic data. Every project uses real public datasets.**
 
