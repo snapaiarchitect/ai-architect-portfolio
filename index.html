@@ -13,6 +13,10 @@
     <meta name="twitter:title" content="Sierra Napier — Fractional CMO & BI Consulting">
     <meta name="twitter:description" content="Fractional CMO | BI Consulting | AI Architecture. 1.29M rows. 6 Maryland open datasets. 143/143 checks passed.">
     <title>Sierra Napier — Fractional CMO & BI Consulting</title>
+    <meta name="theme-color" content="#0a0e1a">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
     <style>
         :root {
             --bg-deep: #0a0e1a;
@@ -21,7 +25,7 @@
             --border: #1f2d44;
             --text-primary: #f0f0f0;
             --text-secondary: #94a3b8;
-            --text-muted: #64748b;
+            --text-muted: #8493a8;
             --accent-gold: #f59e0b;
             --accent-cyan: #06b6d4;
             --accent-gold-hover: #fbbf24;
@@ -750,20 +754,32 @@
         .coming-soon { margin-top: 3rem; border: 1px dashed var(--border); border-radius: 12px; padding: 1rem 1.5rem; }
         .coming-soon > summary { cursor: pointer; font-weight: 600; color: var(--accent-gold); }
         .coming-soon[open] > summary { margin-bottom: 0.5rem; }
+    
+        /* Accessibility and polish */
+        :focus-visible { outline: 3px solid var(--accent-cyan); outline-offset: 2px; border-radius: 4px; }
+        .floating-cta { transition: opacity 0.2s, transform 0.2s; }
+        .floating-cta.is-hidden { opacity: 0; pointer-events: none; transform: translateY(8px); }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .avatar-ring { animation: none; }
+            *, *::before, *::after { transition-duration: 0.01ms !important; }
+            .btn:hover, .project-card:hover { transform: none; }
+        }
     </style>
 </head>
 <body>
     <nav>
         <div class="container">
             <div class="nav-inner">
-                <a href="/" class="nav-brand">
-                    <img src="assets/logo.png" alt="Sierra Napier" onerror="this.style.display='none';this.parentNode.innerHTML='\u003cspan style=\'width:32px;height:32px;background:var(--bg-elevated);border-radius:6px;display:flex;align-items:center;justify-content:center;color:var(--accent-gold);font-weight:700;font-size:0.8rem;\'\u003eSierra Napier\u003c/span\u003e Sierra Napier'">
+                <a href="./" class="nav-brand">
+                    <img src="assets/logo.png" width="32" height="32" alt="Sierra Napier" onerror="this.style.display='none';this.parentNode.innerHTML='\u003cspan style=\'width:32px;height:32px;background:var(--bg-elevated);border-radius:6px;display:flex;align-items:center;justify-content:center;color:var(--accent-gold);font-weight:700;font-size:0.8rem;\'\u003eSierra Napier\u003c/span\u003e Sierra Napier'">
                     <span id="nav-text">Sierra Napier</span>
                 </a>
                 <ul class="nav-links">
                     <li><a href="#about">About</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="demo/gmi-savings-tracker.html">Live Demo</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
@@ -774,7 +790,7 @@
         <div class="container">
             <div class="avatar-wrap">
                 <div class="avatar-ring"></div>
-                <img src="assets/avatar.png" alt="Sierra Napier" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'160\' height=\'160\'%3E%3Crect fill=\'%23111827\' width=\'160\' height=\'160\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%23f59e0b\' font-size=\'48\' font-weight=\'700\' font-family=\'system-ui\'%3ESierra Napier%3C/text%3E%3C/svg%3E'">
+                <img src="assets/avatar.png" width="160" height="160" alt="Sierra Napier" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'160\' height=\'160\'%3E%3Crect fill=\'%23111827\' width=\'160\' height=\'160\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%23f59e0b\' font-size=\'48\' font-weight=\'700\' font-family=\'system-ui\'%3ESierra Napier%3C/text%3E%3C/svg%3E'">
             </div>
             <h1>Sierra Napier</h1>
             <div class="hero-badges">
@@ -806,6 +822,7 @@
             <div class="hero-cta">
                 <a href="#services" class="btn btn-primary">View Services</a>
                 <a href="#portfolio" class="btn btn-secondary">See Portfolio</a>
+                <a href="demo/gmi-savings-tracker.html" class="btn btn-secondary">Live Demo</a>
                 <a href="#contact" class="btn btn-accent">Book a Call</a>
             </div>
         </div>
@@ -962,7 +979,7 @@
                         <span class="badge badge-live">● LIVE</span>
                         <span class="badge badge-data">MARYLAND OPEN DATA</span>
                         <span class="badge badge-avail">TESTING GROUND v3</span>
-                        <a href="https://evo3-ecosystem.github.io/gmi-savings-tracker-v3/#t-over" class="demo-link" target="_blank" rel="noopener">Open this tab →</a>
+                        <a href="demo/gmi-savings-tracker.html#over" class="demo-link">Live demo →</a>
                     </div>
                 </div>
                 <div class="project-body">
@@ -1000,7 +1017,7 @@
                         <span class="badge badge-live">● LIVE</span>
                         <span class="badge badge-data">MARYLAND OPEN DATA</span>
                         <span class="badge badge-avail">TESTING GROUND v3</span>
-                        <a href="https://evo3-ecosystem.github.io/gmi-savings-tracker-v3/#t-areas" class="demo-link" target="_blank" rel="noopener">Open this tab →</a>
+                        <a href="demo/gmi-savings-tracker.html#areas" class="demo-link">Live demo →</a>
                     </div>
                 </div>
                 <div class="project-body">
@@ -1038,7 +1055,7 @@
                         <span class="badge badge-live">● LIVE</span>
                         <span class="badge badge-data">MARYLAND OPEN DATA</span>
                         <span class="badge badge-avail">TESTING GROUND v3</span>
-                        <a href="https://evo3-ecosystem.github.io/gmi-savings-tracker-v3/#t-track" class="demo-link" target="_blank" rel="noopener">Open this tab →</a>
+                        <a href="demo/gmi-savings-tracker.html#track" class="demo-link">Live demo →</a>
                     </div>
                 </div>
                 <div class="project-body">
@@ -1076,7 +1093,7 @@
                         <span class="badge badge-live">● LIVE</span>
                         <span class="badge badge-data">MARYLAND OPEN DATA</span>
                         <span class="badge badge-avail">TESTING GROUND v3</span>
-                        <a href="https://evo3-ecosystem.github.io/gmi-savings-tracker-v3/#t-opp" class="demo-link" target="_blank" rel="noopener">Open this tab →</a>
+                        <a href="demo/gmi-savings-tracker.html#opp" class="demo-link">Live demo →</a>
                     </div>
                 </div>
                 <div class="project-body">
@@ -1114,7 +1131,7 @@
                         <span class="badge badge-live">● LIVE</span>
                         <span class="badge badge-data">MARYLAND OPEN DATA</span>
                         <span class="badge badge-avail">TESTING GROUND v3</span>
-                        <a href="https://evo3-ecosystem.github.io/gmi-savings-tracker-v3/#t-calc" class="demo-link" target="_blank" rel="noopener">Open this tab →</a>
+                        <a href="demo/gmi-savings-tracker.html#calc" class="demo-link">Live demo →</a>
                     </div>
                 </div>
                 <div class="project-body">
@@ -1152,7 +1169,7 @@
                         <span class="badge badge-live">● LIVE</span>
                         <span class="badge badge-data">MARYLAND OPEN DATA</span>
                         <span class="badge badge-avail">TESTING GROUND v3</span>
-                        <a href="https://evo3-ecosystem.github.io/gmi-savings-tracker-v3/#t-fcast" class="demo-link" target="_blank" rel="noopener">Open this tab →</a>
+                        <a href="demo/gmi-savings-tracker.html#fcast" class="demo-link">Live demo →</a>
                     </div>
                 </div>
                 <div class="project-body">
@@ -1190,7 +1207,7 @@
                         <span class="badge badge-live">● LIVE</span>
                         <span class="badge badge-data">MARYLAND OPEN DATA</span>
                         <span class="badge badge-avail">TESTING GROUND v3</span>
-                        <a href="https://evo3-ecosystem.github.io/gmi-savings-tracker-v3/#t-vend" class="demo-link" target="_blank" rel="noopener">Open this tab →</a>
+                        <a href="demo/gmi-savings-tracker.html#vend" class="demo-link">Live demo →</a>
                     </div>
                 </div>
                 <div class="project-body">
@@ -1228,7 +1245,7 @@
                         <span class="badge badge-live">● LIVE</span>
                         <span class="badge badge-data">MARYLAND OPEN DATA</span>
                         <span class="badge badge-avail">TESTING GROUND v3</span>
-                        <a href="https://evo3-ecosystem.github.io/gmi-savings-tracker-v3/#t-agency" class="demo-link" target="_blank" rel="noopener">Open this tab →</a>
+                        <a href="demo/gmi-savings-tracker.html#agency" class="demo-link">Live demo →</a>
                     </div>
                 </div>
                 <div class="project-body">
@@ -1266,7 +1283,7 @@
                         <span class="badge badge-live">● LIVE</span>
                         <span class="badge badge-data">MARYLAND OPEN DATA</span>
                         <span class="badge badge-avail">TESTING GROUND v3</span>
-                        <a href="https://evo3-ecosystem.github.io/gmi-savings-tracker-v3/#t-budget" class="demo-link" target="_blank" rel="noopener">Open this tab →</a>
+                        <a href="demo/gmi-savings-tracker.html#budget" class="demo-link">Live demo →</a>
                     </div>
                 </div>
                 <div class="project-body">
@@ -1304,7 +1321,7 @@
                         <span class="badge badge-live">● LIVE</span>
                         <span class="badge badge-data">MARYLAND OPEN DATA</span>
                         <span class="badge badge-avail">TESTING GROUND v3</span>
-                        <a href="https://evo3-ecosystem.github.io/gmi-savings-tracker-v3/#t-data" class="demo-link" target="_blank" rel="noopener">Open this tab →</a>
+                        <a href="demo/gmi-savings-tracker.html#data" class="demo-link">Live demo →</a>
                     </div>
                 </div>
                 <div class="project-body">
@@ -3330,7 +3347,7 @@
             </details>
 
             <div style="text-align:center;margin:3rem 0;">
-                <a href="https://evo3-ecosystem.github.io/gmi-savings-tracker-v3/" class="btn btn-primary" style="display:inline-block;" target="_blank" rel="noopener">Open the live GMI Savings Tracker → 10 tabs, 6 datasets, 143 checks</a>
+                <a href="demo/gmi-savings-tracker.html" class="btn btn-primary" style="display:inline-block;">Open the live GMI Savings Tracker → 10 tabs, 6 datasets, 143 checks</a>
             </div>
 
         </section>
@@ -3369,6 +3386,15 @@
             var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){load(e.target);io.unobserve(e.target);}});},{rootMargin:'600px 0px'});
             boxes.forEach(function(b){io.observe(b);});
         } else { boxes.forEach(load); }
+    })();
+    </script>
+
+    <script>
+    (function(){
+        var cta=document.querySelector('.floating-cta'); if(!cta||!('IntersectionObserver' in window))return;
+        var seen=new Set();
+        var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)seen.add(e.target);else seen.delete(e.target);});cta.classList.toggle('is-hidden',seen.size>0);});
+        document.querySelectorAll('#contact, .gmi-live').forEach(function(el){io.observe(el);});
     })();
     </script>
 </body>
