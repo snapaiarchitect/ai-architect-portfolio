@@ -103,8 +103,9 @@
 
         function load(key) {
             current = key;
-            var url = BASE + '#t-' + key;
-            newtab.href = url; blockedlink.href = url;
+            var url = BASE + '?palette=portfolio&embed=1#t-' + key;   // portfolio colours and no duplicate header (ignored by older tracker builds)
+            var full = BASE + '#t-' + key;
+            newtab.href = full; blockedlink.href = full;
             [].forEach.call(chips.children, function (b) { b.setAttribute('aria-pressed', String(b.dataset.key === key)); });
             box.classList.remove('is-blocked');
             status.textContent = 'Loading the live dashboard…';
