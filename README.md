@@ -2,8 +2,8 @@
 
 > **I analyze complex data at scale, architect AI systems that automate it, and visualize the story so stakeholders act on it.**
 
-- 🔗 **Live Portfolio:** [gosidehustlesisi.github.io](https://gosidehustlesisi.github.io/)
-- 💼 **Consulting Services:** [gosidehustlesisi.github.io/side-hustle.html](https://gosidehustlesisi.github.io/side-hustle.html)
+- 🔗 **Live Portfolio:** [goaiarchitect.io](https://goaiarchitect.io/)
+- 💼 **Consulting Services:** [goaiarchitect.io/side-hustle.html](https://goaiarchitect.io/side-hustle.html)
 - 🎯 **ML Portfolio:** [gosidehustlesisi.github.io/sierra-applied-ml/](https://gosidehustlesisi.github.io/sierra-applied-ml/)
 
 ---
@@ -63,7 +63,7 @@ My foundation is **MPA/MPH** — policy analysis, regulatory environments, and p
 - **BI Consulting** — ETL to dashboard, boardroom-ready insights
 - **AI Architecture** — Agentic automation, local LLMs, production AI pipelines
 
-[View Services →](https://gosidehustlesisi.github.io/side-hustle.html)
+[View Services →](https://goaiarchitect.io/side-hustle.html)
 
 ---
 
@@ -81,8 +81,8 @@ My foundation is **MPA/MPH** — policy analysis, regulatory environments, and p
 ## 📫 Contact
 
 - **GitHub:** [@gosidehustlesisi](https://github.com/gosidehustlesisi)
-- **Portfolio:** [gosidehustlesisi.github.io](https://gosidehustlesisi.github.io/)
-- **Consulting:** [gosidehustlesisi.github.io/side-hustle.html](https://gosidehustlesisi.github.io/side-hustle.html)
+- **Portfolio:** [goaiarchitect.io](https://goaiarchitect.io/)
+- **Consulting:** [goaiarchitect.io/side-hustle.html](https://goaiarchitect.io/side-hustle.html)
 
 ---
 
