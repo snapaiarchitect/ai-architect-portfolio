@@ -50,10 +50,13 @@
         .fine { font-size: 0.82rem; color: var(--text-muted); padding: 0.75rem 0 0.25rem; max-width: 120ch; }
         footer { border-top: 1px solid var(--border); padding: 1rem 0 1.5rem; color: var(--text-muted); font-size: 0.85rem; }
         @media (max-width: 768px) { .nav-links { gap: 1rem; } .frame-box { height: 78vh; min-height: 560px; } .wrap { padding: 0 1rem; } }
+        .skip-link { position: absolute; left: 0.75rem; top: -4rem; z-index: 1000; padding: 0.6rem 1rem; background: #f59e0b; color: #0a0e1a; font-weight: 700; font-size: 0.95rem; border-radius: 0 0 8px 8px; text-decoration: none; transition: top 0.15s; }
+        .skip-link:focus, .skip-link:focus-visible { top: 0; outline: 3px solid #0a0e1a; outline-offset: -3px; }
     </style>
 </head>
 <body>
-    <nav>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <nav aria-label="Primary">
         <div class="wrap">
             <div class="nav-inner">
                 <a href="../" class="nav-brand"><img src="../assets/logo.png" width="32" height="32" alt="" onerror="this.style.display='none'"><span>Sierra Napier</span></a>
@@ -65,7 +68,7 @@
         </div>
     </nav>
 
-    <main class="wrap frame">
+    <main id="main" class="wrap frame" aria-label="GMI Savings Tracker live dashboard">
         <div class="intro">
             <div class="eyebrow">Live demo &middot; testing ground (v3)</div>
             <h1>GMI Savings Tracker: the live dashboard</h1>
@@ -88,7 +91,7 @@
         <p class="fine">Independent prototype by Sierra Napier, built from Maryland's open data; not an official State of Maryland product. Data as of 2026-11-13, portal updated 2026-11-09. All years are Maryland State fiscal years (July 1 to June 30; FY2026 = July 1, 2025 to June 30, 2026), and "a year" means one fiscal year. FY2027 began July 1, 2026, so its figures are partial. Built from commit <a href="https://github.com/EVO3-Ecosystem/gmi-savings-tracker-v3/commit/9c5400ed8b04fd29d41697116f3f9621c9b0c81c" target="_blank" rel="noopener">9c5400e</a> of <a href="https://github.com/EVO3-Ecosystem/gmi-savings-tracker-v3" target="_blank" rel="noopener">EVO3-Ecosystem/gmi-savings-tracker-v3</a>.</p>
     </main>
 
-    <footer><div class="wrap">&copy; 2026 Sierra Napier &middot; <a href="../">Portfolio</a></div></footer>
+    <footer aria-label="Site footer"><div class="wrap">&copy; 2026 Sierra Napier &middot; <a href="../">Portfolio</a></div></footer>
 
     <script>
     (function () {
@@ -113,6 +116,10 @@
             frame = document.createElement('iframe');
             frame.title = 'GMI Savings Tracker, ' + TABS[keys.indexOf(key)][1] + ' tab (live)';
             frame.setAttribute('allow', 'fullscreen');
+            // Cross-origin (evo3-ecosystem.github.io vs goaiarchitect.com): allow-same-origin here only lets the
+            // tracker keep ITS OWN origin (its fetches and storage); it cannot reach this page's DOM or storage.
+            frame.setAttribute('sandbox', 'allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-forms');
+            frame.setAttribute('width', '1200'); frame.setAttribute('height', '800');
             frame.setAttribute('referrerpolicy', 'no-referrer');
             frame.addEventListener('load', function () {
                 clearTimeout(timer);
