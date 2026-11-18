@@ -4,27 +4,96 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>IT hardware, software & services is 51% of the $9.9B spent in six focus areas, FY2017-FY2025 | GMI Savings Tracker</title>
-<script src="https://cdn.plot.ly/plotly-3.5.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/plotly.js-dist-min@4.3.0/plotly.min.js" integrity="sha384-AtW63zbFwwiEVUeSPFC1ydmqJUwWWoXmyZHP8OC449teZ+00wVajF4cFhd/hy7jG" crossorigin="anonymous"></script>
 <style>
+  html { color-scheme:dark; }
   body { margin:0; padding:0; background:#0a0e1a; color:#f0f0f0; font-family:'Segoe UI',Roboto,sans-serif; }
-  #chart { width:100vw; height:100vh; }
+  .stage { position:relative; height:100vh; min-height:480px; }
+  #chart { width:100%; height:100%; }
   .title-bar { position:absolute; top:12px; left:20px; right:20px; z-index:10; pointer-events:none; }
   .title-bar h1 { margin:0; font-size:18px; color:#f0f0f0; font-weight:600; line-height:1.25; }
   .title-bar p  { margin:4px 0 0; font-size:12px; color:#8892b0; }
+  .ctl { position:absolute; right:20px; top:12px; z-index:11; display:flex; gap:10px; align-items:center; font-size:12px; color:#8892b0; }
+  .ctl button { font:inherit; font-size:13px; color:#f0f0f0; background:#1a2234; border:1px solid #334155; border-radius:6px; padding:6px 12px; cursor:pointer; }
+  .ctl button:hover { border-color:#f59e0b; }
+  .ctl button:focus-visible, details.dt summary:focus-visible, .scroll:focus-visible { outline:2px solid #22d3ee; outline-offset:2px; }
   .foot { position:absolute; left:20px; right:20px; bottom:6px; z-index:10; font-size:11px; color:#8892b0; pointer-events:none; }
+  .data { max-width:1100px; margin:0 auto; padding:20px 20px 40px; font-size:14px; line-height:1.5; }
+  .data .summary { margin:0 0 14px; color:#d6deeb; }
+  details.dt { border:1px solid #1f2d44; border-radius:8px; background:#0d1424; }
+  details.dt > summary { cursor:pointer; padding:10px 14px; color:#f0f0f0; font-weight:600; }
+  .scroll { overflow-x:auto; padding:0 14px 14px; }
+  table { border-collapse:collapse; width:100%; font-size:13px; font-variant-numeric:tabular-nums; }
+  caption { text-align:left; color:#8892b0; padding:0 0 8px; font-size:12px; }
+  th, td { padding:5px 10px; border-bottom:1px solid #1f2d44; text-align:right; white-space:nowrap; }
+  th { color:#cbd5e1; font-weight:600; }
+  th[scope=row], thead th:first-child, td.t { text-align:left; }
+  td.t { white-space:normal; min-width:12em; }
+  .nojs { margin:0 0 10px; color:#fbbf24; }
+  @media (max-width:1100px) {
+    .stage { height:auto; min-height:0; }
+    .title-bar, .foot, .ctl { position:static; margin:12px 16px 0; }
+    .foot { margin-bottom:8px; }
+    #chart { height:72vh; min-height:380px; }
+    .data { padding:12px 16px 32px; }
+  }
 </style>
+<noscript><style>details.dt { display:none; }</style></noscript>
 </head>
 <body>
-<div class="title-bar">
-  <h1>IT hardware, software & services is 51% of the $9.9B spent in six focus areas, FY2017-FY2025</h1>
-  <p>Actual controllable spending by focus area and fiscal year. Click a legend entry to hide or show an area.</p>
+<main>
+<div class="stage">
+  <header class="title-bar">
+    <h1 id="ttl">IT hardware, software & services is 51% of the $9.9B spent in six focus areas, FY2017-FY2025</h1>
+    <p id="sub">Actual controllable spending by focus area and fiscal year. Click a legend entry to hide or show an area.</p>
+  </header>
+  <div id="chart" role="img" aria-labelledby="ttl sub"></div>
+  <div class="foot">Source: Maryland Open Data Portal via the GMI Savings Tracker (testing ground v3), data as of 2026-11-13</div>
 </div>
-<div id="chart"></div>
-<div class="foot">Source: Maryland Open Data Portal via the GMI Savings Tracker (testing ground v3), data as of 2026-11-13</div>
+<section class="data" aria-label="Chart summary and data">
+  <p class="summary"><strong>Summary:</strong> IT hardware, software & services is 51% of the $9.9B spent in six focus areas, FY2017-FY2025. Every value plotted is listed in the data table below.</p>
+  <details class="dt">
+    <summary>Data table behind this chart (9 rows)</summary>
+    <div class="scroll" tabindex="0" role="region" aria-label="Data table, scrolls sideways on small screens">
+<table><caption>Actual spending by focus area ($ billions), all 9 fiscal years and 6 areas plotted</caption><thead><tr><th scope="col">Fiscal year</th><th scope="col">IT hardware, software &amp; services</th><th scope="col">Fleet &amp; fuel</th><th scope="col">Utilities &amp; facility energy</th><th scope="col">Real estate &amp; leases</th><th scope="col">Print, copy &amp; mail</th><th scope="col">Telecom</th></tr></thead>
+<tbody>
+<tr><th scope="row">2,017</th><td data-plotted>0.341</td><td data-plotted>0.171</td><td data-plotted>0.13</td><td data-plotted>0.124</td><td data-plotted>0.051</td><td data-plotted>0.036</td></tr>
+<tr><th scope="row">2,018</th><td data-plotted>0.404</td><td data-plotted>0.167</td><td data-plotted>0.131</td><td data-plotted>0.123</td><td data-plotted>0.048</td><td data-plotted>0.049</td></tr>
+<tr><th scope="row">2,019</th><td data-plotted>0.452</td><td data-plotted>0.156</td><td data-plotted>0.125</td><td data-plotted>0.129</td><td data-plotted>0.05</td><td data-plotted>0.044</td></tr>
+<tr><th scope="row">2,020</th><td data-plotted>0.458</td><td data-plotted>0.15</td><td data-plotted>0.128</td><td data-plotted>0.133</td><td data-plotted>0.049</td><td data-plotted>0.043</td></tr>
+<tr><th scope="row">2,021</th><td data-plotted>0.616</td><td data-plotted>0.143</td><td data-plotted>0.122</td><td data-plotted>0.129</td><td data-plotted>0.046</td><td data-plotted>0.048</td></tr>
+<tr><th scope="row">2,022</th><td data-plotted>0.688</td><td data-plotted>0.162</td><td data-plotted>0.14</td><td data-plotted>0.129</td><td data-plotted>0.047</td><td data-plotted>0.052</td></tr>
+<tr><th scope="row">2,023</th><td data-plotted>0.733</td><td data-plotted>0.199</td><td data-plotted>0.161</td><td data-plotted>0.129</td><td data-plotted>0.053</td><td data-plotted>0.056</td></tr>
+<tr><th scope="row">2,024</th><td data-plotted>0.66</td><td data-plotted>0.24</td><td data-plotted>0.151</td><td data-plotted>0.137</td><td data-plotted>0.049</td><td data-plotted>0.051</td></tr>
+<tr><th scope="row">2,025</th><td data-plotted>0.692</td><td data-plotted>0.193</td><td data-plotted>0.162</td><td data-plotted>0.142</td><td data-plotted>0.052</td><td data-plotted>0.047</td></tr>
+</tbody></table>
+    </div>
+  </details>
+  <noscript>
+    <p class="nojs">This chart needs JavaScript to draw. The same data is listed in this table.</p>
+    <div class="scroll" tabindex="0" role="region" aria-label="Data table">
+<table><caption>Actual spending by focus area ($ billions), all 9 fiscal years and 6 areas plotted</caption><thead><tr><th scope="col">Fiscal year</th><th scope="col">IT hardware, software &amp; services</th><th scope="col">Fleet &amp; fuel</th><th scope="col">Utilities &amp; facility energy</th><th scope="col">Real estate &amp; leases</th><th scope="col">Print, copy &amp; mail</th><th scope="col">Telecom</th></tr></thead>
+<tbody>
+<tr><th scope="row">2,017</th><td data-plotted>0.341</td><td data-plotted>0.171</td><td data-plotted>0.13</td><td data-plotted>0.124</td><td data-plotted>0.051</td><td data-plotted>0.036</td></tr>
+<tr><th scope="row">2,018</th><td data-plotted>0.404</td><td data-plotted>0.167</td><td data-plotted>0.131</td><td data-plotted>0.123</td><td data-plotted>0.048</td><td data-plotted>0.049</td></tr>
+<tr><th scope="row">2,019</th><td data-plotted>0.452</td><td data-plotted>0.156</td><td data-plotted>0.125</td><td data-plotted>0.129</td><td data-plotted>0.05</td><td data-plotted>0.044</td></tr>
+<tr><th scope="row">2,020</th><td data-plotted>0.458</td><td data-plotted>0.15</td><td data-plotted>0.128</td><td data-plotted>0.133</td><td data-plotted>0.049</td><td data-plotted>0.043</td></tr>
+<tr><th scope="row">2,021</th><td data-plotted>0.616</td><td data-plotted>0.143</td><td data-plotted>0.122</td><td data-plotted>0.129</td><td data-plotted>0.046</td><td data-plotted>0.048</td></tr>
+<tr><th scope="row">2,022</th><td data-plotted>0.688</td><td data-plotted>0.162</td><td data-plotted>0.14</td><td data-plotted>0.129</td><td data-plotted>0.047</td><td data-plotted>0.052</td></tr>
+<tr><th scope="row">2,023</th><td data-plotted>0.733</td><td data-plotted>0.199</td><td data-plotted>0.161</td><td data-plotted>0.129</td><td data-plotted>0.053</td><td data-plotted>0.056</td></tr>
+<tr><th scope="row">2,024</th><td data-plotted>0.66</td><td data-plotted>0.24</td><td data-plotted>0.151</td><td data-plotted>0.137</td><td data-plotted>0.049</td><td data-plotted>0.051</td></tr>
+<tr><th scope="row">2,025</th><td data-plotted>0.692</td><td data-plotted>0.193</td><td data-plotted>0.162</td><td data-plotted>0.142</td><td data-plotted>0.052</td><td data-plotted>0.047</td></tr>
+</tbody></table>
+    </div>
+  </noscript>
+</section>
+</main>
 <script>
 var D = {"fy":[2017,2018,2019,2020,2021,2022,2023,2024,2025],"areas":["IT hardware, software & services","Fleet & fuel","Utilities & facility energy","Real estate & leases","Print, copy & mail","Telecom"],"v":{"IT hardware, software & services":[0.341,0.404,0.452,0.458,0.616,0.688,0.733,0.66,0.692],"Fleet & fuel":[0.171,0.167,0.156,0.15,0.143,0.162,0.199,0.24,0.193],"Utilities & facility energy":[0.13,0.131,0.125,0.128,0.122,0.14,0.161,0.151,0.162],"Real estate & leases":[0.124,0.123,0.129,0.133,0.129,0.129,0.129,0.137,0.142],"Print, copy & mail":[0.051,0.048,0.05,0.049,0.046,0.047,0.053,0.049,0.052],"Telecom":[0.036,0.049,0.044,0.043,0.048,0.052,0.056,0.051,0.047]}};
 var GOLD='#f59e0b', CYAN='#06b6d4', GREEN='#22c55e', RED='#f87171', MUTED='#64748b';
 var PALETTE = ["#f59e0b", "#06b6d4", "#a78bfa", "#34d399", "#f472b6", "#60a5fa", "#fbbf24"];
+var PAT = ["", "/", "x", ".", "+", "-", "\\"];
+function pat(i,c){return {shape:PAT[i%PAT.length], bgcolor:c, fgcolor:'rgba(10,14,26,0.55)', size:8, solidity:0.4};}
 var base = {
   paper_bgcolor:'#0a0e1a', plot_bgcolor:'#0a0e1a',
   font:{family:'Segoe UI,Roboto,sans-serif', color:'#f0f0f0', size:12},
@@ -36,11 +105,27 @@ var base = {
 };
 function merge(a,b){var o=JSON.parse(JSON.stringify(a));for(var k in b){if(b[k]&&typeof b[k]==='object'&&!Array.isArray(b[k])&&o[k]&&typeof o[k]==='object'){o[k]=merge(o[k],b[k]);}else{o[k]=b[k];}}return o;}
 var config = {responsive:true, displayModeBar:false};
+var gd = document.getElementById('chart');
+// The title sits in normal flow on narrow screens (see CSS), so the plot needs only a small top margin there.
+var narrow = window.matchMedia('(max-width:1100px)');
+// `nar` is an optional layout patch for narrow screens (long axis labels, margins); the plot is redrawn when the
+// viewport crosses the breakpoint. Plotly's own responsive:true handles every other resize.
+function draw(traces, layout, nar){
+  var mk = function(){
+    var l = merge(layout, {});
+    if (narrow.matches) { l.margin.t = 16; if (nar) l = merge(l, nar); }
+    return l;
+  };
+  var p = Plotly.newPlot(gd, traces, mk(), config);
+  var fit = function(){ Plotly.react(gd, gd.data, mk(), config); };
+  if (narrow.addEventListener) narrow.addEventListener('change', fit); else narrow.addListener(fit);
+  return p;
+}
 
-var tr = D.areas.map(function(a,i){return {type:'bar',name:a,x:D.fy,y:D.v[a],marker:{color:PALETTE[i%PALETTE.length]},
+var tr = D.areas.map(function(a,i){var c=PALETTE[i%PALETTE.length];return {type:'bar',name:a,x:D.fy,y:D.v[a],marker:{color:c,pattern:pat(i,c)},
   hovertemplate:'<b>'+a+'</b><br>FY%{x}: $%{y:.2f}B<extra></extra>'};});
 var layout = merge(base,{barmode:'stack', xaxis:{dtick:1,tickprefix:'FY',tickangle:-45}, yaxis:{title:{text:'$ billions'},tickprefix:'$',ticksuffix:'B'}, legend:{y:-0.18}});
-Plotly.newPlot('chart',tr,layout,config);
+draw(tr,layout);
 
 </script>
 </body>

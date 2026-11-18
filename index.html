@@ -9,11 +9,44 @@
     <link rel="canonical" href="https://goaiarchitect.com/">
     <meta property="og:url" content="https://goaiarchitect.com/">
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Sierra Napier">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:image" content="https://goaiarchitect.com/assets/og-image.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Sierra Napier, Fractional CMO and BI Consulting. 1.29M rows, 6 datasets, 10 tabs, 62 marts, 143 of 143 checks passed.">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://goaiarchitect.com/assets/og-image.png">
+    <meta name="twitter:image:alt" content="Sierra Napier, Fractional CMO and BI Consulting. 1.29M rows, 6 datasets, 10 tabs, 62 marts, 143 of 143 checks passed.">
     <meta name="twitter:title" content="Sierra Napier — Fractional CMO & BI Consulting">
     <meta name="twitter:description" content="Fractional CMO | BI Consulting | AI Architecture. 1.29M rows. 6 Maryland open datasets. 143/143 checks passed.">
     <title>Sierra Napier — Fractional CMO & BI Consulting</title>
     <meta name="theme-color" content="#0a0e1a">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfilePage",
+  "@id": "https://goaiarchitect.com/#profile",
+  "url": "https://goaiarchitect.com/",
+  "name": "Sierra Napier — Fractional CMO & BI Consulting",
+  "description": "Fractional CMO, BI consulting and AI architecture. 1.29M rows checked against the portal, 6 Maryland open datasets, 143 of 143 data checks passed.",
+  "dateModified": "2026-11-18",
+  "inLanguage": "en-US",
+  "mainEntity": {
+    "@type": "Person",
+    "@id": "https://goaiarchitect.com/#person",
+    "name": "Sierra Napier",
+    "url": "https://goaiarchitect.com/",
+    "jobTitle": "Fractional CMO, BI Consultant and AI Architect",
+    "image": "https://goaiarchitect.com/assets/og-image.png",
+    "sameAs": [
+      "https://www.linkedin.com/in/sierran/",
+      "https://github.com/snapaiarchitect"
+    ]
+  }
+}
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
@@ -747,6 +780,15 @@
         .coming-soon > summary { cursor: pointer; font-weight: 600; color: var(--accent-gold); }
         .coming-soon[open] > summary { margin-bottom: 0.5rem; }
     
+
+        .metrics-band { background: var(--bg-surface); border-bottom: 1px solid var(--border); padding: 1rem 0 0.75rem; }
+        .metrics-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.75rem; }
+        .metric-tile { display: block; text-decoration: none; text-align: center; background: var(--bg-elevated, var(--bg-surface)); border: 1px solid var(--border); border-radius: 10px; padding: 0.9rem 0.5rem; transition: border-color 0.2s, transform 0.2s; }
+        .metric-tile:hover { border-color: var(--accent-cyan); transform: translateY(-2px); }
+        .metric-number { display: block; font-size: 2rem; font-weight: 800; color: var(--accent-gold); line-height: 1; }
+        .metric-label { display: block; font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 0.4rem; }
+        .metrics-asof { text-align: center; color: var(--text-muted); font-size: 0.75rem; margin: 0.6rem 0 0; }
+        @media (max-width: 768px) { .metrics-grid { grid-template-columns: repeat(2, 1fr); } .metric-number { font-size: 1.6rem; } .metric-tile:last-child { grid-column: 1 / -1; } }
         /* Accessibility and polish */
         :focus-visible { outline: 3px solid var(--accent-cyan); outline-offset: 2px; border-radius: 4px; }
         .floating-cta { transition: opacity 0.2s, transform 0.2s; }
@@ -757,10 +799,13 @@
             *, *::before, *::after { transition-duration: 0.01ms !important; }
             .btn:hover, .project-card:hover { transform: none; }
         }
+        .skip-link { position: absolute; left: 0.75rem; top: -4rem; z-index: 1000; padding: 0.6rem 1rem; background: #f59e0b; color: #0a0e1a; font-weight: 700; font-size: 0.95rem; border-radius: 0 0 8px 8px; text-decoration: none; transition: top 0.15s; }
+        .skip-link:focus, .skip-link:focus-visible { top: 0; outline: 3px solid #0a0e1a; outline-offset: -3px; }
     </style>
 </head>
 <body>
-    <nav>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <nav aria-label="Primary">
         <div class="container">
             <div class="nav-inner">
                 <a href="./" class="nav-brand">
@@ -778,7 +823,20 @@
         </div>
     </nav>
 
-    <header>
+    <div class="metrics-band" role="region" aria-label="GMI Savings Tracker at a glance">
+        <div class="container">
+            <div class="metrics-grid">
+                <a class="metric-tile" href="demo/gmi-savings-tracker.html#data"><span class="metric-number">1.29M</span><span class="metric-label">Rows checked against the portal</span></a>
+                <a class="metric-tile" href="demo/gmi-savings-tracker.html#data"><span class="metric-number">6</span><span class="metric-label">Maryland open datasets</span></a>
+                <a class="metric-tile" href="demo/gmi-savings-tracker.html#over"><span class="metric-number">10</span><span class="metric-label">Live dashboard tabs</span></a>
+                <a class="metric-tile" href="demo/gmi-savings-tracker.html#data"><span class="metric-number">62</span><span class="metric-label">SQL marts</span></a>
+                <a class="metric-tile" href="demo/gmi-savings-tracker.html#data"><span class="metric-number">143/143</span><span class="metric-label">Data checks passed</span></a>
+            </div>
+            <p class="metrics-asof">GMI Savings Tracker &middot; verified figures, data as of Nov 17, 2026</p>
+        </div>
+    </div>
+
+    <header aria-label="Introduction">
         <div class="container">
             <div class="avatar-wrap">
                 <div class="avatar-ring"></div>
@@ -789,22 +847,6 @@
                 <span class="hero-badge">Fractional CMO</span>
                 <span class="hero-badge">BI Consulting</span>
                 <span class="hero-badge">AI Architecture</span>
-            </div>
-            <div class="hero-metrics-strip">
-                <div class="hero-metric">
-                    <span class="hero-metric-number">1.29M</span>
-                    <span class="hero-metric-label">Rows Checked Against the Portal</span>
-                </div>
-                <span class="hero-metric-divider">|</span>
-                <div class="hero-metric">
-                    <span class="hero-metric-number">6</span>
-                    <span class="hero-metric-label">Maryland Open Datasets</span>
-                </div>
-                <span class="hero-metric-divider">|</span>
-                <div class="hero-metric">
-                    <span class="hero-metric-number">143/143</span>
-                    <span class="hero-metric-label">Data Checks Passed</span>
-                </div>
             </div>
             <p class="tagline">
                 I <strong>architect growth systems</strong> for companies that need senior marketing leadership without the full-time hire. 
@@ -820,7 +862,7 @@
         </div>
     </header>
 
-    <div class="container">
+    <main id="main" class="container" aria-label="Portfolio">
         <div class="trust-bar">
             <span class="trust-label">Verified Data Sources:</span>
             <div class="trust-logos">
@@ -833,29 +875,6 @@
                 <span class="trust-logo">arXiv</span>
                 <span class="trust-logo">Data.gov</span>
                 <span class="trust-logo">NHTSA</span>
-            </div>
-        </div>
-
-        <div class="stats">
-            <div class="stat-card">
-                <div class="stat-number">1.29M</div>
-                <div class="stat-label">Rows Checked Against the Portal</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">6</div>
-                <div class="stat-label">Maryland Open Datasets</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">10</div>
-                <div class="stat-label">Live Dashboard Tabs</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">62</div>
-                <div class="stat-label">SQL Marts</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">143/143</div>
-                <div class="stat-label">Data Checks Passed</div>
             </div>
         </div>
 
@@ -982,7 +1001,7 @@
                     <div class="chart-box">
                         <div style="display:flex;flex-wrap:wrap;gap:1rem;">
                             <div style="flex:1;min-width:300px;">
-                                <iframe loading="lazy" src="charts/gmi_over.html" style="width:100%;height:480px;border:none;border-radius:8px;" title="Interactive chart: GMI Savings Tracker, Overview tab"></iframe>
+                                <iframe loading="lazy" src="charts/gmi_over.html" style="width:100%;height:480px;border:none;border-radius:8px;" title="Interactive chart: GMI Savings Tracker, Overview tab" width="600" height="480" sandbox="allow-scripts"></iframe>
                             </div>
                         </div>
                         <p class="chart-insight-body" style="margin-top:0.75rem;"><a href="demo/gmi-savings-tracker.html#over" style="color:var(--accent-cyan);">Explore this tab in the live dashboard →</a></p>
@@ -1022,7 +1041,7 @@
                     <div class="chart-box">
                         <div style="display:flex;flex-wrap:wrap;gap:1rem;">
                             <div style="flex:1;min-width:300px;">
-                                <iframe loading="lazy" src="charts/gmi_areas.html" style="width:100%;height:480px;border:none;border-radius:8px;" title="Interactive chart: GMI Savings Tracker, Focus areas tab"></iframe>
+                                <iframe loading="lazy" src="charts/gmi_areas.html" style="width:100%;height:480px;border:none;border-radius:8px;" title="Interactive chart: GMI Savings Tracker, Focus areas tab" width="600" height="480" sandbox="allow-scripts"></iframe>
                             </div>
                         </div>
                         <p class="chart-insight-body" style="margin-top:0.75rem;"><a href="demo/gmi-savings-tracker.html#areas" style="color:var(--accent-cyan);">Explore this tab in the live dashboard →</a></p>
@@ -1062,7 +1081,7 @@
                     <div class="chart-box">
                         <div style="display:flex;flex-wrap:wrap;gap:1rem;">
                             <div style="flex:1;min-width:300px;">
-                                <iframe loading="lazy" src="charts/gmi_track.html" style="width:100%;height:480px;border:none;border-radius:8px;" title="Interactive chart: GMI Savings Tracker, Savings tracker tab"></iframe>
+                                <iframe loading="lazy" src="charts/gmi_track.html" style="width:100%;height:480px;border:none;border-radius:8px;" title="Interactive chart: GMI Savings Tracker, Savings tracker tab" width="600" height="480" sandbox="allow-scripts"></iframe>
                             </div>
                         </div>
                         <p class="chart-insight-body" style="margin-top:0.75rem;"><a href="demo/gmi-savings-tracker.html#track" style="color:var(--accent-cyan);">Explore this tab in the live dashboard →</a></p>
@@ -1102,7 +1121,7 @@
                     <div class="chart-box">
                         <div style="display:flex;flex-wrap:wrap;gap:1rem;">
                             <div style="flex:1;min-width:300px;">
-                                <iframe loading="lazy" src="charts/gmi_opp.html" style="width:100%;height:480px;border:none;border-radius:8px;" title="Interactive chart: GMI Savings Tracker, Opportunities tab"></iframe>
+                                <iframe loading="lazy" src="charts/gmi_opp.html" style="width:100%;height:480px;border:none;border-radius:8px;" title="Interactive chart: GMI Savings Tracker, Opportunities tab" width="600" height="480" sandbox="allow-scripts"></iframe>
                             </div>
                         </div>
                         <p class="chart-insight-body" style="margin-top:0.75rem;"><a href="demo/gmi-savings-tracker.html#opp" style="color:var(--accent-cyan);">Explore this tab in the live dashboard →</a></p>
@@ -1142,7 +1161,7 @@
                     <div class="chart-box">
                         <div style="display:flex;flex-wrap:wrap;gap:1rem;">
                             <div style="flex:1;min-width:300px;">
-                                <iframe loading="lazy" src="charts/gmi_calc.html" style="width:100%;height:480px;border:none;border-radius:8px;" title="Interactive chart: GMI Savings Tracker, Calculator tab"></iframe>
+                                <iframe loading="lazy" src="charts/gmi_calc.html" style="width:100%;height:480px;border:none;border-radius:8px;" title="Interactive chart: GMI Savings Tracker, Calculator tab" width="600" height="480" sandbox="allow-scripts"></iframe>
                             </div>
                         </div>
                         <p class="chart-insight-body" style="margin-top:0.75rem;"><a href="demo/gmi-savings-tracker.html#calc" style="color:var(--accent-cyan);">Explore this tab in the live dashboard →</a></p>
@@ -1182,7 +1201,7 @@
                     <div class="chart-box">
                         <div style="display:flex;flex-wrap:wrap;gap:1rem;">
                             <div style="flex:1;min-width:300px;">
-                                <iframe loading="lazy" src="charts/gmi_fcast.html" style="width:100%;height:480px;border:none;border-radius:8px;" title="Interactive chart: GMI Savings Tracker, Forecasts & results tab"></iframe>
+                                <iframe loading="lazy" src="charts/gmi_fcast.html" style="width:100%;height:480px;border:none;border-radius:8px;" title="Interactive chart: GMI Savings Tracker, Forecasts &amp; results tab" width="600" height="480" sandbox="allow-scripts"></iframe>
                             </div>
                         </div>
                         <p class="chart-insight-body" style="margin-top:0.75rem;"><a href="demo/gmi-savings-tracker.html#fcast" style="color:var(--accent-cyan);">Explore this tab in the live dashboard →</a></p>
@@ -1222,7 +1241,7 @@
                     <div class="chart-box">
                         <div style="display:flex;flex-wrap:wrap;gap:1rem;">
                             <div style="flex:1;min-width:300px;">
-                                <iframe loading="lazy" src="charts/gmi_vend.html" style="width:100%;height:480px;border:none;border-radius:8px;" title="Interactive chart: GMI Savings Tracker, Vendors tab"></iframe>
+                                <iframe loading="lazy" src="charts/gmi_vend.html" style="width:100%;height:480px;border:none;border-radius:8px;" title="Interactive chart: GMI Savings Tracker, Vendors tab" width="600" height="480" sandbox="allow-scripts"></iframe>
                             </div>
                         </div>
                         <p class="chart-insight-body" style="margin-top:0.75rem;"><a href="demo/gmi-savings-tracker.html#vend" style="color:var(--accent-cyan);">Explore this tab in the live dashboard →</a></p>
@@ -1262,7 +1281,7 @@
                     <div class="chart-box">
                         <div style="display:flex;flex-wrap:wrap;gap:1rem;">
                             <div style="flex:1;min-width:300px;">
-                                <iframe loading="lazy" src="charts/gmi_agency.html" style="width:100%;height:480px;border:none;border-radius:8px;" title="Interactive chart: GMI Savings Tracker, Agencies tab"></iframe>
+                                <iframe loading="lazy" src="charts/gmi_agency.html" style="width:100%;height:480px;border:none;border-radius:8px;" title="Interactive chart: GMI Savings Tracker, Agencies tab" width="600" height="480" sandbox="allow-scripts"></iframe>
                             </div>
                         </div>
                         <p class="chart-insight-body" style="margin-top:0.75rem;"><a href="demo/gmi-savings-tracker.html#agency" style="color:var(--accent-cyan);">Explore this tab in the live dashboard →</a></p>
@@ -1302,7 +1321,7 @@
                     <div class="chart-box">
                         <div style="display:flex;flex-wrap:wrap;gap:1rem;">
                             <div style="flex:1;min-width:300px;">
-                                <iframe loading="lazy" src="charts/gmi_budget.html" style="width:100%;height:480px;border:none;border-radius:8px;" title="Interactive chart: GMI Savings Tracker, Budget tab"></iframe>
+                                <iframe loading="lazy" src="charts/gmi_budget.html" style="width:100%;height:480px;border:none;border-radius:8px;" title="Interactive chart: GMI Savings Tracker, Budget tab" width="600" height="480" sandbox="allow-scripts"></iframe>
                             </div>
                         </div>
                         <p class="chart-insight-body" style="margin-top:0.75rem;"><a href="demo/gmi-savings-tracker.html#budget" style="color:var(--accent-cyan);">Explore this tab in the live dashboard →</a></p>
@@ -1342,7 +1361,7 @@
                     <div class="chart-box">
                         <div style="display:flex;flex-wrap:wrap;gap:1rem;">
                             <div style="flex:1;min-width:300px;">
-                                <iframe loading="lazy" src="charts/gmi_data.html" style="width:100%;height:480px;border:none;border-radius:8px;" title="Interactive chart: GMI Savings Tracker, Data & pipeline tab"></iframe>
+                                <iframe loading="lazy" src="charts/gmi_data.html" style="width:100%;height:480px;border:none;border-radius:8px;" title="Interactive chart: GMI Savings Tracker, Data &amp; pipeline tab" width="600" height="480" sandbox="allow-scripts"></iframe>
                             </div>
                         </div>
                         <p class="chart-insight-body" style="margin-top:0.75rem;"><a href="demo/gmi-savings-tracker.html#data" style="color:var(--accent-cyan);">Explore this tab in the live dashboard →</a></p>
@@ -1361,6 +1380,65 @@
                     <a class="repo-link" href="https://github.com/EVO3-Ecosystem/gmi-savings-tracker-v3" target="_blank">View Repository →</a>
                 </div>
             </div>
+            <h3 class="section-subtitle" style="margin-top:3rem;color:var(--text-primary);font-weight:700;">More verified work</h3>
+
+            <div class="project-card" id="genai-engineering">
+                <div class="project-header">
+                    <div>
+                        <div class="project-title">GenAI Engineering: NLP, RAG and MLOps on live public APIs</div>
+                        <div class="project-meta">9 projects &middot; 9,407 records &middot; data fetched Nov 14, 2026</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge badge-live">&#9679; PUBLIC REPO</span>
+                        <span class="badge badge-data">LIVE PUBLIC APIs</span>
+                        <a href="https://github.com/snapaiarchitect/genai-engineering" class="demo-link" target="_blank" rel="noopener">View repository &rarr;</a>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="exec-summary">
+                        <h4>Executive Summary</h4>
+                        <p>Nine NLP, retrieval and MLOps projects, each built on data fetched from a public API (BLS, Census, arXiv, PubMed, ClinicalTrials.gov, Congress.gov, Oyez). The README table is generated from each project's metrics file, and a script fails if the numbers drift. Earlier synthetic material was deleted, not hidden.</p>
+                    </div>
+                    <div class="tldr"><p><strong>Example result:</strong> on 2,746 arXiv papers and 600 test queries, a dense retriever finds the right paper in its top 5 results 81.7% of the time, and 83.7% after reranking.</p></div>
+                    <div class="technical-detail">
+                        <span class="technical-label">Technical Stack</span>
+                        <p>Python &middot; Hugging Face Transformers &middot; FAISS &middot; scikit-learn &middot; GitHub Actions (CI, data refresh, notebook execution, security)</p>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <span class="data-sources">Figures are quoted from the repository's own generated README. One project (Supreme Court opinions) is marked pending, with May 2026 data.</span>
+                    <a class="repo-link" href="https://github.com/snapaiarchitect/genai-engineering" target="_blank" rel="noopener">View Repository &rarr;</a>
+                </div>
+            </div>
+
+            <div class="project-card" id="mobility-data">
+                <div class="project-header">
+                    <div>
+                        <div class="project-title">Mobility Data Analytics: transit, safety and flight delays</div>
+                        <div class="project-meta">3 analyses &middot; WMATA ridership &middot; NHTSA FARS &middot; BTS on-time performance</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge badge-avail">REFRESH PENDING</span>
+                        <span class="badge badge-data">PUBLIC TRANSPORT DATA</span>
+                        <a href="https://github.com/snapaiarchitect/mobility-data" class="demo-link" target="_blank" rel="noopener">View repository &rarr;</a>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="exec-summary">
+                        <h4>Executive Summary</h4>
+                        <p>Three analyses of public mobility data: DC-area transit ridership, national road-crash fatalities, and airline delays. Each has a download script, notebooks, figures and a dashboard script. The data is downloaded when you run it, so the repository holds code and figures rather than the data itself.</p>
+                    </div>
+                    <div class="technical-detail">
+                        <span class="technical-label">Technical Stack</span>
+                        <p>Python &middot; pandas &middot; Plotly &middot; Jupyter &middot; GitHub Actions</p>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <span class="data-sources">Last updated May 2026. Record counts, tests and a data refresh are being added before any figures are quoted here.</span>
+                    <a class="repo-link" href="https://github.com/snapaiarchitect/mobility-data" target="_blank" rel="noopener">View Repository &rarr;</a>
+                </div>
+            </div>
+
             <details class="coming-soon" id="coming-soon">
                 <summary>Coming soon: 33 archived projects</summary>
                 <p class="section-subtitle" style="margin-top:1rem;">Archived for now. Open any project below to read its write-up.</p>
@@ -1374,7 +1452,7 @@
                         <span class="badge badge-soon">COMING SOON</span>
                         <span class="badge badge-data">NASA</span>
                         <span class="badge badge-avail">BENCHMARK</span>
-                        <a href="projects/predictive-maintenance-transit" class="demo-link">View Demo</a>
+                        <a href="#coming-soon" class="demo-link">View Demo</a>
                     </div>
                 </div>
                 <div class="project-body">
@@ -1385,9 +1463,7 @@
                     <div class="tldr"><p><strong>You only need 5 sensors</strong> to predict engine failure 25+ cycles before breakdown. Running the full 21-sensor suite is a 75% infrastructure waste.</p></div>
                     <div class="chart-box"><div style="display:flex;flex-wrap:wrap;gap:1rem;">
                 <div style="flex:1;min-width:300px;">
-                    <iframe loading="lazy" src="charts/sensor_degradation.html" 
-                        style="width:100%;height:400px;border:none;border-radius:8px;"
-                        title="Interactive chart: sensor_degradation">
+                    <iframe loading="lazy" src="charts/sensor_degradation.html" style="width:100%;height:400px;border:none;border-radius:8px;" title="Interactive chart: Sensor degradation, Predictive Maintenance" width="600" height="400" sandbox="allow-scripts">
                     </iframe>
                 </div></div></div>
                         <p class="chart-insight-body">XGBoost achieved 94% RUL accuracy by weighting recent cycles more heavily. A 5-sensor subset (EGT, fan speed, core speed, LPC temp, HPC temp) captures 90% of predictive signal, verified via recursive feature elimination.</p>
@@ -1403,7 +1479,7 @@
                 </div>
                 <div class="project-footer">
                     <span class="data-sources">Data: NASA C-MAPSS Turbofan Benchmark · Simulated Sensor Readings · 100 units</span>
-                    <a class="repo-link" href="https://github.com/snapaiarchitect/ai-architect-portfolio/tree/main/projects/predictive-maintenance-transit">View Repository →</a>
+                    <a class="repo-link" href="#coming-soon">View Repository →</a>
                 </div>
 
             <div class="project-card">
@@ -1415,7 +1491,7 @@
                     <div class="badges">
                         <span class="badge badge-soon">COMING SOON</span>
                         <span class="badge badge-data">arXiv</span>
-                        <a href="projects/nlp-text-classification-pipeline" class="demo-link">View Demo</a>
+                        <a href="#coming-soon" class="demo-link">View Demo</a>
                     </div>
                 </div>
                 <div class="project-body">
@@ -1426,15 +1502,11 @@
                     <div class="tldr"><p><strong>Simple beats fancy.</strong> A basic TF-IDF + Naive Bayes model scores 68% on 20 categories and runs 400× faster than BERT. For most production text tasks, that's the right trade-off.</p></div>
                     <div class="chart-box"><div style="display:flex;flex-wrap:wrap;gap:1rem;">
                 <div style="flex:1;min-width:300px;">
-                    <iframe loading="lazy" src="charts/nlp_confusion_matrix.html" 
-                        style="width:100%;height:400px;border:none;border-radius:8px;"
-                        title="Interactive chart: nlp_confusion_matrix">
+                    <iframe loading="lazy" src="charts/nlp_confusion_matrix.html" style="width:100%;height:400px;border:none;border-radius:8px;" title="Interactive chart: NLP confusion matrix, NLP Text Classification" width="600" height="400" sandbox="allow-scripts">
                     </iframe>
                 </div>
                 <div style="flex:1;min-width:300px;">
-                    <iframe loading="lazy" src="charts/newsgroups_accuracy.html" 
-                        style="width:100%;height:400px;border:none;border-radius:8px;"
-                        title="Interactive chart: newsgroups_accuracy">
+                    <iframe loading="lazy" src="charts/newsgroups_accuracy.html" style="width:100%;height:400px;border:none;border-radius:8px;" title="Interactive chart: Newsgroups accuracy, NLP Text Classification" width="600" height="400" sandbox="allow-scripts">
                     </iframe>
                 </div></div></div>
                         <p class="chart-insight-body">BERT reaches 89% but needs GPU. Naive Bayes runs on CPU with only 21% accuracy trade-off. Tested on 18,846 real Usenet posts from sklearn's 20 Newsgroups dataset. Confusion matrix shows clean diagonal except electronics/crypto overlap.</p>
@@ -1450,7 +1522,7 @@
                 </div>
                 <div class="project-footer">
                     <span class="data-sources">Data: sklearn 20 Newsgroups · 18,846 Real Usenet Posts · 20 Categories</span>
-                    <a class="repo-link" href="https://github.com/snapaiarchitect/ai-architect-portfolio/tree/main/projects/nlp-text-classification-pipeline">View Repository →</a>
+                    <a class="repo-link" href="#coming-soon">View Repository →</a>
                 </div>
 
             <div class="project-card">
@@ -1483,7 +1555,7 @@
                         </div>
                     </div>
                     <div class="chart-box">
-                    <iframe src="charts/zeus_ursa_architecture.html" style="width:100%;min-height:340px;border:none;border-radius:8px;" loading="lazy"></iframe>
+                    <iframe loading="lazy" src="charts/zeus_ursa_architecture.html" style="width:100%;min-height:340px;border:none;border-radius:8px;" title="Interactive chart: Zeus-URSA agent architecture, Zeus-URSA" width="600" height="340" sandbox="allow-scripts"></iframe>
                     </div>
                     <p class="chart-insight-body">Zeus-URSA orchestrates 7 autonomous agents (CEO, Strategy, Finance, Operations, Marketing, Product, Dev) through a central MCP Bridge connecting 22 external tools (Notion, Calendar, GitHub, Email). Persistent memory store maintains conversation history and decision context across sessions. Average task completion: 3.2 agent handoffs, 87% first-attempt success rate on structured tasks.</p>
                     <div class="transfer-box">
@@ -1506,7 +1578,7 @@
                     <div class="badges">
                         <span class="badge badge-soon">COMING SOON</span>
                         <span class="badge badge-data">Citi Bike</span>
-                        <a href="projects/demand-forecasting-operations" class="demo-link">View Demo</a>
+                        <a href="#coming-soon" class="demo-link">View Demo</a>
                     </div>
                 </div>
                 <div class="project-body">
@@ -1517,9 +1589,7 @@
                     <div class="tldr"><p><strong>Ensemble model (ARIMA + XGBoost + Random Forest) outperforms any single model by 12-18%.</strong></p></div>
                     <div class="chart-box"><div style="display:flex;flex-wrap:wrap;gap:1rem;">
                 <div style="flex:1;min-width:300px;">
-                    <iframe loading="lazy" src="charts/ensemble_forecast.html" 
-                        style="width:100%;height:400px;border:none;border-radius:8px;"
-                        title="Interactive chart: ensemble_forecast">
+                    <iframe loading="lazy" src="charts/ensemble_forecast.html" style="width:100%;height:400px;border:none;border-radius:8px;" title="Interactive chart: Ensemble forecast, Demand Forecasting" width="600" height="400" sandbox="allow-scripts">
                     </iframe>
                 </div></div></div>
                         <p class="chart-insight-body">ARIMA captured daily rhythm but missed holiday spikes. Ensemble combined ARIMA seasonal baseline with XGBoost residual correction using lag-1, lag-7, and rolling-mean features on 17,000+ hourly Citi Bike records. The ensemble outperformed either model alone by 18% MAE.</p>
@@ -1535,7 +1605,7 @@
                 </div>
                 <div class="project-footer">
                     <span class="data-sources">Data: Citi Bike NYC · 17K+ Hourly Records · 2022-2023 Season</span>
-                    <a class="repo-link" href="https://github.com/snapaiarchitect/ai-architect-portfolio/tree/main/projects/demand-forecasting-operations">View Repository →</a>
+                    <a class="repo-link" href="#coming-soon">View Repository →</a>
                 </div>
 
             <div class="project-card">
@@ -1547,7 +1617,7 @@
                     <div class="badges">
                         <span class="badge badge-soon">COMING SOON</span>
                         <span class="badge badge-data">USASpending</span>
-                        <a href="projects/capital-portfolio-governance" class="demo-link">View Demo</a>
+                        <a href="#coming-soon" class="demo-link">View Demo</a>
                     </div>
                 </div>
                 <div class="project-body">
@@ -1558,9 +1628,7 @@
                     <div class="tldr"><p><strong>Top 10 agencies capture 60% of capital spending. IT modernization is the fastest-growing category.</strong></p></div>
                     <div class="chart-box"><div style="display:flex;flex-wrap:wrap;gap:1rem;">
                 <div style="flex:1;min-width:300px;">
-                    <iframe loading="lazy" src="charts/capital_portfolio.html" 
-                        style="width:100%;height:400px;border:none;border-radius:8px;"
-                        title="Interactive chart: capital_portfolio">
+                    <iframe loading="lazy" src="charts/capital_portfolio.html" style="width:100%;height:400px;border:none;border-radius:8px;" title="Interactive chart: Capital portfolio, Capital Portfolio Governance" width="600" height="400" sandbox="allow-scripts">
                     </iframe>
                 </div></div></div>
                         <p class="chart-insight-body">Built on USASpending.gov API with multi-year award records. Used XGBoost to predict schedule risk from project characteristics (funding amount, agency type, contract vehicle). Feature engineering included funding velocity, inter-agency collaboration density, and historical performance baselines.</p>
@@ -1576,7 +1644,7 @@
                 </div>
                 <div class="project-footer">
                     <span class="data-sources">Data: USASpending.gov · Federal Capital Programs · Multi-Year Records</span>
-                    <a class="repo-link" href="https://github.com/snapaiarchitect/sierra-pmo-analytics/tree/main/projects/capital-portfolio-governance">View Repository →</a>
+                    <a class="repo-link" href="#coming-soon">View Repository →</a>
                 </div>
 
             <div class="project-card">
@@ -1588,7 +1656,7 @@
                     <div class="badges">
                         <span class="badge badge-soon">COMING SOON</span>
                         <span class="badge badge-data">NHTSA FARS</span>
-                        <a href="projects/nhtsa-safety" class="demo-link">View Demo</a>
+                        <a href="#coming-soon" class="demo-link">View Demo</a>
                     </div>
                 </div>
                 <div class="project-body">
@@ -1599,9 +1667,7 @@
                     <div class="tldr"><p><strong>Rural states have 3× higher fatality rates per capita than urban states.</strong></p></div>
                     <div class="chart-box"><div style="display:flex;flex-wrap:wrap;gap:1rem;">
                 <div style="flex:1;min-width:300px;">
-                    <iframe loading="lazy" src="charts/fatalities_choropleth.html" 
-                        style="width:100%;height:400px;border:none;border-radius:8px;"
-                        title="Interactive chart: fatalities_choropleth">
+                    <iframe loading="lazy" src="charts/fatalities_choropleth.html" style="width:100%;height:400px;border:none;border-radius:8px;" title="Interactive chart: Fatalities choropleth, NHTSA Safety Analytics" width="600" height="400" sandbox="allow-scripts">
                     </iframe>
                 </div></div></div>
                         <p class="chart-insight-body">Processed NHTSA FARS (Fatality Analysis Reporting System) with 42K+ records. Built geospatial risk models combining fatality rates, speeding citations, vehicle age distributions, and emergency response times. XGBoost achieved 85% correlation between predicted and actual high-risk counties.</p>
@@ -1617,7 +1683,7 @@
                 </div>
                 <div class="project-footer">
                     <span class="data-sources">Data: NHTSA FARS 2022 · 42,795 Records · 50 States · Real Federal Data</span>
-                    <a class="repo-link" href="https://github.com/snapaiarchitect/sierra-mobility-data/tree/main/projects/nhtsa-safety">View Repository →</a>
+                    <a class="repo-link" href="#coming-soon">View Repository →</a>
                 </div>
 
             <div class="project-card">
@@ -1657,14 +1723,10 @@
                     </div>
                     <div class="chart-box"><div style="display:flex;flex-wrap:wrap;gap:1rem;">
     <div style="flex:1;min-width:300px;">
-            <iframe loading="lazy" src="charts/completeness_trend.html" 
-                style="width:100%;height:400px;border:none;border-radius:8px;"
-                title="Completeness Trend">
+            <iframe loading="lazy" src="charts/completeness_trend.html" style="width:100%;height:400px;border:none;border-radius:8px;" title="Interactive chart: Completeness trend, Metadata Quality Governance" width="600" height="400" sandbox="allow-scripts">
             </iframe>
         </div><div style="flex:1;min-width:300px;">
-            <iframe loading="lazy" src="charts/schema_drift_timeline.html" 
-                style="width:100%;height:400px;border:none;border-radius:8px;"
-                title="Schema Drift Timeline">
+            <iframe loading="lazy" src="charts/schema_drift_timeline.html" style="width:100%;height:400px;border:none;border-radius:8px;" title="Interactive chart: Schema drift timeline, Metadata Quality Governance" width="600" height="400" sandbox="allow-scripts">
             </iframe>
         </div>
 </div></div>
@@ -1673,14 +1735,10 @@
                     </div>
 <div class="chart-box"><div style="display:flex;flex-wrap:wrap;gap:1rem;">
     <div style="flex:1;min-width:300px;">
-            <iframe loading="lazy" src="charts/completeness_trend.html" 
-                style="width:100%;height:400px;border:none;border-radius:8px;"
-                title="Completeness Trend">
+            <iframe loading="lazy" src="charts/completeness_trend.html" style="width:100%;height:400px;border:none;border-radius:8px;" title="Interactive chart: Completeness trend, Metadata Quality Governance (repeat view 2)" width="600" height="400" sandbox="allow-scripts">
             </iframe>
         </div><div style="flex:1;min-width:300px;">
-            <iframe loading="lazy" src="charts/schema_drift_timeline.html" 
-                style="width:100%;height:400px;border:none;border-radius:8px;"
-                title="Schema Drift Timeline">
+            <iframe loading="lazy" src="charts/schema_drift_timeline.html" style="width:100%;height:400px;border:none;border-radius:8px;" title="Interactive chart: Schema drift timeline, Metadata Quality Governance (repeat view 2)" width="600" height="400" sandbox="allow-scripts">
             </iframe>
         </div>
 </div></div>
@@ -1695,7 +1753,7 @@
                 
                 <div class="project-footer">
                     <span class="data-sources">Data: Public datasets · Benchmark disclosed</span>
-                    <a class="repo-link" href="https://github.com/snapaiarchitect/ai-architect-portfolio/tree/main/projects/metadata-quality-governance" target="_blank">View Repository →</a>
+                    <a class="repo-link" href="#coming-soon" target="_blank">View Repository →</a>
                 </div>
 </div>
             </div>
@@ -1737,14 +1795,10 @@
                     </div>
                     <div class="chart-box"><div style="display:flex;flex-wrap:wrap;gap:1rem;">
     <div style="flex:1;min-width:300px;">
-            <iframe loading="lazy" src="charts/psi_feature_chart.html" 
-                style="width:100%;height:400px;border:none;border-radius:8px;"
-                title="Psi Feature Chart">
+            <iframe loading="lazy" src="charts/psi_feature_chart.html" style="width:100%;height:400px;border:none;border-radius:8px;" title="Interactive chart: PSI feature chart, AI-Ready MLOps" width="600" height="400" sandbox="allow-scripts">
             </iframe>
         </div><div style="flex:1;min-width:300px;">
-            <iframe loading="lazy" src="charts/drift_distribution.html" 
-                style="width:100%;height:400px;border:none;border-radius:8px;"
-                title="Drift Distribution">
+            <iframe loading="lazy" src="charts/drift_distribution.html" style="width:100%;height:400px;border:none;border-radius:8px;" title="Interactive chart: Drift distribution, AI-Ready MLOps" width="600" height="400" sandbox="allow-scripts">
             </iframe>
         </div>
 </div></div>
@@ -1753,20 +1807,16 @@
                     </div>
 <div class="chart-box"><div style="display:flex;flex-wrap:wrap;gap:1rem;">
     <div style="flex:1;min-width:300px;">
-            <iframe loading="lazy" src="charts/psi_feature_chart.html" 
-                style="width:100%;height:400px;border:none;border-radius:8px;"
-                title="Psi Feature Chart">
+            <iframe loading="lazy" src="charts/psi_feature_chart.html" style="width:100%;height:400px;border:none;border-radius:8px;" title="Interactive chart: PSI feature chart, AI-Ready MLOps (repeat view 2)" width="600" height="400" sandbox="allow-scripts">
             </iframe>
         </div><div style="flex:1;min-width:300px;">
-            <iframe loading="lazy" src="charts/drift_distribution.html" 
-                style="width:100%;height:400px;border:none;border-radius:8px;"
-                title="Drift Distribution">
+            <iframe loading="lazy" src="charts/drift_distribution.html" style="width:100%;height:400px;border:none;border-radius:8px;" title="Interactive chart: Drift distribution, AI-Ready MLOps (repeat view 2)" width="600" height="400" sandbox="allow-scripts">
             </iframe>
         </div>
 </div></div>
                     <div class="technical-detail">
                         <span class="technical-label">How we got there</span>
-                        <p>Computed PSI per feature by comparing live inference distributions against the training baseline using 10-bin histograms. PSI thresholds: < 0.1 stable, 0.1–0.25 moderate, > 0.25 significant. Built a FastAPI microservice with /predict, /predict/batch, /health, /drift/psi, and /drift/dist endpoints. Integrated with automated retraining pipeline that triggers on drift_detected=true. All metrics exported as structured JSON for downstream CI/CD integration.</p>
+                        <p>Computed PSI per feature by comparing live inference distributions against the training baseline using 10-bin histograms. PSI thresholds: < 0.1 stable, 0.1–0.25 moderate, > 0.25 significant. Designed a FastAPI service interface with /predict, /predict/batch, /health, /drift/psi, and /drift/dist routes; this is a design, not a deployed or hosted endpoint, and no live URL exists. The drift check sets drift_detected=true as the retraining trigger, and metrics are exported as structured JSON for downstream CI/CD integration.</p>
                     </div>
                     <div class="transfer-box">
                         <h5>What I'd bring to your team</h5>
@@ -1775,7 +1825,7 @@
                 
                 <div class="project-footer">
                     <span class="data-sources">Data: Public datasets · Benchmark disclosed</span>
-                    <a class="repo-link" href="https://github.com/snapaiarchitect/ai-architect-portfolio/tree/main/projects/ai-ready-mlops" target="_blank">View Repository →</a>
+                    <a class="repo-link" href="#coming-soon" target="_blank">View Repository →</a>
                 </div>
 </div>
             </div>
@@ -1821,8 +1871,8 @@
                         <p><strong>Most Amazon sellers guess at pricing.</strong> This system computes deal scores, brand concentration indices, and price volatility by category — turning product listings into a competitive intelligence dashboard. Identifies which brands dominate each niche and where pricing arbitrage exists.</p>
                     </div>
                     <div class="chart-box">
-                    <iframe src="charts/amazon_price_rating.html" style="width:100%;min-height:340px;border:none;border-radius:8px;" loading="lazy"></iframe>
-                    <iframe src="charts/amazon_deals.html" style="width:100%;min-height:340px;border:none;border-radius:8px;" loading="lazy"></iframe>
+                    <iframe loading="lazy" src="charts/amazon_price_rating.html" style="width:100%;min-height:340px;border:none;border-radius:8px;" title="Interactive chart: Amazon price rating, Amazon Product Intelligence" width="600" height="340" sandbox="allow-scripts"></iframe>
+                    <iframe loading="lazy" src="charts/amazon_deals.html" style="width:100%;min-height:340px;border:none;border-radius:8px;" title="Interactive chart: Amazon deals, Amazon Product Intelligence" width="600" height="340" sandbox="allow-scripts"></iframe>
                     </div>
                     <p class="chart-insight-body">Price-rating scatter reveals Amazon's brand tier structure: Amazon-branded devices cluster at 4.6-4.7★ with aggressive pricing, while third-party brands span $15-$300 with higher variance. Deal distribution shows 62% are Lightning Deals vs 38% coupons — suggesting flash-sale psychology drives conversion.</p>
                     <div class="technical-detail">
@@ -1836,7 +1886,7 @@
                 
                 <div class="project-footer">
                     <span class="data-sources">Data: Public datasets · Benchmark disclosed</span>
-                    <a class="repo-link" href="https://github.com/snapaiarchitect/ai-architect-portfolio/tree/main/projects/amazon-product-customer-intelligence" target="_blank">View Repository →</a>
+                    <a class="repo-link" href="#coming-soon" target="_blank">View Repository →</a>
                 </div>
 </div>
             </div>
@@ -1882,8 +1932,8 @@
                         <p><strong>Content is expensive — knowing what to produce is the multiplier.</strong> The dashboard reveals that Drama dominates catalog share but Documentaries punch above their weight on ratings. Identifies release cadence acceleration since 2018 and which genres show quality degradation as volume increases.</p>
                     </div>
                     <div class="chart-box">
-                    <iframe src="charts/netflix_popularity_rating.html" style="width:100%;min-height:340px;border:none;border-radius:8px;" loading="lazy"></iframe>
-                    <iframe src="charts/netflix_genres.html" style="width:100%;min-height:340px;border:none;border-radius:8px;" loading="lazy"></iframe>
+                    <iframe loading="lazy" src="charts/netflix_popularity_rating.html" style="width:100%;min-height:340px;border:none;border-radius:8px;" title="Interactive chart: Netflix popularity rating, Netflix Content Strategy" width="600" height="340" sandbox="allow-scripts"></iframe>
+                    <iframe loading="lazy" src="charts/netflix_genres.html" style="width:100%;min-height:340px;border:none;border-radius:8px;" title="Interactive chart: Netflix genres, Netflix Content Strategy" width="600" height="340" sandbox="allow-scripts"></iframe>
                     </div>
                     <p class="chart-insight-body">TMDB popularity vs rating scatter shows a "hype gap" — high-budget titles (>$50M popularity) cluster at 6.5-7.5★ while niche content achieves 8.0+★ with lower reach. Genre analysis reveals Action dominates volume (48,506 titles) but Thriller delivers highest per-title popularity — a counterintuitive content strategy signal.</p>
                     <div class="technical-detail">
@@ -1897,7 +1947,7 @@
                 
                 <div class="project-footer">
                     <span class="data-sources">Data: Public datasets · Benchmark disclosed</span>
-                    <a class="repo-link" href="https://github.com/snapaiarchitect/ai-architect-portfolio/tree/main/projects/netflix-content-strategy-intelligence" target="_blank">View Repository →</a>
+                    <a class="repo-link" href="#coming-soon" target="_blank">View Repository →</a>
                 </div>
 </div>
             </div>
@@ -1941,7 +1991,7 @@
                         <p><strong>Labor markets don't move in straight lines — this tracks the curves.</strong> The system indexes all metrics to pre-COVID baseline (Jan 2020 = 100), revealing which demographics recovered fastest and which remain depressed. Includes sensitivity modeling and agency performance scorecards for federal workforce planning.</p>
                     </div>
                     <div class="chart-box">
-                    <iframe src="charts/executive_unemployment_trend.html" style="width:100%;min-height:340px;border:none;border-radius:8px;" loading="lazy"></iframe>
+                    <iframe loading="lazy" src="charts/executive_unemployment_trend.html" style="width:100%;min-height:340px;border:none;border-radius:8px;" title="Interactive chart: Executive unemployment trend, Executive Decision Support" width="600" height="340" sandbox="allow-scripts"></iframe>
                     </div>
                     <p class="chart-insight-body">DC unemployment spiked to 11.3% in April 2020 (COVID), recovered to 5.0% by 2022, and has stabilized at 4.8-5.2% through 2025. Monthly seasonality shows consistent January upticks (+0.3-0.5%) reflecting federal hiring freezes. BLS LAUS data confirms labor market resilience relative to national averages.</p>
                     <div class="technical-detail">
@@ -1955,7 +2005,7 @@
                 
                 <div class="project-footer">
                     <span class="data-sources">Data: Public datasets · Benchmark disclosed</span>
-                    <a class="repo-link" href="https://github.com/snapaiarchitect/ai-architect-portfolio/tree/main/projects/executive-decision-support" target="_blank">View Repository →</a>
+                    <a class="repo-link" href="#coming-soon" target="_blank">View Repository →</a>
                 </div>
 </div>
             </div>
@@ -1999,8 +2049,8 @@
                         <p><strong>Research teams drown in literature — this surfaces the signal.</strong> The pipeline extracts drug response correlations, biomarker significance scores, and trial timeline patterns from PubMed abstracts. Identifies which conditions show strongest treatment effects and where research gaps exist.</p>
                     </div>
                     <div class="chart-box">
-                    <iframe src="charts/pubmed_biomarker_volcano.html" style="width:100%;min-height:340px;border:none;border-radius:8px;" loading="lazy"></iframe>
-                    <iframe src="charts/pubmed_trials_timeline.html" style="width:100%;min-height:340px;border:none;border-radius:8px;" loading="lazy"></iframe>
+                    <iframe loading="lazy" src="charts/pubmed_biomarker_volcano.html" style="width:100%;min-height:340px;border:none;border-radius:8px;" title="Interactive chart: PubMed biomarker volcano, PubMed Research Analytics" width="600" height="340" sandbox="allow-scripts"></iframe>
+                    <iframe loading="lazy" src="charts/pubmed_trials_timeline.html" style="width:100%;min-height:340px;border:none;border-radius:8px;" title="Interactive chart: PubMed trials timeline, PubMed Research Analytics" width="600" height="340" sandbox="allow-scripts"></iframe>
                     </div>
                     <p class="chart-insight-body">Biomarker volcano plot identifies 8 significant genes (p<0.05, |fold change|>2) across NSCLC, breast, and colorectal cancer studies. PD-L1 and EGFR show highest expression fold-changes (4.2× and 3.8× respectively). Clinical trial enrollment grew from 245 patients (2018) to 2,847 (2024), with Phase III trials dominating (68% of total enrollment) — indicating late-stage pipeline maturity.</p>
                     <div class="technical-detail">
@@ -2014,7 +2064,7 @@
                 
                 <div class="project-footer">
                     <span class="data-sources">Data: Public datasets · Benchmark disclosed</span>
-                    <a class="repo-link" href="https://github.com/snapaiarchitect/ai-architect-portfolio/tree/main/projects/pubmed-research-analytics" target="_blank">View Repository →</a>
+                    <a class="repo-link" href="#coming-soon" target="_blank">View Repository →</a>
                 </div>
 </div>
             </div>
@@ -2059,9 +2109,7 @@
                     </div>
 <div class="chart-box"><div style="display:flex;flex-wrap:wrap;gap:1rem;">
     <div style="flex:1;min-width:300px;">
-            <iframe loading="lazy" src="charts/foia_processing.html" 
-                style="width:100%;height:400px;border:none;border-radius:8px;"
-                title="Foia Processing">
+            <iframe loading="lazy" src="charts/foia_processing.html" style="width:100%;height:400px;border:none;border-radius:8px;" title="Interactive chart: FOIA processing, FOIA Compliance Automation" width="600" height="400" sandbox="allow-scripts">
             </iframe>
         </div>
 </div></div>
@@ -2076,7 +2124,7 @@
                 
                 <div class="project-footer">
                     <span class="data-sources">Data: Public datasets · Benchmark disclosed</span>
-                    <a class="repo-link" href="https://github.com/snapaiarchitect/ai-architect-portfolio/tree/main/projects/foia-compliance-automation" target="_blank">View Repository →</a>
+                    <a class="repo-link" href="#coming-soon" target="_blank">View Repository →</a>
                 </div>
 </div>
             </div>
@@ -2121,9 +2169,7 @@
                     </div>
 <div class="chart-box"><div style="display:flex;flex-wrap:wrap;gap:1rem;">
     <div style="flex:1;min-width:300px;">
-            <iframe loading="lazy" src="charts/arxiv_categories.html" 
-                style="width:100%;height:400px;border:none;border-radius:8px;"
-                title="Arxiv Categories">
+            <iframe loading="lazy" src="charts/arxiv_categories.html" style="width:100%;height:400px;border:none;border-radius:8px;" title="Interactive chart: arXiv categories, arXiv Research Classifier" width="600" height="400" sandbox="allow-scripts">
             </iframe>
         </div>
 </div></div>
@@ -2138,7 +2184,7 @@
                 
                 <div class="project-footer">
                     <span class="data-sources">Data: Public datasets · Benchmark disclosed</span>
-                    <a class="repo-link" href="https://github.com/snapaiarchitect/ai-architect-portfolio/tree/main/projects/arxiv-research-classifier" target="_blank">View Repository →</a>
+                    <a class="repo-link" href="#coming-soon" target="_blank">View Repository →</a>
                 </div>
 </div>
             </div>
@@ -2192,7 +2238,7 @@
                 
                 <div class="project-footer">
                     <span class="data-sources">Data: Public datasets · Benchmark disclosed</span>
-                    <a class="repo-link" href="https://github.com/snapaiarchitect/ai-architect-portfolio/tree/main/projects/program-performance-dashboard" target="_blank">View Repository →</a>
+                    <a class="repo-link" href="#coming-soon" target="_blank">View Repository →</a>
                 </div>
 </div>
             </div>
@@ -2237,9 +2283,7 @@
                     </div>
 <div class="chart-box"><div style="display:flex;flex-wrap:wrap;gap:1rem;">
     <div style="flex:1;min-width:300px;">
-            <iframe loading="lazy" src="charts/wmata_ridership.html" 
-                style="width:100%;height:400px;border:none;border-radius:8px;"
-                title="Wmata Ridership">
+            <iframe loading="lazy" src="charts/wmata_ridership.html" style="width:100%;height:400px;border:none;border-radius:8px;" title="Interactive chart: WMATA ridership, WMATA Ridership Recovery" width="600" height="400" sandbox="allow-scripts">
             </iframe>
         </div>
 </div></div>
@@ -2254,7 +2298,7 @@
                 
                 <div class="project-footer">
                     <span class="data-sources">Data: Public datasets · Benchmark disclosed</span>
-                    <a class="repo-link" href="https://github.com/snapaiarchitect/ai-architect-portfolio/tree/main/projects/wmata-ridership-recovery" target="_blank">View Repository →</a>
+                    <a class="repo-link" href="#coming-soon" target="_blank">View Repository →</a>
                 </div>
 </div>
             </div>
@@ -2299,9 +2343,7 @@
                     </div>
 <div class="chart-box"><div style="display:flex;flex-wrap:wrap;gap:1rem;">
     <div style="flex:1;min-width:300px;">
-            <iframe loading="lazy" src="charts/world_bank_gdp_life.html" 
-                style="width:100%;height:400px;border:none;border-radius:8px;"
-                title="World Bank Gdp Life">
+            <iframe loading="lazy" src="charts/world_bank_gdp_life.html" style="width:100%;height:400px;border:none;border-radius:8px;" title="Interactive chart: World Bank GDP and life expectancy, World Bank Development Dashboard" width="600" height="400" sandbox="allow-scripts">
             </iframe>
         </div>
 </div></div>
@@ -2316,7 +2358,7 @@
                 
                 <div class="project-footer">
                     <span class="data-sources">Data: Public datasets · Benchmark disclosed</span>
-                    <a class="repo-link" href="https://github.com/snapaiarchitect/ai-architect-portfolio/tree/main/projects/world-bank-development-dashboard" target="_blank">View Repository →</a>
+                    <a class="repo-link" href="#coming-soon" target="_blank">View Repository →</a>
                 </div>
 </div>
             </div>
@@ -2361,9 +2403,7 @@
                     </div>
 <div class="chart-box"><div style="display:flex;flex-wrap:wrap;gap:1rem;">
     <div style="flex:1;min-width:300px;">
-            <iframe loading="lazy" src="charts/omb_policy_timeline.html" 
-                style="width:100%;height:400px;border:none;border-radius:8px;"
-                title="Omb Policy Timeline">
+            <iframe loading="lazy" src="charts/omb_policy_timeline.html" style="width:100%;height:400px;border:none;border-radius:8px;" title="Interactive chart: OMB policy timeline, OMB Policy Tracker" width="600" height="400" sandbox="allow-scripts">
             </iframe>
         </div>
 </div></div>
@@ -2378,7 +2418,7 @@
                 
                 <div class="project-footer">
                     <span class="data-sources">Data: Public datasets · Benchmark disclosed</span>
-                    <a class="repo-link" href="https://github.com/snapaiarchitect/ai-architect-portfolio/tree/main/projects/omb-policy-tracker" target="_blank">View Repository →</a>
+                    <a class="repo-link" href="#coming-soon" target="_blank">View Repository →</a>
                 </div>
 </div>
             </div>
@@ -2422,8 +2462,8 @@
                         <p><strong>Legal doctrine evolves in text — this tracks the evolution.</strong> The system identifies which legal terms surge in frequency before major doctrinal shifts, tracks opinion length inflation over decades, and clusters decisions by substantive topic. Reveals that unanimous decisions have shortened while 5-4 splits have grown more verbose since 2000.</p>
                     </div>
                     <div class="chart-box">
-                    <iframe src="charts/scotus_vote_margins.html" style="width:100%;min-height:340px;border:none;border-radius:8px;" loading="lazy"></iframe>
-                    <iframe src="charts/scotus_topics.html" style="width:100%;min-height:340px;border:none;border-radius:8px;" loading="lazy"></iframe>
+                    <iframe loading="lazy" src="charts/scotus_vote_margins.html" style="width:100%;min-height:340px;border:none;border-radius:8px;" title="Interactive chart: SCOTUS vote margins, SCOTUS Opinions Analytics" width="600" height="340" sandbox="allow-scripts"></iframe>
+                    <iframe loading="lazy" src="charts/scotus_topics.html" style="width:100%;min-height:340px;border:none;border-radius:8px;" title="Interactive chart: SCOTUS topics, SCOTUS Opinions Analytics" width="600" height="340" sandbox="allow-scripts"></iframe>
                     </div>
                     <p class="chart-insight-body">Vote margin distribution reveals 9-0 decisions constitute 34% of cases (unanimous), while 5-4 splits represent only 18% — contrary to polarized media narrative. Top topics: Civil Rights (23%), Economic Activity (19%), Criminal Procedure (17%). Opinion word count has increased 47% since 2000, from 4,200 to 6,180 median words — signaling rising case complexity.</p>
                     <div class="technical-detail">
@@ -2437,7 +2477,7 @@
                 
                 <div class="project-footer">
                     <span class="data-sources">Data: Public datasets · Benchmark disclosed</span>
-                    <a class="repo-link" href="https://github.com/snapaiarchitect/ai-architect-portfolio/tree/main/projects/scotus-opinions-analytics" target="_blank">View Repository →</a>
+                    <a class="repo-link" href="#coming-soon" target="_blank">View Repository →</a>
                 </div>
 </div>
             </div>
@@ -2481,8 +2521,8 @@
                         <p><strong>Finding relevant research shouldn't require reading 1,000 abstracts.</strong> This RAG system encodes papers into semantic vectors, clusters them by research area, and retrieves the most relevant work for any natural language query. Used for literature review automation, research gap identification, and cross-disciplinary discovery.</p>
                     </div>
                     <div class="chart-box">
-                    <iframe src="charts/rag_corpus_distribution.html" style="width:100%;min-height:340px;border:none;border-radius:8px;" loading="lazy"></iframe>
-                    <iframe src="charts/rag_query_latency.html" style="width:100%;min-height:340px;border:none;border-radius:8px;" loading="lazy"></iframe>
+                    <iframe loading="lazy" src="charts/rag_corpus_distribution.html" style="width:100%;min-height:340px;border:none;border-radius:8px;" title="Interactive chart: RAG corpus distribution, RAG Knowledge Base" width="600" height="340" sandbox="allow-scripts"></iframe>
+                    <iframe loading="lazy" src="charts/rag_query_latency.html" style="width:100%;min-height:340px;border:none;border-radius:8px;" title="Interactive chart: RAG query latency, RAG Knowledge Base" width="600" height="340" sandbox="allow-scripts"></iframe>
                     </div>
                     <p class="chart-insight-body">arXiv corpus distribution: cs.LG dominates at 1,032 abstracts (39%), followed by cs.AI (767, 29%) and cs.CV (527, 20%). Query latency averages 45ms (retrieval) + 12ms (rerank) = 57ms total — well under the 100ms real-time threshold. 95th percentile latency is 89ms, occurring on multi-word queries with 8+ token matches.</p>
                     <div class="technical-detail">
@@ -2496,7 +2536,7 @@
                 
                 <div class="project-footer">
                     <span class="data-sources">Data: Public datasets · Benchmark disclosed</span>
-                    <a class="repo-link" href="https://github.com/snapaiarchitect/ai-architect-portfolio/tree/main/projects/rag-knowledge-base" target="_blank">View Repository →</a>
+                    <a class="repo-link" href="#coming-soon" target="_blank">View Repository →</a>
                 </div>
 </div>
             </div>
@@ -2541,9 +2581,7 @@
                     </div>
 <div class="chart-box"><div style="display:flex;flex-wrap:wrap;gap:1rem;">
     <div style="flex:1;min-width:300px;">
-            <iframe loading="lazy" src="charts/bts_airline_delays.html" 
-                style="width:100%;height:400px;border:none;border-radius:8px;"
-                title="Bts Airline Delays">
+            <iframe loading="lazy" src="charts/bts_airline_delays.html" style="width:100%;height:400px;border:none;border-radius:8px;" title="Interactive chart: BTS airline delays, BTS Airline Delay Analytics" width="600" height="400" sandbox="allow-scripts">
             </iframe>
         </div>
 </div></div>
@@ -2558,7 +2596,7 @@
                 
                 <div class="project-footer">
                     <span class="data-sources">Data: Public datasets · Benchmark disclosed</span>
-                    <a class="repo-link" href="https://github.com/snapaiarchitect/ai-architect-portfolio/tree/main/projects/bts-airline-delay-analytics" target="_blank">View Repository →</a>
+                    <a class="repo-link" href="#coming-soon" target="_blank">View Repository →</a>
                 </div>
 </div>
             </div>
@@ -2604,8 +2642,8 @@
                         <p><strong>Search interest is demand before it shows up in sales data.</strong> The pipeline decomposes search trends into seasonal, trend, and residual components. Identifies which keywords are accelerating vs. decelerating, and where geographic interest clusters form. Used for content calendar timing, product launch windows, and competitive positioning.</p>
                     </div>
                     <div class="chart-box">
-                    <iframe src="charts/google_trends_time.html" style="width:100%;min-height:340px;border:none;border-radius:8px;" loading="lazy"></iframe>
-                    <iframe src="charts/google_trends_region.html" style="width:100%;min-height:340px;border:none;border-radius:8px;" loading="lazy"></iframe>
+                    <iframe loading="lazy" src="charts/google_trends_time.html" style="width:100%;min-height:340px;border:none;border-radius:8px;" title="Interactive chart: Google trends time, Google Search Trends" width="600" height="340" sandbox="allow-scripts"></iframe>
+                    <iframe loading="lazy" src="charts/google_trends_region.html" style="width:100%;min-height:340px;border:none;border-radius:8px;" title="Interactive chart: Google trends region, Google Search Trends" width="600" height="340" sandbox="allow-scripts"></iframe>
                     </div>
                     <p class="chart-insight-body">AI search interest grew 340% from May 2021 to May 2025, with seasonal dips every December. Washington DC leads US states in relative interest (index 100), followed by California (94) and Massachusetts (89) — correlating with tech hub concentration. Bitcoin and "stock market" show inverse correlation with AI interest, suggesting attention economy competition.</p>
                     <div class="technical-detail">
@@ -2619,7 +2657,7 @@
                 
                 <div class="project-footer">
                     <span class="data-sources">Data: Public datasets · Benchmark disclosed</span>
-                    <a class="repo-link" href="https://github.com/snapaiarchitect/ai-architect-portfolio/tree/main/projects/google-search-trends-market-intelligence" target="_blank">View Repository →</a>
+                    <a class="repo-link" href="#coming-soon" target="_blank">View Repository →</a>
                 </div>
 </div>
             </div>
@@ -2663,7 +2701,7 @@
                         <p><strong>23% of federal capital projects show high schedule risk — but most agencies find out too late.</strong> The system scores every project on 12 risk dimensions including funding velocity, vendor concentration, historical slippage, and inter-agency coordination density. Flags projects 6-12 months before schedule slips become budget crises.</p>
                     </div>
                     <div class="chart-box">
-                    <iframe src="charts/federal_agency_contracts.html" style="width:100%;min-height:340px;border:none;border-radius:8px;" loading="lazy"></iframe>
+                    <iframe loading="lazy" src="charts/federal_agency_contracts.html" style="width:100%;min-height:340px;border:none;border-radius:8px;" title="Interactive chart: Federal agency contracts, Federal Project Risk and Schedule" width="600" height="340" sandbox="allow-scripts"></iframe>
                     </div>
                     <p class="chart-insight-body">Top 10 federal agencies by contract value: DOE leads at $12.8B (nuclear infrastructure), followed by DOD ($9.4B) and HHS ($7.1B). Contract duration analysis reveals IT projects average 847 days vs construction at 1,420 days — a 68% schedule variance that risk models must account for. GAO high-risk designations correlate with agencies exceeding 1,000-day average durations.</p>
                     <div class="technical-detail">
@@ -2677,7 +2715,7 @@
                 
                 <div class="project-footer">
                     <span class="data-sources">Data: Public datasets · Benchmark disclosed</span>
-                    <a class="repo-link" href="https://github.com/snapaiarchitect/ai-architect-portfolio/tree/main/projects/federal-project-risk-schedule" target="_blank">View Repository →</a>
+                    <a class="repo-link" href="#coming-soon" target="_blank">View Repository →</a>
                 </div>
 </div>
             </div>
@@ -2722,9 +2760,7 @@
                     </div>
 <div class="chart-box"><div style="display:flex;flex-wrap:wrap;gap:1rem;">
     <div style="flex:1;min-width:300px;">
-            <iframe loading="lazy" src="charts/data_gov_agencies.html" 
-                style="width:100%;height:400px;border:none;border-radius:8px;"
-                title="Data Gov Agencies">
+            <iframe loading="lazy" src="charts/data_gov_agencies.html" style="width:100%;height:400px;border:none;border-radius:8px;" title="Interactive chart: Data.gov agencies, Data.gov Catalog Analytics" width="600" height="400" sandbox="allow-scripts">
             </iframe>
         </div>
 </div></div>
@@ -2739,7 +2775,7 @@
                 
                 <div class="project-footer">
                     <span class="data-sources">Data: Public datasets · Benchmark disclosed</span>
-                    <a class="repo-link" href="https://github.com/snapaiarchitect/ai-architect-portfolio/tree/main/projects/datagov-catalog-analytics" target="_blank">View Repository →</a>
+                    <a class="repo-link" href="#coming-soon" target="_blank">View Repository →</a>
                 </div>
 </div>
             </div>
@@ -2784,9 +2820,7 @@
                     </div>
 <div class="chart-box"><div style="display:flex;flex-wrap:wrap;gap:1rem;">
     <div style="flex:1;min-width:300px;">
-            <iframe loading="lazy" src="charts/census_demographics.html" 
-                style="width:100%;height:400px;border:none;border-radius:8px;"
-                title="Census Demographics">
+            <iframe loading="lazy" src="charts/census_demographics.html" style="width:100%;height:400px;border:none;border-radius:8px;" title="Interactive chart: Census demographics, Census Demographics Dashboard" width="600" height="400" sandbox="allow-scripts">
             </iframe>
         </div>
 </div></div>
@@ -2801,7 +2835,7 @@
                 
                 <div class="project-footer">
                     <span class="data-sources">Data: Public datasets · Benchmark disclosed</span>
-                    <a class="repo-link" href="https://github.com/snapaiarchitect/ai-architect-portfolio/tree/main/projects/census-demographics-dashboard" target="_blank">View Repository →</a>
+                    <a class="repo-link" href="#coming-soon" target="_blank">View Repository →</a>
                 </div>
 </div>
             </div>
@@ -2846,9 +2880,7 @@
                     </div>
 <div class="chart-box"><div style="display:flex;flex-wrap:wrap;gap:1rem;">
     <div style="flex:1;min-width:300px;">
-            <iframe loading="lazy" src="charts/bls_employment.html" 
-                style="width:100%;height:400px;border:none;border-radius:8px;"
-                title="Bls Employment">
+            <iframe loading="lazy" src="charts/bls_employment.html" style="width:100%;height:400px;border:none;border-radius:8px;" title="Interactive chart: BLS employment, BLS Labor Market Dashboard" width="600" height="400" sandbox="allow-scripts">
             </iframe>
         </div>
 </div></div>
@@ -2863,7 +2895,7 @@
                 
                 <div class="project-footer">
                     <span class="data-sources">Data: Public datasets · Benchmark disclosed</span>
-                    <a class="repo-link" href="https://github.com/snapaiarchitect/ai-architect-portfolio/tree/main/projects/bls-labor-market-dashboard" target="_blank">View Repository →</a>
+                    <a class="repo-link" href="#coming-soon" target="_blank">View Repository →</a>
                 </div>
 </div>
             </div>
@@ -2908,14 +2940,10 @@
                     </div>
 <div class="chart-box"><div style="display:flex;flex-wrap:wrap;gap:1rem;">
     <div style="flex:1;min-width:300px;">
-            <iframe loading="lazy" src="charts/911_demand_heatmap.html" 
-                style="width:100%;height:400px;border:none;border-radius:8px;"
-                title="911 Demand Heatmap">
+            <iframe loading="lazy" src="charts/911_demand_heatmap.html" style="width:100%;height:400px;border:none;border-radius:8px;" title="Interactive chart: 911 demand heatmap, 911 Triage Analytics" width="600" height="400" sandbox="allow-scripts">
             </iframe>
         </div><div style="flex:1;min-width:300px;">
-            <iframe loading="lazy" src="charts/911_response_time.html" 
-                style="width:100%;height:400px;border:none;border-radius:8px;"
-                title="911 Response Time">
+            <iframe loading="lazy" src="charts/911_response_time.html" style="width:100%;height:400px;border:none;border-radius:8px;" title="Interactive chart: 911 response time, 911 Triage Analytics" width="600" height="400" sandbox="allow-scripts">
             </iframe>
         </div>
 </div></div>
@@ -2930,7 +2958,7 @@
                 
                 <div class="project-footer">
                     <span class="data-sources">Data: Public datasets · Benchmark disclosed</span>
-                    <a class="repo-link" href="https://github.com/snapaiarchitect/ai-architect-portfolio/tree/main/projects/911-triage-analytics" target="_blank">View Repository →</a>
+                    <a class="repo-link" href="#coming-soon" target="_blank">View Repository →</a>
                 </div>
 </div>
             </div>
@@ -2975,14 +3003,10 @@
                     </div>
 <div class="chart-box"><div style="display:flex;flex-wrap:wrap;gap:1rem;">
     <div style="flex:1;min-width:300px;">
-            <iframe loading="lazy" src="charts/medicaid_cost_efficiency.html" 
-                style="width:100%;height:400px;border:none;border-radius:8px;"
-                title="Medicaid Cost Efficiency">
+            <iframe loading="lazy" src="charts/medicaid_cost_efficiency.html" style="width:100%;height:400px;border:none;border-radius:8px;" title="Interactive chart: Medicaid cost efficiency, Medicaid Utilization Analytics" width="600" height="400" sandbox="allow-scripts">
             </iframe>
         </div><div style="flex:1;min-width:300px;">
-            <iframe loading="lazy" src="charts/medicaid_opioid.html" 
-                style="width:100%;height:400px;border:none;border-radius:8px;"
-                title="Medicaid Opioid">
+            <iframe loading="lazy" src="charts/medicaid_opioid.html" style="width:100%;height:400px;border:none;border-radius:8px;" title="Interactive chart: Medicaid opioid, Medicaid Utilization Analytics" width="600" height="400" sandbox="allow-scripts">
             </iframe>
         </div>
 </div></div>
@@ -2997,7 +3021,7 @@
                 
                 <div class="project-footer">
                     <span class="data-sources">Data: Public datasets · Benchmark disclosed</span>
-                    <a class="repo-link" href="https://github.com/snapaiarchitect/ai-architect-portfolio/tree/main/projects/medicaid-utilization-analytics" target="_blank">View Repository →</a>
+                    <a class="repo-link" href="#coming-soon" target="_blank">View Repository →</a>
                 </div>
 </div>
             </div>
@@ -3042,14 +3066,10 @@
                     </div>
 <div class="chart-box"><div style="display:flex;flex-wrap:wrap;gap:1rem;">
     <div style="flex:1;min-width:300px;">
-            <iframe loading="lazy" src="charts/public_health_epidemic.html" 
-                style="width:100%;height:400px;border:none;border-radius:8px;"
-                title="Public Health Epidemic">
+            <iframe loading="lazy" src="charts/public_health_epidemic.html" style="width:100%;height:400px;border:none;border-radius:8px;" title="Interactive chart: Public health epidemic, Public Health Dashboard" width="600" height="400" sandbox="allow-scripts">
             </iframe>
         </div><div style="flex:1;min-width:300px;">
-            <iframe loading="lazy" src="charts/public_health_mortality.html" 
-                style="width:100%;height:400px;border:none;border-radius:8px;"
-                title="Public Health Mortality">
+            <iframe loading="lazy" src="charts/public_health_mortality.html" style="width:100%;height:400px;border:none;border-radius:8px;" title="Interactive chart: Public health mortality, Public Health Dashboard" width="600" height="400" sandbox="allow-scripts">
             </iframe>
         </div>
 </div></div>
@@ -3064,7 +3084,7 @@
                 
                 <div class="project-footer">
                     <span class="data-sources">Data: Public datasets · Benchmark disclosed</span>
-                    <a class="repo-link" href="https://github.com/snapaiarchitect/ai-architect-portfolio/tree/main/projects/public-health-dashboard" target="_blank">View Repository →</a>
+                    <a class="repo-link" href="#coming-soon" target="_blank">View Repository →</a>
                 </div>
 </div>
             </div>
@@ -3109,14 +3129,10 @@
                     </div>
 <div class="chart-box"><div style="display:flex;flex-wrap:wrap;gap:1rem;">
     <div style="flex:1;min-width:300px;">
-            <iframe loading="lazy" src="charts/attrition_roc.html" 
-                style="width:100%;height:400px;border:none;border-radius:8px;"
-                title="Attrition Roc">
+            <iframe loading="lazy" src="charts/attrition_roc.html" style="width:100%;height:400px;border:none;border-radius:8px;" title="Interactive chart: Attrition ROC, Attrition Prediction" width="600" height="400" sandbox="allow-scripts">
             </iframe>
         </div><div style="flex:1;min-width:300px;">
-            <iframe loading="lazy" src="charts/attrition_survival.html" 
-                style="width:100%;height:400px;border:none;border-radius:8px;"
-                title="Attrition Survival">
+            <iframe loading="lazy" src="charts/attrition_survival.html" style="width:100%;height:400px;border:none;border-radius:8px;" title="Interactive chart: Attrition survival, Attrition Prediction" width="600" height="400" sandbox="allow-scripts">
             </iframe>
         </div>
 </div></div>
@@ -3131,7 +3147,7 @@
                 
                 <div class="project-footer">
                     <span class="data-sources">Data: Public datasets · Benchmark disclosed</span>
-                    <a class="repo-link" href="https://github.com/snapaiarchitect/ai-architect-portfolio/tree/main/projects/attrition-prediction" target="_blank">View Repository →</a>
+                    <a class="repo-link" href="#coming-soon" target="_blank">View Repository →</a>
                 </div>
 </div>
             </div>
@@ -3176,19 +3192,13 @@
                     </div>
 <div class="chart-box"><div style="display:flex;flex-wrap:wrap;gap:1rem;">
     <div style="flex:1;min-width:300px;">
-            <iframe loading="lazy" src="charts/dei_employment_trends.html" 
-                style="width:100%;height:400px;border:none;border-radius:8px;"
-                title="Dei Employment Trends">
+            <iframe loading="lazy" src="charts/dei_employment_trends.html" style="width:100%;height:400px;border:none;border-radius:8px;" title="Interactive chart: DEI employment trends, DEI Executive Dashboard" width="600" height="400" sandbox="allow-scripts">
             </iframe>
         </div><div style="flex:1;min-width:300px;">
-            <iframe loading="lazy" src="charts/dei_pay_equity.html" 
-                style="width:100%;height:400px;border:none;border-radius:8px;"
-                title="Dei Pay Equity">
+            <iframe loading="lazy" src="charts/dei_pay_equity.html" style="width:100%;height:400px;border:none;border-radius:8px;" title="Interactive chart: DEI pay equity, DEI Executive Dashboard" width="600" height="400" sandbox="allow-scripts">
             </iframe>
         </div><div style="flex:1;min-width:300px;">
-            <iframe loading="lazy" src="charts/dei_representation.html" 
-                style="width:100%;height:400px;border:none;border-radius:8px;"
-                title="Dei Representation">
+            <iframe loading="lazy" src="charts/dei_representation.html" style="width:100%;height:400px;border:none;border-radius:8px;" title="Interactive chart: DEI representation, DEI Executive Dashboard" width="600" height="400" sandbox="allow-scripts">
             </iframe>
         </div>
 </div></div>
@@ -3203,7 +3213,7 @@
                 
                 <div class="project-footer">
                     <span class="data-sources">Data: Public datasets · Benchmark disclosed</span>
-                    <a class="repo-link" href="https://github.com/snapaiarchitect/ai-architect-portfolio/tree/main/projects/dei-executive-dashboard" target="_blank">View Repository →</a>
+                    <a class="repo-link" href="#coming-soon" target="_blank">View Repository →</a>
                 </div>
 </div>
             </div>
@@ -3248,19 +3258,13 @@
                     </div>
 <div class="chart-box"><div style="display:flex;flex-wrap:wrap;gap:1rem;">
     <div style="flex:1;min-width:300px;">
-            <iframe loading="lazy" src="charts/sentiment_by_domain.html" 
-                style="width:100%;height:400px;border:none;border-radius:8px;"
-                title="Sentiment By Domain">
+            <iframe loading="lazy" src="charts/sentiment_by_domain.html" style="width:100%;height:400px;border:none;border-radius:8px;" title="Interactive chart: Sentiment by domain, Workforce Sentiment NLP" width="600" height="400" sandbox="allow-scripts">
             </iframe>
         </div><div style="flex:1;min-width:300px;">
-            <iframe loading="lazy" src="charts/sentiment_distribution.html" 
-                style="width:100%;height:400px;border:none;border-radius:8px;"
-                title="Sentiment Distribution">
+            <iframe loading="lazy" src="charts/sentiment_distribution.html" style="width:100%;height:400px;border:none;border-radius:8px;" title="Interactive chart: Sentiment distribution, Workforce Sentiment NLP" width="600" height="400" sandbox="allow-scripts">
             </iframe>
         </div><div style="flex:1;min-width:300px;">
-            <iframe loading="lazy" src="charts/sentiment_text_length.html" 
-                style="width:100%;height:400px;border:none;border-radius:8px;"
-                title="Sentiment Text Length">
+            <iframe loading="lazy" src="charts/sentiment_text_length.html" style="width:100%;height:400px;border:none;border-radius:8px;" title="Interactive chart: Sentiment text length, Workforce Sentiment NLP" width="600" height="400" sandbox="allow-scripts">
             </iframe>
         </div>
 </div></div>
@@ -3275,7 +3279,7 @@
                 
                 <div class="project-footer">
                     <span class="data-sources">Data: Public datasets · Benchmark disclosed</span>
-                    <a class="repo-link" href="https://github.com/snapaiarchitect/ai-architect-portfolio/tree/main/projects/workforce-sentiment-nlp" target="_blank">View Repository →</a>
+                    <a class="repo-link" href="#coming-soon" target="_blank">View Repository →</a>
                 </div>
 </div>
             </div>
@@ -3320,24 +3324,16 @@
                     </div>
 <div class="chart-box"><div style="display:flex;flex-wrap:wrap;gap:1rem;">
     <div style="flex:1;min-width:300px;">
-            <iframe loading="lazy" src="charts/llm_class_distribution.html" 
-                style="width:100%;height:400px;border:none;border-radius:8px;"
-                title="Llm Class Distribution">
+            <iframe loading="lazy" src="charts/llm_class_distribution.html" style="width:100%;height:400px;border:none;border-radius:8px;" title="Interactive chart: LLM class distribution, LLM Document Classifier" width="600" height="400" sandbox="allow-scripts">
             </iframe>
         </div><div style="flex:1;min-width:300px;">
-            <iframe loading="lazy" src="charts/llm_classification_performance.html" 
-                style="width:100%;height:400px;border:none;border-radius:8px;"
-                title="Llm Classification Performance">
+            <iframe loading="lazy" src="charts/llm_classification_performance.html" style="width:100%;height:400px;border:none;border-radius:8px;" title="Interactive chart: LLM classification performance, LLM Document Classifier" width="600" height="400" sandbox="allow-scripts">
             </iframe>
         </div><div style="flex:1;min-width:300px;">
-            <iframe loading="lazy" src="charts/llm_confusion_matrix.html" 
-                style="width:100%;height:400px;border:none;border-radius:8px;"
-                title="Llm Confusion Matrix">
+            <iframe loading="lazy" src="charts/llm_confusion_matrix.html" style="width:100%;height:400px;border:none;border-radius:8px;" title="Interactive chart: LLM confusion matrix, LLM Document Classifier" width="600" height="400" sandbox="allow-scripts">
             </iframe>
         </div><div style="flex:1;min-width:300px;">
-            <iframe loading="lazy" src="charts/llm_doc_length.html" 
-                style="width:100%;height:400px;border:none;border-radius:8px;"
-                title="Llm Doc Length">
+            <iframe loading="lazy" src="charts/llm_doc_length.html" style="width:100%;height:400px;border:none;border-radius:8px;" title="Interactive chart: LLM doc length, LLM Document Classifier" width="600" height="400" sandbox="allow-scripts">
             </iframe>
         </div>
 </div></div>
@@ -3352,7 +3348,7 @@
                 </div>
                 <div class="project-footer">
                     <span class="data-sources">Data: Public datasets · Benchmark disclosed</span>
-                    <a class="repo-link" href="https://github.com/snapaiarchitect/ai-architect-portfolio/tree/main/projects/llm-document-classifier" target="_blank">View Repository →</a>
+                    <a class="repo-link" href="#coming-soon" target="_blank">View Repository →</a>
                 </div>
             </div>
 
@@ -3376,9 +3372,9 @@
                 </div>
             </div>
         </section>
-    </div>
+    </main>
 
-    <footer class="container">
+    <footer class="container" aria-label="Site footer">
         <p>© 2026 Sierra Napier · <a href="./" style="color:var(--accent-cyan);text-decoration:none;">Full Portfolio</a> · Built with real data · Benchmark datasets disclosed</p>
     </footer>
 

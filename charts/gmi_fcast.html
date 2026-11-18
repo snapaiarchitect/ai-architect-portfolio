@@ -4,27 +4,100 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FY2027 General Fund revenue midpoint $29.7B, indicative range $28.7B to $31.2B | GMI Savings Tracker</title>
-<script src="https://cdn.plot.ly/plotly-3.5.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/plotly.js-dist-min@4.3.0/plotly.min.js" integrity="sha384-AtW63zbFwwiEVUeSPFC1ydmqJUwWWoXmyZHP8OC449teZ+00wVajF4cFhd/hy7jG" crossorigin="anonymous"></script>
 <style>
+  html { color-scheme:dark; }
   body { margin:0; padding:0; background:#0a0e1a; color:#f0f0f0; font-family:'Segoe UI',Roboto,sans-serif; }
-  #chart { width:100vw; height:100vh; }
+  .stage { position:relative; height:100vh; min-height:480px; }
+  #chart { width:100%; height:100%; }
   .title-bar { position:absolute; top:12px; left:20px; right:20px; z-index:10; pointer-events:none; }
   .title-bar h1 { margin:0; font-size:18px; color:#f0f0f0; font-weight:600; line-height:1.25; }
   .title-bar p  { margin:4px 0 0; font-size:12px; color:#8892b0; }
+  .ctl { position:absolute; right:20px; top:12px; z-index:11; display:flex; gap:10px; align-items:center; font-size:12px; color:#8892b0; }
+  .ctl button { font:inherit; font-size:13px; color:#f0f0f0; background:#1a2234; border:1px solid #334155; border-radius:6px; padding:6px 12px; cursor:pointer; }
+  .ctl button:hover { border-color:#f59e0b; }
+  .ctl button:focus-visible, details.dt summary:focus-visible, .scroll:focus-visible { outline:2px solid #22d3ee; outline-offset:2px; }
   .foot { position:absolute; left:20px; right:20px; bottom:6px; z-index:10; font-size:11px; color:#8892b0; pointer-events:none; }
+  .data { max-width:1100px; margin:0 auto; padding:20px 20px 40px; font-size:14px; line-height:1.5; }
+  .data .summary { margin:0 0 14px; color:#d6deeb; }
+  details.dt { border:1px solid #1f2d44; border-radius:8px; background:#0d1424; }
+  details.dt > summary { cursor:pointer; padding:10px 14px; color:#f0f0f0; font-weight:600; }
+  .scroll { overflow-x:auto; padding:0 14px 14px; }
+  table { border-collapse:collapse; width:100%; font-size:13px; font-variant-numeric:tabular-nums; }
+  caption { text-align:left; color:#8892b0; padding:0 0 8px; font-size:12px; }
+  th, td { padding:5px 10px; border-bottom:1px solid #1f2d44; text-align:right; white-space:nowrap; }
+  th { color:#cbd5e1; font-weight:600; }
+  th[scope=row], thead th:first-child, td.t { text-align:left; }
+  td.t { white-space:normal; min-width:12em; }
+  .nojs { margin:0 0 10px; color:#fbbf24; }
+  @media (max-width:1100px) {
+    .stage { height:auto; min-height:0; }
+    .title-bar, .foot, .ctl { position:static; margin:12px 16px 0; }
+    .foot { margin-bottom:8px; }
+    #chart { height:72vh; min-height:380px; }
+    .data { padding:12px 16px 32px; }
+  }
 </style>
+<noscript><style>details.dt { display:none; }</style></noscript>
 </head>
 <body>
-<div class="title-bar">
-  <h1>FY2027 General Fund revenue midpoint $29.7B, indicative range $28.7B to $31.2B</h1>
-  <p>General Fund revenue, budgetary basis, as reported (one-time items included). The range is indicative, from a log-linear trend; the wider dotted band is the calibrated range.</p>
+<main>
+<div class="stage">
+  <header class="title-bar">
+    <h1 id="ttl">FY2027 General Fund revenue midpoint $29.7B, indicative range $28.7B to $31.2B</h1>
+    <p id="sub">General Fund revenue, budgetary basis, as reported (one-time items included). The range is indicative, from a log-linear trend; the wider dotted band is the calibrated range.</p>
+  </header>
+  <div id="chart" role="img" aria-labelledby="ttl sub"></div>
+  <div class="foot">Source: Maryland Open Data Portal via the GMI Savings Tracker (testing ground v3), data as of 2026-11-13</div>
 </div>
-<div id="chart"></div>
-<div class="foot">Source: Maryland Open Data Portal via the GMI Savings Tracker (testing ground v3), data as of 2026-11-13</div>
+<section class="data" aria-label="Chart summary and data">
+  <p class="summary"><strong>Summary:</strong> FY2027 General Fund revenue midpoint $29.7B, indicative range $28.7B to $31.2B. Every value plotted is listed in the data table below.</p>
+  <details class="dt">
+    <summary>Data table behind this chart (11 rows)</summary>
+    <div class="scroll" tabindex="0" role="region" aria-label="Data table, scrolls sideways on small screens">
+<table><caption>All 10 actual years plus the one forecast year plotted, General Fund revenue in $ billions</caption><thead><tr><th scope="col">Fiscal year</th><th scope="col">Kind</th><th scope="col">Value or midpoint ($B)</th><th scope="col">Indicative low ($B)</th><th scope="col">Indicative high ($B)</th><th scope="col">Calibrated low ($B)</th><th scope="col">Calibrated high ($B)</th></tr></thead>
+<tbody>
+<tr><th scope="row">2,017</th><td>Actual</td><td data-plotted>16.699</td><td></td><td></td><td></td><td></td></tr>
+<tr><th scope="row">2,018</th><td>Actual</td><td data-plotted>17.372</td><td></td><td></td><td></td><td></td></tr>
+<tr><th scope="row">2,019</th><td>Actual</td><td data-plotted>18.199</td><td></td><td></td><td></td><td></td></tr>
+<tr><th scope="row">2,020</th><td>Actual</td><td data-plotted>18.634</td><td></td><td></td><td></td><td></td></tr>
+<tr><th scope="row">2,021</th><td>Actual</td><td data-plotted>20.831</td><td></td><td></td><td></td><td></td></tr>
+<tr><th scope="row">2,022</th><td>Actual</td><td data-plotted>24.039</td><td></td><td></td><td></td><td></td></tr>
+<tr><th scope="row">2,023</th><td>Actual</td><td data-plotted>23.673</td><td></td><td></td><td></td><td></td></tr>
+<tr><th scope="row">2,024</th><td>Actual</td><td data-plotted>24.863</td><td></td><td></td><td></td><td></td></tr>
+<tr><th scope="row">2,025</th><td>Actual</td><td data-plotted>25.716</td><td></td><td></td><td></td><td></td></tr>
+<tr><th scope="row">2,026</th><td>Actual</td><td data-plotted>28.057</td><td></td><td></td><td></td><td></td></tr>
+<tr><th scope="row">2,027</th><td>Forecast</td><td data-plotted>29.71</td><td data-plotted>28.66</td><td data-plotted>31.16</td><td data-plotted>26.13</td><td data-plotted>35.23</td></tr>
+</tbody></table>
+    </div>
+  </details>
+  <noscript>
+    <p class="nojs">This chart needs JavaScript to draw. The same data is listed in this table.</p>
+    <div class="scroll" tabindex="0" role="region" aria-label="Data table">
+<table><caption>All 10 actual years plus the one forecast year plotted, General Fund revenue in $ billions</caption><thead><tr><th scope="col">Fiscal year</th><th scope="col">Kind</th><th scope="col">Value or midpoint ($B)</th><th scope="col">Indicative low ($B)</th><th scope="col">Indicative high ($B)</th><th scope="col">Calibrated low ($B)</th><th scope="col">Calibrated high ($B)</th></tr></thead>
+<tbody>
+<tr><th scope="row">2,017</th><td>Actual</td><td data-plotted>16.699</td><td></td><td></td><td></td><td></td></tr>
+<tr><th scope="row">2,018</th><td>Actual</td><td data-plotted>17.372</td><td></td><td></td><td></td><td></td></tr>
+<tr><th scope="row">2,019</th><td>Actual</td><td data-plotted>18.199</td><td></td><td></td><td></td><td></td></tr>
+<tr><th scope="row">2,020</th><td>Actual</td><td data-plotted>18.634</td><td></td><td></td><td></td><td></td></tr>
+<tr><th scope="row">2,021</th><td>Actual</td><td data-plotted>20.831</td><td></td><td></td><td></td><td></td></tr>
+<tr><th scope="row">2,022</th><td>Actual</td><td data-plotted>24.039</td><td></td><td></td><td></td><td></td></tr>
+<tr><th scope="row">2,023</th><td>Actual</td><td data-plotted>23.673</td><td></td><td></td><td></td><td></td></tr>
+<tr><th scope="row">2,024</th><td>Actual</td><td data-plotted>24.863</td><td></td><td></td><td></td><td></td></tr>
+<tr><th scope="row">2,025</th><td>Actual</td><td data-plotted>25.716</td><td></td><td></td><td></td><td></td></tr>
+<tr><th scope="row">2,026</th><td>Actual</td><td data-plotted>28.057</td><td></td><td></td><td></td><td></td></tr>
+<tr><th scope="row">2,027</th><td>Forecast</td><td data-plotted>29.71</td><td data-plotted>28.66</td><td data-plotted>31.16</td><td data-plotted>26.13</td><td data-plotted>35.23</td></tr>
+</tbody></table>
+    </div>
+  </noscript>
+</section>
+</main>
 <script>
 var D = {"fy":[2017,2018,2019,2020,2021,2022,2023,2024,2025,2026],"v":[16.699,17.372,18.199,18.634,20.831,24.039,23.673,24.863,25.716,28.057],"fy2":2027,"p10":28.66,"p50":29.71,"p90":31.16,"c10":26.13,"c90":35.23,"last":28.0569,"lfy":2026};
 var GOLD='#f59e0b', CYAN='#06b6d4', GREEN='#22c55e', RED='#f87171', MUTED='#64748b';
 var PALETTE = ["#f59e0b", "#06b6d4", "#a78bfa", "#34d399", "#f472b6", "#60a5fa", "#fbbf24"];
+var PAT = ["", "/", "x", ".", "+", "-", "\\"];
+function pat(i,c){return {shape:PAT[i%PAT.length], bgcolor:c, fgcolor:'rgba(10,14,26,0.55)', size:8, solidity:0.4};}
 var base = {
   paper_bgcolor:'#0a0e1a', plot_bgcolor:'#0a0e1a',
   font:{family:'Segoe UI,Roboto,sans-serif', color:'#f0f0f0', size:12},
@@ -36,6 +109,22 @@ var base = {
 };
 function merge(a,b){var o=JSON.parse(JSON.stringify(a));for(var k in b){if(b[k]&&typeof b[k]==='object'&&!Array.isArray(b[k])&&o[k]&&typeof o[k]==='object'){o[k]=merge(o[k],b[k]);}else{o[k]=b[k];}}return o;}
 var config = {responsive:true, displayModeBar:false};
+var gd = document.getElementById('chart');
+// The title sits in normal flow on narrow screens (see CSS), so the plot needs only a small top margin there.
+var narrow = window.matchMedia('(max-width:1100px)');
+// `nar` is an optional layout patch for narrow screens (long axis labels, margins); the plot is redrawn when the
+// viewport crosses the breakpoint. Plotly's own responsive:true handles every other resize.
+function draw(traces, layout, nar){
+  var mk = function(){
+    var l = merge(layout, {});
+    if (narrow.matches) { l.margin.t = 16; if (nar) l = merge(l, nar); }
+    return l;
+  };
+  var p = Plotly.newPlot(gd, traces, mk(), config);
+  var fit = function(){ Plotly.react(gd, gd.data, mk(), config); };
+  if (narrow.addEventListener) narrow.addEventListener('change', fit); else narrow.addListener(fit);
+  return p;
+}
 
 var a={type:'scatter',mode:'lines+markers',name:'Actual',x:D.fy,y:D.v,line:{color:GOLD,width:3},marker:{size:7,color:GOLD},hovertemplate:'<b>FY%{x}</b><br>$%{y:.1f}B actual<extra></extra>'};
 var xs=[D.lfy,D.fy2];
@@ -44,7 +133,7 @@ var rng={type:'scatter',mode:'lines',name:'Indicative range',x:[D.lfy,D.fy2,D.fy
 var mid={type:'scatter',mode:'lines+markers',name:'Forecast midpoint',x:xs,y:[D.last,D.p50],line:{color:CYAN,width:3,dash:'dash'},marker:{size:[0,10],color:CYAN},
  hovertemplate:'<b>FY%{x}</b><br>$%{y:.1f}B midpoint ($'+D.p10+'B to $'+D.p90+'B)<extra></extra>'};
 var layout=merge(base,{xaxis:{dtick:1,tickprefix:'FY',tickangle:-45},yaxis:{title:{text:'$ billions'},tickprefix:'$',ticksuffix:'B',rangemode:'tozero'},legend:{y:-0.2}});
-Plotly.newPlot('chart',[wide,rng,a,mid],layout,config);
+draw([wide,rng,a,mid],layout);
 
 </script>
 </body>

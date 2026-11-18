@@ -84,6 +84,10 @@ My foundation is **MPA/MPH** — policy analysis, regulatory environments, and p
 - **Portfolio:** [goaiarchitect.com](https://goaiarchitect.com/)
 - **Consulting:** [goaiarchitect.com/side-hustle.html](https://goaiarchitect.com/side-hustle.html)
 
+## Deployment
+
+Hosting, CI checks, rollback and the remaining manual steps are documented in [docs/deployment.md](docs/deployment.md).
+
 ---
 
 *© 2026 Sierra Napier. Built on public and benchmark datasets, disclosed on each project.*

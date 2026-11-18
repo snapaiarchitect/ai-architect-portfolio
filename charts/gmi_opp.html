@@ -4,27 +4,86 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>389 leads worth up to $330.5M a year ($219.7M likely); they overlap and are not additive | GMI Savings Tracker</title>
-<script src="https://cdn.plot.ly/plotly-3.5.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/plotly.js-dist-min@4.3.0/plotly.min.js" integrity="sha384-AtW63zbFwwiEVUeSPFC1ydmqJUwWWoXmyZHP8OC449teZ+00wVajF4cFhd/hy7jG" crossorigin="anonymous"></script>
 <style>
+  html { color-scheme:dark; }
   body { margin:0; padding:0; background:#0a0e1a; color:#f0f0f0; font-family:'Segoe UI',Roboto,sans-serif; }
-  #chart { width:100vw; height:100vh; }
+  .stage { position:relative; height:100vh; min-height:480px; }
+  #chart { width:100%; height:100%; }
   .title-bar { position:absolute; top:12px; left:20px; right:20px; z-index:10; pointer-events:none; }
   .title-bar h1 { margin:0; font-size:18px; color:#f0f0f0; font-weight:600; line-height:1.25; }
   .title-bar p  { margin:4px 0 0; font-size:12px; color:#8892b0; }
+  .ctl { position:absolute; right:20px; top:12px; z-index:11; display:flex; gap:10px; align-items:center; font-size:12px; color:#8892b0; }
+  .ctl button { font:inherit; font-size:13px; color:#f0f0f0; background:#1a2234; border:1px solid #334155; border-radius:6px; padding:6px 12px; cursor:pointer; }
+  .ctl button:hover { border-color:#f59e0b; }
+  .ctl button:focus-visible, details.dt summary:focus-visible, .scroll:focus-visible { outline:2px solid #22d3ee; outline-offset:2px; }
   .foot { position:absolute; left:20px; right:20px; bottom:6px; z-index:10; font-size:11px; color:#8892b0; pointer-events:none; }
+  .data { max-width:1100px; margin:0 auto; padding:20px 20px 40px; font-size:14px; line-height:1.5; }
+  .data .summary { margin:0 0 14px; color:#d6deeb; }
+  details.dt { border:1px solid #1f2d44; border-radius:8px; background:#0d1424; }
+  details.dt > summary { cursor:pointer; padding:10px 14px; color:#f0f0f0; font-weight:600; }
+  .scroll { overflow-x:auto; padding:0 14px 14px; }
+  table { border-collapse:collapse; width:100%; font-size:13px; font-variant-numeric:tabular-nums; }
+  caption { text-align:left; color:#8892b0; padding:0 0 8px; font-size:12px; }
+  th, td { padding:5px 10px; border-bottom:1px solid #1f2d44; text-align:right; white-space:nowrap; }
+  th { color:#cbd5e1; font-weight:600; }
+  th[scope=row], thead th:first-child, td.t { text-align:left; }
+  td.t { white-space:normal; min-width:12em; }
+  .nojs { margin:0 0 10px; color:#fbbf24; }
+  @media (max-width:1100px) {
+    .stage { height:auto; min-height:0; }
+    .title-bar, .foot, .ctl { position:static; margin:12px 16px 0; }
+    .foot { margin-bottom:8px; }
+    #chart { height:72vh; min-height:380px; }
+    .data { padding:12px 16px 32px; }
+  }
 </style>
+<noscript><style>details.dt { display:none; }</style></noscript>
 </head>
 <body>
-<div class="title-bar">
-  <h1>389 leads worth up to $330.5M a year ($219.7M likely); they overlap and are not additive</h1>
-  <p>Left: leads by detector. Right: of units flagged in an earlier year, the share flagged again the next year, against units not flagged (reruns as of earlier years; hover for unit counts, small for Tail spend).</p>
+<main>
+<div class="stage">
+  <header class="title-bar">
+    <h1 id="ttl">389 leads worth up to $330.5M a year ($219.7M likely); they overlap and are not additive</h1>
+    <p id="sub">Left: leads by detector. Right: of units flagged in an earlier year, the share flagged again the next year, against units not flagged (reruns as of earlier years; hover for unit counts, small for Tail spend).</p>
+  </header>
+  <div id="chart" role="img" aria-labelledby="ttl sub"></div>
+  <div class="foot">Source: Maryland Open Data Portal via the GMI Savings Tracker (testing ground v3), data as of 2026-11-13</div>
 </div>
-<div id="chart"></div>
-<div class="foot">Source: Maryland Open Data Portal via the GMI Savings Tracker (testing ground v3), data as of 2026-11-13</div>
+<section class="data" aria-label="Chart summary and data">
+  <p class="summary"><strong>Summary:</strong> 389 leads worth up to $330.5M a year ($219.7M likely); they overlap and are not additive. Every value plotted is listed in the data table below.</p>
+  <details class="dt">
+    <summary>Data table behind this chart (4 rows)</summary>
+    <div class="scroll" tabindex="0" role="region" aria-label="Data table, scrolls sideways on small screens">
+<table><caption>All 4 detectors plotted: leads in $ millions a year (left chart) and back-test repeat rates (right chart)</caption><thead><tr><th scope="col">Detector</th><th scope="col">Leads</th><th scope="col">Likely ($M a year)</th><th scope="col">High end ($M a year)</th><th scope="col">Units flagged earlier</th><th scope="col">Flagged again next year (share)</th><th scope="col">Units not flagged earlier</th><th scope="col">Flagged next year, not flagged earlier (share)</th></tr></thead>
+<tbody>
+<tr><th scope="row">Peer gap</th><td>308</td><td data-plotted>96.8</td><td data-plotted>148.1</td><td>907</td><td data-plotted>0.765</td><td>849</td><td data-plotted>0.091</td></tr>
+<tr><th scope="row">Growth above trend</th><td>40</td><td data-plotted>93.9</td><td data-plotted>140.8</td><td>144</td><td data-plotted>0.382</td><td>631</td><td data-plotted>0.114</td></tr>
+<tr><th scope="row">Leverage</th><td>38</td><td data-plotted>27.4</td><td data-plotted>39.1</td><td>79</td><td data-plotted>0.911</td><td>1,525</td><td data-plotted>0.005</td></tr>
+<tr><th scope="row">Tail spend</th><td>3</td><td data-plotted>1.6</td><td data-plotted>2.5</td><td>9</td><td data-plotted>1.0</td><td>9</td><td data-plotted>0.0</td></tr>
+</tbody></table>
+    </div>
+  </details>
+  <noscript>
+    <p class="nojs">This chart needs JavaScript to draw. The same data is listed in this table.</p>
+    <div class="scroll" tabindex="0" role="region" aria-label="Data table">
+<table><caption>All 4 detectors plotted: leads in $ millions a year (left chart) and back-test repeat rates (right chart)</caption><thead><tr><th scope="col">Detector</th><th scope="col">Leads</th><th scope="col">Likely ($M a year)</th><th scope="col">High end ($M a year)</th><th scope="col">Units flagged earlier</th><th scope="col">Flagged again next year (share)</th><th scope="col">Units not flagged earlier</th><th scope="col">Flagged next year, not flagged earlier (share)</th></tr></thead>
+<tbody>
+<tr><th scope="row">Peer gap</th><td>308</td><td data-plotted>96.8</td><td data-plotted>148.1</td><td>907</td><td data-plotted>0.765</td><td>849</td><td data-plotted>0.091</td></tr>
+<tr><th scope="row">Growth above trend</th><td>40</td><td data-plotted>93.9</td><td data-plotted>140.8</td><td>144</td><td data-plotted>0.382</td><td>631</td><td data-plotted>0.114</td></tr>
+<tr><th scope="row">Leverage</th><td>38</td><td data-plotted>27.4</td><td data-plotted>39.1</td><td>79</td><td data-plotted>0.911</td><td>1,525</td><td data-plotted>0.005</td></tr>
+<tr><th scope="row">Tail spend</th><td>3</td><td data-plotted>1.6</td><td data-plotted>2.5</td><td>9</td><td data-plotted>1.0</td><td>9</td><td data-plotted>0.0</td></tr>
+</tbody></table>
+    </div>
+  </noscript>
+</section>
+</main>
 <script>
 var D = {"det":["Peer gap","Growth above trend","Leverage","Tail spend"],"likely":[96.8,93.9,27.4,1.6],"high":[148.1,140.8,39.1,2.5],"n":[308,40,38,3],"fl":[0.765,0.382,0.911,1.0],"nf":[0.091,0.114,0.005,0.0],"uf":[907,144,79,9],"un":[849,631,1525,9]};
 var GOLD='#f59e0b', CYAN='#06b6d4', GREEN='#22c55e', RED='#f87171', MUTED='#64748b';
 var PALETTE = ["#f59e0b", "#06b6d4", "#a78bfa", "#34d399", "#f472b6", "#60a5fa", "#fbbf24"];
+var PAT = ["", "/", "x", ".", "+", "-", "\\"];
+function pat(i,c){return {shape:PAT[i%PAT.length], bgcolor:c, fgcolor:'rgba(10,14,26,0.55)', size:8, solidity:0.4};}
 var base = {
   paper_bgcolor:'#0a0e1a', plot_bgcolor:'#0a0e1a',
   font:{family:'Segoe UI,Roboto,sans-serif', color:'#f0f0f0', size:12},
@@ -36,16 +95,32 @@ var base = {
 };
 function merge(a,b){var o=JSON.parse(JSON.stringify(a));for(var k in b){if(b[k]&&typeof b[k]==='object'&&!Array.isArray(b[k])&&o[k]&&typeof o[k]==='object'){o[k]=merge(o[k],b[k]);}else{o[k]=b[k];}}return o;}
 var config = {responsive:true, displayModeBar:false};
+var gd = document.getElementById('chart');
+// The title sits in normal flow on narrow screens (see CSS), so the plot needs only a small top margin there.
+var narrow = window.matchMedia('(max-width:1100px)');
+// `nar` is an optional layout patch for narrow screens (long axis labels, margins); the plot is redrawn when the
+// viewport crosses the breakpoint. Plotly's own responsive:true handles every other resize.
+function draw(traces, layout, nar){
+  var mk = function(){
+    var l = merge(layout, {});
+    if (narrow.matches) { l.margin.t = 16; if (nar) l = merge(l, nar); }
+    return l;
+  };
+  var p = Plotly.newPlot(gd, traces, mk(), config);
+  var fit = function(){ Plotly.react(gd, gd.data, mk(), config); };
+  if (narrow.addEventListener) narrow.addEventListener('change', fit); else narrow.addListener(fit);
+  return p;
+}
 
 var t1=[{type:'bar',name:'Likely',x:D.det,y:D.likely,marker:{color:GOLD},customdata:D.n,hovertemplate:'<b>%{x}</b><br>Likely: $%{y}M a year<br>%{customdata} leads<extra></extra>'},
-        {type:'bar',name:'High end',x:D.det,y:D.high,marker:{color:CYAN},hovertemplate:'<b>%{x}</b><br>High end: $%{y}M a year<extra></extra>'}];
+        {type:'bar',name:'High end',x:D.det,y:D.high,marker:{color:CYAN,pattern:pat(1,CYAN)},hovertemplate:'<b>%{x}</b><br>High end: $%{y}M a year<extra></extra>'}];
 var t2=[{type:'bar',name:'Flagged earlier',x:D.det,y:D.fl,xaxis:'x2',yaxis:'y2',marker:{color:GOLD},customdata:D.uf,hovertemplate:'<b>%{x}</b><br>Flagged again next year: %{y:.0%}<br>%{customdata} units flagged earlier<extra></extra>'},
-        {type:'bar',name:'Not flagged earlier',x:D.det,y:D.nf,xaxis:'x2',yaxis:'y2',marker:{color:MUTED},customdata:D.un,hovertemplate:'<b>%{x}</b><br>Flagged next year: %{y:.0%}<br>%{customdata} units not flagged earlier<extra></extra>'}];
+        {type:'bar',name:'Not flagged earlier',x:D.det,y:D.nf,xaxis:'x2',yaxis:'y2',marker:{color:MUTED,pattern:pat(3,MUTED)},customdata:D.un,hovertemplate:'<b>%{x}</b><br>Flagged next year: %{y:.0%}<br>%{customdata} units not flagged earlier<extra></extra>'}];
 var layout=merge(base,{grid:{rows:1,columns:2,pattern:'independent',xgap:0.12},barmode:'group',
   yaxis:{title:{text:'$ millions a year'},tickprefix:'$',ticksuffix:'M'},
   yaxis2:{tickformat:'.0%',range:[0,1],gridcolor:'#1f2d44',tickfont:{color:'#94a3b8'}},
   xaxis2:{tickfont:{color:'#94a3b8'},gridcolor:'#1f2d44'}, legend:{y:-0.2}});
-Plotly.newPlot('chart',t1.concat(t2),layout,config);
+draw(t1.concat(t2),layout);
 
 </script>
 </body>

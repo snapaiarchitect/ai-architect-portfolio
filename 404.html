@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0a0e1a">
+    <meta name="robots" content="noindex">
+    <title>Page not found | Sierra Napier</title>
+    <meta name="description" content="That page could not be found. Return to the Sierra Napier portfolio.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
+    <style>
+        :root {
+            --bg-deep: #0a0e1a; --bg-surface: #111827; --bg-elevated: #1a2234; --border: #1f2d44;
+            --text-primary: #f0f0f0; --text-secondary: #94a3b8;
+            --accent-gold: #f59e0b; --accent-cyan: #06b6d4; --accent-cyan-hover: #22d3ee;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif; background: var(--bg-deep); color: var(--text-primary); line-height: 1.6; -webkit-font-smoothing: antialiased; display: flex; flex-direction: column; min-height: 100vh; min-height: 100dvh; }
+        a { color: var(--accent-cyan); }
+        :focus-visible { outline: 3px solid var(--accent-cyan); outline-offset: 2px; }
+        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        nav { background: rgba(10, 14, 26, 0.95); border-bottom: 1px solid var(--border); padding: 0.75rem 0; }
+        .nav-brand { color: var(--text-primary); text-decoration: none; font-weight: 700; font-size: 1.05rem; }
+        main { flex: 1; display: flex; align-items: center; }
+        .box { padding: 4rem 0; }
+        .code { font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent-gold); font-weight: 700; }
+        h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.15; margin: 0.5rem 0 1rem; }
+        p { color: var(--text-secondary); max-width: 60ch; }
+        .btn { display: inline-block; margin-top: 1.5rem; padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600; text-decoration: none; background: linear-gradient(135deg, var(--accent-gold), #d97706); color: #0a0e1a; }
+        footer { border-top: 1px solid var(--border); padding: 1rem 0 1.5rem; color: var(--text-secondary); font-size: 0.85rem; }
+        .skip-link { position: absolute; left: 0.75rem; top: -4rem; z-index: 1000; padding: 0.6rem 1rem; background: #f59e0b; color: #0a0e1a; font-weight: 700; border-radius: 0 0 8px 8px; text-decoration: none; }
+        .skip-link:focus { top: 0; }
+        @media (max-width: 768px) { .container { padding: 0 1rem; } }
+    </style>
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <nav aria-label="Primary">
+        <div class="container"><a href="/" class="nav-brand">Sierra Napier</a></div>
+    </nav>
+    <main id="main" class="container" aria-label="Page not found">
+        <div class="box">
+            <div class="code">Error 404</div>
+            <h1>That page could not be found</h1>
+            <p>The link may be out of date, or the page may have moved. The portfolio, the live GMI Savings Tracker demo and the contact details are all one click from the home page.</p>
+            <a class="btn" href="/">Back to the portfolio</a>
+        </div>
+    </main>
+    <footer aria-label="Site footer"><div class="container">&copy; 2026 Sierra Napier</div></footer>
+</body>
+</html>
