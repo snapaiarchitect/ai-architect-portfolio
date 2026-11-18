@@ -52,6 +52,7 @@ jobs:
             --retry-wait-time 5
             --timeout 20
             --accept "200..=299,429"
+            --root-dir "${{ github.workspace }}"
             --exclude-path projects
             --exclude "^https://www\.linkedin\.com/"
             --exclude "^https://fonts\.(googleapis|gstatic)\.com"
