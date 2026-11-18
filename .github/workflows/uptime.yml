@@ -1,0 +1,87 @@
+name: Uptime
+
+on:
+  schedule:
+    # Every 30 minutes at :07 and :37
+    - cron: "7,37 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: uptime
+  cancel-in-progress: false
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      REPO: ${{ github.repository }}
+      RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+      TITLE: Site down (uptime check)
+    steps:
+      - name: Probe endpoints
+        id: probe
+        continue-on-error: true
+        run: |
+          set -uo pipefail
+          rc=0
+          : > report.md
+          for url in \
+            "https://goaiarchitect.com/" \
+            "https://goaiarchitect.com/demo/gmi-savings-tracker.html" \
+            "https://evo3-ecosystem.github.io/gmi-savings-tracker-v3/"; do
+            if curl -fsS --retry 3 --retry-delay 5 --max-time 30 -o /dev/null "$url"; then
+              echo "- OK: $url" >> report.md
+            else
+              echo "- DOWN: $url" >> report.md
+              rc=1
+            fi
+          done
+
+          # The tracker must stay embeddable: no X-Frame-Options, no frame-ancestors CSP.
+          tracker="https://goaiarchitect.com/demo/gmi-savings-tracker.html"
+          if headers=$(curl -fsS --retry 3 --retry-delay 5 --max-time 30 -D - -o /dev/null "$tracker"); then
+            if printf '%s\n' "$headers" | grep -iq '^x-frame-options:'; then
+              echo "- EMBED BROKEN: X-Frame-Options present on $tracker" >> report.md
+              rc=1
+            fi
+            if printf '%s\n' "$headers" | grep -i '^content-security-policy' | grep -iq 'frame-ancestors'; then
+              echo "- EMBED BROKEN: CSP frame-ancestors present on $tracker" >> report.md
+              rc=1
+            fi
+          fi
+          cat report.md
+          exit "$rc"
+
+      - name: Open or comment on the outage issue
+        if: steps.probe.outcome == 'failure'
+        run: |
+          set -euo pipefail
+          { echo "Uptime check failed. Run: ${RUN_URL}"; echo; cat report.md; } > body.md
+          num=$(gh api "repos/${REPO}/issues?state=open&per_page=100" \
+            --jq "[.[] | select(.pull_request | not) | select(.title == \"${TITLE}\")][0].number // empty")
+          if [ -n "${num}" ]; then
+            gh api "repos/${REPO}/issues/${num}/comments" -F body=@body.md > /dev/null
+          else
+            gh api "repos/${REPO}/issues" -f title="${TITLE}" -F body=@body.md > /dev/null
+          fi
+
+      - name: Close the outage issue on recovery
+        if: steps.probe.outcome == 'success'
+        run: |
+          set -euo pipefail
+          num=$(gh api "repos/${REPO}/issues?state=open&per_page=100" \
+            --jq "[.[] | select(.pull_request | not) | select(.title == \"${TITLE}\")][0].number // empty")
+          if [ -n "${num}" ]; then
+            gh api "repos/${REPO}/issues/${num}/comments" -f body="Recovered. Run: ${RUN_URL}" > /dev/null
+            gh api -X PATCH "repos/${REPO}/issues/${num}" -f state=closed -f state_reason=completed > /dev/null
+          fi
+
+      - name: Fail the run if the probe failed
+        if: steps.probe.outcome == 'failure'
+        run: exit 1

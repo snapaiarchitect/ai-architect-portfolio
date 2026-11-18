@@ -1,0 +1,77 @@
+# =============================================================================
+# Cloudflare static-assets _headers file (READY FOR A FUTURE MOVE; NOT ACTIVE).
+#
+# The site is served by GitHub Pages today, which ignores this file and does
+# not allow custom response headers. Copy/serve this file from the publish
+# root when moving to Cloudflare (static assets / Pages).
+#
+# VERIFY BEFORE GO-LIVE: Cloudflare documentation could not be fetched in the
+# authoring sandbox, so the syntax below follows the documented _headers
+# format from memory (URL pattern line, then indented "Name: value" lines;
+# "*" splat and ":placeholder" patterns; "! Name" detaches an inherited
+# header; multiple matching rules are merged, not overridden). Confirm with
+# `wrangler dev` or a preview deploy and inspect real responses (curl -I)
+# before pointing DNS at it.
+#
+# Design: CSP is attached to explicit paths and NOT to /demo/*, because the
+# tracker page must stay embeddable (the uptime workflow asserts it has no
+# X-Frame-Options and no frame-ancestors CSP). Everything else gets the
+# baseline headers from /*.
+# =============================================================================
+
+# ---- Baseline security headers, every response -----------------------------
+/*
+  # Force HTTPS for a year. No includeSubDomains/preload: those are hard to undo.
+  Strict-Transport-Security: max-age=31536000
+  # Stop browsers MIME-sniffing responses into executable types.
+  X-Content-Type-Options: nosniff
+  # Send the origin only on cross-origin requests; keeps full paths private.
+  Referrer-Policy: strict-origin-when-cross-origin
+  # Deny powerful features the site does not use.
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+
+# ---- Content-Security-Policy for the portfolio pages and chart frames ------
+# Sources, from what index.html / charts/* actually load:
+#   scripts : self, cdn.plot.ly (Plotly), cdn.jsdelivr.net
+#   styles  : self, fonts.googleapis.com (Inter stylesheet)
+#   fonts   : fonts.gstatic.com
+#   images  : self + data: (no external image hosts found in index.html)
+#   frames  : self (charts/*.html) and https://evo3-ecosystem.github.io (tracker)
+# TODO(security): 'unsafe-inline' is required today because the pages use
+# inline <script> and <style> blocks. Replace with per-page hashes or nonces
+# (then drop 'unsafe-inline') once the inline code is stable.
+# TODO(verify): check Plotly 3.x under this CSP in a preview deploy; if charts
+# fail to render, the browser console will name the blocked directive.
+# frame-ancestors 'self': only this site may frame these pages (charts are
+# framed by index.html on the same origin).
+/
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.plot.ly https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src 'self' https://evo3-ecosystem.github.io; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'
+  Cache-Control: public, max-age=300, must-revalidate
+/index.html
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.plot.ly https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src 'self' https://evo3-ecosystem.github.io; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'
+/side-hustle.html
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.plot.ly https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; frame-src 'self' https://evo3-ecosystem.github.io; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'self'
+/charts/*
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.plot.ly https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'self'
+# TODO: projects/* contains generated notebook exports that load require.js and
+# MathJax from cdnjs.cloudflare.com and have no CSP here. Add one only after
+# testing them in a preview deploy.
+
+# ---- Caching ---------------------------------------------------------------
+# HTML: always revalidate quickly so content updates show within minutes.
+# ("/" gets its Cache-Control in its rule above so each pattern appears once.)
+/*.html
+  Cache-Control: public, max-age=300, must-revalidate
+
+# Non-fingerprinted static files (current assets/ and images/): one day.
+# Their filenames do not change when content changes, so do not make them immutable.
+/assets/*
+  Cache-Control: public, max-age=86400
+/images/*
+  Cache-Control: public, max-age=86400
+
+# Fingerprinted assets only (filename contains a content hash): one year, immutable.
+# NOTE: nothing in the repo is fingerprinted yet; this top-level directory is a convention
+# reserved for future build output. Do not put non-hashed files under it.
+/immutable/*
+  Cache-Control: public, max-age=31536000, immutable

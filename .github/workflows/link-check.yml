@@ -1,0 +1,86 @@
+name: Link check
+
+on:
+  pull_request:
+  push:
+    branches: ["main"]
+  schedule:
+    # Weekly, Monday 06:17 UTC (not on the hour, to avoid scheduler congestion)
+    - cron: "17 6 * * 1"
+  workflow_dispatch:
+
+# Least privilege: read the repo; issues: write is only needed to open/update the
+# single scheduled-failure issue. Pull requests from forks get a read-only token.
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: link-check-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Offline site checks
+        run: python3 scripts/check_site.py
+
+      - name: Restore lychee cache
+        uses: actions/cache@v4
+        with:
+          path: .lycheecache
+          key: lychee-${{ github.run_id }}
+          restore-keys: lychee-
+
+      - name: Prepare report dir
+        run: mkdir -p lychee
+
+      - name: Check links (lychee)
+        id: lychee
+        # v2.9.0 verified to exist via git ls-remote on 2026-11-18.
+        uses: lycheeverse/lychee-action@v2.9.0
+        with:
+          args: >-
+            --no-progress
+            --cache --max-cache-age 1d
+            --max-retries 3
+            --retry-wait-time 5
+            --timeout 20
+            --accept "200..=299,429"
+            --exclude-path projects
+            --exclude "^https://www\.linkedin\.com/"
+            --exclude "^https://fonts\.(googleapis|gstatic)\.com"
+            --exclude "^http://www\.w3\.org/"
+            --exclude "^https://goaiarchitect\.com/"
+            './**/*.html'
+          output: lychee/out.md
+          fail: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Open or update the link-check issue (scheduled runs only)
+        if: failure() && github.event_name == 'schedule'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          set -euo pipefail
+          title="Scheduled link check failed"
+          {
+            echo "The weekly link check failed. Run: ${RUN_URL}"
+            echo
+            if [ -f lychee/out.md ]; then cat lychee/out.md; fi
+          } > body.md
+          num=$(gh api "repos/${REPO}/issues?state=open&per_page=100" \
+            --jq "[.[] | select(.pull_request | not) | select(.title == \"${title}\")][0].number // empty")
+          if [ -n "${num}" ]; then
+            gh api "repos/${REPO}/issues/${num}/comments" -F body=@body.md > /dev/null
+          else
+            gh api "repos/${REPO}/issues" -f title="${title}" -F body=@body.md > /dev/null
+          fi
