@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GMI Savings Tracker: Case Study | Sierra Napier</title>
+    <meta name="description" content="Case study: an independent prototype that checks Maryland's reported GMI savings against what the State paid, using only open data and 143 stop checks.">
+    <link rel="canonical" href="https://goaiarchitect.com/projects/gmi-savings-tracker/">
+    <meta property="og:title" content="GMI Savings Tracker: Case Study">
+    <meta property="og:description" content="Did Maryland's reported GMI savings show up in what the State paid? An independent prototype built only from open data.">
+    <meta property="og:url" content="https://goaiarchitect.com/projects/gmi-savings-tracker/">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://goaiarchitect.com/assets/og-image.png">
+    <meta property="og:image:alt" content="Sierra Napier, Fractional CMO and BI Consulting. 1.29M rows, 6 datasets, 10 tabs, 62 marts, 143 of 143 checks passed.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="GMI Savings Tracker: Case Study">
+    <meta name="twitter:description" content="Independent prototype checking Maryland's reported GMI savings against State payments, built only from open data.">
+    <style>
+        :root {
+            --bg-deep: #0a0e1a;
+            --bg-surface: #111827;
+            --bg-elevated: #1a2234;
+            --border: #1f2d44;
+            --text-primary: #f0f0f0;
+            --text-secondary: #a9b6c9;
+            --accent-gold: #f59e0b;
+            --accent-cyan: #22d3ee;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+        body {
+            font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: var(--bg-deep);
+            color: var(--text-primary);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+        @media (min-width: 640px) { .container { padding: 0 2rem; } }
+        .prose { max-width: 46rem; margin: 0 auto; }
+        :focus-visible { outline: 3px solid var(--accent-cyan); outline-offset: 2px; border-radius: 4px; }
+        .skip-link { position: absolute; left: 0.75rem; top: -4rem; z-index: 1000; padding: 0.6rem 1rem; background: #f59e0b; color: #0a0e1a; font-weight: 700; font-size: 0.95rem; border-radius: 0 0 8px 8px; text-decoration: none; transition: top 0.15s; }
+        .skip-link:focus, .skip-link:focus-visible { top: 0; outline: 3px solid #0a0e1a; outline-offset: -3px; }
+
+        nav { position: sticky; top: 0; background: rgba(10, 14, 26, 0.97); border-bottom: 1px solid var(--border); z-index: 100; padding: 0.75rem 0; }
+        .nav-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem 1.5rem; }
+        .nav-brand { display: flex; align-items: center; gap: 0.75rem; font-weight: 700; font-size: 1.1rem; color: var(--text-primary); text-decoration: none; }
+        .nav-brand img { width: 32px; height: 32px; border-radius: 6px; object-fit: contain; }
+        .nav-links { padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 0.25rem 1.5rem; list-style: none; }
+        .nav-links a { color: var(--text-secondary); text-decoration: none; font-size: 0.95rem; font-weight: 500; padding: 0.35rem 0; display: inline-block; }
+        .nav-links a:hover { color: var(--accent-gold); }
+
+        main { padding: 2.5rem 0 3rem; }
+        h1 { font-size: clamp(1.9rem, 5vw, 2.8rem); font-weight: 800; letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 1rem; }
+        h2 { font-size: 1.6rem; font-weight: 700; line-height: 1.3; margin: 3rem 0 1rem; color: var(--accent-gold); }
+        h3 { font-size: 1.15rem; font-weight: 700; margin: 1.75rem 0 0.5rem; }
+        p, ul { margin-bottom: 1rem; }
+        ul { padding-left: 1.4rem; }
+        li { margin-bottom: 0.5rem; }
+        .lead { font-size: 1.2rem; color: var(--text-primary); }
+        .byline { color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.5rem; }
+        .notice { background: var(--bg-elevated); border: 1px solid var(--border); border-left: 4px solid var(--accent-gold); border-radius: 8px; padding: 1rem 1.25rem; margin: 1.5rem 0; }
+        .notice p:last-child { margin-bottom: 0; }
+        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr)); gap: 0.75rem; list-style: none; padding: 0; margin: 1.5rem 0; }
+        .stats li { background: var(--bg-surface); border: 1px solid var(--border); border-radius: 10px; padding: 0.9rem 1rem; margin: 0; }
+        .stats strong { display: block; font-size: 1.5rem; color: var(--accent-cyan); line-height: 1.2; }
+        .stats span { color: var(--text-secondary); font-size: 0.9rem; }
+        a { color: var(--accent-cyan); text-underline-offset: 3px; }
+        a:hover { color: #67e8f9; }
+        .btn { display: inline-block; background: var(--accent-gold); color: #0a0e1a; font-weight: 700; padding: 0.7rem 1.25rem; border-radius: 8px; text-decoration: none; margin: 0.25rem 0.5rem 0.5rem 0; }
+        .btn:hover { background: #fbbf24; color: #0a0e1a; }
+        .btn.secondary { background: transparent; color: var(--accent-cyan); border: 2px solid var(--accent-cyan); }
+        .btn.secondary:hover { background: var(--bg-elevated); color: #67e8f9; }
+        footer { border-top: 1px solid var(--border); padding: 1.5rem 1rem 2.5rem; color: var(--text-secondary); font-size: 0.95rem; text-align: center; }
+    </style>
+</head>
+<body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <nav aria-label="Primary">
+        <div class="container">
+            <div class="nav-inner">
+                <a href="../../" class="nav-brand">
+                    <img src="../../assets/logo.png" width="32" height="32" alt="">
+                    <span>Sierra Napier</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="../../#about">About</a></li>
+                    <li><a href="../../#services">Services</a></li>
+                    <li><a href="../../#portfolio">Portfolio</a></li>
+                    <li><a href="../../demo/gmi-savings-tracker.html">Live Demo</a></li>
+                    <li><a href="../../#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main">
+        <div class="container">
+            <article class="prose">
+                <h1>GMI Savings Tracker: case study</h1>
+                <p class="byline">By Sierra Napier, MPA/MPH. Data as of Nov 13, 2026 (portal updated Nov 9, 2026).</p>
+
+                <p class="lead">Bottom line: payments to the vendors tied to GMI fell in 5 of the 12 areas checked. That is evidence, not proof. The reported savings are not verified, and the rest of the picture needs agency records.</p>
+
+                <div class="notice" role="note">
+                    <p><strong>Independent prototype.</strong> This is not an official State of Maryland product. It is built only from Maryland's open data portal (opendata.maryland.gov) through the SODA API. DBM budget books and State sites were used only to verify the numbers.</p>
+                </div>
+
+                <ul class="stats" aria-label="Project at a glance">
+                    <li><strong>1.29M</strong><span>rows from 6 State datasets</span></li>
+                    <li><strong>143 of 143</strong><span>stop checks pass</span></li>
+                    <li><strong>77</strong><span>published tables</span></li>
+                    <li><strong>10</strong><span>dashboard tabs</span></li>
+                </ul>
+
+                <p>
+                    <a class="btn" href="../../demo/gmi-savings-tracker.html">Open the live dashboard demo</a>
+                    <a class="btn secondary" href="mailto:s.napier430@gmail.com?subject=GMI%20Savings%20Tracker%20walkthrough">Ask for a walkthrough</a>
+                </p>
+
+                <h2 id="problem">The problem</h2>
+                <p>Maryland's Government Modernization Initiative (GMI) reports savings. The question here is simple: did those savings show up in what the State actually paid, and where could more be saved?</p>
+                <p>Two totals have been reported. They count different things, so this project keeps them apart and labels each one. Neither is verified here.</p>
+                <ul>
+                    <li><strong>$29M.</strong> From the GMI final report to the Joint Chairmen, Jan 26, 2026. It describes four items as saved in FY2026.</li>
+                    <li><strong>$50M.</strong> From the Governor's GMI page, status as of June 2026, which says "implemented actions to save $50 million." The page does not say whether that is one-time or yearly.</li>
+                </ul>
+
+                <h2 id="method">The method</h2>
+                <h3>Build the data</h3>
+                <p>Six State datasets, 1.29M rows in all, were downloaded and checked against the portal's own counts and totals. They were loaded into DuckDB in layers: raw, reviewed rules, core, and 62 SQL marts. The result is published as 77 tables and a static dashboard with 10 tabs.</p>
+                <h3>Stop checks</h3>
+                <p>143 of 143 stop checks pass. Nothing publishes unless every check passes.</p>
+                <h3>Reconcile to official sources</h3>
+                <ul>
+                    <li>Every actual year, FY2017 to FY2025, reconciles with DBM's printed budget books. Statewide totals are within 0.008%, and 99.3% to 100% of programs match to the dollar.</li>
+                    <li>The enacted FY2027 budget equals DBM's Fiscal Digest in every fund.</li>
+                    <li>31 of 31 yearly totals equal the State's Open Finance sites to the cent.</li>
+                </ul>
+                <h3>Look for payment evidence</h3>
+                <p>For each GMI area, the tracker looks at payments to the matching vendors before and after. It treats a drop as evidence to follow up on, not as proof of savings.</p>
+                <h3>Model a path and find leads</h3>
+                <p>A calculator carries GMI's reported rates forward and adds labeled assumptions. Opportunity detectors flag places where more could be saved. Forecast models are shown only if they beat a simple baseline on held-out data.</p>
+
+                <h2 id="result">The result</h2>
+                <h3>Payment evidence</h3>
+                <p>Payments to the matching vendors fell in 5 of the 12 areas checked. Two examples: office supplies fell 48% and vehicle purchases fell 26%. The other areas are newer and need agency records to confirm.</p>
+                <h3>A conditional path</h3>
+                <ul>
+                    <li>Carrying GMI's reported rates forward gives about $29.6M a year.</li>
+                    <li>Add an assumed 3.5% saving (range 2% to 5%) on statewide contracts for 27 vendors, which had $569.3M in FY2026 payments, plus 1% starting savings in real estate and utilities.</li>
+                    <li>The conditional path is then $52.6M, with a range of $42.6M to $64.2M.</li>
+                    <li>About 14% of that path has payment evidence.</li>
+                </ul>
+                <p>The assumptions are labeled and can be changed in the dashboard calculator.</p>
+                <h3>Opportunity detectors</h3>
+                <p>The detectors found 389 leads worth up to $330.5M a year ($219.7M likely). Leads overlap, so they cannot be added up, and they are not savings. As a check on usefulness, 76% of flagged units were flagged again the next year, compared with 5% for like-sized unflagged units.</p>
+                <h3>Forecast ranges</h3>
+                <p>Raw 80% ranges held 58.7% of 63 past outcomes. After split-conformal calibration, 53 of 63 held (84.1%, 95% interval 73% to 91%).</p>
+                <h3>A source issue, reported and not a finding</h3>
+                <p>The FY2022 payments data lists a second $874.5M block for Maryland Environmental Service and Maryland Transportation Authority.</p>
+
+                <h2 id="limits">The limits</h2>
+                <ul>
+                    <li>Public payment data has no vendor number, only name and ZIP, so matching vendors is imperfect.</li>
+                    <li>Payments are cash paid.</li>
+                    <li>FY2027 is partial.</li>
+                    <li>Payments are evidence, not proof of savings.</li>
+                    <li>The $29M and $50M totals are neither verified here.</li>
+                    <li>This is not an audit under government auditing standards.</li>
+                </ul>
+
+                <h2 id="next">See it or ask about it</h2>
+                <p>The live dashboard demo is on this site. The code is in a private repository, and a walkthrough is available on request.</p>
+                <p>
+                    <a class="btn" href="../../demo/gmi-savings-tracker.html">Open the live dashboard demo</a>
+                    <a class="btn secondary" href="mailto:s.napier430@gmail.com?subject=GMI%20Savings%20Tracker%20walkthrough">Email for a walkthrough</a>
+                </p>
+            </article>
+        </div>
+    </main>
+
+    <footer aria-label="Site footer">
+        <p>&copy; 2026 Sierra Napier &middot; <a href="../../">Full Portfolio</a></p>
+    </footer>
+</body>
+</html>
