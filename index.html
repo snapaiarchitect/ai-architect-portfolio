@@ -747,6 +747,15 @@
         .coming-soon > summary { cursor: pointer; font-weight: 600; color: var(--accent-gold); }
         .coming-soon[open] > summary { margin-bottom: 0.5rem; }
     
+
+        .metrics-band { background: var(--bg-surface); border-bottom: 1px solid var(--border); padding: 1rem 0 0.75rem; }
+        .metrics-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.75rem; }
+        .metric-tile { display: block; text-decoration: none; text-align: center; background: var(--bg-elevated, var(--bg-surface)); border: 1px solid var(--border); border-radius: 10px; padding: 0.9rem 0.5rem; transition: border-color 0.2s, transform 0.2s; }
+        .metric-tile:hover { border-color: var(--accent-cyan); transform: translateY(-2px); }
+        .metric-number { display: block; font-size: 2rem; font-weight: 800; color: var(--accent-gold); line-height: 1; }
+        .metric-label { display: block; font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 0.4rem; }
+        .metrics-asof { text-align: center; color: var(--text-muted); font-size: 0.75rem; margin: 0.6rem 0 0; }
+        @media (max-width: 768px) { .metrics-grid { grid-template-columns: repeat(2, 1fr); } .metric-number { font-size: 1.6rem; } .metric-tile:last-child { grid-column: 1 / -1; } }
         /* Accessibility and polish */
         :focus-visible { outline: 3px solid var(--accent-cyan); outline-offset: 2px; border-radius: 4px; }
         .floating-cta { transition: opacity 0.2s, transform 0.2s; }
@@ -778,6 +787,19 @@
         </div>
     </nav>
 
+    <div class="metrics-band" role="region" aria-label="GMI Savings Tracker at a glance">
+        <div class="container">
+            <div class="metrics-grid">
+                <a class="metric-tile" href="demo/gmi-savings-tracker.html#data"><span class="metric-number">1.29M</span><span class="metric-label">Rows checked against the portal</span></a>
+                <a class="metric-tile" href="demo/gmi-savings-tracker.html#data"><span class="metric-number">6</span><span class="metric-label">Maryland open datasets</span></a>
+                <a class="metric-tile" href="demo/gmi-savings-tracker.html#over"><span class="metric-number">10</span><span class="metric-label">Live dashboard tabs</span></a>
+                <a class="metric-tile" href="demo/gmi-savings-tracker.html#data"><span class="metric-number">62</span><span class="metric-label">SQL marts</span></a>
+                <a class="metric-tile" href="demo/gmi-savings-tracker.html#data"><span class="metric-number">143/143</span><span class="metric-label">Data checks passed</span></a>
+            </div>
+            <p class="metrics-asof">GMI Savings Tracker &middot; verified figures, data as of Nov 17, 2026</p>
+        </div>
+    </div>
+
     <header>
         <div class="container">
             <div class="avatar-wrap">
@@ -789,22 +811,6 @@
                 <span class="hero-badge">Fractional CMO</span>
                 <span class="hero-badge">BI Consulting</span>
                 <span class="hero-badge">AI Architecture</span>
-            </div>
-            <div class="hero-metrics-strip">
-                <div class="hero-metric">
-                    <span class="hero-metric-number">1.29M</span>
-                    <span class="hero-metric-label">Rows Checked Against the Portal</span>
-                </div>
-                <span class="hero-metric-divider">|</span>
-                <div class="hero-metric">
-                    <span class="hero-metric-number">6</span>
-                    <span class="hero-metric-label">Maryland Open Datasets</span>
-                </div>
-                <span class="hero-metric-divider">|</span>
-                <div class="hero-metric">
-                    <span class="hero-metric-number">143/143</span>
-                    <span class="hero-metric-label">Data Checks Passed</span>
-                </div>
             </div>
             <p class="tagline">
                 I <strong>architect growth systems</strong> for companies that need senior marketing leadership without the full-time hire. 
@@ -833,29 +839,6 @@
                 <span class="trust-logo">arXiv</span>
                 <span class="trust-logo">Data.gov</span>
                 <span class="trust-logo">NHTSA</span>
-            </div>
-        </div>
-
-        <div class="stats">
-            <div class="stat-card">
-                <div class="stat-number">1.29M</div>
-                <div class="stat-label">Rows Checked Against the Portal</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">6</div>
-                <div class="stat-label">Maryland Open Datasets</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">10</div>
-                <div class="stat-label">Live Dashboard Tabs</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">62</div>
-                <div class="stat-label">SQL Marts</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-number">143/143</div>
-                <div class="stat-label">Data Checks Passed</div>
             </div>
         </div>
 
