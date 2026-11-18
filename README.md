@@ -16,7 +16,7 @@
 | Rows checked against the Maryland open-data portal | 1,294,572 across 6 datasets |
 | SQL marts | 62 |
 | Data checks passed | 143 of 143 |
-| Live dashboard tabs | 10 |
+| Live dashboard tabs | 11 |
 
 The other projects are archived under "Coming soon" on the site while they are re-checked. Each project states whether it uses public or benchmark data.
 
