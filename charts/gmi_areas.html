@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IT hardware, software & services is 51% of the $9.9B spent in six focus areas, FY2017-FY2025 | GMI Savings Tracker</title>
+<script src="https://cdn.plot.ly/plotly-3.5.0.min.js"></script>
+<style>
+  body { margin:0; padding:0; background:#0a0e1a; color:#f0f0f0; font-family:'Segoe UI',Roboto,sans-serif; }
+  #chart { width:100vw; height:100vh; }
+  .title-bar { position:absolute; top:12px; left:20px; right:20px; z-index:10; pointer-events:none; }
+  .title-bar h1 { margin:0; font-size:18px; color:#f0f0f0; font-weight:600; line-height:1.25; }
+  .title-bar p  { margin:4px 0 0; font-size:12px; color:#8892b0; }
+  .foot { position:absolute; left:20px; right:20px; bottom:6px; z-index:10; font-size:11px; color:#8892b0; pointer-events:none; }
+</style>
+</head>
+<body>
+<div class="title-bar">
+  <h1>IT hardware, software & services is 51% of the $9.9B spent in six focus areas, FY2017-FY2025</h1>
+  <p>Actual controllable spending by focus area and fiscal year. Click a legend entry to hide or show an area.</p>
+</div>
+<div id="chart"></div>
+<div class="foot">Source: Maryland Open Data Portal via the GMI Savings Tracker (testing ground v3), data as of 2026-11-13</div>
+<script>
+var D = {"fy":[2017,2018,2019,2020,2021,2022,2023,2024,2025],"areas":["IT hardware, software & services","Fleet & fuel","Utilities & facility energy","Real estate & leases","Print, copy & mail","Telecom"],"v":{"IT hardware, software & services":[0.341,0.404,0.452,0.458,0.616,0.688,0.733,0.66,0.692],"Fleet & fuel":[0.171,0.167,0.156,0.15,0.143,0.162,0.199,0.24,0.193],"Utilities & facility energy":[0.13,0.131,0.125,0.128,0.122,0.14,0.161,0.151,0.162],"Real estate & leases":[0.124,0.123,0.129,0.133,0.129,0.129,0.129,0.137,0.142],"Print, copy & mail":[0.051,0.048,0.05,0.049,0.046,0.047,0.053,0.049,0.052],"Telecom":[0.036,0.049,0.044,0.043,0.048,0.052,0.056,0.051,0.047]}};
+var GOLD='#f59e0b', CYAN='#06b6d4', GREEN='#22c55e', RED='#f87171', MUTED='#64748b';
+var PALETTE = ["#f59e0b", "#06b6d4", "#a78bfa", "#34d399", "#f472b6", "#60a5fa", "#fbbf24"];
+var base = {
+  paper_bgcolor:'#0a0e1a', plot_bgcolor:'#0a0e1a',
+  font:{family:'Segoe UI,Roboto,sans-serif', color:'#f0f0f0', size:12},
+  margin:{t:92, b:92, l:70, r:24},
+  hoverlabel:{bgcolor:'#1a2234', bordercolor:'#1f2d44', font:{color:'#f0f0f0'}},
+  legend:{orientation:'h', y:-0.12, font:{color:'#94a3b8'}},
+  xaxis:{gridcolor:'#1f2d44', zerolinecolor:'#1f2d44', linecolor:'#1f2d44', tickfont:{color:'#94a3b8'}},
+  yaxis:{gridcolor:'#1f2d44', zerolinecolor:'#1f2d44', linecolor:'#1f2d44', tickfont:{color:'#94a3b8'}}
+};
+function merge(a,b){var o=JSON.parse(JSON.stringify(a));for(var k in b){if(b[k]&&typeof b[k]==='object'&&!Array.isArray(b[k])&&o[k]&&typeof o[k]==='object'){o[k]=merge(o[k],b[k]);}else{o[k]=b[k];}}return o;}
+var config = {responsive:true, displayModeBar:false};
+
+var tr = D.areas.map(function(a,i){return {type:'bar',name:a,x:D.fy,y:D.v[a],marker:{color:PALETTE[i%PALETTE.length]},
+  hovertemplate:'<b>'+a+'</b><br>FY%{x}: $%{y:.2f}B<extra></extra>'};});
+var layout = merge(base,{barmode:'stack', xaxis:{dtick:1,tickprefix:'FY',tickangle:-45}, yaxis:{title:{text:'$ billions'},tickprefix:'$',ticksuffix:'B'}, legend:{y:-0.18}});
+Plotly.newPlot('chart',tr,layout,config);
+
+</script>
+</body>
+</html>

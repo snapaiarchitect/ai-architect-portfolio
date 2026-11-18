@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Actual spending rose from $37.7B in FY2017 to $60.5B in FY2025; Health is 38% of FY2025 | GMI Savings Tracker</title>
+<script src="https://cdn.plot.ly/plotly-3.5.0.min.js"></script>
+<style>
+  body { margin:0; padding:0; background:#0a0e1a; color:#f0f0f0; font-family:'Segoe UI',Roboto,sans-serif; }
+  #chart { width:100vw; height:100vh; }
+  .title-bar { position:absolute; top:12px; left:20px; right:20px; z-index:10; pointer-events:none; }
+  .title-bar h1 { margin:0; font-size:18px; color:#f0f0f0; font-weight:600; line-height:1.25; }
+  .title-bar p  { margin:4px 0 0; font-size:12px; color:#8892b0; }
+  .foot { position:absolute; left:20px; right:20px; bottom:6px; z-index:10; font-size:11px; color:#8892b0; pointer-events:none; }
+</style>
+</head>
+<body>
+<div class="title-bar">
+  <h1>Actual spending rose from $37.7B in FY2017 to $60.5B in FY2025; Health is 38% of FY2025</h1>
+  <p>Operating budget actuals by government function, all funds. Click a legend entry to hide or show a function.</p>
+</div>
+<div id="chart"></div>
+<div class="foot">Source: Maryland Open Data Portal via the GMI Savings Tracker (testing ground v3), data as of 2026-11-13</div>
+<script>
+var D = {"fy":[2017,2018,2019,2020,2021,2022,2023,2024,2025],"s":{"Health":[13.387,13.694,14.271,15.537,18.113,19.445,20.595,21.084,23.226],"Elementary and Secondary Education":[7.695,7.735,7.969,8.795,9.632,11.944,10.304,11.444,11.527],"Transportation":[4.97,4.974,4.961,5.373,5.058,5.62,5.228,5.765,6.505],"Human Services":[2.864,2.748,2.74,3.21,5.195,5.848,5.023,4.545,4.815],"Higher Education":[2.017,2.04,2.128,2.255,2.309,2.685,3.427,3.486,3.472],"Public Safety":[2.213,2.141,2.172,2.243,3.022,2.724,2.967,3.642,3.373],"All other functions":[4.578,4.59,4.936,5.539,5.96,7.657,11.595,9.184,7.622]}};
+var GOLD='#f59e0b', CYAN='#06b6d4', GREEN='#22c55e', RED='#f87171', MUTED='#64748b';
+var PALETTE = ["#f59e0b", "#06b6d4", "#a78bfa", "#34d399", "#f472b6", "#60a5fa", "#fbbf24"];
+var base = {
+  paper_bgcolor:'#0a0e1a', plot_bgcolor:'#0a0e1a',
+  font:{family:'Segoe UI,Roboto,sans-serif', color:'#f0f0f0', size:12},
+  margin:{t:92, b:92, l:70, r:24},
+  hoverlabel:{bgcolor:'#1a2234', bordercolor:'#1f2d44', font:{color:'#f0f0f0'}},
+  legend:{orientation:'h', y:-0.12, font:{color:'#94a3b8'}},
+  xaxis:{gridcolor:'#1f2d44', zerolinecolor:'#1f2d44', linecolor:'#1f2d44', tickfont:{color:'#94a3b8'}},
+  yaxis:{gridcolor:'#1f2d44', zerolinecolor:'#1f2d44', linecolor:'#1f2d44', tickfont:{color:'#94a3b8'}}
+};
+function merge(a,b){var o=JSON.parse(JSON.stringify(a));for(var k in b){if(b[k]&&typeof b[k]==='object'&&!Array.isArray(b[k])&&o[k]&&typeof o[k]==='object'){o[k]=merge(o[k],b[k]);}else{o[k]=b[k];}}return o;}
+var config = {responsive:true, displayModeBar:false};
+
+var names=Object.keys(D.s);
+var tr=names.map(function(n,i){return {type:'scatter',mode:'lines',stackgroup:'one',name:n,x:D.fy,y:D.s[n],line:{width:0.5,color:'#0a0e1a'},fillcolor:PALETTE[i%PALETTE.length],
+ hovertemplate:'<b>'+n+'</b><br>FY%{x}: $%{y:.1f}B<extra></extra>'};});
+var layout=merge(base,{xaxis:{dtick:1,tickprefix:'FY',tickangle:-45},yaxis:{title:{text:'$ billions'},tickprefix:'$',ticksuffix:'B'},legend:{y:-0.22}});
+Plotly.newPlot('chart',tr,layout,config);
+
+</script>
+</body>
+</html>

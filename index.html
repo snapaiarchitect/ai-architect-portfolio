@@ -742,14 +742,6 @@
         .gmi-note p { margin: 0 0 0.75rem; color: var(--text-secondary); }
         .gmi-note .gmi-fine { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0; }
         .gmi-note a { color: var(--accent-cyan); }
-        .gmi-live { position: relative; width: 100%; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; background: #f6f6f4; }
-        .gmi-live .gmi-poster { display: block; }
-        .gmi-live img { display: block; width: 100%; height: auto; }
-        .gmi-live iframe { display: block; width: 100%; height: 760px; border: 0; background: #f6f6f4; }
-        .gmi-live.is-live .gmi-poster { display: none; }
-        .gmi-live-bar { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; padding: 0.5rem 0.9rem; background: var(--bg-elevated); color: var(--text-secondary); font-size: 0.85rem; border-top: 1px solid var(--border); }
-        .gmi-live-bar a { color: var(--accent-cyan); }
-        @media (max-width: 768px) { .gmi-live iframe { height: 620px; } }
         .badge-soon { background: var(--bg-elevated); color: var(--text-secondary); border: 1px solid var(--border); }
         .coming-soon { margin-top: 3rem; border: 1px dashed var(--border); border-radius: 12px; padding: 1rem 1.5rem; }
         .coming-soon > summary { cursor: pointer; font-weight: 600; color: var(--accent-gold); }
@@ -988,10 +980,12 @@
                         <p>In the FY2026 working budget, Maryland&#x27;s purchases agencies can control are $4.8B, up 17.7% from the FY2025 actual, 7.4% of $64.8B in operating spending, so GMI&#x27;s $50M FY2026 target is 1.0% of them.</p>
                     </div>
                     <div class="chart-box">
-                        <div class="gmi-live" data-src="https://evo3-ecosystem.github.io/gmi-savings-tracker-v3/#t-over" data-title="GMI Savings Tracker, Overview tab (live)">
-                            <a class="gmi-poster" href="https://evo3-ecosystem.github.io/gmi-savings-tracker-v3/#t-over" target="_blank" rel="noopener"><img src="images/gmi/over.jpg" width="1200" height="760" loading="lazy" alt="Screenshot of the Overview tab of the GMI Savings Tracker"></a>
-                            <div class="gmi-live-bar"><span class="gmi-status">Loading the live tab…</span><a href="https://evo3-ecosystem.github.io/gmi-savings-tracker-v3/#t-over" target="_blank" rel="noopener">Open in a new tab →</a></div>
+                        <div style="display:flex;flex-wrap:wrap;gap:1rem;">
+                            <div style="flex:1;min-width:300px;">
+                                <iframe loading="lazy" src="charts/gmi_over.html" style="width:100%;height:480px;border:none;border-radius:8px;" title="Interactive chart: GMI Savings Tracker, Overview tab"></iframe>
+                            </div>
                         </div>
+                        <p class="chart-insight-body" style="margin-top:0.75rem;"><a href="demo/gmi-savings-tracker.html#over" style="color:var(--accent-cyan);">Explore this tab in the live dashboard →</a></p>
                     </div>
                     <div class="technical-detail">
                         <span class="technical-label">What this tab does</span>
@@ -1026,10 +1020,12 @@
                         <p>In FY2017–FY2025 combined, the six focus areas total $9.9B. IT hardware, software &amp; services is the largest at $5B (50.8%). Fastest change, FY2017 to FY2025: it hardware, software &amp; services, ▲ 102.9%. Click a card to filter the page by it, or Open page for its detail.</p>
                     </div>
                     <div class="chart-box">
-                        <div class="gmi-live" data-src="https://evo3-ecosystem.github.io/gmi-savings-tracker-v3/#t-areas" data-title="GMI Savings Tracker, Focus areas tab (live)">
-                            <a class="gmi-poster" href="https://evo3-ecosystem.github.io/gmi-savings-tracker-v3/#t-areas" target="_blank" rel="noopener"><img src="images/gmi/areas.jpg" width="1200" height="760" loading="lazy" alt="Screenshot of the Focus areas tab of the GMI Savings Tracker"></a>
-                            <div class="gmi-live-bar"><span class="gmi-status">Loading the live tab…</span><a href="https://evo3-ecosystem.github.io/gmi-savings-tracker-v3/#t-areas" target="_blank" rel="noopener">Open in a new tab →</a></div>
+                        <div style="display:flex;flex-wrap:wrap;gap:1rem;">
+                            <div style="flex:1;min-width:300px;">
+                                <iframe loading="lazy" src="charts/gmi_areas.html" style="width:100%;height:480px;border:none;border-radius:8px;" title="Interactive chart: GMI Savings Tracker, Focus areas tab"></iframe>
+                            </div>
                         </div>
+                        <p class="chart-insight-body" style="margin-top:0.75rem;"><a href="demo/gmi-savings-tracker.html#areas" style="color:var(--accent-cyan);">Explore this tab in the live dashboard →</a></p>
                     </div>
                     <div class="technical-detail">
                         <span class="technical-label">What this tab does</span>
@@ -1064,10 +1060,12 @@
                         <p>GMI&#x27;s January 26, 2026 (FY2026) report to the legislature says GMI saved $29M in FY2026 ($20M of it General Fund) against its $50M FY2026 target. It lists 17 items: 4 saved in FY2026 that add up to $29M, plus yearly savings under way or projected that are not part of that total. Payments to the matching vendors can check 11 items. From FY2025 to FY2026, payments fell in 3 of 5 checks: about $11.1M of the reported savings shows up in what the state paid. The largest item, $18M from renegotiating seven vendors&#x27; agreements, names four kinds of contract but no vendors; each kind is checked against the payments that fit it.</p>
                     </div>
                     <div class="chart-box">
-                        <div class="gmi-live" data-src="https://evo3-ecosystem.github.io/gmi-savings-tracker-v3/#t-track" data-title="GMI Savings Tracker, Savings tracker tab (live)">
-                            <a class="gmi-poster" href="https://evo3-ecosystem.github.io/gmi-savings-tracker-v3/#t-track" target="_blank" rel="noopener"><img src="images/gmi/track.jpg" width="1200" height="760" loading="lazy" alt="Screenshot of the Savings tracker tab of the GMI Savings Tracker"></a>
-                            <div class="gmi-live-bar"><span class="gmi-status">Loading the live tab…</span><a href="https://evo3-ecosystem.github.io/gmi-savings-tracker-v3/#t-track" target="_blank" rel="noopener">Open in a new tab →</a></div>
+                        <div style="display:flex;flex-wrap:wrap;gap:1rem;">
+                            <div style="flex:1;min-width:300px;">
+                                <iframe loading="lazy" src="charts/gmi_track.html" style="width:100%;height:480px;border:none;border-radius:8px;" title="Interactive chart: GMI Savings Tracker, Savings tracker tab"></iframe>
+                            </div>
                         </div>
+                        <p class="chart-insight-body" style="margin-top:0.75rem;"><a href="demo/gmi-savings-tracker.html#track" style="color:var(--accent-cyan);">Explore this tab in the live dashboard →</a></p>
                     </div>
                     <div class="technical-detail">
                         <span class="technical-label">What this tab does</span>
@@ -1102,10 +1100,12 @@
                         <p>The detectors find 389 places where spending looks higher than it needs to be: leads worth up to $330.5M a year (likely $219.7M). The findings overlap (budget and payment detectors can see the same money, and several detectors can flag one vendor), so they are not additive and are not a forecast of savings: each is a lead for an agency review.</p>
                     </div>
                     <div class="chart-box">
-                        <div class="gmi-live" data-src="https://evo3-ecosystem.github.io/gmi-savings-tracker-v3/#t-opp" data-title="GMI Savings Tracker, Opportunities tab (live)">
-                            <a class="gmi-poster" href="https://evo3-ecosystem.github.io/gmi-savings-tracker-v3/#t-opp" target="_blank" rel="noopener"><img src="images/gmi/opp.jpg" width="1200" height="760" loading="lazy" alt="Screenshot of the Opportunities tab of the GMI Savings Tracker"></a>
-                            <div class="gmi-live-bar"><span class="gmi-status">Loading the live tab…</span><a href="https://evo3-ecosystem.github.io/gmi-savings-tracker-v3/#t-opp" target="_blank" rel="noopener">Open in a new tab →</a></div>
+                        <div style="display:flex;flex-wrap:wrap;gap:1rem;">
+                            <div style="flex:1;min-width:300px;">
+                                <iframe loading="lazy" src="charts/gmi_opp.html" style="width:100%;height:480px;border:none;border-radius:8px;" title="Interactive chart: GMI Savings Tracker, Opportunities tab"></iframe>
+                            </div>
                         </div>
+                        <p class="chart-insight-body" style="margin-top:0.75rem;"><a href="demo/gmi-savings-tracker.html#opp" style="color:var(--accent-cyan);">Explore this tab in the live dashboard →</a></p>
                     </div>
                     <div class="technical-detail">
                         <span class="technical-label">What this tab does</span>
@@ -1140,10 +1140,12 @@
                         <p>At these settings, the six focus areas and other controllable purchases would save about $29.6M in FY2027 (indicative range $23.8M–$39.7M; such calibrated ranges held 84% of actuals out of sample, nominal 80%), net of the fee, and $147.8M over FY2027–FY2031. Spending baselines are forecasts from the state&#x27;s own FY2017–FY2025 actuals, using whichever model predicted FY2023–FY2025 best; savings rates default to what GMI reported achieving. Use &quot;Reach $50M&quot; to see the extra rate it takes.</p>
                     </div>
                     <div class="chart-box">
-                        <div class="gmi-live" data-src="https://evo3-ecosystem.github.io/gmi-savings-tracker-v3/#t-calc" data-title="GMI Savings Tracker, Calculator tab (live)">
-                            <a class="gmi-poster" href="https://evo3-ecosystem.github.io/gmi-savings-tracker-v3/#t-calc" target="_blank" rel="noopener"><img src="images/gmi/calc.jpg" width="1200" height="760" loading="lazy" alt="Screenshot of the Calculator tab of the GMI Savings Tracker"></a>
-                            <div class="gmi-live-bar"><span class="gmi-status">Loading the live tab…</span><a href="https://evo3-ecosystem.github.io/gmi-savings-tracker-v3/#t-calc" target="_blank" rel="noopener">Open in a new tab →</a></div>
+                        <div style="display:flex;flex-wrap:wrap;gap:1rem;">
+                            <div style="flex:1;min-width:300px;">
+                                <iframe loading="lazy" src="charts/gmi_calc.html" style="width:100%;height:480px;border:none;border-radius:8px;" title="Interactive chart: GMI Savings Tracker, Calculator tab"></iframe>
+                            </div>
                         </div>
+                        <p class="chart-insight-body" style="margin-top:0.75rem;"><a href="demo/gmi-savings-tracker.html#calc" style="color:var(--accent-cyan);">Explore this tab in the live dashboard →</a></p>
                     </div>
                     <div class="technical-detail">
                         <span class="technical-label">What this tab does</span>
@@ -1178,10 +1180,12 @@
                         <p>Forward look: FY2027 General Fund revenue midpoint $29.7B (indicative range $28.7B–$31.2B); FY2026 controllable-purchases corridor $3.4B–$5.4B against the state&#x27;s working budget of $4.8B. Below, 2,367 agency performance measures tracked next to real budget change — the spending-to-results view.</p>
                     </div>
                     <div class="chart-box">
-                        <div class="gmi-live" data-src="https://evo3-ecosystem.github.io/gmi-savings-tracker-v3/#t-fcast" data-title="GMI Savings Tracker, Forecasts &amp; results tab (live)">
-                            <a class="gmi-poster" href="https://evo3-ecosystem.github.io/gmi-savings-tracker-v3/#t-fcast" target="_blank" rel="noopener"><img src="images/gmi/fcast.jpg" width="1200" height="760" loading="lazy" alt="Screenshot of the Forecasts &amp; results tab of the GMI Savings Tracker"></a>
-                            <div class="gmi-live-bar"><span class="gmi-status">Loading the live tab…</span><a href="https://evo3-ecosystem.github.io/gmi-savings-tracker-v3/#t-fcast" target="_blank" rel="noopener">Open in a new tab →</a></div>
+                        <div style="display:flex;flex-wrap:wrap;gap:1rem;">
+                            <div style="flex:1;min-width:300px;">
+                                <iframe loading="lazy" src="charts/gmi_fcast.html" style="width:100%;height:480px;border:none;border-radius:8px;" title="Interactive chart: GMI Savings Tracker, Forecasts & results tab"></iframe>
+                            </div>
                         </div>
+                        <p class="chart-insight-body" style="margin-top:0.75rem;"><a href="demo/gmi-savings-tracker.html#fcast" style="color:var(--accent-cyan);">Explore this tab in the live dashboard →</a></p>
                     </div>
                     <div class="technical-detail">
                         <span class="technical-label">What this tab does</span>
@@ -1216,10 +1220,12 @@
                         <p>In FY2026, 42 private vendors were each paid by 15 or more state agencies buying separately, $572.4M in all. 4 of the 6 focus areas are highly concentrated and 110 companies are paid under more than one name: three places where buying together could save money.</p>
                     </div>
                     <div class="chart-box">
-                        <div class="gmi-live" data-src="https://evo3-ecosystem.github.io/gmi-savings-tracker-v3/#t-vend" data-title="GMI Savings Tracker, Vendors tab (live)">
-                            <a class="gmi-poster" href="https://evo3-ecosystem.github.io/gmi-savings-tracker-v3/#t-vend" target="_blank" rel="noopener"><img src="images/gmi/vend.jpg" width="1200" height="760" loading="lazy" alt="Screenshot of the Vendors tab of the GMI Savings Tracker"></a>
-                            <div class="gmi-live-bar"><span class="gmi-status">Loading the live tab…</span><a href="https://evo3-ecosystem.github.io/gmi-savings-tracker-v3/#t-vend" target="_blank" rel="noopener">Open in a new tab →</a></div>
+                        <div style="display:flex;flex-wrap:wrap;gap:1rem;">
+                            <div style="flex:1;min-width:300px;">
+                                <iframe loading="lazy" src="charts/gmi_vend.html" style="width:100%;height:480px;border:none;border-radius:8px;" title="Interactive chart: GMI Savings Tracker, Vendors tab"></iframe>
+                            </div>
                         </div>
+                        <p class="chart-insight-body" style="margin-top:0.75rem;"><a href="demo/gmi-savings-tracker.html#vend" style="color:var(--accent-cyan);">Explore this tab in the live dashboard →</a></p>
                     </div>
                     <div class="technical-detail">
                         <span class="technical-label">What this tab does</span>
@@ -1254,10 +1260,12 @@
                         <p>Maryland Health Benefit Exchange has the highest controllable purchases per position: $909.5K a year in FY2017–FY2025, against $62.3K for the 42 agencies together; it mostly passes money through, so the highest of the rest, Department of Information Technology at $497.9K, is the better lead (6 of the top 12 are flagged as pass-through).</p>
                     </div>
                     <div class="chart-box">
-                        <div class="gmi-live" data-src="https://evo3-ecosystem.github.io/gmi-savings-tracker-v3/#t-agency" data-title="GMI Savings Tracker, Agencies tab (live)">
-                            <a class="gmi-poster" href="https://evo3-ecosystem.github.io/gmi-savings-tracker-v3/#t-agency" target="_blank" rel="noopener"><img src="images/gmi/agency.jpg" width="1200" height="760" loading="lazy" alt="Screenshot of the Agencies tab of the GMI Savings Tracker"></a>
-                            <div class="gmi-live-bar"><span class="gmi-status">Loading the live tab…</span><a href="https://evo3-ecosystem.github.io/gmi-savings-tracker-v3/#t-agency" target="_blank" rel="noopener">Open in a new tab →</a></div>
+                        <div style="display:flex;flex-wrap:wrap;gap:1rem;">
+                            <div style="flex:1;min-width:300px;">
+                                <iframe loading="lazy" src="charts/gmi_agency.html" style="width:100%;height:480px;border:none;border-radius:8px;" title="Interactive chart: GMI Savings Tracker, Agencies tab"></iframe>
+                            </div>
                         </div>
+                        <p class="chart-insight-body" style="margin-top:0.75rem;"><a href="demo/gmi-savings-tracker.html#agency" style="color:var(--accent-cyan);">Explore this tab in the live dashboard →</a></p>
                     </div>
                     <div class="technical-detail">
                         <span class="technical-label">What this tab does</span>
@@ -1292,10 +1300,12 @@
                         <p>Actual spending went from $37.7B in FY2017 to $60.5B in FY2025 (+60.5%, +6.1% a year). Health is the largest function, 38% of FY2025. GMI&#x27;s controllable base is a small slice of the operating budget.</p>
                     </div>
                     <div class="chart-box">
-                        <div class="gmi-live" data-src="https://evo3-ecosystem.github.io/gmi-savings-tracker-v3/#t-budget" data-title="GMI Savings Tracker, Budget tab (live)">
-                            <a class="gmi-poster" href="https://evo3-ecosystem.github.io/gmi-savings-tracker-v3/#t-budget" target="_blank" rel="noopener"><img src="images/gmi/budget.jpg" width="1200" height="760" loading="lazy" alt="Screenshot of the Budget tab of the GMI Savings Tracker"></a>
-                            <div class="gmi-live-bar"><span class="gmi-status">Loading the live tab…</span><a href="https://evo3-ecosystem.github.io/gmi-savings-tracker-v3/#t-budget" target="_blank" rel="noopener">Open in a new tab →</a></div>
+                        <div style="display:flex;flex-wrap:wrap;gap:1rem;">
+                            <div style="flex:1;min-width:300px;">
+                                <iframe loading="lazy" src="charts/gmi_budget.html" style="width:100%;height:480px;border:none;border-radius:8px;" title="Interactive chart: GMI Savings Tracker, Budget tab"></iframe>
+                            </div>
                         </div>
+                        <p class="chart-insight-body" style="margin-top:0.75rem;"><a href="demo/gmi-savings-tracker.html#budget" style="color:var(--accent-cyan);">Explore this tab in the live dashboard →</a></p>
                     </div>
                     <div class="technical-detail">
                         <span class="technical-label">What this tab does</span>
@@ -1330,10 +1340,12 @@
                         <p>Latest run passed 2026-11-13 18:03 UTC: 143 of 143 checks passed, 0 warnings, 0 failed. 1,294,572 rows were checked against the portal (all six datasets, count and yearly totals), and nothing is built from a dataset that does not match.</p>
                     </div>
                     <div class="chart-box">
-                        <div class="gmi-live" data-src="https://evo3-ecosystem.github.io/gmi-savings-tracker-v3/#t-data" data-title="GMI Savings Tracker, Data &amp; pipeline tab (live)">
-                            <a class="gmi-poster" href="https://evo3-ecosystem.github.io/gmi-savings-tracker-v3/#t-data" target="_blank" rel="noopener"><img src="images/gmi/data.jpg" width="1200" height="760" loading="lazy" alt="Screenshot of the Data &amp; pipeline tab of the GMI Savings Tracker"></a>
-                            <div class="gmi-live-bar"><span class="gmi-status">Loading the live tab…</span><a href="https://evo3-ecosystem.github.io/gmi-savings-tracker-v3/#t-data" target="_blank" rel="noopener">Open in a new tab →</a></div>
+                        <div style="display:flex;flex-wrap:wrap;gap:1rem;">
+                            <div style="flex:1;min-width:300px;">
+                                <iframe loading="lazy" src="charts/gmi_data.html" style="width:100%;height:480px;border:none;border-radius:8px;" title="Interactive chart: GMI Savings Tracker, Data & pipeline tab"></iframe>
+                            </div>
                         </div>
+                        <p class="chart-insight-body" style="margin-top:0.75rem;"><a href="demo/gmi-savings-tracker.html#data" style="color:var(--accent-cyan);">Explore this tab in the live dashboard →</a></p>
                     </div>
                     <div class="technical-detail">
                         <span class="technical-label">What this tab does</span>
@@ -3371,30 +3383,13 @@
     </footer>
 
     <a href="#contact" class="floating-cta">Contact Sierra</a>
-    <script>
-    (function(){
-        var boxes=[].slice.call(document.querySelectorAll('.gmi-live'));
-        function load(b){
-            if(b.dataset.done)return; b.dataset.done='1';
-            var f=document.createElement('iframe');
-            f.src=b.dataset.src; f.title=b.dataset.title; f.loading='lazy';
-            f.setAttribute('referrerpolicy','no-referrer');
-            f.addEventListener('load',function(){b.classList.add('is-live');var st=b.querySelector('.gmi-status');if(st)st.textContent='Live: interact with the tab below';});
-            b.insertBefore(f,b.querySelector('.gmi-live-bar'));
-        }
-        if('IntersectionObserver' in window){
-            var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){load(e.target);io.unobserve(e.target);}});},{rootMargin:'600px 0px'});
-            boxes.forEach(function(b){io.observe(b);});
-        } else { boxes.forEach(load); }
-    })();
-    </script>
 
     <script>
     (function(){
         var cta=document.querySelector('.floating-cta'); if(!cta||!('IntersectionObserver' in window))return;
         var seen=new Set();
         var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)seen.add(e.target);else seen.delete(e.target);});cta.classList.toggle('is-hidden',seen.size>0);});
-        document.querySelectorAll('#contact, .gmi-live').forEach(function(el){io.observe(el);});
+        document.querySelectorAll('#contact, .gmi-card iframe').forEach(function(el){io.observe(el);});
     })();
     </script>
 </body>

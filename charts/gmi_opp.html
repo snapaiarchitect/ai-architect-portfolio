@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>389 leads worth up to $330.5M a year ($219.7M likely); they overlap and are not additive | GMI Savings Tracker</title>
+<script src="https://cdn.plot.ly/plotly-3.5.0.min.js"></script>
+<style>
+  body { margin:0; padding:0; background:#0a0e1a; color:#f0f0f0; font-family:'Segoe UI',Roboto,sans-serif; }
+  #chart { width:100vw; height:100vh; }
+  .title-bar { position:absolute; top:12px; left:20px; right:20px; z-index:10; pointer-events:none; }
+  .title-bar h1 { margin:0; font-size:18px; color:#f0f0f0; font-weight:600; line-height:1.25; }
+  .title-bar p  { margin:4px 0 0; font-size:12px; color:#8892b0; }
+  .foot { position:absolute; left:20px; right:20px; bottom:6px; z-index:10; font-size:11px; color:#8892b0; pointer-events:none; }
+</style>
+</head>
+<body>
+<div class="title-bar">
+  <h1>389 leads worth up to $330.5M a year ($219.7M likely); they overlap and are not additive</h1>
+  <p>Left: leads by detector. Right: of units flagged in an earlier year, the share flagged again the next year, against units not flagged (reruns as of earlier years; hover for unit counts, small for Tail spend).</p>
+</div>
+<div id="chart"></div>
+<div class="foot">Source: Maryland Open Data Portal via the GMI Savings Tracker (testing ground v3), data as of 2026-11-13</div>
+<script>
+var D = {"det":["Peer gap","Growth above trend","Leverage","Tail spend"],"likely":[96.8,93.9,27.4,1.6],"high":[148.1,140.8,39.1,2.5],"n":[308,40,38,3],"fl":[0.765,0.382,0.911,1.0],"nf":[0.091,0.114,0.005,0.0],"uf":[907,144,79,9],"un":[849,631,1525,9]};
+var GOLD='#f59e0b', CYAN='#06b6d4', GREEN='#22c55e', RED='#f87171', MUTED='#64748b';
+var PALETTE = ["#f59e0b", "#06b6d4", "#a78bfa", "#34d399", "#f472b6", "#60a5fa", "#fbbf24"];
+var base = {
+  paper_bgcolor:'#0a0e1a', plot_bgcolor:'#0a0e1a',
+  font:{family:'Segoe UI,Roboto,sans-serif', color:'#f0f0f0', size:12},
+  margin:{t:92, b:92, l:70, r:24},
+  hoverlabel:{bgcolor:'#1a2234', bordercolor:'#1f2d44', font:{color:'#f0f0f0'}},
+  legend:{orientation:'h', y:-0.12, font:{color:'#94a3b8'}},
+  xaxis:{gridcolor:'#1f2d44', zerolinecolor:'#1f2d44', linecolor:'#1f2d44', tickfont:{color:'#94a3b8'}},
+  yaxis:{gridcolor:'#1f2d44', zerolinecolor:'#1f2d44', linecolor:'#1f2d44', tickfont:{color:'#94a3b8'}}
+};
+function merge(a,b){var o=JSON.parse(JSON.stringify(a));for(var k in b){if(b[k]&&typeof b[k]==='object'&&!Array.isArray(b[k])&&o[k]&&typeof o[k]==='object'){o[k]=merge(o[k],b[k]);}else{o[k]=b[k];}}return o;}
+var config = {responsive:true, displayModeBar:false};
+
+var t1=[{type:'bar',name:'Likely',x:D.det,y:D.likely,marker:{color:GOLD},customdata:D.n,hovertemplate:'<b>%{x}</b><br>Likely: $%{y}M a year<br>%{customdata} leads<extra></extra>'},
+        {type:'bar',name:'High end',x:D.det,y:D.high,marker:{color:CYAN},hovertemplate:'<b>%{x}</b><br>High end: $%{y}M a year<extra></extra>'}];
+var t2=[{type:'bar',name:'Flagged earlier',x:D.det,y:D.fl,xaxis:'x2',yaxis:'y2',marker:{color:GOLD},customdata:D.uf,hovertemplate:'<b>%{x}</b><br>Flagged again next year: %{y:.0%}<br>%{customdata} units flagged earlier<extra></extra>'},
+        {type:'bar',name:'Not flagged earlier',x:D.det,y:D.nf,xaxis:'x2',yaxis:'y2',marker:{color:MUTED},customdata:D.un,hovertemplate:'<b>%{x}</b><br>Flagged next year: %{y:.0%}<br>%{customdata} units not flagged earlier<extra></extra>'}];
+var layout=merge(base,{grid:{rows:1,columns:2,pattern:'independent',xgap:0.12},barmode:'group',
+  yaxis:{title:{text:'$ millions a year'},tickprefix:'$',ticksuffix:'M'},
+  yaxis2:{tickformat:'.0%',range:[0,1],gridcolor:'#1f2d44',tickfont:{color:'#94a3b8'}},
+  xaxis2:{tickfont:{color:'#94a3b8'},gridcolor:'#1f2d44'}, legend:{y:-0.2}});
+Plotly.newPlot('chart',t1.concat(t2),layout,config);
+
+</script>
+</body>
+</html>

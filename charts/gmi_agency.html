@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maryland Health Benefit Exchange has the highest controllable purchases per position: $909.5K a year | GMI Savings Tracker</title>
+<script src="https://cdn.plot.ly/plotly-3.5.0.min.js"></script>
+<style>
+  body { margin:0; padding:0; background:#0a0e1a; color:#f0f0f0; font-family:'Segoe UI',Roboto,sans-serif; }
+  #chart { width:100vw; height:100vh; }
+  .title-bar { position:absolute; top:12px; left:20px; right:20px; z-index:10; pointer-events:none; }
+  .title-bar h1 { margin:0; font-size:18px; color:#f0f0f0; font-weight:600; line-height:1.25; }
+  .title-bar p  { margin:4px 0 0; font-size:12px; color:#8892b0; }
+  .foot { position:absolute; left:20px; right:20px; bottom:6px; z-index:10; font-size:11px; color:#8892b0; pointer-events:none; }
+</style>
+</head>
+<body>
+<div class="title-bar">
+  <h1>Maryland Health Benefit Exchange has the highest controllable purchases per position: $909.5K a year</h1>
+  <p>Agencies with at least $100M of controllable purchases, FY2017-FY2025 actuals, per budgeted position per year. Some agencies mostly pass money through, so a high figure is a place to ask, not a finding.</p>
+</div>
+<div id="chart"></div>
+<div class="foot">Source: Maryland Open Data Portal via the GMI Savings Tracker (testing ground v3), data as of 2026-11-13</div>
+<script>
+var D = {"a":["Department of Human Services","Maryland Department of Labor","Maryland Department of Health","State Department of Education","Maryland Public Broadcasting Commission","Department of Commerce","Maryland Stadium Authority","Department of Transportation","Maryland Lottery and Gaming Control Agency","Department of Information Technology","State Board of Elections","Maryland Health Benefit Exchange"],"k":[54.1,58.6,71.5,77.3,98.1,100.5,133.8,134.5,227.1,497.9,714.3,909.5],"c":[2960.6,781.9,5568.4,957.5,128.6,172.7,103.7,12374.2,698.6,960.9,293.6,553.9],"f":[54720.0,13335.0,77860.0,12387.0,1311.0,1719.0,775.0,91972.0,3077.0,1930.0,411.0,609.0]};
+var GOLD='#f59e0b', CYAN='#06b6d4', GREEN='#22c55e', RED='#f87171', MUTED='#64748b';
+var PALETTE = ["#f59e0b", "#06b6d4", "#a78bfa", "#34d399", "#f472b6", "#60a5fa", "#fbbf24"];
+var base = {
+  paper_bgcolor:'#0a0e1a', plot_bgcolor:'#0a0e1a',
+  font:{family:'Segoe UI,Roboto,sans-serif', color:'#f0f0f0', size:12},
+  margin:{t:92, b:92, l:70, r:24},
+  hoverlabel:{bgcolor:'#1a2234', bordercolor:'#1f2d44', font:{color:'#f0f0f0'}},
+  legend:{orientation:'h', y:-0.12, font:{color:'#94a3b8'}},
+  xaxis:{gridcolor:'#1f2d44', zerolinecolor:'#1f2d44', linecolor:'#1f2d44', tickfont:{color:'#94a3b8'}},
+  yaxis:{gridcolor:'#1f2d44', zerolinecolor:'#1f2d44', linecolor:'#1f2d44', tickfont:{color:'#94a3b8'}}
+};
+function merge(a,b){var o=JSON.parse(JSON.stringify(a));for(var k in b){if(b[k]&&typeof b[k]==='object'&&!Array.isArray(b[k])&&o[k]&&typeof o[k]==='object'){o[k]=merge(o[k],b[k]);}else{o[k]=b[k];}}return o;}
+var config = {responsive:true, displayModeBar:false};
+
+var tr={type:'bar',orientation:'h',y:D.a,x:D.k,marker:{color:D.a.map(function(_,i){return i===D.a.length-1?GOLD:CYAN;})},
+ customdata:D.a.map(function(_,i){return [D.c[i],D.f[i]];}),hovertemplate:'<b>%{y}</b><br>$%{x}K per position a year<br>$%{customdata[0]}M controllable over the period, %{customdata[1]:,} position-years<extra></extra>'};
+var layout=merge(base,{xaxis:{title:{text:'Controllable purchases per position, $ thousands a year'},tickprefix:'$',ticksuffix:'K'},yaxis:{automargin:true,tickfont:{size:11,color:'#cbd5e1'}},margin:{l:260},showlegend:false});
+Plotly.newPlot('chart',[tr],layout,config);
+
+</script>
+</body>
+</html>
