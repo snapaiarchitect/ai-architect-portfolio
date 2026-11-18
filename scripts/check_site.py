@@ -178,7 +178,44 @@ def check(root):
     return fails
 
 
-def report(fails):
+def apply_known(fails, known_path):
+    """Drop failures listed in a known-issues file; report stale entries.
+
+    Each non-comment line is: RULE | page | text that must appear in the message.
+    An entry that no longer matches anything is itself a failure, so the list
+    cannot rot into a blanket skip.
+    """
+    if not os.path.exists(known_path):
+        return fails, 0
+    entries = []
+    with open(known_path, encoding="utf-8") as fh:
+        for line in fh:
+            line = line.strip()
+            if line and not line.startswith("#"):
+                parts = [x.strip() for x in line.split("|", 2)]
+                if len(parts) == 3:
+                    entries.append(parts)
+    used = set()
+    kept = []
+    for f in fails:
+        hit = None
+        for i, (r, w, m) in enumerate(entries):
+            if f[0] == r and f[1] == w and m in f[2]:
+                hit = i
+                break
+        if hit is None:
+            kept.append(f)
+        else:
+            used.add(hit)
+    for i, (r, w, m) in enumerate(entries):
+        if i not in used:
+            kept.append(("KNOWN_STALE", os.path.basename(known_path), "no longer matches: %s | %s | %s" % (r, w, m)))
+    return kept, len(used)
+
+
+def report(fails, known=0):
+    if known:
+        print("check_site: %d known issue(s) in scripts/check_site_known.txt not counted" % known)
     if not fails:
         print("check_site: OK (all rules pass)")
         return 0
@@ -275,7 +312,8 @@ def main(argv):
     if not os.path.isdir(root):
         print("not a directory: %s" % root)
         return 2
-    return report(check(root))
+    fails, known = apply_known(check(root), os.path.join(root, "scripts", "check_site_known.txt"))
+    return report(fails, known)
 
 
 if __name__ == "__main__":

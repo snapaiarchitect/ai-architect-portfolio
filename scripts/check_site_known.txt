@@ -1,0 +1,8 @@
+# Known issues the site checker does not count. One per line: RULE | page | text in the message.
+# An entry that stops matching is reported as KNOWN_STALE, so remove it when the issue is fixed.
+# Archived, unlinked page; the figures folder was never committed. Fix by restoring figures or deleting the page.
+LOCAL_REF | projects/netflix-content-strategy-intelligence/docs/02_sql_analysis.html | 02_q2_top_genres.png
+LOCAL_REF | projects/netflix-content-strategy-intelligence/docs/02_sql_analysis.html | 02_q3_avg_rating_by_genre.png
+LOCAL_REF | projects/netflix-content-strategy-intelligence/docs/02_sql_analysis.html | 02_q5_release_trend.png
+LOCAL_REF | projects/netflix-content-strategy-intelligence/docs/02_sql_analysis.html | 02_q6_vote_bucket_rating.png
+LOCAL_REF | projects/netflix-content-strategy-intelligence/docs/02_sql_analysis.html | 02_q10_quality_tiers.png

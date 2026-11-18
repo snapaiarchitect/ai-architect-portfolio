@@ -44,3 +44,6 @@ Note: `check_site.py` runs in `link-check.yml`, which is separate from the deplo
 ## "Last verified" policy
 
 Any page that states a fact with a date ("last verified", "as of") must be re-checked at least every 90 days or the date removed. When verifying, update the date in the same commit. The weekly link check and the 30-minute uptime check are the automated signals; neither verifies content accuracy. The 90-day interval is a proposed policy for the owner to confirm or change.
+
+## Known issues file
+`scripts/check_site_known.txt` lists failures the checker does not count (currently 5 missing images on one archived, unlinked page). Each entry must still match a real failure; a stale entry fails the check, so the list cannot turn into a blanket skip.
