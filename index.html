@@ -5,14 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Sierra Napier — Fractional CMO & BI Consulting. MPA/MPH. Data Scientist | AI Architect | Analytics Viz. Available for fractional leadership, BI consulting, and AI architecture engagements.">
     <meta property="og:title" content="Sierra Napier — Fractional CMO & BI Consulting">
-    <meta property="og:description" content="Fractional CMO | BI Consulting | AI Architecture. 743K+ records analyzed. 14 production projects. Real data, real systems, real results.">
+    <meta property="og:description" content="Fractional CMO | BI Consulting | AI Architecture. 1.29M rows checked against the portal. 6 Maryland open datasets. 143 of 143 data checks passed.">
     <link rel="canonical" href="https://goaiarchitect.io/">
     <meta property="og:url" content="https://goaiarchitect.io/">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Sierra Napier — Fractional CMO & BI Consulting">
-    <meta name="twitter:description" content="Fractional CMO | BI Consulting | AI Architecture. 743K+ records. 14 projects. Real data, real results.">
+    <meta name="twitter:description" content="Fractional CMO | BI Consulting | AI Architecture. 1.29M rows. 6 Maryland open datasets. 143/143 checks passed.">
     <title>Sierra Napier — Fractional CMO & BI Consulting</title>
+    <meta name="theme-color" content="#0a0e1a">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">
     <style>
         :root {
             --bg-deep: #0a0e1a;
@@ -21,7 +25,7 @@
             --border: #1f2d44;
             --text-primary: #f0f0f0;
             --text-secondary: #94a3b8;
-            --text-muted: #64748b;
+            --text-muted: #8493a8;
             --accent-gold: #f59e0b;
             --accent-cyan: #06b6d4;
             --accent-gold-hover: #fbbf24;
@@ -731,20 +735,43 @@
             }
             .logo-hero { max-width: 280px; }
         }
+    
+        /* GMI tab cards */
+        .gmi-note { background: var(--bg-surface); border: 1px solid var(--border); border-left: 4px solid var(--accent-gold); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 1.5rem 0 2rem; }
+        .gmi-note h3 { margin: 0 0 0.5rem; font-size: 1.25rem; }
+        .gmi-note p { margin: 0 0 0.75rem; color: var(--text-secondary); }
+        .gmi-note .gmi-fine { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0; }
+        .gmi-note a { color: var(--accent-cyan); }
+        .badge-soon { background: var(--bg-elevated); color: var(--text-secondary); border: 1px solid var(--border); }
+        .coming-soon { margin-top: 3rem; border: 1px dashed var(--border); border-radius: 12px; padding: 1rem 1.5rem; }
+        .coming-soon > summary { cursor: pointer; font-weight: 600; color: var(--accent-gold); }
+        .coming-soon[open] > summary { margin-bottom: 0.5rem; }
+    
+        /* Accessibility and polish */
+        :focus-visible { outline: 3px solid var(--accent-cyan); outline-offset: 2px; border-radius: 4px; }
+        .floating-cta { transition: opacity 0.2s, transform 0.2s; }
+        .floating-cta.is-hidden { opacity: 0; pointer-events: none; transform: translateY(8px); }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .avatar-ring { animation: none; }
+            *, *::before, *::after { transition-duration: 0.01ms !important; }
+            .btn:hover, .project-card:hover { transform: none; }
+        }
     </style>
 </head>
 <body>
     <nav>
         <div class="container">
             <div class="nav-inner">
-                <a href="/" class="nav-brand">
-                    <img src="assets/logo.png" alt="Sierra Napier" onerror="this.style.display='none';this.parentNode.innerHTML='\u003cspan style=\'width:32px;height:32px;background:var(--bg-elevated);border-radius:6px;display:flex;align-items:center;justify-content:center;color:var(--accent-gold);font-weight:700;font-size:0.8rem;\'\u003eSierra Napier\u003c/span\u003e Sierra Napier'">
+                <a href="./" class="nav-brand">
+                    <img src="assets/logo.png" width="32" height="32" alt="Sierra Napier" onerror="this.style.display='none';this.parentNode.innerHTML='\u003cspan style=\'width:32px;height:32px;background:var(--bg-elevated);border-radius:6px;display:flex;align-items:center;justify-content:center;color:var(--accent-gold);font-weight:700;font-size:0.8rem;\'\u003eSierra Napier\u003c/span\u003e Sierra Napier'">
                     <span id="nav-text">Sierra Napier</span>
                 </a>
                 <ul class="nav-links">
                     <li><a href="#about">About</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="demo/gmi-savings-tracker.html">Live Demo</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
@@ -755,7 +782,7 @@
         <div class="container">
             <div class="avatar-wrap">
                 <div class="avatar-ring"></div>
-                <img src="assets/avatar.png" alt="Sierra Napier" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'160\' height=\'160\'%3E%3Crect fill=\'%23111827\' width=\'160\' height=\'160\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%23f59e0b\' font-size=\'48\' font-weight=\'700\' font-family=\'system-ui\'%3ESierra Napier%3C/text%3E%3C/svg%3E'">
+                <img src="assets/avatar.png" width="160" height="160" alt="Sierra Napier" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'160\' height=\'160\'%3E%3Crect fill=\'%23111827\' width=\'160\' height=\'160\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%23f59e0b\' font-size=\'48\' font-weight=\'700\' font-family=\'system-ui\'%3ESierra Napier%3C/text%3E%3C/svg%3E'">
             </div>
             <h1>Sierra Napier</h1>
             <div class="hero-badges">
@@ -765,18 +792,18 @@
             </div>
             <div class="hero-metrics-strip">
                 <div class="hero-metric">
-                    <span class="hero-metric-number">743K+</span>
-                    <span class="hero-metric-label">Records Analyzed</span>
+                    <span class="hero-metric-number">1.29M</span>
+                    <span class="hero-metric-label">Rows Checked Against the Portal</span>
                 </div>
                 <span class="hero-metric-divider">|</span>
                 <div class="hero-metric">
-                    <span class="hero-metric-number">14</span>
-                    <span class="hero-metric-label">Production Projects</span>
+                    <span class="hero-metric-number">6</span>
+                    <span class="hero-metric-label">Maryland Open Datasets</span>
                 </div>
                 <span class="hero-metric-divider">|</span>
                 <div class="hero-metric">
-                    <span class="hero-metric-number">Real</span>
-                    <span class="hero-metric-label">Public Data</span>
+                    <span class="hero-metric-number">143/143</span>
+                    <span class="hero-metric-label">Data Checks Passed</span>
                 </div>
             </div>
             <p class="tagline">
@@ -787,6 +814,7 @@
             <div class="hero-cta">
                 <a href="#services" class="btn btn-primary">View Services</a>
                 <a href="#portfolio" class="btn btn-secondary">See Portfolio</a>
+                <a href="demo/gmi-savings-tracker.html" class="btn btn-secondary">Live Demo</a>
                 <a href="#contact" class="btn btn-accent">Book a Call</a>
             </div>
         </div>
@@ -796,6 +824,7 @@
         <div class="trust-bar">
             <span class="trust-label">Verified Data Sources:</span>
             <div class="trust-logos">
+                <span class="trust-logo">Maryland Open Data</span>
                 <span class="trust-logo">NASA</span>
                 <span class="trust-logo">Census ACS</span>
                 <span class="trust-logo">BLS</span>
@@ -809,24 +838,24 @@
 
         <div class="stats">
             <div class="stat-card">
-                <div class="stat-number">743K+</div>
-                <div class="stat-label">Records Analyzed</div>
+                <div class="stat-number">1.29M</div>
+                <div class="stat-label">Rows Checked Against the Portal</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number">12</div>
-                <div class="stat-label">Gov APIs</div>
+                <div class="stat-number">6</div>
+                <div class="stat-label">Maryland Open Datasets</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number">14</div>
-                <div class="stat-label">Projects</div>
+                <div class="stat-number">10</div>
+                <div class="stat-label">Live Dashboard Tabs</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number">45</div>
-                <div class="stat-label">Notebooks</div>
+                <div class="stat-number">62</div>
+                <div class="stat-label">SQL Marts</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number">5</div>
-                <div class="stat-label">Categories</div>
+                <div class="stat-number">143/143</div>
+                <div class="stat-label">Data Checks Passed</div>
             </div>
         </div>
 
@@ -923,8 +952,418 @@
         <section id="portfolio">
             <div class="section-accent"></div>
             <h2 class="section-title">Portfolio</h2>
-            <p class="section-subtitle">14 production projects with real public data and benchmark datasets. <a href="./" style="color:var(--accent-gold);">View full portfolio →</a></p>
+            <p class="section-subtitle">Featured: the GMI Savings Tracker, one card per tab. Each card shows the tracker's own live view. The other projects are archived under <a href="#coming-soon" style="color:var(--accent-gold);">Coming soon</a>.</p>
 
+            <div class="gmi-note">
+                <h3>GMI Savings Tracker</h3>
+                <p>An independent check of GMI: it compares reported savings with the state's own payments and shows conditional paths to GMI's $50M savings target (set for FY2026).</p>
+                <p>The flagship is <a href="https://evo3-ecosystem.github.io/gmi-savings-tracker/" target="_blank" rel="noopener">gmi-savings-tracker (v1)</a>. The cards below show its testing ground, <a href="https://evo3-ecosystem.github.io/gmi-savings-tracker-v3/" target="_blank" rel="noopener">v3</a>.</p>
+                <p class="gmi-fine">Independent prototype by Sierra Napier, built from Maryland's open data; not an official State of Maryland product. Data as of 2026-11-13, portal updated 2026-11-09. All years are Maryland State fiscal years (July 1 to June 30; FY2026 = July 1, 2025 to June 30, 2026), and "a year" means one fiscal year. FY2027 began July 1, 2026, so its figures are partial. Built from commit <a href="https://github.com/EVO3-Ecosystem/gmi-savings-tracker-v3/commit/9c5400ed8b04fd29d41697116f3f9621c9b0c81c" target="_blank" rel="noopener">9c5400e</a> of <a href="https://github.com/EVO3-Ecosystem/gmi-savings-tracker-v3" target="_blank" rel="noopener">EVO3-Ecosystem/gmi-savings-tracker-v3</a> · <a href="https://evo3-ecosystem.github.io/gmi-savings-tracker-v3/about.html" target="_blank" rel="noopener">About the pipeline</a> · <a href="https://evo3-ecosystem.github.io/gmi-savings-tracker-v3/explorer.html" target="_blank" rel="noopener">Data explorer</a> · <a href="https://evo3-ecosystem.github.io/gmi-savings-tracker-v3/catalog.html" target="_blank" rel="noopener">Database catalog</a> · <a href="https://evo3-ecosystem.github.io/gmi-savings-tracker-v3/ai.html" target="_blank" rel="noopener">AI layer</a></p>
+            </div>
+
+            <div class="project-card gmi-card" id="gmi-over">
+                <div class="project-header">
+                    <div>
+                        <div class="project-title">GMI Savings Tracker: Overview</div>
+                        <div class="project-meta">Budget and payments, FY2017–FY2026</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-data">MARYLAND OPEN DATA</span>
+                        <span class="badge badge-avail">TESTING GROUND v3</span>
+                        <a href="demo/gmi-savings-tracker.html#over" class="demo-link">Live demo →</a>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="exec-summary">
+                        <h4>Executive Overview</h4>
+                        <p>In the FY2026 working budget, Maryland&#x27;s purchases agencies can control are $4.8B, up 17.7% from the FY2025 actual, 7.4% of $64.8B in operating spending, so GMI&#x27;s $50M FY2026 target is 1.0% of them.</p>
+                    </div>
+                    <div class="chart-box">
+                        <div style="display:flex;flex-wrap:wrap;gap:1rem;">
+                            <div style="flex:1;min-width:300px;">
+                                <iframe loading="lazy" src="charts/gmi_over.html" style="width:100%;height:480px;border:none;border-radius:8px;" title="Interactive chart: GMI Savings Tracker, Overview tab"></iframe>
+                            </div>
+                        </div>
+                        <p class="chart-insight-body" style="margin-top:0.75rem;"><a href="demo/gmi-savings-tracker.html#over" style="color:var(--accent-cyan);">Explore this tab in the live dashboard →</a></p>
+                    </div>
+                    <div class="technical-detail">
+                        <span class="technical-label">What this tab does</span>
+                        <p>Sizes GMI&#x27;s $50M target against the purchases agencies can control, with how it is funded and where payments go.</p>
+                    </div>
+                    <div class="transfer-box">
+                        <h5>What it shows about the build</h5>
+                        <p>One computed finding at the top, then the charts that explain it. Every chart has an Analyst detail panel: what it shows, method, how to read it, caveats and data vintage.</p>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <span class="data-sources">Data: Maryland Open Data Portal · as of 2026-11-13 · Testing ground (v3)</span>
+                    <a class="repo-link" href="https://github.com/EVO3-Ecosystem/gmi-savings-tracker-v3" target="_blank">View Repository →</a>
+                </div>
+            </div>
+            <div class="project-card gmi-card" id="gmi-areas">
+                <div class="project-header">
+                    <div>
+                        <div class="project-title">GMI Savings Tracker: Focus areas</div>
+                        <div class="project-meta">Six focus areas, FY2017–FY2025</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-data">MARYLAND OPEN DATA</span>
+                        <span class="badge badge-avail">TESTING GROUND v3</span>
+                        <a href="demo/gmi-savings-tracker.html#areas" class="demo-link">Live demo →</a>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="exec-summary">
+                        <h4>Executive Overview</h4>
+                        <p>In FY2017–FY2025 combined, the six focus areas total $9.9B. IT hardware, software &amp; services is the largest at $5B (50.8%). Fastest change, FY2017 to FY2025: it hardware, software &amp; services, ▲ 102.9%. Click a card to filter the page by it, or Open page for its detail.</p>
+                    </div>
+                    <div class="chart-box">
+                        <div style="display:flex;flex-wrap:wrap;gap:1rem;">
+                            <div style="flex:1;min-width:300px;">
+                                <iframe loading="lazy" src="charts/gmi_areas.html" style="width:100%;height:480px;border:none;border-radius:8px;" title="Interactive chart: GMI Savings Tracker, Focus areas tab"></iframe>
+                            </div>
+                        </div>
+                        <p class="chart-insight-body" style="margin-top:0.75rem;"><a href="demo/gmi-savings-tracker.html#areas" style="color:var(--accent-cyan);">Explore this tab in the live dashboard →</a></p>
+                    </div>
+                    <div class="technical-detail">
+                        <span class="technical-label">What this tab does</span>
+                        <p>Spending by focus area over time, with click-through filters across the whole dashboard.</p>
+                    </div>
+                    <div class="transfer-box">
+                        <h5>What it shows about the build</h5>
+                        <p>Filtering is shared across tabs: pick a focus area once and every view follows. Growth and share are computed from the State&#x27;s own actuals.</p>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <span class="data-sources">Data: Maryland Open Data Portal · as of 2026-11-13 · Testing ground (v3)</span>
+                    <a class="repo-link" href="https://github.com/EVO3-Ecosystem/gmi-savings-tracker-v3" target="_blank">View Repository →</a>
+                </div>
+            </div>
+            <div class="project-card gmi-card" id="gmi-track">
+                <div class="project-header">
+                    <div>
+                        <div class="project-title">GMI Savings Tracker: Savings tracker</div>
+                        <div class="project-meta">GMI&#x27;s 17 reported items, checked against payments</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-data">MARYLAND OPEN DATA</span>
+                        <span class="badge badge-avail">TESTING GROUND v3</span>
+                        <a href="demo/gmi-savings-tracker.html#track" class="demo-link">Live demo →</a>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="exec-summary">
+                        <h4>Executive Overview</h4>
+                        <p>GMI&#x27;s January 26, 2026 (FY2026) report to the legislature says GMI saved $29M in FY2026 ($20M of it General Fund) against its $50M FY2026 target. It lists 17 items: 4 saved in FY2026 that add up to $29M, plus yearly savings under way or projected that are not part of that total. Payments to the matching vendors can check 11 items. From FY2025 to FY2026, payments fell in 3 of 5 checks: about $11.1M of the reported savings shows up in what the state paid. The largest item, $18M from renegotiating seven vendors&#x27; agreements, names four kinds of contract but no vendors; each kind is checked against the payments that fit it.</p>
+                    </div>
+                    <div class="chart-box">
+                        <div style="display:flex;flex-wrap:wrap;gap:1rem;">
+                            <div style="flex:1;min-width:300px;">
+                                <iframe loading="lazy" src="charts/gmi_track.html" style="width:100%;height:480px;border:none;border-radius:8px;" title="Interactive chart: GMI Savings Tracker, Savings tracker tab"></iframe>
+                            </div>
+                        </div>
+                        <p class="chart-insight-body" style="margin-top:0.75rem;"><a href="demo/gmi-savings-tracker.html#track" style="color:var(--accent-cyan);">Explore this tab in the live dashboard →</a></p>
+                    </div>
+                    <div class="technical-detail">
+                        <span class="technical-label">What this tab does</span>
+                        <p>Compares each reported saving with what the State actually paid the matching vendors.</p>
+                    </div>
+                    <div class="transfer-box">
+                        <h5>What it shows about the build</h5>
+                        <p>Reported savings are grouped by how the report words them (saved, under way, projected) and never added into one total. Each check states how sure it is.</p>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <span class="data-sources">Data: Maryland Open Data Portal · as of 2026-11-13 · Testing ground (v3)</span>
+                    <a class="repo-link" href="https://github.com/EVO3-Ecosystem/gmi-savings-tracker-v3" target="_blank">View Repository →</a>
+                </div>
+            </div>
+            <div class="project-card gmi-card" id="gmi-opp">
+                <div class="project-header">
+                    <div>
+                        <div class="project-title">GMI Savings Tracker: Opportunities</div>
+                        <div class="project-meta">389 leads for agency review</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-data">MARYLAND OPEN DATA</span>
+                        <span class="badge badge-avail">TESTING GROUND v3</span>
+                        <a href="demo/gmi-savings-tracker.html#opp" class="demo-link">Live demo →</a>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="exec-summary">
+                        <h4>Executive Overview</h4>
+                        <p>The detectors find 389 places where spending looks higher than it needs to be: leads worth up to $330.5M a year (likely $219.7M). The findings overlap (budget and payment detectors can see the same money, and several detectors can flag one vendor), so they are not additive and are not a forecast of savings: each is a lead for an agency review.</p>
+                    </div>
+                    <div class="chart-box">
+                        <div style="display:flex;flex-wrap:wrap;gap:1rem;">
+                            <div style="flex:1;min-width:300px;">
+                                <iframe loading="lazy" src="charts/gmi_opp.html" style="width:100%;height:480px;border:none;border-radius:8px;" title="Interactive chart: GMI Savings Tracker, Opportunities tab"></iframe>
+                            </div>
+                        </div>
+                        <p class="chart-insight-body" style="margin-top:0.75rem;"><a href="demo/gmi-savings-tracker.html#opp" style="color:var(--accent-cyan);">Explore this tab in the live dashboard →</a></p>
+                    </div>
+                    <div class="technical-detail">
+                        <span class="technical-label">What this tab does</span>
+                        <p>Rule-based detectors that flag places where spending looks higher than it needs to be.</p>
+                    </div>
+                    <div class="transfer-box">
+                        <h5>What it shows about the build</h5>
+                        <p>Detectors were rerun as of earlier years and scored on what happened next. The leads overlap, so they are shown as leads for review, not as a forecast of savings.</p>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <span class="data-sources">Data: Maryland Open Data Portal · as of 2026-11-13 · Testing ground (v3)</span>
+                    <a class="repo-link" href="https://github.com/EVO3-Ecosystem/gmi-savings-tracker-v3" target="_blank">View Repository →</a>
+                </div>
+            </div>
+            <div class="project-card gmi-card" id="gmi-calc">
+                <div class="project-header">
+                    <div>
+                        <div class="project-title">GMI Savings Tracker: Calculator</div>
+                        <div class="project-meta">Conditional paths to the $50M target</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-data">MARYLAND OPEN DATA</span>
+                        <span class="badge badge-avail">TESTING GROUND v3</span>
+                        <a href="demo/gmi-savings-tracker.html#calc" class="demo-link">Live demo →</a>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="exec-summary">
+                        <h4>Executive Overview</h4>
+                        <p>At these settings, the six focus areas and other controllable purchases would save about $29.6M in FY2027 (indicative range $23.8M–$39.7M; such calibrated ranges held 84% of actuals out of sample, nominal 80%), net of the fee, and $147.8M over FY2027–FY2031. Spending baselines are forecasts from the state&#x27;s own FY2017–FY2025 actuals, using whichever model predicted FY2023–FY2025 best; savings rates default to what GMI reported achieving. Use &quot;Reach $50M&quot; to see the extra rate it takes.</p>
+                    </div>
+                    <div class="chart-box">
+                        <div style="display:flex;flex-wrap:wrap;gap:1rem;">
+                            <div style="flex:1;min-width:300px;">
+                                <iframe loading="lazy" src="charts/gmi_calc.html" style="width:100%;height:480px;border:none;border-radius:8px;" title="Interactive chart: GMI Savings Tracker, Calculator tab"></iframe>
+                            </div>
+                        </div>
+                        <p class="chart-insight-body" style="margin-top:0.75rem;"><a href="demo/gmi-savings-tracker.html#calc" style="color:var(--accent-cyan);">Explore this tab in the live dashboard →</a></p>
+                    </div>
+                    <div class="technical-detail">
+                        <span class="technical-label">What this tab does</span>
+                        <p>A what-if tool: change the savings levers and see the savings by year and the spending forecast with and without them.</p>
+                    </div>
+                    <div class="transfer-box">
+                        <h5>What it shows about the build</h5>
+                        <p>Ranges are calibrated on held-out years. The tool states its assumptions beside the result and shows how often such ranges held out of sample.</p>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <span class="data-sources">Data: Maryland Open Data Portal · as of 2026-11-13 · Testing ground (v3)</span>
+                    <a class="repo-link" href="https://github.com/EVO3-Ecosystem/gmi-savings-tracker-v3" target="_blank">View Repository →</a>
+                </div>
+            </div>
+            <div class="project-card gmi-card" id="gmi-fcast">
+                <div class="project-header">
+                    <div>
+                        <div class="project-title">GMI Savings Tracker: Forecasts &amp; results</div>
+                        <div class="project-meta">FY2027 revenue and FY2026 spending corridors</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-data">MARYLAND OPEN DATA</span>
+                        <span class="badge badge-avail">TESTING GROUND v3</span>
+                        <a href="demo/gmi-savings-tracker.html#fcast" class="demo-link">Live demo →</a>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="exec-summary">
+                        <h4>Executive Overview</h4>
+                        <p>Forward look: FY2027 General Fund revenue midpoint $29.7B (indicative range $28.7B–$31.2B); FY2026 controllable-purchases corridor $3.4B–$5.4B against the state&#x27;s working budget of $4.8B. Below, 2,367 agency performance measures tracked next to real budget change — the spending-to-results view.</p>
+                    </div>
+                    <div class="chart-box">
+                        <div style="display:flex;flex-wrap:wrap;gap:1rem;">
+                            <div style="flex:1;min-width:300px;">
+                                <iframe loading="lazy" src="charts/gmi_fcast.html" style="width:100%;height:480px;border:none;border-radius:8px;" title="Interactive chart: GMI Savings Tracker, Forecasts & results tab"></iframe>
+                            </div>
+                        </div>
+                        <p class="chart-insight-body" style="margin-top:0.75rem;"><a href="demo/gmi-savings-tracker.html#fcast" style="color:var(--accent-cyan);">Explore this tab in the live dashboard →</a></p>
+                    </div>
+                    <div class="technical-detail">
+                        <span class="technical-label">What this tab does</span>
+                        <p>Forward-looking corridors for General Fund revenue and controllable purchases, next to 2,367 agency performance measures.</p>
+                    </div>
+                    <div class="transfer-box">
+                        <h5>What it shows about the build</h5>
+                        <p>Every forecast has to beat a simple &quot;same as last year&quot; baseline on held-out years before it is shown.</p>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <span class="data-sources">Data: Maryland Open Data Portal · as of 2026-11-13 · Testing ground (v3)</span>
+                    <a class="repo-link" href="https://github.com/EVO3-Ecosystem/gmi-savings-tracker-v3" target="_blank">View Repository →</a>
+                </div>
+            </div>
+            <div class="project-card gmi-card" id="gmi-vend">
+                <div class="project-header">
+                    <div>
+                        <div class="project-title">GMI Savings Tracker: Vendors</div>
+                        <div class="project-meta">Who gets paid, and by how many agencies</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-data">MARYLAND OPEN DATA</span>
+                        <span class="badge badge-avail">TESTING GROUND v3</span>
+                        <a href="demo/gmi-savings-tracker.html#vend" class="demo-link">Live demo →</a>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="exec-summary">
+                        <h4>Executive Overview</h4>
+                        <p>In FY2026, 42 private vendors were each paid by 15 or more state agencies buying separately, $572.4M in all. 4 of the 6 focus areas are highly concentrated and 110 companies are paid under more than one name: three places where buying together could save money.</p>
+                    </div>
+                    <div class="chart-box">
+                        <div style="display:flex;flex-wrap:wrap;gap:1rem;">
+                            <div style="flex:1;min-width:300px;">
+                                <iframe loading="lazy" src="charts/gmi_vend.html" style="width:100%;height:480px;border:none;border-radius:8px;" title="Interactive chart: GMI Savings Tracker, Vendors tab"></iframe>
+                            </div>
+                        </div>
+                        <p class="chart-insight-body" style="margin-top:0.75rem;"><a href="demo/gmi-savings-tracker.html#vend" style="color:var(--accent-cyan);">Explore this tab in the live dashboard →</a></p>
+                    </div>
+                    <div class="technical-detail">
+                        <span class="technical-label">What this tab does</span>
+                        <p>Finds vendors paid separately by many agencies, concentrated focus areas and companies paid under more than one name.</p>
+                    </div>
+                    <div class="transfer-box">
+                        <h5>What it shows about the build</h5>
+                        <p>The public data has no vendor number, so matching uses name and ZIP only. Uncertain merges go to a review queue rather than being assumed.</p>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <span class="data-sources">Data: Maryland Open Data Portal · as of 2026-11-13 · Testing ground (v3)</span>
+                    <a class="repo-link" href="https://github.com/EVO3-Ecosystem/gmi-savings-tracker-v3" target="_blank">View Repository →</a>
+                </div>
+            </div>
+            <div class="project-card gmi-card" id="gmi-agency">
+                <div class="project-header">
+                    <div>
+                        <div class="project-title">GMI Savings Tracker: Agencies</div>
+                        <div class="project-meta">Controllable purchases per position</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-data">MARYLAND OPEN DATA</span>
+                        <span class="badge badge-avail">TESTING GROUND v3</span>
+                        <a href="demo/gmi-savings-tracker.html#agency" class="demo-link">Live demo →</a>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="exec-summary">
+                        <h4>Executive Overview</h4>
+                        <p>Maryland Health Benefit Exchange has the highest controllable purchases per position: $909.5K a year in FY2017–FY2025, against $62.3K for the 42 agencies together; it mostly passes money through, so the highest of the rest, Department of Information Technology at $497.9K, is the better lead (6 of the top 12 are flagged as pass-through).</p>
+                    </div>
+                    <div class="chart-box">
+                        <div style="display:flex;flex-wrap:wrap;gap:1rem;">
+                            <div style="flex:1;min-width:300px;">
+                                <iframe loading="lazy" src="charts/gmi_agency.html" style="width:100%;height:480px;border:none;border-radius:8px;" title="Interactive chart: GMI Savings Tracker, Agencies tab"></iframe>
+                            </div>
+                        </div>
+                        <p class="chart-insight-body" style="margin-top:0.75rem;"><a href="demo/gmi-savings-tracker.html#agency" style="color:var(--accent-cyan);">Explore this tab in the live dashboard →</a></p>
+                    </div>
+                    <div class="technical-detail">
+                        <span class="technical-label">What this tab does</span>
+                        <p>Compares agencies on controllable purchases per position and how they spread out over nine years.</p>
+                    </div>
+                    <div class="transfer-box">
+                        <h5>What it shows about the build</h5>
+                        <p>Pass-through agencies are flagged so that money passing through does not read as a lead.</p>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <span class="data-sources">Data: Maryland Open Data Portal · as of 2026-11-13 · Testing ground (v3)</span>
+                    <a class="repo-link" href="https://github.com/EVO3-Ecosystem/gmi-savings-tracker-v3" target="_blank">View Repository →</a>
+                </div>
+            </div>
+            <div class="project-card gmi-card" id="gmi-budget">
+                <div class="project-header">
+                    <div>
+                        <div class="project-title">GMI Savings Tracker: Budget</div>
+                        <div class="project-meta">Operating budget by function and fund</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-data">MARYLAND OPEN DATA</span>
+                        <span class="badge badge-avail">TESTING GROUND v3</span>
+                        <a href="demo/gmi-savings-tracker.html#budget" class="demo-link">Live demo →</a>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="exec-summary">
+                        <h4>Executive Overview</h4>
+                        <p>Actual spending went from $37.7B in FY2017 to $60.5B in FY2025 (+60.5%, +6.1% a year). Health is the largest function, 38% of FY2025. GMI&#x27;s controllable base is a small slice of the operating budget.</p>
+                    </div>
+                    <div class="chart-box">
+                        <div style="display:flex;flex-wrap:wrap;gap:1rem;">
+                            <div style="flex:1;min-width:300px;">
+                                <iframe loading="lazy" src="charts/gmi_budget.html" style="width:100%;height:480px;border:none;border-radius:8px;" title="Interactive chart: GMI Savings Tracker, Budget tab"></iframe>
+                            </div>
+                        </div>
+                        <p class="chart-insight-body" style="margin-top:0.75rem;"><a href="demo/gmi-savings-tracker.html#budget" style="color:var(--accent-cyan);">Explore this tab in the live dashboard →</a></p>
+                    </div>
+                    <div class="technical-detail">
+                        <span class="technical-label">What this tab does</span>
+                        <p>The State&#x27;s operating budget by function, funding mix and year, with payments and grants beside it.</p>
+                    </div>
+                    <div class="transfer-box">
+                        <h5>What it shows about the build</h5>
+                        <p>Yearly totals reconcile to the Department of Budget and Management&#x27;s printed budget books and to the State&#x27;s Open Finance sites.</p>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <span class="data-sources">Data: Maryland Open Data Portal · as of 2026-11-13 · Testing ground (v3)</span>
+                    <a class="repo-link" href="https://github.com/EVO3-Ecosystem/gmi-savings-tracker-v3" target="_blank">View Repository →</a>
+                </div>
+            </div>
+            <div class="project-card gmi-card" id="gmi-data">
+                <div class="project-header">
+                    <div>
+                        <div class="project-title">GMI Savings Tracker: Data &amp; pipeline</div>
+                        <div class="project-meta">Sources, runs and checks</div>
+                    </div>
+                    <div class="badges">
+                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-data">MARYLAND OPEN DATA</span>
+                        <span class="badge badge-avail">TESTING GROUND v3</span>
+                        <a href="demo/gmi-savings-tracker.html#data" class="demo-link">Live demo →</a>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <div class="exec-summary">
+                        <h4>Executive Overview</h4>
+                        <p>Latest run passed 2026-11-13 18:03 UTC: 143 of 143 checks passed, 0 warnings, 0 failed. 1,294,572 rows were checked against the portal (all six datasets, count and yearly totals), and nothing is built from a dataset that does not match.</p>
+                    </div>
+                    <div class="chart-box">
+                        <div style="display:flex;flex-wrap:wrap;gap:1rem;">
+                            <div style="flex:1;min-width:300px;">
+                                <iframe loading="lazy" src="charts/gmi_data.html" style="width:100%;height:480px;border:none;border-radius:8px;" title="Interactive chart: GMI Savings Tracker, Data & pipeline tab"></iframe>
+                            </div>
+                        </div>
+                        <p class="chart-insight-body" style="margin-top:0.75rem;"><a href="demo/gmi-savings-tracker.html#data" style="color:var(--accent-cyan);">Explore this tab in the live dashboard →</a></p>
+                    </div>
+                    <div class="technical-detail">
+                        <span class="technical-label">What this tab does</span>
+                        <p>How the numbers get here: six State datasets pulled through the SODA API, each matched to the portal before anything is built.</p>
+                    </div>
+                    <div class="transfer-box">
+                        <h5>What it shows about the build</h5>
+                        <p>Every run records its checks. A failed build is never published, and the page shows the latest run&#x27;s checks and the six datasets&#x27; provenance.</p>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <span class="data-sources">Data: Maryland Open Data Portal · as of 2026-11-13 · Testing ground (v3)</span>
+                    <a class="repo-link" href="https://github.com/EVO3-Ecosystem/gmi-savings-tracker-v3" target="_blank">View Repository →</a>
+                </div>
+            </div>
+            <details class="coming-soon" id="coming-soon">
+                <summary>Coming soon: 33 archived projects</summary>
+                <p class="section-subtitle" style="margin-top:1rem;">Archived for now. Open any project below to read its write-up.</p>
             <div class="project-card">
                 <div class="project-header">
                     <div>
@@ -932,7 +1371,7 @@
                         <div class="project-meta">Sensor optimization · RUL prediction · 94% accuracy</div>
                     </div>
                     <div class="badges">
-                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-soon">COMING SOON</span>
                         <span class="badge badge-data">NASA</span>
                         <span class="badge badge-avail">BENCHMARK</span>
                         <a href="projects/predictive-maintenance-transit" class="demo-link">View Demo</a>
@@ -974,7 +1413,7 @@
                         <div class="project-meta">18,846 documents · 20 categories · CPU-deployable</div>
                     </div>
                     <div class="badges">
-                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-soon">COMING SOON</span>
                         <span class="badge badge-data">arXiv</span>
                         <a href="projects/nlp-text-classification-pipeline" class="demo-link">View Demo</a>
                     </div>
@@ -1021,7 +1460,7 @@
                         <div class="project-meta">Multi-role agent system · 22 MCP tools · Persistent memory</div>
                     </div>
                     <div class="badges">
-                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-soon">COMING SOON</span>
                         <span class="badge badge-data">AI Architecture</span>
                         <a href="#" class="demo-link">Live System</a>
                     </div>
@@ -1065,7 +1504,7 @@
                         <div class="project-meta">7.1% MAPE · 90-day horizon · 17K+ hourly records</div>
                     </div>
                     <div class="badges">
-                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-soon">COMING SOON</span>
                         <span class="badge badge-data">Citi Bike</span>
                         <a href="projects/demand-forecasting-operations" class="demo-link">View Demo</a>
                     </div>
@@ -1106,7 +1545,7 @@
                         <div class="project-meta">847 projects · Federal capital · schedule risk 23%</div>
                     </div>
                     <div class="badges">
-                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-soon">COMING SOON</span>
                         <span class="badge badge-data">USASpending</span>
                         <a href="projects/capital-portfolio-governance" class="demo-link">View Demo</a>
                     </div>
@@ -1147,7 +1586,7 @@
                         <div class="project-meta">42K fatalities · 50 states · 10-year trend</div>
                     </div>
                     <div class="badges">
-                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-soon">COMING SOON</span>
                         <span class="badge badge-data">NHTSA FARS</span>
                         <a href="projects/nhtsa-safety" class="demo-link">View Demo</a>
                     </div>
@@ -1188,7 +1627,7 @@
                         <div class="project-meta">DC ArcGIS API · 25 fields monitored · 81.36% completeness</div>
                     </div>
                     <div class="badges">
-                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-soon">COMING SOON</span>
                         <span class="badge badge-data">ArcGIS</span>
                         <span class="badge badge-ai">Governance</span>
                     </div>
@@ -1268,7 +1707,7 @@
                         <div class="project-meta">8 features · 3 drifted · PSI > 0.25 flagged</div>
                     </div>
                     <div class="badges">
-                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-soon">COMING SOON</span>
                         <span class="badge badge-ai">MLOps</span>
                         <span class="badge badge-data">PSI</span>
                     </div>
@@ -1348,7 +1787,7 @@
                         <div class="project-meta">33K products · 50K reviews · sentiment + price trend analysis</div>
                     </div>
                     <div class="badges">
-                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-soon">COMING SOON</span>
                         <span class="badge badge-data">Amazon</span>
                         <span class="badge badge-ai">BI</span>
                     
@@ -1470,7 +1909,7 @@
                         <div class="project-meta">BLS API · 50 years employment · recovery index + scenario modeling</div>
                     </div>
                     <div class="badges">
-                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-soon">COMING SOON</span>
                         <span class="badge badge-data">BLS</span>
                         <span class="badge badge-ai">PMO</span>
                     </div>
@@ -1528,7 +1967,7 @@
                         <div class="project-meta">NCBI API · clinical trials · drug response · epidemiology</div>
                     </div>
                     <div class="badges">
-                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-soon">COMING SOON</span>
                         <span class="badge badge-data">PubMed</span>
                         <span class="badge badge-ai">GenAI</span>
                     </div>
@@ -1587,7 +2026,7 @@
                         <div class="project-meta">FOIA.gov API · 127 agencies · exemption + backlog tracking</div>
                     </div>
                     <div class="badges">
-                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-soon">COMING SOON</span>
                         <span class="badge badge-data">FOIA.gov</span>
                         <span class="badge badge-ai">Gov</span>
                     </div>
@@ -1649,7 +2088,7 @@
                         <div class="project-meta">230K papers · 172 categories · TF-IDF + SVM pipeline</div>
                     </div>
                     <div class="badges">
-                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-soon">COMING SOON</span>
                         <span class="badge badge-data">arXiv</span>
                         <span class="badge badge-ai">GenAI</span>
                     </div>
@@ -1711,7 +2150,7 @@
                         <div class="project-meta">NTD API · 1,000+ agencies · cost per vehicle · fleet modernization</div>
                     </div>
                     <div class="badges">
-                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-soon">COMING SOON</span>
                         <span class="badge badge-data">NTD</span>
                         <span class="badge badge-ai">PMO</span>
                     </div>
@@ -1765,7 +2204,7 @@
                         <div class="project-meta">WMATA API · 91 stations · post-COVID recovery tracking</div>
                     </div>
                     <div class="badges">
-                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-soon">COMING SOON</span>
                         <span class="badge badge-data">WMATA</span>
                         <span class="badge badge-ai">Mobility</span>
                     </div>
@@ -1827,7 +2266,7 @@
                         <div class="project-meta">World Bank API · 200+ countries · GDP, literacy, CO2, life expectancy</div>
                     </div>
                     <div class="badges">
-                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-soon">COMING SOON</span>
                         <span class="badge badge-data">World Bank</span>
                         <span class="badge badge-ai">Global</span>
                     </div>
@@ -1889,7 +2328,7 @@
                         <div class="project-meta">OMB API · 500+ policies · category + type + timeline analysis</div>
                     </div>
                     <div class="badges">
-                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-soon">COMING SOON</span>
                         <span class="badge badge-data">OMB</span>
                         <span class="badge badge-ai">Gov</span>
                     </div>
@@ -1951,7 +2390,7 @@
                         <div class="project-meta">CourtListener API · 70K opinions · topic modeling · vote margin analysis</div>
                     </div>
                     <div class="badges">
-                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-soon">COMING SOON</span>
                         <span class="badge badge-data">CourtListener</span>
                         <span class="badge badge-ai">GenAI</span>
                     </div>
@@ -2010,7 +2449,7 @@
                         <div class="project-meta">230K papers · sentence-transformers · t-SNE · semantic retrieval</div>
                     </div>
                     <div class="badges">
-                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-soon">COMING SOON</span>
                         <span class="badge badge-data">arXiv</span>
                         <span class="badge badge-ai">RAG</span>
                     </div>
@@ -2069,7 +2508,7 @@
                         <div class="project-meta">BTS API · 5.8M flights · delay prediction · route optimization</div>
                     </div>
                     <div class="badges">
-                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-soon">COMING SOON</span>
                         <span class="badge badge-data">BTS</span>
                         <span class="badge badge-ai">Mobility</span>
                     </div>
@@ -2131,7 +2570,7 @@
                         <div class="project-meta">Google Trends API · keyword velocity · seasonal decomposition · competitive tracking</div>
                     </div>
                     <div class="badges">
-                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-soon">COMING SOON</span>
                         <span class="badge badge-data">Google</span>
                         <span class="badge badge-ai">BI</span>
                     
@@ -2192,7 +2631,7 @@
                         <div class="project-meta">USASpending + NTD · risk scoring · schedule variance · capital efficiency</div>
                     </div>
                     <div class="badges">
-                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-soon">COMING SOON</span>
                         <span class="badge badge-data">USASpending</span>
                         <span class="badge badge-ai">PMO</span>
                     </div>
@@ -2250,7 +2689,7 @@
                         <div class="project-meta">Data.gov API · 250K datasets · agency distribution · topic clustering</div>
                     </div>
                     <div class="badges">
-                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-soon">COMING SOON</span>
                         <span class="badge badge-data">Data.gov</span>
                         <span class="badge badge-ai">Gov</span>
                     </div>
@@ -2312,7 +2751,7 @@
                         <div class="project-meta">Census API · 50 states · age + income + education · county-level</div>
                     </div>
                     <div class="badges">
-                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-soon">COMING SOON</span>
                         <span class="badge badge-data">Census</span>
                         <span class="badge badge-ai">Public Sector</span>
                     </div>
@@ -2374,7 +2813,7 @@
                         <div class="project-meta">BLS API · unemployment · job openings · wage trends · state-level</div>
                     </div>
                     <div class="badges">
-                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-soon">COMING SOON</span>
                         <span class="badge badge-data">BLS</span>
                         <span class="badge badge-ai">Public Sector</span>
                     </div>
@@ -2436,7 +2875,7 @@
                         <div class="project-meta">FDNY API · 2.5M incidents · response time · severity triage</div>
                     </div>
                     <div class="badges">
-                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-soon">COMING SOON</span>
                         <span class="badge badge-data">FDNY</span>
                         <span class="badge badge-ai">Healthcare</span>
                     </div>
@@ -2503,7 +2942,7 @@
                         <div class="project-meta">CMS API · 50 states · drug utilization · opioid monitoring</div>
                     </div>
                     <div class="badges">
-                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-soon">COMING SOON</span>
                         <span class="badge badge-data">CMS</span>
                         <span class="badge badge-ai">Healthcare</span>
                     </div>
@@ -2570,7 +3009,7 @@
                         <div class="project-meta">CDC API · NVSS · COVID · opioid epidemic · mortality trends</div>
                     </div>
                     <div class="badges">
-                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-soon">COMING SOON</span>
                         <span class="badge badge-data">CDC</span>
                         <span class="badge badge-ai">Healthcare</span>
                     </div>
@@ -2637,7 +3076,7 @@
                         <div class="project-meta">IBM HR Analytics · 1,470 employees · survival analysis · ROC 0.87</div>
                     </div>
                     <div class="badges">
-                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-soon">COMING SOON</span>
                         <span class="badge badge-data">IBM</span>
                         <span class="badge badge-ai">People</span>
                     </div>
@@ -2704,7 +3143,7 @@
                         <div class="project-meta">Census + BLS · 50 states · pay gap · diversity index</div>
                     </div>
                     <div class="badges">
-                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-soon">COMING SOON</span>
                         <span class="badge badge-data">Census</span>
                         <span class="badge badge-ai">People</span>
                     </div>
@@ -2776,7 +3215,7 @@
                         <div class="project-meta">3K reviews · sentiment classification · domain analysis · 89% accuracy</div>
                     </div>
                     <div class="badges">
-                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-soon">COMING SOON</span>
                         <span class="badge badge-data">Internal</span>
                         <span class="badge badge-ai">People</span>
                     </div>
@@ -2848,7 +3287,7 @@
                         <div class="project-meta">BBC News · 2,225 docs · TF-IDF + Random Forest · 97% accuracy</div>
                     </div>
                     <div class="badges">
-                        <span class="badge badge-live">● LIVE</span>
+                        <span class="badge badge-soon">COMING SOON</span>
                         <span class="badge badge-data">BBC</span>
                         <span class="badge badge-ai">GenAI</span>
                     </div>
@@ -2917,8 +3356,10 @@
                 </div>
             </div>
 
+            </details>
+
             <div style="text-align:center;margin:3rem 0;">
-                <a href="#portfolio" class="btn btn-primary" style="display:inline-block;">View Full Portfolio → 33 Projects, 45 Notebooks, 50+ Visualizations</a>
+                <a href="demo/gmi-savings-tracker.html" class="btn btn-primary" style="display:inline-block;">Open the live GMI Savings Tracker → 10 tabs, 6 datasets, 143 checks</a>
             </div>
 
         </section>
@@ -2928,10 +3369,10 @@
                 <h2>Let's Build Something</h2>
                 <p>Available for fractional CMO engagements, BI consulting projects, and AI architecture work. I'll respond within 24 hours.</p>
                 <div class="contact-links">
-                    <a href="mailto:book@baldbeautymua.com">book@baldbeautymua.com</a>
+                    <a href="mailto:s.napier430@gmail.com">s.napier430@gmail.com</a>
                     <a href="https://www.linkedin.com/in/sierran/">LinkedIn</a>
                     <a href="https://github.com/snapaiarchitect">GitHub</a>
-                    <a href="https://calendly.com">Book a Call</a>
+                    <a href="mailto:s.napier430@gmail.com?subject=Intro%20call">Book a Call</a>
                 </div>
             </div>
         </section>
@@ -2942,5 +3383,14 @@
     </footer>
 
     <a href="#contact" class="floating-cta">Contact Sierra</a>
+
+    <script>
+    (function(){
+        var cta=document.querySelector('.floating-cta'); if(!cta||!('IntersectionObserver' in window))return;
+        var seen=new Set();
+        var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)seen.add(e.target);else seen.delete(e.target);});cta.classList.toggle('is-hidden',seen.size>0);});
+        document.querySelectorAll('#contact, .gmi-card iframe').forEach(function(el){io.observe(el);});
+    })();
+    </script>
 </body>
 </html>

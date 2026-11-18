@@ -2,6 +2,7 @@
 
 > **I analyze complex data at scale, architect AI systems that automate it, and visualize the story so stakeholders act on it.**
 
+- ▶️ **Live demo (GMI Savings Tracker dashboard):** [goaiarchitect.io/demo/gmi-savings-tracker.html](https://goaiarchitect.io/demo/gmi-savings-tracker.html)
 - 🔗 **Live Portfolio:** [goaiarchitect.io](https://goaiarchitect.io/)
 - 💼 **Consulting Services:** [goaiarchitect.io/side-hustle.html](https://goaiarchitect.io/side-hustle.html)
 - 🎯 **ML Portfolio:** [gosidehustlesisi.github.io/sierra-applied-ml/](https://gosidehustlesisi.github.io/sierra-applied-ml/)
@@ -14,9 +15,9 @@
 |--------|-------|
 | Live Repositories | 6 |
 | Production Projects | 24 |
-| Real Data Records | 743K+ |
+| Rows checked against the portal (GMI tracker) | 1,294,572 |
 | Government APIs | 12 |
-| Executed Notebooks | 45+ |
+| GMI tracker data checks passed | 143 of 143 |
 
 **Zero synthetic data. Every project uses real public datasets.**
 

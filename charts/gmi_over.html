@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>State payments grew from $19.9B in FY2008 to $45.5B in FY2026 | GMI Savings Tracker</title>
+<script src="https://cdn.plot.ly/plotly-3.5.0.min.js"></script>
+<style>
+  body { margin:0; padding:0; background:#0a0e1a; color:#f0f0f0; font-family:'Segoe UI',Roboto,sans-serif; }
+  #chart { width:100vw; height:100vh; }
+  .title-bar { position:absolute; top:12px; left:20px; right:20px; z-index:10; pointer-events:none; }
+  .title-bar h1 { margin:0; font-size:18px; color:#f0f0f0; font-weight:600; line-height:1.25; }
+  .title-bar p  { margin:4px 0 0; font-size:12px; color:#8892b0; }
+  .foot { position:absolute; left:20px; right:20px; bottom:6px; z-index:10; font-size:11px; color:#8892b0; pointer-events:none; }
+</style>
+</head>
+<body>
+<div class="title-bar">
+  <h1>State payments grew from $19.9B in FY2008 to $45.5B in FY2026</h1>
+  <p>Total payments by Maryland State fiscal year (July 1 to June 30), nominal dollars. Hover a bar for records, agencies and vendors.</p>
+</div>
+<div id="chart"></div>
+<div class="foot">Source: Maryland Open Data Portal via the GMI Savings Tracker (testing ground v3), data as of 2026-11-13</div>
+<script>
+var D = {"fy":[2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025,2026],"b":[19.879,21.332,21.539,22.934,23.161,23.514,25.276,27.192,27.36,29.306,29.596,30.321,32.926,34.67,36.657,39.278,40.39,43.703,45.536],"rec":[19392,20160,19841,20141,19474,19732,19906,19918,19537,19901,19516,20067,21520,23806,23979,22320,22614,23221,23166],"ven":[8079,8420,8800,9547,9298,9376,9812,9900,9852,9960,10128,10552,11706,13317,14446,12692,12987,13632,13648],"ag":[65,66,67,67,68,68,68,68,68,68,68,69,69,69,71,75,80,82,83]};
+var GOLD='#f59e0b', CYAN='#06b6d4', GREEN='#22c55e', RED='#f87171', MUTED='#64748b';
+var PALETTE = ["#f59e0b", "#06b6d4", "#a78bfa", "#34d399", "#f472b6", "#60a5fa", "#fbbf24"];
+var base = {
+  paper_bgcolor:'#0a0e1a', plot_bgcolor:'#0a0e1a',
+  font:{family:'Segoe UI,Roboto,sans-serif', color:'#f0f0f0', size:12},
+  margin:{t:92, b:92, l:70, r:24},
+  hoverlabel:{bgcolor:'#1a2234', bordercolor:'#1f2d44', font:{color:'#f0f0f0'}},
+  legend:{orientation:'h', y:-0.12, font:{color:'#94a3b8'}},
+  xaxis:{gridcolor:'#1f2d44', zerolinecolor:'#1f2d44', linecolor:'#1f2d44', tickfont:{color:'#94a3b8'}},
+  yaxis:{gridcolor:'#1f2d44', zerolinecolor:'#1f2d44', linecolor:'#1f2d44', tickfont:{color:'#94a3b8'}}
+};
+function merge(a,b){var o=JSON.parse(JSON.stringify(a));for(var k in b){if(b[k]&&typeof b[k]==='object'&&!Array.isArray(b[k])&&o[k]&&typeof o[k]==='object'){o[k]=merge(o[k],b[k]);}else{o[k]=b[k];}}return o;}
+var config = {responsive:true, displayModeBar:false};
+
+var op = D.fy.map(function(y){return y===2026?0.65:1;});
+var tr = {type:'bar', x:D.fy, y:D.b, marker:{color:GOLD, opacity:op, line:{color:'#0a0e1a',width:1}},
+  customdata:D.fy.map(function(y,i){return [D.rec[i],D.ag[i],D.ven[i]];}),
+  hovertemplate:'<b>FY%{x}</b><br>$%{y:.1f}B paid<br>%{customdata[0]:,} payment records<br>%{customdata[1]} agencies, %{customdata[2]:,} vendors<extra></extra>'};
+var i22=D.fy.indexOf(2022), i26=D.fy.indexOf(2026);
+var layout = merge(base,{
+  xaxis:{dtick:1, tickprefix:'FY', tickangle:-45}, yaxis:{title:{text:'$ billions'}, ticksuffix:'B', tickprefix:'$', rangemode:'tozero'}, showlegend:false,
+  annotations:[
+   {x:2022,y:D.b[i22],ax:-70,ay:-60,text:'FY2022 as published includes a second<br>$874.5M block (a source issue the<br>tracker reports, not a saving)',showarrow:true,arrowcolor:'#94a3b8',font:{size:11,color:'#94a3b8'},align:'left'},
+   {x:2026,y:D.b[i26],ax:-20,ay:-46,text:'Latest year<br>in the data',showarrow:true,arrowcolor:'#94a3b8',font:{size:11,color:'#94a3b8'}}]
+});
+Plotly.newPlot('chart',[tr],layout,config);
+
+</script>
+</body>
+</html>

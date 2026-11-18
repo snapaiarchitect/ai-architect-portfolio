@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FY2027 General Fund revenue midpoint $29.7B, indicative range $28.7B to $31.2B | GMI Savings Tracker</title>
+<script src="https://cdn.plot.ly/plotly-3.5.0.min.js"></script>
+<style>
+  body { margin:0; padding:0; background:#0a0e1a; color:#f0f0f0; font-family:'Segoe UI',Roboto,sans-serif; }
+  #chart { width:100vw; height:100vh; }
+  .title-bar { position:absolute; top:12px; left:20px; right:20px; z-index:10; pointer-events:none; }
+  .title-bar h1 { margin:0; font-size:18px; color:#f0f0f0; font-weight:600; line-height:1.25; }
+  .title-bar p  { margin:4px 0 0; font-size:12px; color:#8892b0; }
+  .foot { position:absolute; left:20px; right:20px; bottom:6px; z-index:10; font-size:11px; color:#8892b0; pointer-events:none; }
+</style>
+</head>
+<body>
+<div class="title-bar">
+  <h1>FY2027 General Fund revenue midpoint $29.7B, indicative range $28.7B to $31.2B</h1>
+  <p>General Fund revenue, budgetary basis, as reported (one-time items included). The range is indicative, from a log-linear trend; the wider dotted band is the calibrated range.</p>
+</div>
+<div id="chart"></div>
+<div class="foot">Source: Maryland Open Data Portal via the GMI Savings Tracker (testing ground v3), data as of 2026-11-13</div>
+<script>
+var D = {"fy":[2017,2018,2019,2020,2021,2022,2023,2024,2025,2026],"v":[16.699,17.372,18.199,18.634,20.831,24.039,23.673,24.863,25.716,28.057],"fy2":2027,"p10":28.66,"p50":29.71,"p90":31.16,"c10":26.13,"c90":35.23,"last":28.0569,"lfy":2026};
+var GOLD='#f59e0b', CYAN='#06b6d4', GREEN='#22c55e', RED='#f87171', MUTED='#64748b';
+var PALETTE = ["#f59e0b", "#06b6d4", "#a78bfa", "#34d399", "#f472b6", "#60a5fa", "#fbbf24"];
+var base = {
+  paper_bgcolor:'#0a0e1a', plot_bgcolor:'#0a0e1a',
+  font:{family:'Segoe UI,Roboto,sans-serif', color:'#f0f0f0', size:12},
+  margin:{t:92, b:92, l:70, r:24},
+  hoverlabel:{bgcolor:'#1a2234', bordercolor:'#1f2d44', font:{color:'#f0f0f0'}},
+  legend:{orientation:'h', y:-0.12, font:{color:'#94a3b8'}},
+  xaxis:{gridcolor:'#1f2d44', zerolinecolor:'#1f2d44', linecolor:'#1f2d44', tickfont:{color:'#94a3b8'}},
+  yaxis:{gridcolor:'#1f2d44', zerolinecolor:'#1f2d44', linecolor:'#1f2d44', tickfont:{color:'#94a3b8'}}
+};
+function merge(a,b){var o=JSON.parse(JSON.stringify(a));for(var k in b){if(b[k]&&typeof b[k]==='object'&&!Array.isArray(b[k])&&o[k]&&typeof o[k]==='object'){o[k]=merge(o[k],b[k]);}else{o[k]=b[k];}}return o;}
+var config = {responsive:true, displayModeBar:false};
+
+var a={type:'scatter',mode:'lines+markers',name:'Actual',x:D.fy,y:D.v,line:{color:GOLD,width:3},marker:{size:7,color:GOLD},hovertemplate:'<b>FY%{x}</b><br>$%{y:.1f}B actual<extra></extra>'};
+var xs=[D.lfy,D.fy2];
+var wide={type:'scatter',mode:'lines',name:'Calibrated range',x:[D.lfy,D.fy2,D.fy2,D.lfy],y:[D.last,D.c90,D.c10,D.last],fill:'toself',fillcolor:'rgba(100,116,139,0.12)',line:{color:'#64748b',width:1,dash:'dot'},hoverinfo:'skip'};
+var rng={type:'scatter',mode:'lines',name:'Indicative range',x:[D.lfy,D.fy2,D.fy2,D.lfy],y:[D.last,D.p90,D.p10,D.last],fill:'toself',fillcolor:'rgba(6,182,212,0.22)',line:{width:0},hoverinfo:'skip'};
+var mid={type:'scatter',mode:'lines+markers',name:'Forecast midpoint',x:xs,y:[D.last,D.p50],line:{color:CYAN,width:3,dash:'dash'},marker:{size:[0,10],color:CYAN},
+ hovertemplate:'<b>FY%{x}</b><br>$%{y:.1f}B midpoint ($'+D.p10+'B to $'+D.p90+'B)<extra></extra>'};
+var layout=merge(base,{xaxis:{dtick:1,tickprefix:'FY',tickangle:-45},yaxis:{title:{text:'$ billions'},tickprefix:'$',ticksuffix:'B',rangemode:'tozero'},legend:{y:-0.2}});
+Plotly.newPlot('chart',[wide,rng,a,mid],layout,config);
+
+</script>
+</body>
+</html>

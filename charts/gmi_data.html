@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1,294,572 rows downloaded; 6 of 6 datasets match the portal on count and yearly totals | GMI Savings Tracker</title>
+<script src="https://cdn.plot.ly/plotly-3.5.0.min.js"></script>
+<style>
+  body { margin:0; padding:0; background:#0a0e1a; color:#f0f0f0; font-family:'Segoe UI',Roboto,sans-serif; }
+  #chart { width:100vw; height:100vh; }
+  .title-bar { position:absolute; top:12px; left:20px; right:20px; z-index:10; pointer-events:none; }
+  .title-bar h1 { margin:0; font-size:18px; color:#f0f0f0; font-weight:600; line-height:1.25; }
+  .title-bar p  { margin:4px 0 0; font-size:12px; color:#8892b0; }
+  .foot { position:absolute; left:20px; right:20px; bottom:6px; z-index:10; font-size:11px; color:#8892b0; pointer-events:none; }
+</style>
+</head>
+<body>
+<div class="title-bar">
+  <h1>1,294,572 rows downloaded; 6 of 6 datasets match the portal on count and yearly totals</h1>
+  <p>Rows per State dataset, downloaded in full through the SODA API and checked against the portal on every run (log scale). Nothing is built from a dataset that does not match.</p>
+</div>
+<div id="chart"></div>
+<div class="foot">Source: Maryland Open Data Portal via the GMI Savings Tracker (testing ground v3), data as of 2026-11-13</div>
+<script>
+var D = {"name":["fte","grants","fund","highered","payments","budget"],"id":["x8qy-486w","absk-avps","gy87-e27x","4mca-332u","7syw-q4cy","yu65-jmmv"],"dl":[6026,23085,26178,84446,412880,741957],"pt":[6026,23085,26178,84446,412880,741957],"ok":[1,1,1,1,1,1],"yrs":["FY2017-FY2027","FY2009-FY2025","FY2017-FY2027","FY2017-FY2027","FY2008-FY2027","FY2017-FY2027"],"upd":["2026-08-10","2026-10-09","2026-08-10","2026-08-10","2026-11-09","2026-08-10"]};
+var GOLD='#f59e0b', CYAN='#06b6d4', GREEN='#22c55e', RED='#f87171', MUTED='#64748b';
+var PALETTE = ["#f59e0b", "#06b6d4", "#a78bfa", "#34d399", "#f472b6", "#60a5fa", "#fbbf24"];
+var base = {
+  paper_bgcolor:'#0a0e1a', plot_bgcolor:'#0a0e1a',
+  font:{family:'Segoe UI,Roboto,sans-serif', color:'#f0f0f0', size:12},
+  margin:{t:92, b:92, l:70, r:24},
+  hoverlabel:{bgcolor:'#1a2234', bordercolor:'#1f2d44', font:{color:'#f0f0f0'}},
+  legend:{orientation:'h', y:-0.12, font:{color:'#94a3b8'}},
+  xaxis:{gridcolor:'#1f2d44', zerolinecolor:'#1f2d44', linecolor:'#1f2d44', tickfont:{color:'#94a3b8'}},
+  yaxis:{gridcolor:'#1f2d44', zerolinecolor:'#1f2d44', linecolor:'#1f2d44', tickfont:{color:'#94a3b8'}}
+};
+function merge(a,b){var o=JSON.parse(JSON.stringify(a));for(var k in b){if(b[k]&&typeof b[k]==='object'&&!Array.isArray(b[k])&&o[k]&&typeof o[k]==='object'){o[k]=merge(o[k],b[k]);}else{o[k]=b[k];}}return o;}
+var config = {responsive:true, displayModeBar:false};
+
+var tr={type:'bar',orientation:'h',y:D.name,x:D.dl,text:D.dl.map(function(v){return v.toLocaleString();}),textposition:'outside',textfont:{color:'#f0f0f0'},cliponaxis:false,
+ marker:{color:D.ok.map(function(v){return v?GOLD:RED;})},customdata:D.name.map(function(_,i){return [D.id[i],D.pt[i],D.yrs[i],D.upd[i]];}),
+ hovertemplate:'<b>%{y}</b> (%{customdata[0]})<br>%{x:,} rows downloaded; portal: %{customdata[1]:,}<br>Years: %{customdata[2]}<br>Portal updated %{customdata[3]}<extra></extra>'};
+var layout=merge(base,{xaxis:{type:'log',title:{text:'Rows (log scale)'},range:[3,6.6],tickvals:[1000,10000,100000,1000000],ticktext:['1K','10K','100K','1M']},yaxis:{automargin:true,tickfont:{size:12,color:'#cbd5e1'}},margin:{l:110,r:80},showlegend:false});
+Plotly.newPlot('chart',[tr],layout,config);
+
+</script>
+</body>
+</html>
