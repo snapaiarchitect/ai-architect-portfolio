@@ -2,24 +2,23 @@
 
 > **I analyze complex data at scale, architect AI systems that automate it, and visualize the story so stakeholders act on it.**
 
-- ▶️ **Live demo (GMI Savings Tracker dashboard):** [goaiarchitect.io/demo/gmi-savings-tracker.html](https://goaiarchitect.io/demo/gmi-savings-tracker.html)
-- 🔗 **Live Portfolio:** [goaiarchitect.io](https://goaiarchitect.io/)
-- 💼 **Consulting Services:** [goaiarchitect.io/side-hustle.html](https://goaiarchitect.io/side-hustle.html)
+- ▶️ **Live demo (GMI Savings Tracker dashboard):** [goaiarchitect.com/demo/gmi-savings-tracker.html](https://goaiarchitect.com/demo/gmi-savings-tracker.html)
+- 🔗 **Live Portfolio:** [goaiarchitect.com](https://goaiarchitect.com/)
+- 💼 **Consulting Services:** [goaiarchitect.com/side-hustle.html](https://goaiarchitect.com/side-hustle.html)
 - 🎯 **ML Portfolio:** [gosidehustlesisi.github.io/sierra-applied-ml/](https://gosidehustlesisi.github.io/sierra-applied-ml/)
 
 ---
 
-## 📊 Portfolio At a Glance
+## 📊 Featured: GMI Savings Tracker
 
-| Metric | Count |
+| Metric (data as of 2026-11-13) | Value |
 |--------|-------|
-| Live Repositories | 6 |
-| Production Projects | 24 |
-| Rows checked against the portal (GMI tracker) | 1,294,572 |
-| Government APIs | 12 |
-| GMI tracker data checks passed | 143 of 143 |
+| Rows checked against the Maryland open-data portal | 1,294,572 across 6 datasets |
+| SQL marts | 62 |
+| Data checks passed | 143 of 143 |
+| Live dashboard tabs | 10 |
 
-**Zero synthetic data. Every project uses real public datasets.**
+The other projects are archived under "Coming soon" on the site while they are re-checked. Each project states whether it uses public or benchmark data.
 
 ---
 
@@ -64,7 +63,7 @@ My foundation is **MPA/MPH** — policy analysis, regulatory environments, and p
 - **BI Consulting** — ETL to dashboard, boardroom-ready insights
 - **AI Architecture** — Agentic automation, local LLMs, production AI pipelines
 
-[View Services →](https://goaiarchitect.io/side-hustle.html)
+[View Services →](https://goaiarchitect.com/side-hustle.html)
 
 ---
 
@@ -82,9 +81,9 @@ My foundation is **MPA/MPH** — policy analysis, regulatory environments, and p
 ## 📫 Contact
 
 - **GitHub:** [@gosidehustlesisi](https://github.com/gosidehustlesisi)
-- **Portfolio:** [goaiarchitect.io](https://goaiarchitect.io/)
-- **Consulting:** [goaiarchitect.io/side-hustle.html](https://goaiarchitect.io/side-hustle.html)
+- **Portfolio:** [goaiarchitect.com](https://goaiarchitect.com/)
+- **Consulting:** [goaiarchitect.com/side-hustle.html](https://goaiarchitect.com/side-hustle.html)
 
 ---
 
-*© 2026 Sierra Napier. MIT Licensed. Built with real public data — zero synthetic records.*
+*© 2026 Sierra Napier. Built on public and benchmark datasets, disclosed on each project.*
