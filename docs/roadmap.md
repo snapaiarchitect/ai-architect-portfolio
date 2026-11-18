@@ -10,7 +10,7 @@ Last updated 2026-11-18. Items are ordered within each group; nothing here is a 
 ## Next
 - **Mobility refresh:** re-download the data, record the real counts, add tests and a scheduled refresh, then quote figures. The old "743,957 records" claim is not reproducible from the repository today.
 - **GenAI:** re-run its audit and refresh the Supreme Court project (May 2026 data); link a live demo if one is published.
-- **Link checker as a required check:** make `scripts/check_site.py` a gate before deploy once the archived `projects/` pages are fixed or excluded.
+- **Link checker:** done as a deploy gate. The offline `site-check` job is the one to mark as a required status check; the external `links` job stays advisory on pull requests because other servers can flake.
 - **Cloudflare move:** reconnect the connector with read scopes, inventory the account, then host the static site with `cloudflare/_headers` (test with `wrangler dev` first).
 
 ## Later: UI_INDEX (unemployment insurance adequacy, DC/MD/VA)

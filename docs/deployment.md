@@ -47,3 +47,6 @@ Any page that states a fact with a date ("last verified", "as of") must be re-ch
 
 ## Known issues file
 `scripts/check_site_known.txt` lists failures the checker does not count (currently 5 missing images on one archived, unlinked page). Each entry must still match a real failure; a stale entry fails the check, so the list cannot turn into a blanket skip.
+
+## Required check and deploy gate
+`site-check` (offline, deterministic) runs on every pull request and as a step before each Pages deploy in `static.yml`, so a failing check blocks the deploy. External link checking (`links`) is advisory on pull requests and fails only on main and the weekly run. Owner step: Settings > Rules > Rulesets > Require status checks > add `site-check`.

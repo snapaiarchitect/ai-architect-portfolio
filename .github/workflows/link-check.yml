@@ -20,15 +20,27 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  check:
+  # Fast, deterministic, no network: this is the job to mark as a required status
+  # check (Settings > Rules > Rulesets > Require status checks: "site-check").
+  site-check:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 5
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
       - name: Offline site checks
         run: python3 scripts/check_site.py
+
+  # External links depend on other people's servers, so on pull requests this job
+  # reports but does not block. Weekly and on main it fails and the weekly run
+  # opens an issue.
+  links:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    continue-on-error: ${{ github.event_name == 'pull_request' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
 
       - name: Restore lychee cache
         uses: actions/cache@v4
