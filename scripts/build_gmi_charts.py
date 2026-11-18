@@ -42,7 +42,7 @@ PAGE = """<!DOCTYPE html>
   .title-bar { position:absolute; top:12px; left:20px; right:20px; z-index:10; pointer-events:none; }
   .title-bar h1 { margin:0; font-size:18px; color:#f0f0f0; font-weight:600; line-height:1.25; }
   .title-bar p  { margin:4px 0 0; font-size:12px; color:#8892b0; }
-  .ctl { position:absolute; right:20px; bottom:30px; z-index:11; display:flex; gap:10px; align-items:center; font-size:12px; color:#8892b0; }
+  .ctl { position:absolute; right:20px; top:12px; z-index:11; display:flex; gap:10px; align-items:center; font-size:12px; color:#8892b0; }
   .ctl button { font:inherit; font-size:13px; color:#f0f0f0; background:#1a2234; border:1px solid #334155; border-radius:6px; padding:6px 12px; cursor:pointer; }
   .ctl button:hover { border-color:#f59e0b; }
   .ctl button:focus-visible, details.dt summary:focus-visible, .scroll:focus-visible { outline:2px solid #22d3ee; outline-offset:2px; }
