@@ -4,27 +4,102 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Maryland Health Benefit Exchange has the highest controllable purchases per position: $909.5K a year | GMI Savings Tracker</title>
-<script src="https://cdn.plot.ly/plotly-3.5.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/plotly.js-dist-min@4.3.0/plotly.min.js" integrity="sha384-AtW63zbFwwiEVUeSPFC1ydmqJUwWWoXmyZHP8OC449teZ+00wVajF4cFhd/hy7jG" crossorigin="anonymous"></script>
 <style>
+  html { color-scheme:dark; }
   body { margin:0; padding:0; background:#0a0e1a; color:#f0f0f0; font-family:'Segoe UI',Roboto,sans-serif; }
-  #chart { width:100vw; height:100vh; }
+  .stage { position:relative; height:100vh; min-height:480px; }
+  #chart { width:100%; height:100%; }
   .title-bar { position:absolute; top:12px; left:20px; right:20px; z-index:10; pointer-events:none; }
   .title-bar h1 { margin:0; font-size:18px; color:#f0f0f0; font-weight:600; line-height:1.25; }
   .title-bar p  { margin:4px 0 0; font-size:12px; color:#8892b0; }
+  .ctl { position:absolute; right:20px; bottom:30px; z-index:11; display:flex; gap:10px; align-items:center; font-size:12px; color:#8892b0; }
+  .ctl button { font:inherit; font-size:13px; color:#f0f0f0; background:#1a2234; border:1px solid #334155; border-radius:6px; padding:6px 12px; cursor:pointer; }
+  .ctl button:hover { border-color:#f59e0b; }
+  .ctl button:focus-visible, details.dt summary:focus-visible, .scroll:focus-visible { outline:2px solid #22d3ee; outline-offset:2px; }
   .foot { position:absolute; left:20px; right:20px; bottom:6px; z-index:10; font-size:11px; color:#8892b0; pointer-events:none; }
+  .data { max-width:1100px; margin:0 auto; padding:20px 20px 40px; font-size:14px; line-height:1.5; }
+  .data .summary { margin:0 0 14px; color:#d6deeb; }
+  details.dt { border:1px solid #1f2d44; border-radius:8px; background:#0d1424; }
+  details.dt > summary { cursor:pointer; padding:10px 14px; color:#f0f0f0; font-weight:600; }
+  .scroll { overflow-x:auto; padding:0 14px 14px; }
+  table { border-collapse:collapse; width:100%; font-size:13px; font-variant-numeric:tabular-nums; }
+  caption { text-align:left; color:#8892b0; padding:0 0 8px; font-size:12px; }
+  th, td { padding:5px 10px; border-bottom:1px solid #1f2d44; text-align:right; white-space:nowrap; }
+  th { color:#cbd5e1; font-weight:600; }
+  th[scope=row], thead th:first-child, td.t { text-align:left; }
+  td.t { white-space:normal; min-width:12em; }
+  .nojs { margin:0 0 10px; color:#fbbf24; }
+  @media (max-width:1100px) {
+    .stage { height:auto; min-height:0; }
+    .title-bar, .foot, .ctl { position:static; margin:12px 16px 0; }
+    .foot { margin-bottom:8px; }
+    #chart { height:72vh; min-height:380px; }
+    .data { padding:12px 16px 32px; }
+  }
 </style>
+<noscript><style>details.dt { display:none; }</style></noscript>
 </head>
 <body>
-<div class="title-bar">
-  <h1>Maryland Health Benefit Exchange has the highest controllable purchases per position: $909.5K a year</h1>
-  <p>Agencies with at least $100M of controllable purchases, FY2017-FY2025 actuals, per budgeted position per year. Some agencies mostly pass money through, so a high figure is a place to ask, not a finding.</p>
+<main>
+<div class="stage">
+  <header class="title-bar">
+    <h1 id="ttl">Maryland Health Benefit Exchange has the highest controllable purchases per position: $909.5K a year</h1>
+    <p id="sub">Agencies with at least $100M of controllable purchases, FY2017-FY2025 actuals, per budgeted position per year. Some agencies mostly pass money through, so a high figure is a place to ask, not a finding.</p>
+  </header>
+  <div id="chart" role="img" aria-labelledby="ttl sub"></div>
+  <div class="foot">Source: Maryland Open Data Portal via the GMI Savings Tracker (testing ground v3), data as of 2026-11-13</div>
 </div>
-<div id="chart"></div>
-<div class="foot">Source: Maryland Open Data Portal via the GMI Savings Tracker (testing ground v3), data as of 2026-11-13</div>
+<section class="data" aria-label="Chart summary and data">
+  <p class="summary"><strong>Summary:</strong> Maryland Health Benefit Exchange has the highest controllable purchases per position: $909.5K a year. Every value plotted is listed in the data table below.</p>
+  <details class="dt">
+    <summary>Data table behind this chart (12 rows)</summary>
+    <div class="scroll" tabindex="0" role="region" aria-label="Data table, scrolls sideways on small screens">
+<table><caption>The 12 agencies plotted (agencies with at least $100M of controllable purchases), highest per position first</caption><thead><tr><th scope="col">Agency</th><th scope="col">Per position ($K a year)</th><th scope="col">Controllable purchases ($M)</th><th scope="col">Position-years</th></tr></thead>
+<tbody>
+<tr><th scope="row">Maryland Health Benefit Exchange</th><td data-plotted>909.5</td><td>553.9</td><td>609</td></tr>
+<tr><th scope="row">State Board of Elections</th><td data-plotted>714.3</td><td>293.6</td><td>411</td></tr>
+<tr><th scope="row">Department of Information Technology</th><td data-plotted>497.9</td><td>960.9</td><td>1,930</td></tr>
+<tr><th scope="row">Maryland Lottery and Gaming Control Agency</th><td data-plotted>227.1</td><td>698.6</td><td>3,077</td></tr>
+<tr><th scope="row">Department of Transportation</th><td data-plotted>134.5</td><td>12374.2</td><td>91,972</td></tr>
+<tr><th scope="row">Maryland Stadium Authority</th><td data-plotted>133.8</td><td>103.7</td><td>775</td></tr>
+<tr><th scope="row">Department of Commerce</th><td data-plotted>100.5</td><td>172.7</td><td>1,719</td></tr>
+<tr><th scope="row">Maryland Public Broadcasting Commission</th><td data-plotted>98.1</td><td>128.6</td><td>1,311</td></tr>
+<tr><th scope="row">State Department of Education</th><td data-plotted>77.3</td><td>957.5</td><td>12,387</td></tr>
+<tr><th scope="row">Maryland Department of Health</th><td data-plotted>71.5</td><td>5568.4</td><td>77,860</td></tr>
+<tr><th scope="row">Maryland Department of Labor</th><td data-plotted>58.6</td><td>781.9</td><td>13,335</td></tr>
+<tr><th scope="row">Department of Human Services</th><td data-plotted>54.1</td><td>2960.6</td><td>54,720</td></tr>
+</tbody></table>
+    </div>
+  </details>
+  <noscript>
+    <p class="nojs">This chart needs JavaScript to draw. The same data is listed in this table.</p>
+    <div class="scroll" tabindex="0" role="region" aria-label="Data table">
+<table><caption>The 12 agencies plotted (agencies with at least $100M of controllable purchases), highest per position first</caption><thead><tr><th scope="col">Agency</th><th scope="col">Per position ($K a year)</th><th scope="col">Controllable purchases ($M)</th><th scope="col">Position-years</th></tr></thead>
+<tbody>
+<tr><th scope="row">Maryland Health Benefit Exchange</th><td data-plotted>909.5</td><td>553.9</td><td>609</td></tr>
+<tr><th scope="row">State Board of Elections</th><td data-plotted>714.3</td><td>293.6</td><td>411</td></tr>
+<tr><th scope="row">Department of Information Technology</th><td data-plotted>497.9</td><td>960.9</td><td>1,930</td></tr>
+<tr><th scope="row">Maryland Lottery and Gaming Control Agency</th><td data-plotted>227.1</td><td>698.6</td><td>3,077</td></tr>
+<tr><th scope="row">Department of Transportation</th><td data-plotted>134.5</td><td>12374.2</td><td>91,972</td></tr>
+<tr><th scope="row">Maryland Stadium Authority</th><td data-plotted>133.8</td><td>103.7</td><td>775</td></tr>
+<tr><th scope="row">Department of Commerce</th><td data-plotted>100.5</td><td>172.7</td><td>1,719</td></tr>
+<tr><th scope="row">Maryland Public Broadcasting Commission</th><td data-plotted>98.1</td><td>128.6</td><td>1,311</td></tr>
+<tr><th scope="row">State Department of Education</th><td data-plotted>77.3</td><td>957.5</td><td>12,387</td></tr>
+<tr><th scope="row">Maryland Department of Health</th><td data-plotted>71.5</td><td>5568.4</td><td>77,860</td></tr>
+<tr><th scope="row">Maryland Department of Labor</th><td data-plotted>58.6</td><td>781.9</td><td>13,335</td></tr>
+<tr><th scope="row">Department of Human Services</th><td data-plotted>54.1</td><td>2960.6</td><td>54,720</td></tr>
+</tbody></table>
+    </div>
+  </noscript>
+</section>
+</main>
 <script>
 var D = {"a":["Department of Human Services","Maryland Department of Labor","Maryland Department of Health","State Department of Education","Maryland Public Broadcasting Commission","Department of Commerce","Maryland Stadium Authority","Department of Transportation","Maryland Lottery and Gaming Control Agency","Department of Information Technology","State Board of Elections","Maryland Health Benefit Exchange"],"k":[54.1,58.6,71.5,77.3,98.1,100.5,133.8,134.5,227.1,497.9,714.3,909.5],"c":[2960.6,781.9,5568.4,957.5,128.6,172.7,103.7,12374.2,698.6,960.9,293.6,553.9],"f":[54720.0,13335.0,77860.0,12387.0,1311.0,1719.0,775.0,91972.0,3077.0,1930.0,411.0,609.0]};
 var GOLD='#f59e0b', CYAN='#06b6d4', GREEN='#22c55e', RED='#f87171', MUTED='#64748b';
 var PALETTE = ["#f59e0b", "#06b6d4", "#a78bfa", "#34d399", "#f472b6", "#60a5fa", "#fbbf24"];
+var PAT = ["", "/", "x", ".", "+", "-", "\\"];
+function pat(i,c){return {shape:PAT[i%PAT.length], bgcolor:c, fgcolor:'rgba(10,14,26,0.55)', size:8, solidity:0.4};}
 var base = {
   paper_bgcolor:'#0a0e1a', plot_bgcolor:'#0a0e1a',
   font:{family:'Segoe UI,Roboto,sans-serif', color:'#f0f0f0', size:12},
@@ -36,11 +111,29 @@ var base = {
 };
 function merge(a,b){var o=JSON.parse(JSON.stringify(a));for(var k in b){if(b[k]&&typeof b[k]==='object'&&!Array.isArray(b[k])&&o[k]&&typeof o[k]==='object'){o[k]=merge(o[k],b[k]);}else{o[k]=b[k];}}return o;}
 var config = {responsive:true, displayModeBar:false};
+var gd = document.getElementById('chart');
+// The title sits in normal flow on narrow screens (see CSS), so the plot needs only a small top margin there.
+var narrow = window.matchMedia('(max-width:1100px)');
+// `nar` is an optional layout patch for narrow screens (long axis labels, margins); the plot is redrawn when the
+// viewport crosses the breakpoint. Plotly's own responsive:true handles every other resize.
+function draw(traces, layout, nar){
+  var mk = function(){
+    var l = merge(layout, {});
+    if (narrow.matches) { l.margin.t = 16; if (nar) l = merge(l, nar); }
+    return l;
+  };
+  var p = Plotly.newPlot(gd, traces, mk(), config);
+  var fit = function(){ Plotly.react(gd, gd.data, mk(), config); };
+  if (narrow.addEventListener) narrow.addEventListener('change', fit); else narrow.addListener(fit);
+  return p;
+}
 
-var tr={type:'bar',orientation:'h',y:D.a,x:D.k,marker:{color:D.a.map(function(_,i){return i===D.a.length-1?GOLD:CYAN;})},
+var hi=D.a.length-1;
+var tr={type:'bar',orientation:'h',y:D.a,x:D.k,text:D.k.map(function(v,i){return '$'+v+'K';}),textposition:'outside',cliponaxis:false,textfont:{color:'#f0f0f0'},
+ marker:{color:D.a.map(function(_,i){return i===hi?GOLD:CYAN;}),pattern:{shape:D.a.map(function(_,i){return i===hi?'/':'';}),bgcolor:D.a.map(function(_,i){return i===hi?GOLD:CYAN;}),fgcolor:'rgba(10,14,26,0.55)',size:8,solidity:0.4}},
  customdata:D.a.map(function(_,i){return [D.c[i],D.f[i]];}),hovertemplate:'<b>%{y}</b><br>$%{x}K per position a year<br>$%{customdata[0]}M controllable over the period, %{customdata[1]:,} position-years<extra></extra>'};
-var layout=merge(base,{xaxis:{title:{text:'Controllable purchases per position, $ thousands a year'},tickprefix:'$',ticksuffix:'K'},yaxis:{automargin:true,tickfont:{size:11,color:'#cbd5e1'}},margin:{l:260},showlegend:false});
-Plotly.newPlot('chart',[tr],layout,config);
+var layout=merge(base,{xaxis:{title:{text:'Controllable purchases per position, $ thousands a year'},tickprefix:'$',ticksuffix:'K'},yaxis:{automargin:true,tickfont:{size:11,color:'#cbd5e1'}},margin:{l:260,r:110},showlegend:false});
+draw([tr],layout,{margin:{l:10,r:56},xaxis:{title:{text:'$ thousands per position'}},yaxis:{tickfont:{size:9}}});
 
 </script>
 </body>

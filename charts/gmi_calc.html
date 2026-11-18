@@ -4,27 +4,138 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>A conditional path reaches $52.6M (range $42.6M to $64.2M) against GMI's $50M target | GMI Savings Tracker</title>
-<script src="https://cdn.plot.ly/plotly-3.5.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/plotly.js-dist-min@4.3.0/plotly.min.js" integrity="sha384-AtW63zbFwwiEVUeSPFC1ydmqJUwWWoXmyZHP8OC449teZ+00wVajF4cFhd/hy7jG" crossorigin="anonymous"></script>
 <style>
+  html { color-scheme:dark; }
   body { margin:0; padding:0; background:#0a0e1a; color:#f0f0f0; font-family:'Segoe UI',Roboto,sans-serif; }
-  #chart { width:100vw; height:100vh; }
+  .stage { position:relative; height:100vh; min-height:480px; }
+  #chart { width:100%; height:100%; }
   .title-bar { position:absolute; top:12px; left:20px; right:20px; z-index:10; pointer-events:none; }
   .title-bar h1 { margin:0; font-size:18px; color:#f0f0f0; font-weight:600; line-height:1.25; }
   .title-bar p  { margin:4px 0 0; font-size:12px; color:#8892b0; }
+  .ctl { position:absolute; right:20px; bottom:30px; z-index:11; display:flex; gap:10px; align-items:center; font-size:12px; color:#8892b0; }
+  .ctl button { font:inherit; font-size:13px; color:#f0f0f0; background:#1a2234; border:1px solid #334155; border-radius:6px; padding:6px 12px; cursor:pointer; }
+  .ctl button:hover { border-color:#f59e0b; }
+  .ctl button:focus-visible, details.dt summary:focus-visible, .scroll:focus-visible { outline:2px solid #22d3ee; outline-offset:2px; }
   .foot { position:absolute; left:20px; right:20px; bottom:6px; z-index:10; font-size:11px; color:#8892b0; pointer-events:none; }
+  .data { max-width:1100px; margin:0 auto; padding:20px 20px 40px; font-size:14px; line-height:1.5; }
+  .data .summary { margin:0 0 14px; color:#d6deeb; }
+  details.dt { border:1px solid #1f2d44; border-radius:8px; background:#0d1424; }
+  details.dt > summary { cursor:pointer; padding:10px 14px; color:#f0f0f0; font-weight:600; }
+  .scroll { overflow-x:auto; padding:0 14px 14px; }
+  table { border-collapse:collapse; width:100%; font-size:13px; font-variant-numeric:tabular-nums; }
+  caption { text-align:left; color:#8892b0; padding:0 0 8px; font-size:12px; }
+  th, td { padding:5px 10px; border-bottom:1px solid #1f2d44; text-align:right; white-space:nowrap; }
+  th { color:#cbd5e1; font-weight:600; }
+  th[scope=row], thead th:first-child, td.t { text-align:left; }
+  td.t { white-space:normal; min-width:12em; }
+  .nojs { margin:0 0 10px; color:#fbbf24; }
+  @media (max-width:1100px) {
+    .stage { height:auto; min-height:0; }
+    .title-bar, .foot, .ctl { position:static; margin:12px 16px 0; }
+    .foot { margin-bottom:8px; }
+    #chart { height:72vh; min-height:380px; }
+    .data { padding:12px 16px 32px; }
+  }
 </style>
+<noscript><style>details.dt { display:none; }</style></noscript>
 </head>
 <body>
-<div class="title-bar">
-  <h1>A conditional path reaches $52.6M (range $42.6M to $64.2M) against GMI's $50M target</h1>
-  <p>Savings added step by step: GMI's reported rates first, then assumed savings from statewide contracts. Conditional on reported savings recurring and on the stated assumptions.</p>
+<main>
+<div class="stage">
+  <header class="title-bar">
+    <h1 id="ttl">A conditional path reaches $52.6M (range $42.6M to $64.2M) against GMI's $50M target</h1>
+    <p id="sub">Savings added step by step: GMI's reported rates first, then assumed savings from statewide contracts. Conditional on reported savings recurring and on the stated assumptions.</p>
+  </header>
+  <div id="chart" role="img" aria-labelledby="ttl sub"></div>
+  <div class="foot">Source: Maryland Open Data Portal via the GMI Savings Tracker (testing ground v3), data as of 2026-11-13</div>
 </div>
-<div id="chart"></div>
-<div class="foot">Source: Maryland Open Data Portal via the GMI Savings Tracker (testing ground v3), data as of 2026-11-13</div>
+<section class="data" aria-label="Chart summary and data">
+  <p class="summary"><strong>Summary:</strong> A conditional path reaches $52.6M (range $42.6M to $64.2M) against GMI's $50M target. Every value plotted is listed in the data table below.</p>
+  <details class="dt">
+    <summary>Data table behind this chart (30 rows)</summary>
+    <div class="scroll" tabindex="0" role="region" aria-label="Data table, scrolls sideways on small screens">
+<table><caption>All 30 steps plotted: savings added, cumulative likely path and the assumed range ($ millions a year)</caption><thead><tr><th scope="col">Step</th><th scope="col">Action</th><th scope="col">Basis</th><th scope="col">Adds ($M)</th><th scope="col">Cumulative likely ($M)</th><th scope="col">Range low ($M)</th><th scope="col">Range high ($M)</th></tr></thead>
+<tbody>
+<tr><th scope="row">1</th><td class="t">Apply GMI&#x27;s reported savings rates</td><td class="t">forecast FY2027 spending × the rate GMI reported for each area</td><td>29.64</td><td data-plotted>29.64</td><td data-plotted>29.64</td><td data-plotted>29.64</td></tr>
+<tr><th scope="row">2</th><td class="t">Statewide contract: Carroll Independent Fuel</td><td class="t">assumed 3.5% of $65.6M paid by 48 agencies (assumed range 2-5%)</td><td>2.29</td><td data-plotted>31.94</td><td data-plotted>30.95</td><td data-plotted>32.92</td></tr>
+<tr><th scope="row">3</th><td class="t">Statewide contract: Carahsoft</td><td class="t">assumed 3.5% of $57.4M paid by 38 agencies (assumed range 2-5%)</td><td>2.01</td><td data-plotted>33.94</td><td data-plotted>32.1</td><td data-plotted>35.79</td></tr>
+<tr><th scope="row">4</th><td class="t">Statewide contract: Shi International</td><td class="t">assumed 3.5% of $52.5M paid by 39 agencies (assumed range 2-5%)</td><td>1.84</td><td data-plotted>35.78</td><td data-plotted>33.15</td><td data-plotted>38.41</td></tr>
+<tr><th scope="row">5</th><td class="t">Statewide contract: Wgl Energy Services</td><td class="t">assumed 3.5% of $52.0M paid by 16 agencies (assumed range 2-5%)</td><td>1.82</td><td data-plotted>37.6</td><td data-plotted>34.19</td><td data-plotted>41.01</td></tr>
+<tr><th scope="row">6</th><td class="t">Statewide contract: Applied Technology Services</td><td class="t">assumed 3.5% of $43.2M paid by 33 agencies (assumed range 2-5%)</td><td>1.51</td><td data-plotted>39.11</td><td data-plotted>35.05</td><td data-plotted>43.17</td></tr>
+<tr><th scope="row">7</th><td class="t">Statewide contract: Verizon</td><td class="t">assumed 3.5% of $32.3M paid by 54 agencies (assumed range 2-5%)</td><td>1.13</td><td data-plotted>40.24</td><td data-plotted>35.7</td><td data-plotted>44.78</td></tr>
+<tr><th scope="row">8</th><td class="t">Statewide contract: Strategic Communications</td><td class="t">assumed 3.5% of $29.3M paid by 18 agencies (assumed range 2-5%)</td><td>1.03</td><td data-plotted>41.27</td><td data-plotted>36.28</td><td data-plotted>46.25</td></tr>
+<tr><th scope="row">9</th><td class="t">Statewide contract: Element Fleet</td><td class="t">assumed 3.5% of $26.5M paid by 48 agencies (assumed range 2-5%)</td><td>0.93</td><td data-plotted>42.2</td><td data-plotted>36.82</td><td data-plotted>47.58</td></tr>
+<tr><th scope="row">10</th><td class="t">Statewide contract: Skyline Technology Solutions</td><td class="t">assumed 3.5% of $25.6M paid by 17 agencies (assumed range 2-5%)</td><td>0.9</td><td data-plotted>43.09</td><td data-plotted>37.33</td><td data-plotted>48.86</td></tr>
+<tr><th scope="row">11</th><td class="t">Statewide contract: Gantech</td><td class="t">assumed 3.5% of $22.2M paid by 10 agencies (assumed range 2-5%)</td><td>0.78</td><td data-plotted>43.87</td><td data-plotted>37.77</td><td data-plotted>49.97</td></tr>
+<tr><th scope="row">12</th><td class="t">Statewide contract: Securitas Technology</td><td class="t">assumed 3.5% of $20.6M paid by 14 agencies (assumed range 2-5%)</td><td>0.72</td><td data-plotted>44.59</td><td data-plotted>38.18</td><td data-plotted>51.0</td></tr>
+<tr><th scope="row">13</th><td class="t">Statewide contract: Advanced Computer Concepts</td><td class="t">assumed 3.5% of $19.7M paid by 26 agencies (assumed range 2-5%)</td><td>0.69</td><td data-plotted>45.28</td><td data-plotted>38.58</td><td data-plotted>51.99</td></tr>
+<tr><th scope="row">14</th><td class="t">Statewide contract: Cas Severn</td><td class="t">assumed 3.5% of $19.4M paid by 13 agencies (assumed range 2-5%)</td><td>0.68</td><td data-plotted>45.96</td><td data-plotted>38.97</td><td data-plotted>52.96</td></tr>
+<tr><th scope="row">15</th><td class="t">Statewide contract: At&amp;T</td><td class="t">assumed 3.5% of $13.1M paid by 41 agencies (assumed range 2-5%)</td><td>0.46</td><td data-plotted>46.42</td><td data-plotted>39.23</td><td data-plotted>53.61</td></tr>
+<tr><th scope="row">16</th><td class="t">Statewide contract: Apple Ford</td><td class="t">assumed 3.5% of $12.1M paid by 12 agencies (assumed range 2-5%)</td><td>0.42</td><td data-plotted>46.85</td><td data-plotted>39.47</td><td data-plotted>54.22</td></tr>
+<tr><th scope="row">17</th><td class="t">Statewide contract: Washington Gas</td><td class="t">assumed 3.5% of $8.0M paid by 11 agencies (assumed range 2-5%)</td><td>0.28</td><td data-plotted>47.13</td><td data-plotted>39.63</td><td data-plotted>54.62</td></tr>
+<tr><th scope="row">18</th><td class="t">Statewide contract: Watkins Security Agency</td><td class="t">assumed 3.5% of $7.7M paid by 10 agencies (assumed range 2-5%)</td><td>0.27</td><td data-plotted>47.4</td><td data-plotted>39.79</td><td data-plotted>55.01</td></tr>
+<tr><th scope="row">19</th><td class="t">Statewide contract: Grainger</td><td class="t">assumed 3.5% of $7.6M paid by 17 agencies (assumed range 2-5%)</td><td>0.26</td><td data-plotted>47.66</td><td data-plotted>39.94</td><td data-plotted>55.39</td></tr>
+<tr><th scope="row">20</th><td class="t">Statewide contract: Sport Chevrolet</td><td class="t">assumed 3.5% of $7.3M paid by 15 agencies (assumed range 2-5%)</td><td>0.26</td><td data-plotted>47.92</td><td data-plotted>40.09</td><td data-plotted>55.75</td></tr>
+<tr><th scope="row">21</th><td class="t">Statewide contract: Comcast</td><td class="t">assumed 3.5% of $7.2M paid by 11 agencies (assumed range 2-5%)</td><td>0.25</td><td data-plotted>48.17</td><td data-plotted>40.23</td><td data-plotted>56.11</td></tr>
+<tr><th scope="row">22</th><td class="t">Statewide contract: En Net Services</td><td class="t">assumed 3.5% of $6.3M paid by 34 agencies (assumed range 2-5%)</td><td>0.22</td><td data-plotted>48.39</td><td data-plotted>40.36</td><td data-plotted>56.43</td></tr>
+<tr><th scope="row">23</th><td class="t">Statewide contract: Hertrich Fleet Services</td><td class="t">assumed 3.5% of $6.0M paid by 10 agencies (assumed range 2-5%)</td><td>0.21</td><td data-plotted>48.6</td><td data-plotted>40.48</td><td data-plotted>56.73</td></tr>
+<tr><th scope="row">24</th><td class="t">Statewide contract: Canon</td><td class="t">assumed 3.5% of $5.8M paid by 39 agencies (assumed range 2-5%)</td><td>0.2</td><td data-plotted>48.8</td><td data-plotted>40.59</td><td data-plotted>57.02</td></tr>
+<tr><th scope="row">25</th><td class="t">Statewide contract: Hcgi Hartford</td><td class="t">assumed 3.5% of $5.6M paid by 12 agencies (assumed range 2-5%)</td><td>0.2</td><td data-plotted>49.0</td><td data-plotted>40.7</td><td data-plotted>57.3</td></tr>
+<tr><th scope="row">26</th><td class="t">Statewide contract: Mobile Communications America</td><td class="t">assumed 3.5% of $5.6M paid by 11 agencies (assumed range 2-5%)</td><td>0.2</td><td data-plotted>49.2</td><td data-plotted>40.82</td><td data-plotted>57.58</td></tr>
+<tr><th scope="row">27</th><td class="t">Statewide contract: Forerunner Technologies</td><td class="t">assumed 3.5% of $5.4M paid by 16 agencies (assumed range 2-5%)</td><td>0.19</td><td data-plotted>49.39</td><td data-plotted>40.92</td><td data-plotted>57.85</td></tr>
+<tr><th scope="row">28</th><td class="t">Statewide contract: Corporate Mailing Services</td><td class="t">assumed 3.5% of $5.3M paid by 11 agencies (assumed range 2-5%)</td><td>0.18</td><td data-plotted>49.57</td><td data-plotted>41.03</td><td data-plotted>58.11</td></tr>
+<tr><th scope="row">29</th><td class="t">Start savings in real estate &amp; leases at 1%</td><td class="t">assumed 1% of forecast FY2027 spending of $141.5M</td><td>1.41</td><td data-plotted>50.99</td><td data-plotted>41.74</td><td data-plotted>60.94</td></tr>
+<tr><th scope="row">30</th><td class="t">Start savings in utilities &amp; facility energy at 1%</td><td class="t">assumed 1% of forecast FY2027 spending of $164.2M</td><td>1.64</td><td data-plotted>52.63</td><td data-plotted>42.56</td><td data-plotted>64.23</td></tr>
+</tbody></table>
+    </div>
+  </details>
+  <noscript>
+    <p class="nojs">This chart needs JavaScript to draw. The same data is listed in this table.</p>
+    <div class="scroll" tabindex="0" role="region" aria-label="Data table">
+<table><caption>All 30 steps plotted: savings added, cumulative likely path and the assumed range ($ millions a year)</caption><thead><tr><th scope="col">Step</th><th scope="col">Action</th><th scope="col">Basis</th><th scope="col">Adds ($M)</th><th scope="col">Cumulative likely ($M)</th><th scope="col">Range low ($M)</th><th scope="col">Range high ($M)</th></tr></thead>
+<tbody>
+<tr><th scope="row">1</th><td class="t">Apply GMI&#x27;s reported savings rates</td><td class="t">forecast FY2027 spending × the rate GMI reported for each area</td><td>29.64</td><td data-plotted>29.64</td><td data-plotted>29.64</td><td data-plotted>29.64</td></tr>
+<tr><th scope="row">2</th><td class="t">Statewide contract: Carroll Independent Fuel</td><td class="t">assumed 3.5% of $65.6M paid by 48 agencies (assumed range 2-5%)</td><td>2.29</td><td data-plotted>31.94</td><td data-plotted>30.95</td><td data-plotted>32.92</td></tr>
+<tr><th scope="row">3</th><td class="t">Statewide contract: Carahsoft</td><td class="t">assumed 3.5% of $57.4M paid by 38 agencies (assumed range 2-5%)</td><td>2.01</td><td data-plotted>33.94</td><td data-plotted>32.1</td><td data-plotted>35.79</td></tr>
+<tr><th scope="row">4</th><td class="t">Statewide contract: Shi International</td><td class="t">assumed 3.5% of $52.5M paid by 39 agencies (assumed range 2-5%)</td><td>1.84</td><td data-plotted>35.78</td><td data-plotted>33.15</td><td data-plotted>38.41</td></tr>
+<tr><th scope="row">5</th><td class="t">Statewide contract: Wgl Energy Services</td><td class="t">assumed 3.5% of $52.0M paid by 16 agencies (assumed range 2-5%)</td><td>1.82</td><td data-plotted>37.6</td><td data-plotted>34.19</td><td data-plotted>41.01</td></tr>
+<tr><th scope="row">6</th><td class="t">Statewide contract: Applied Technology Services</td><td class="t">assumed 3.5% of $43.2M paid by 33 agencies (assumed range 2-5%)</td><td>1.51</td><td data-plotted>39.11</td><td data-plotted>35.05</td><td data-plotted>43.17</td></tr>
+<tr><th scope="row">7</th><td class="t">Statewide contract: Verizon</td><td class="t">assumed 3.5% of $32.3M paid by 54 agencies (assumed range 2-5%)</td><td>1.13</td><td data-plotted>40.24</td><td data-plotted>35.7</td><td data-plotted>44.78</td></tr>
+<tr><th scope="row">8</th><td class="t">Statewide contract: Strategic Communications</td><td class="t">assumed 3.5% of $29.3M paid by 18 agencies (assumed range 2-5%)</td><td>1.03</td><td data-plotted>41.27</td><td data-plotted>36.28</td><td data-plotted>46.25</td></tr>
+<tr><th scope="row">9</th><td class="t">Statewide contract: Element Fleet</td><td class="t">assumed 3.5% of $26.5M paid by 48 agencies (assumed range 2-5%)</td><td>0.93</td><td data-plotted>42.2</td><td data-plotted>36.82</td><td data-plotted>47.58</td></tr>
+<tr><th scope="row">10</th><td class="t">Statewide contract: Skyline Technology Solutions</td><td class="t">assumed 3.5% of $25.6M paid by 17 agencies (assumed range 2-5%)</td><td>0.9</td><td data-plotted>43.09</td><td data-plotted>37.33</td><td data-plotted>48.86</td></tr>
+<tr><th scope="row">11</th><td class="t">Statewide contract: Gantech</td><td class="t">assumed 3.5% of $22.2M paid by 10 agencies (assumed range 2-5%)</td><td>0.78</td><td data-plotted>43.87</td><td data-plotted>37.77</td><td data-plotted>49.97</td></tr>
+<tr><th scope="row">12</th><td class="t">Statewide contract: Securitas Technology</td><td class="t">assumed 3.5% of $20.6M paid by 14 agencies (assumed range 2-5%)</td><td>0.72</td><td data-plotted>44.59</td><td data-plotted>38.18</td><td data-plotted>51.0</td></tr>
+<tr><th scope="row">13</th><td class="t">Statewide contract: Advanced Computer Concepts</td><td class="t">assumed 3.5% of $19.7M paid by 26 agencies (assumed range 2-5%)</td><td>0.69</td><td data-plotted>45.28</td><td data-plotted>38.58</td><td data-plotted>51.99</td></tr>
+<tr><th scope="row">14</th><td class="t">Statewide contract: Cas Severn</td><td class="t">assumed 3.5% of $19.4M paid by 13 agencies (assumed range 2-5%)</td><td>0.68</td><td data-plotted>45.96</td><td data-plotted>38.97</td><td data-plotted>52.96</td></tr>
+<tr><th scope="row">15</th><td class="t">Statewide contract: At&amp;T</td><td class="t">assumed 3.5% of $13.1M paid by 41 agencies (assumed range 2-5%)</td><td>0.46</td><td data-plotted>46.42</td><td data-plotted>39.23</td><td data-plotted>53.61</td></tr>
+<tr><th scope="row">16</th><td class="t">Statewide contract: Apple Ford</td><td class="t">assumed 3.5% of $12.1M paid by 12 agencies (assumed range 2-5%)</td><td>0.42</td><td data-plotted>46.85</td><td data-plotted>39.47</td><td data-plotted>54.22</td></tr>
+<tr><th scope="row">17</th><td class="t">Statewide contract: Washington Gas</td><td class="t">assumed 3.5% of $8.0M paid by 11 agencies (assumed range 2-5%)</td><td>0.28</td><td data-plotted>47.13</td><td data-plotted>39.63</td><td data-plotted>54.62</td></tr>
+<tr><th scope="row">18</th><td class="t">Statewide contract: Watkins Security Agency</td><td class="t">assumed 3.5% of $7.7M paid by 10 agencies (assumed range 2-5%)</td><td>0.27</td><td data-plotted>47.4</td><td data-plotted>39.79</td><td data-plotted>55.01</td></tr>
+<tr><th scope="row">19</th><td class="t">Statewide contract: Grainger</td><td class="t">assumed 3.5% of $7.6M paid by 17 agencies (assumed range 2-5%)</td><td>0.26</td><td data-plotted>47.66</td><td data-plotted>39.94</td><td data-plotted>55.39</td></tr>
+<tr><th scope="row">20</th><td class="t">Statewide contract: Sport Chevrolet</td><td class="t">assumed 3.5% of $7.3M paid by 15 agencies (assumed range 2-5%)</td><td>0.26</td><td data-plotted>47.92</td><td data-plotted>40.09</td><td data-plotted>55.75</td></tr>
+<tr><th scope="row">21</th><td class="t">Statewide contract: Comcast</td><td class="t">assumed 3.5% of $7.2M paid by 11 agencies (assumed range 2-5%)</td><td>0.25</td><td data-plotted>48.17</td><td data-plotted>40.23</td><td data-plotted>56.11</td></tr>
+<tr><th scope="row">22</th><td class="t">Statewide contract: En Net Services</td><td class="t">assumed 3.5% of $6.3M paid by 34 agencies (assumed range 2-5%)</td><td>0.22</td><td data-plotted>48.39</td><td data-plotted>40.36</td><td data-plotted>56.43</td></tr>
+<tr><th scope="row">23</th><td class="t">Statewide contract: Hertrich Fleet Services</td><td class="t">assumed 3.5% of $6.0M paid by 10 agencies (assumed range 2-5%)</td><td>0.21</td><td data-plotted>48.6</td><td data-plotted>40.48</td><td data-plotted>56.73</td></tr>
+<tr><th scope="row">24</th><td class="t">Statewide contract: Canon</td><td class="t">assumed 3.5% of $5.8M paid by 39 agencies (assumed range 2-5%)</td><td>0.2</td><td data-plotted>48.8</td><td data-plotted>40.59</td><td data-plotted>57.02</td></tr>
+<tr><th scope="row">25</th><td class="t">Statewide contract: Hcgi Hartford</td><td class="t">assumed 3.5% of $5.6M paid by 12 agencies (assumed range 2-5%)</td><td>0.2</td><td data-plotted>49.0</td><td data-plotted>40.7</td><td data-plotted>57.3</td></tr>
+<tr><th scope="row">26</th><td class="t">Statewide contract: Mobile Communications America</td><td class="t">assumed 3.5% of $5.6M paid by 11 agencies (assumed range 2-5%)</td><td>0.2</td><td data-plotted>49.2</td><td data-plotted>40.82</td><td data-plotted>57.58</td></tr>
+<tr><th scope="row">27</th><td class="t">Statewide contract: Forerunner Technologies</td><td class="t">assumed 3.5% of $5.4M paid by 16 agencies (assumed range 2-5%)</td><td>0.19</td><td data-plotted>49.39</td><td data-plotted>40.92</td><td data-plotted>57.85</td></tr>
+<tr><th scope="row">28</th><td class="t">Statewide contract: Corporate Mailing Services</td><td class="t">assumed 3.5% of $5.3M paid by 11 agencies (assumed range 2-5%)</td><td>0.18</td><td data-plotted>49.57</td><td data-plotted>41.03</td><td data-plotted>58.11</td></tr>
+<tr><th scope="row">29</th><td class="t">Start savings in real estate &amp; leases at 1%</td><td class="t">assumed 1% of forecast FY2027 spending of $141.5M</td><td>1.41</td><td data-plotted>50.99</td><td data-plotted>41.74</td><td data-plotted>60.94</td></tr>
+<tr><th scope="row">30</th><td class="t">Start savings in utilities &amp; facility energy at 1%</td><td class="t">assumed 1% of forecast FY2027 spending of $164.2M</td><td>1.64</td><td data-plotted>52.63</td><td data-plotted>42.56</td><td data-plotted>64.23</td></tr>
+</tbody></table>
+    </div>
+  </noscript>
+</section>
+</main>
 <script>
 var D = {"step":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30],"action":["Apply GMI's reported savings rates","Statewide contract: Carroll Independent Fuel","Statewide contract: Carahsoft","Statewide contract: Shi International","Statewide contract: Wgl Energy Services","Statewide contract: Applied Technology Services","Statewide contract: Verizon","Statewide contract: Strategic Communications","Statewide contract: Element Fleet","Statewide contract: Skyline Technology Solutions","Statewide contract: Gantech","Statewide contract: Securitas Technology","Statewide contract: Advanced Computer Concepts","Statewide contract: Cas Severn","Statewide contract: At&T","Statewide contract: Apple Ford","Statewide contract: Washington Gas","Statewide contract: Watkins Security Agency","Statewide contract: Grainger","Statewide contract: Sport Chevrolet","Statewide contract: Comcast","Statewide contract: En Net Services","Statewide contract: Hertrich Fleet Services","Statewide contract: Canon","Statewide contract: Hcgi Hartford","Statewide contract: Mobile Communications America","Statewide contract: Forerunner Technologies","Statewide contract: Corporate Mailing Services","Start savings in real estate & leases at 1%","Start savings in utilities & facility energy at 1%"],"basis":["forecast FY2027 spending × the rate GMI reported for each area","assumed 3.5% of $65.6M paid by 48 agencies (assumed range 2-5%)","assumed 3.5% of $57.4M paid by 38 agencies (assumed range 2-5%)","assumed 3.5% of $52.5M paid by 39 agencies (assumed range 2-5%)","assumed 3.5% of $52.0M paid by 16 agencies (assumed range 2-5%)","assumed 3.5% of $43.2M paid by 33 agencies (assumed range 2-5%)","assumed 3.5% of $32.3M paid by 54 agencies (assumed range 2-5%)","assumed 3.5% of $29.3M paid by 18 agencies (assumed range 2-5%)","assumed 3.5% of $26.5M paid by 48 agencies (assumed range 2-5%)","assumed 3.5% of $25.6M paid by 17 agencies (assumed range 2-5%)","assumed 3.5% of $22.2M paid by 10 agencies (assumed range 2-5%)","assumed 3.5% of $20.6M paid by 14 agencies (assumed range 2-5%)","assumed 3.5% of $19.7M paid by 26 agencies (assumed range 2-5%)","assumed 3.5% of $19.4M paid by 13 agencies (assumed range 2-5%)","assumed 3.5% of $13.1M paid by 41 agencies (assumed range 2-5%)","assumed 3.5% of $12.1M paid by 12 agencies (assumed range 2-5%)","assumed 3.5% of $8.0M paid by 11 agencies (assumed range 2-5%)","assumed 3.5% of $7.7M paid by 10 agencies (assumed range 2-5%)","assumed 3.5% of $7.6M paid by 17 agencies (assumed range 2-5%)","assumed 3.5% of $7.3M paid by 15 agencies (assumed range 2-5%)","assumed 3.5% of $7.2M paid by 11 agencies (assumed range 2-5%)","assumed 3.5% of $6.3M paid by 34 agencies (assumed range 2-5%)","assumed 3.5% of $6.0M paid by 10 agencies (assumed range 2-5%)","assumed 3.5% of $5.8M paid by 39 agencies (assumed range 2-5%)","assumed 3.5% of $5.6M paid by 12 agencies (assumed range 2-5%)","assumed 3.5% of $5.6M paid by 11 agencies (assumed range 2-5%)","assumed 3.5% of $5.4M paid by 16 agencies (assumed range 2-5%)","assumed 3.5% of $5.3M paid by 11 agencies (assumed range 2-5%)","assumed 1% of forecast FY2027 spending of $141.5M","assumed 1% of forecast FY2027 spending of $164.2M"],"cum":[29.64,31.94,33.94,35.78,37.6,39.11,40.24,41.27,42.2,43.09,43.87,44.59,45.28,45.96,46.42,46.85,47.13,47.4,47.66,47.92,48.17,48.39,48.6,48.8,49.0,49.2,49.39,49.57,50.99,52.63],"lo":[29.64,30.95,32.1,33.15,34.19,35.05,35.7,36.28,36.82,37.33,37.77,38.18,38.58,38.97,39.23,39.47,39.63,39.79,39.94,40.09,40.23,40.36,40.48,40.59,40.7,40.82,40.92,41.03,41.74,42.56],"hi":[29.64,32.92,35.79,38.41,41.01,43.17,44.78,46.25,47.58,48.86,49.97,51.0,51.99,52.96,53.61,54.22,54.62,55.01,55.39,55.75,56.11,56.43,56.73,57.02,57.3,57.58,57.85,58.11,60.94,64.23],"s":[29.64,2.29,2.01,1.84,1.82,1.51,1.13,1.03,0.93,0.9,0.78,0.72,0.69,0.68,0.46,0.42,0.28,0.27,0.26,0.26,0.25,0.22,0.21,0.2,0.2,0.2,0.19,0.18,1.41,1.64]};
 var GOLD='#f59e0b', CYAN='#06b6d4', GREEN='#22c55e', RED='#f87171', MUTED='#64748b';
 var PALETTE = ["#f59e0b", "#06b6d4", "#a78bfa", "#34d399", "#f472b6", "#60a5fa", "#fbbf24"];
+var PAT = ["", "/", "x", ".", "+", "-", "\\"];
+function pat(i,c){return {shape:PAT[i%PAT.length], bgcolor:c, fgcolor:'rgba(10,14,26,0.55)', size:8, solidity:0.4};}
 var base = {
   paper_bgcolor:'#0a0e1a', plot_bgcolor:'#0a0e1a',
   font:{family:'Segoe UI,Roboto,sans-serif', color:'#f0f0f0', size:12},
@@ -36,6 +147,22 @@ var base = {
 };
 function merge(a,b){var o=JSON.parse(JSON.stringify(a));for(var k in b){if(b[k]&&typeof b[k]==='object'&&!Array.isArray(b[k])&&o[k]&&typeof o[k]==='object'){o[k]=merge(o[k],b[k]);}else{o[k]=b[k];}}return o;}
 var config = {responsive:true, displayModeBar:false};
+var gd = document.getElementById('chart');
+// The title sits in normal flow on narrow screens (see CSS), so the plot needs only a small top margin there.
+var narrow = window.matchMedia('(max-width:1100px)');
+// `nar` is an optional layout patch for narrow screens (long axis labels, margins); the plot is redrawn when the
+// viewport crosses the breakpoint. Plotly's own responsive:true handles every other resize.
+function draw(traces, layout, nar){
+  var mk = function(){
+    var l = merge(layout, {});
+    if (narrow.matches) { l.margin.t = 16; if (nar) l = merge(l, nar); }
+    return l;
+  };
+  var p = Plotly.newPlot(gd, traces, mk(), config);
+  var fit = function(){ Plotly.react(gd, gd.data, mk(), config); };
+  if (narrow.addEventListener) narrow.addEventListener('change', fit); else narrow.addListener(fit);
+  return p;
+}
 
 var band=[{type:'scatter',mode:'lines',x:D.step,y:D.hi,line:{width:0},hoverinfo:'skip',showlegend:false},
  {type:'scatter',mode:'lines',name:'Assumed range',x:D.step,y:D.lo,fill:'tonexty',fillcolor:'rgba(6,182,212,0.18)',line:{width:0},hoverinfo:'skip'}];
@@ -45,7 +172,7 @@ var line={type:'scatter',mode:'lines+markers',name:'Likely, cumulative',x:D.step
 var layout=merge(base,{xaxis:{title:{text:'Step'},dtick:2}, yaxis:{title:{text:'Cumulative annual savings, $ millions'},tickprefix:'$',ticksuffix:'M',rangemode:'tozero'},
  shapes:[{type:'line',xref:'paper',x0:0,x1:1,y0:50,y1:50,line:{color:RED,width:2,dash:'dash'}}],
  annotations:[{xref:'paper',x:0.01,y:50,yshift:12,xanchor:'left',showarrow:false,text:'GMI target: $50M',font:{color:RED,size:12}}], legend:{y:-0.18}});
-Plotly.newPlot('chart',band.concat([line]),layout,config);
+draw(band.concat([line]),layout);
 
 </script>
 </body>
